@@ -1,9 +1,8 @@
 import util
 paths = util.load_files()
-if len(paths)==0:
+if not paths:
     print('Nenhum arquivo encontrado')
     exit()
-print(1)
 for path in paths:
     with open(path,'r') as file:
         with open(path.replace("input",'output',1)
