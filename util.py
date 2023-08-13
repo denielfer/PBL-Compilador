@@ -1,4 +1,4 @@
-def load_files(base_dir:str = 'files\\input') -> list[str]:
+def load_files(base_dir:str = 'files') -> list[str]:
     '''
         Pega caminho relativo de todos arquivos com terminação '.txt' de apartir 
             de um diretorio raiz
@@ -8,7 +8,7 @@ def load_files(base_dir:str = 'files\\input') -> list[str]:
     returned = []
     for (dirpath, dirnames, filenames) in walk(base_dir):
         for filename in filenames: 
-            if filename.endswith(".txt"):
+            if filename.endswith(".txt") and not filename.endswith("-saida.txt"):
                 returned.append(path.join(dirpath, filename))
     return returned
 
