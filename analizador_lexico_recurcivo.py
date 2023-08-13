@@ -1,3 +1,6 @@
+######################### TO DO ##########################
+# fazer geração de tokens para itendificadores e palavras reservadas
+
 codigos = {
     1:'PRE',
     2:'IDE',
@@ -29,7 +32,7 @@ def get_token(txt:str,chars_list: list[str],executions:dict[str:comportamento]):
     if chars_list == []:
         # print(f'Lista de caracteres a serem buscados acabou')
         return
-    if txt == '':
+    if txt.strip() == '':
         # print( f'string vazia para busca de {chars_list[0]}')
         return
     # print(f'A string \/{txt}\/ sera analizada para o token {chars_list[0]}',end=' | ')
@@ -38,8 +41,8 @@ def get_token(txt:str,chars_list: list[str],executions:dict[str:comportamento]):
     for token in get_token(new_txt[0],chars_list[1:],executions):
         yield token
     if new_txt[1:] != []:
-        for a in executions[chars_list[0]].ação(new_txt[1:],chars_list,executions):
-            yield a
+        for token in executions[chars_list[0]].ação(new_txt[1:],chars_list,executions):
+            yield token
 
 class comentario_bloco(comportamento):
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
@@ -49,11 +52,11 @@ class comentario_bloco(comportamento):
         for txt in txts:
             flag = False
             if '*/' in txt:
-                for token in get_token(txt.split('*/')[1:],chars_list[1:],executions):
+                for token in get_token(txt.split('*/',1)[1],chars_list[1:],executions):
                     yield token
                 flag = True
         if flag is False:
-            yield 10
+            yield 10,None
         
 class comentario_linha(comportamento):
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
@@ -152,16 +155,18 @@ if __name__ == '__main__':
     #     print(a)
 
     # teste para cometnario de linha
-    s = '+//as+as' # espera token + e erro 
-    print('analizando: ', s)
-    try:
-        for a in get_token(s,prioridade,comportamentos):
-            print(a)
-    except comentario_linha_excption:
-        pass
+    # s = '+//as+as' # espera token + e erro 
+    # print('analizando: ', s)
+    # try:
+    #     for a in get_token(s,prioridade,comportamentos):
+    #         print(a)
+    # except comentario_linha_excption:
+    #     pass
     
     #teste para comentario de bloco
     #########TO DO #############################################################
 
     #teste para cadeia de caracteres
-    ########### TO DO ##################################################
+    s = '+/* // +-*/ -' # + , iguinora o que ta em comentario e termina com o - 
+    for a in get_token(s,prioridade,comportamentos):
+        print(a)
