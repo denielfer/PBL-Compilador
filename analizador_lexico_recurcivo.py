@@ -231,7 +231,10 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                 else:
                     identificador += char
             else:
-                tokens.append((13,identificador))
+                if identificador == '.':
+                    tokens.append((5,'.'))
+                else:
+                    tokens.append((13,identificador))
 
         # print(txt,' -> ',txt[n+1:],tokens)
         return tokens, txt[n+2:]
