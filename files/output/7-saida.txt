@@ -1,20 +1,60 @@
 0 <REL,<>
+0 <IDE,stdio>
+0 <DEL,.>
+0 <IDE,h>
 0 <REL,>>
+1 <PRE,int>
 1 <DEL,{>
+2 <PRE,int>
+2 <IDE,a>
 2 <DEL,;>
+3 <IDE,long>
+3 <IDE,b>
 3 <DEL,;>
+4 <IDE,long>
+4 <IDE,long>
+4 <IDE,c>
 4 <DEL,;>
+5 <IDE,double>
+5 <IDE,e>
 5 <DEL,;>
+6 <IDE,long>
+6 <IDE,double>
+6 <IDE,f>
 6 <DEL,;>
-8 <CMF,Size of int = %zu bytes \n, sizeof(a));
->
-9 <CMF,Size of long int = %zu bytes\n, sizeof(b));
->
-10 <CMF,Size of long long int = %zu bytes\n, sizeof(c));
->
-11 <CMF,Size of double = %zu bytes\n, sizeof(e));
->
-12 <CMF,Size of long double = %zu bytes\n, sizeof(f));
->
+8 <CAC,"Size of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \n">
+8 <DEL,,>
+8 <DEL,;>
+9 <CAC,"Size of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\n">
+9 <DEL,,>
+9 <DEL,;>
+10 <CAC,"Size of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\n">
+10 <DEL,,>
+10 <DEL,;>
+11 <CAC,"Size of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\n">
+11 <DEL,,>
+11 <DEL,;>
+12 <CAC,"Size of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\n">
+12 <DEL,,>
+12 <DEL,;>
+14 <PRE,return>
+14 <NRO,0>
 14 <DEL,;>
 15 <DEL,}>
+0 <TMF,#include>
+1 <IMF,main()>
+8 <IMF,printf(>
+8 <IMF,sizeof(a))>
+8 <CMF,"Size of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \nSize of int = %zu bytes \n>
+9 <IMF,printf(>
+9 <IMF,sizeof(b))>
+9 <CMF,"Size of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\nSize of long int = %zu bytes\n>
+10 <IMF,printf(>
+10 <IMF,sizeof(c))>
+10 <CMF,"Size of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\nSize of long long int = %zu bytes\n>
+11 <IMF,printf(>
+11 <IMF,sizeof(e))>
+11 <CMF,"Size of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\nSize of double = %zu bytes\n>
+12 <IMF,printf(>
+12 <IMF,sizeof(f))>
+12 <CMF,"Size of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\nSize of long double = %zu bytes\n>

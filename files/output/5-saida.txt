@@ -1,17 +1,45 @@
 0 <REL,<>
+0 <IDE,stdio>
+0 <DEL,.>
+0 <IDE,h>
 0 <REL,>>
+1 <PRE,int>
 1 <DEL,{>
+2 <IDE,double>
+2 <IDE,a>
 2 <DEL,,>
+2 <IDE,b>
 2 <DEL,,>
+2 <IDE,product>
 2 <DEL,;>
-3 <CMF,Enter two numbers: );
->
-4 <CMF,%lf %lf, &a, &b);  
->
+3 <CAC,"Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: ">
+3 <DEL,;>
+4 <CAC,"%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf">
+4 <DEL,,>
+4 <DEL,,>
+4 <DEL,;>
+7 <IDE,product>
 7 <REL,=>
+7 <IDE,a>
 7 <ART,*>
+7 <IDE,b>
 7 <DEL,;>
-10 <CMF,Product = %.2lf, product);
->
+10 <CAC,"Product = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lf">
+10 <DEL,,>
+10 <DEL,;>
+12 <PRE,return>
+12 <NRO,0>
 12 <DEL,;>
 13 <DEL,}>
+0 <TMF,#include>
+1 <IMF,main()>
+3 <IMF,printf(>
+3 <TMF,)>
+3 <CMF,"Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: >
+4 <IMF,scanf(>
+4 <TMF,&a>
+4 <TMF,&b)>
+4 <CMF,"%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf>
+10 <IMF,printf(>
+10 <IMF,product)>
+10 <CMF,"Product = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lf>

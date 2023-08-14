@@ -1,12 +1,33 @@
 0 <REL,<>
+0 <IDE,stdio>
+0 <DEL,.>
+0 <IDE,h>
 0 <REL,>>
+1 <PRE,int>
 1 <DEL,{>
+2 <PRE,int>
+2 <IDE,number>
 2 <DEL,;>
-4 <CMF,Enter an integer: );  
->
-7 <CMF,%d, &number);
->
-10 <CMF,You entered: %d, number);
->
+4 <CAC,"Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: ">
+4 <DEL,;>
+7 <CAC,"%d%d">
+7 <DEL,,>
+7 <DEL,;>
+10 <CAC,"You entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %d">
+10 <DEL,,>
+10 <DEL,;>
+12 <PRE,return>
+12 <NRO,0>
 12 <DEL,;>
 13 <DEL,}>
+0 <TMF,#include>
+1 <IMF,main()>
+4 <IMF,printf(>
+4 <TMF,)>
+4 <CMF,"Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: >
+7 <IMF,scanf(>
+7 <TMF,&number)>
+7 <CMF,"%d%d>
+10 <IMF,printf(>
+10 <IMF,number)>
+10 <CMF,"You entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %d>

@@ -12,6 +12,7 @@ for path in paths:
             FBC = False #flag_bloco_de_comentario = False
             TEXT_FBC = ''
             LINE_FBC = -1
+            erros = []
             for n,line in enumerate(file.readlines()):
                 line = line[:-1] if line[-1] == '-1' else line
                 if not FBC:
@@ -19,8 +20,10 @@ for path in paths:
                         for token in analizador_lexico_recurcivo.get_token(line,
                                                             analizador_lexico_recurcivo.prioridade,
                                                             analizador_lexico_recurcivo.comportamentos):
-                            #if token not erro, precisa verificar se erro ou nao ##################################################################
-                            out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
+                                if token[0]>8:
+                                    erros.append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
+                                else:
+                                    out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
                     except analizador_lexico_recurcivo.comentario_linha_excption:
                         pass  
                     except analizador_lexico_recurcivo.comentario_bloco_excption as e:
@@ -35,8 +38,10 @@ for path in paths:
                             for token in analizador_lexico_recurcivo.get_token(line,
                                                                 analizador_lexico_recurcivo.prioridade,
                                                                 analizador_lexico_recurcivo.comportamentos):
-                                #if token not erro, precisa verificar se erro ou nao ##################################################################
-                                out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
+                                if token[0]>8:
+                                    erros.append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
+                                else:
+                                    out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]},{token[1]}>\n')
                         except analizador_lexico_recurcivo.comentario_linha_excption:
                             pass  
                         except analizador_lexico_recurcivo.comentario_bloco_excption as e:
@@ -44,5 +49,7 @@ for path in paths:
                             TEXT_FBC = str(e)
                     else:
                         TEXT_FBC +=line
+            for erro in erros:
+                out_file.write(erro)
             if FBC: # terminou o arquivo e ta com comentario de bloco sem termina
                 out_file.write(f'{LINE_FBC} <{analizador_lexico_recurcivo.codigos[CoMF_CODE]},{TEXT_FBC}>\n')
