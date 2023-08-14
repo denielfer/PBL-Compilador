@@ -1,5 +1,5 @@
-######################### TO DO ##########################
-# fazer geração de tokens para itendificadores e palavras reservadas
+
+from string import printable, ascii_letters, digits
 
 codigos = {
     1:'PRE',
@@ -20,6 +20,9 @@ codigos = {
 class comentario_linha_excption(Exception):
     pass
 
+class comentario_bloco_excption(Exception):
+    pass
+
 # nao tem ponto pois este pode ser usado para gerar numero e pode dar problema ainda nao pensei em como seria entao ta fora ate o momento
 # '/*' e '//' tem mesma ordem de prioridade assim escolhe-se quebra em '/*' e caso exista um '//' antes usa o raise Exception para cancelar o continuamento da função de analize para linha
 prioridade = '/* // " ++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ; ,'.split()
@@ -29,34 +32,40 @@ class comportamento:
         ...
 
 def get_token(txt:str,chars_list: list[str],executions:dict[str:comportamento]):
-    if chars_list == []:
-        # print(f'Lista de caracteres a serem buscados acabou')
-        return
     if txt.strip() == '':
         # print( f'string vazia para busca de {chars_list[0]}')
         return
+    if chars_list == []:
+        # print(f'Lista de caracteres a serem buscados acabou')
+        for token in i_pr_n.ação(txt,chars_list,executions):
+            yield token
+        return
     # print(f'A string \/{txt}\/ sera analizada para o token {chars_list[0]}',end=' | ')
     new_txt = txt.split(chars_list[0])
-    # print('resultado: ',new_txt)#, f' para: {chars_list[0]}')
+    # print('resultado: ',new_txt, f' para: {chars_list[0]}')
     for token in get_token(new_txt[0],chars_list[1:],executions):
         yield token
     if new_txt[1:] != []:
         for token in executions[chars_list[0]].ação(new_txt[1:],chars_list,executions):
             yield token
 
-class comentario_bloco(comportamento):
+class comentario_bloco(comportamento): 
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
         if txts == []:
             return
         flag = False
+        t = ''
         for txt in txts:
             flag = False
             if '*/' in txt:
                 for token in get_token(txt.split('*/',1)[1],chars_list[1:],executions):
                     yield token
                 flag = True
+                t=''
+            else:
+                t+=txt
         if flag is False:
-            yield 10,None
+            raise comentario_bloco_excption(t)
         
 class comentario_linha(comportamento):
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
@@ -65,26 +74,30 @@ class comentario_linha(comportamento):
         raise comentario_linha_excption
 
 class cadeia_de_caracter(comportamento):
-    ########################## rever #################################################################
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
         if txts == []:
             return
-        cadeia = ''
-        flag = False
+        cadeia = '"'
+        flag = True # precisa acha cadeia
+        quebrado = False
         for txt in txts:
-            flag = False
-            if '"' in txt:
-                # NESTE NAO SE FAZ SPLIT E SIM PEGA DE UM ELEMENTO DO VETOR A OUTRA UMA VEZ QUE '"' ABRE E FECHA O ELEMENTO BUSCADO
-                t = txt.split('"')
-                cadeia += t[0]
-                yield 3,cadeia + t[0]
-                cadeia = ''
-                for token in get_token(t[1:],chars_list[1:],executions):
-                    yield token
-                flag = True
+            if flag:
+                flag = False # indica se o pedaço do vetor vem de abertura de '"' ou da de fechamento
+                for char in txt:
+                    if char not in printable:
+                        quebrado = True
+                    cadeia += txt 
             else:
-                cadeia+=txt
-        if flag is False:
+                flag = True
+                if quebrado: # se a cadeia foi fechada e existe erro dentre os caracteres dela, geramos token de erro
+                    yield 9,cadeia+'"'
+                    quebrado = False
+                    cadeia = '"'
+                else:# se a cadeia passada fecho e nao tem erro emitimos o token
+                    yield 3,cadeia+'"'
+                for token in get_token(txt,chars_list[1:],executions):
+                    yield token
+        if flag: # se tiver numero impar de elementos no vetor recebido um '"' foi aberto e nao fechado entao geramos erro
             yield 9,cadeia
 
 class operadores_delimitadores(comportamento):
@@ -136,6 +149,94 @@ comportamentos = {
     ';':operadores_delimitadores,
     ',':operadores_delimitadores
 }
+#Para variavel faz strip ( tira ' ' do inicio e fim, uma vez que no final temos um separador ), verifica se o primeiro char é digito ou letra, sendo letra segue pegando char ate o fim verificando se é valido ( letra + digito + '_') se nao for ver se é ' ' se for termina token se nao gera erro, se achar primeiro numero continua verificando numeros fim ou ' ' ou ponto, se ponto pega numero no proximo se nao gera erro, 
+# para palavra reservada antes de emitir token de variavel ve se ta na lista de reservada
+class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
+    indent_char = ascii_letters + digits + '_'
+    palavras_reservadas = ["variables", "const", "class", "methods","objects", 
+                           "main", "return", "if", "else", "then", "for", "read", 
+                           "print", "void", "int", "real", "boolean", "string", 
+                           "true", "false"]
+    def ação(txts:list[str],chars_list: list[str],executions:dict[str:comportamento]):
+        txt = txts.strip()
+        while txt != '':
+            # print(txt)
+            tokens,txt = i_pr_n.__monta_token__(txt)
+            for token in tokens:
+                yield token
+            txt = txt.strip()
+
+                
+    def __monta_token__(txt, n = 0):
+        if txt == '':
+            return [],''
+        tokens = []
+        identificador = txt[n]
+        if txt[n] in ascii_letters: # verifica indentificador ou palavra reservada
+            erro = False
+            for n,char in enumerate(txt[n+1:]):
+                        if char in i_pr_n.indent_char:
+                            identificador += char
+                        elif char in ' .':
+                            if not erro:
+                                if identificador in i_pr_n.palavras_reservadas:
+                                    tokens.append((1, identificador))
+                                else:
+                                    tokens.append((2, identificador))
+                            else:
+                                tokens.append((12,identificador))
+                            if char == '.':
+                                tokens.append((5, char))
+                            break
+                        else:
+                            erro = True
+                            identificador += char
+            else:
+                if not erro:
+                    if identificador in i_pr_n.palavras_reservadas:
+                        tokens.append((1, identificador))
+                    else:
+                        tokens.append((2, identificador))
+                else:
+                    tokens.append((12,identificador))
+        elif txt[n] in digits:# verifica numero
+            erro = False
+            digits_temp = digits+'.'
+            for n,char in enumerate(txt[n+1:]):
+                        if char in digits_temp:
+                            identificador += char
+                        elif char in ' ':
+                            if not erro:
+                                tokens.append((4, identificador))
+                            else:
+                                tokens.append((11,identificador))
+                            break
+                        else:
+                            erro = True
+                            identificador += char
+                        if char == '.':
+                            digits_temp = digits
+            else:
+                if not erro:
+                    tokens.append((4, identificador))
+                else:
+                    tokens.append((11,identificador))
+        else:#se nao é token mal formado
+            for n,char in enumerate(txt[n+1:]):
+                if char == ' ':
+                    tokens.append((13,identificador))
+                    break
+                else:
+                    identificador += char
+            else:
+                tokens.append((13,identificador))
+
+        # print(txt,' -> ',txt[n+1:],tokens)
+        return tokens, txt[n+2:]
+
+
+
+                                                
 
 
 if __name__ == '__main__':
@@ -167,6 +268,21 @@ if __name__ == '__main__':
     #########TO DO #############################################################
 
     #teste para cadeia de caracteres
-    s = '+/* // +-*/ -' # + , iguinora o que ta em comentario e termina com o - 
+    # s = '+/* // +-*/ -' # + , iguinora o que ta em comentario e termina com o - 
+    # for a in get_token(s,prioridade,comportamentos):
+    #     print(a)
+
+    #teste identificador
+    # s = 'a + = 1'
+    # for a in get_token(s,prioridade,comportamentos):
+    #     print(a)
+    
+    #teste palavra reservada
+    # s = 'for variables const+ class= 1 classconst'
+    # for a in get_token(s,prioridade,comportamentos):
+    #     print(a)
+    
+    #teste erros erro identificador, erro numero e erro token
+    s = 'asd_12 asd.123 asds.. as@# 123 12.3 12..3 1.2.3 .3 1. @as %$#'
     for a in get_token(s,prioridade,comportamentos):
         print(a)
