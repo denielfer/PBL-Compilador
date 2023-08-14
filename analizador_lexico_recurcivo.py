@@ -86,7 +86,7 @@ class cadeia_de_caracter(comportamento):
                 for char in txt:
                     if char not in printable:
                         quebrado = True
-                    cadeia += txt 
+                    cadeia += char 
             else:
                 flag = True
                 if quebrado: # se a cadeia foi fechada e existe erro dentre os caracteres dela, geramos token de erro
