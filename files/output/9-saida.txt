@@ -19,23 +19,23 @@
 2 <DEL,;>
 3 <IDE,printf>
 3 <DEL,(>
-3 <CAC,"Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: ">
+3 <CAC,"Enter dividend: ">
 3 <DEL,)>
 3 <DEL,;>
 4 <IDE,scanf>
 4 <DEL,(>
-4 <CAC,"%d%d">
+4 <CAC,"%d">
 4 <DEL,,>
 4 <DEL,)>
 4 <DEL,;>
 5 <IDE,printf>
 5 <DEL,(>
-5 <CAC,"Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: ">
+5 <CAC,"Enter divisor: ">
 5 <DEL,)>
 5 <DEL,;>
 6 <IDE,scanf>
 6 <DEL,(>
-6 <CAC,"%d%d">
+6 <CAC,"%d">
 6 <DEL,,>
 6 <DEL,)>
 6 <DEL,;>
@@ -52,14 +52,14 @@
 12 <DEL,;>
 14 <IDE,printf>
 14 <DEL,(>
-14 <CAC,"Quotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\n">
+14 <CAC,"Quotient = %d\n">
 14 <DEL,,>
 14 <IDE,quotient>
 14 <DEL,)>
 14 <DEL,;>
 15 <IDE,printf>
 15 <DEL,(>
-15 <CAC,"Remainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %d">
+15 <CAC,"Remainder = %d">
 15 <DEL,,>
 15 <IDE,remainder>
 15 <DEL,)>
@@ -69,12 +69,6 @@
 16 <DEL,;>
 17 <DEL,}>
 0 <TMF,#include>
-3 <CMF,"Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: >
 4 <TMF,&dividend>
-4 <CMF,"%d%d>
-5 <CMF,"Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: >
 6 <TMF,&divisor>
-6 <CMF,"%d%d>
 12 <TMF,%>
-14 <CMF,"Quotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\n>
-15 <CMF,"Remainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %d>

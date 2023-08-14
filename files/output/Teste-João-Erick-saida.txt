@@ -14,7 +14,7 @@
 3 <DEL,.>
 3 <IDE,serverURI>
 3 <ART,+>
-3 <CAC,"Trying to connect to the MQTT broker ...">
+3 <CAC,"...">
 4 <DEL,)>
 4 <DEL,;>
 6 <IDE,this>
@@ -86,14 +86,10 @@
 17 <DEL,.>
 17 <IDE,serverURI>
 17 <ART,+>
-17 <CAC,"Error connecting to MQTT broker  - ">
+17 <CAC," - ">
 17 <ART,+>
 17 <IDE,ex>
 18 <DEL,)>
 18 <DEL,;>
 19 <DEL,}>
 20 <DEL,}>
-3 <CMF,"Trying to connect to the MQTT broker ...>
-9 <CMF,"cliente_java_%d>
-10 <CMF,"java.io.tmpdir>
-17 <CMF,"Error connecting to MQTT broker  - >

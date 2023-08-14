@@ -14,7 +14,7 @@ for path in paths:
             LINE_FBC = -1
             erros = []
             for n,line in enumerate(file.readlines()):
-                line = line[:-1] if line[-1] == '-1' else line
+                line = line[:-1] if line[-1] == '\n' else line
                 if not FBC:
                     try:
                         for token in analizador_lexico_recurcivo.get_token(line,

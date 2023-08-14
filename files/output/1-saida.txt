@@ -10,7 +10,7 @@
 1 <DEL,{>
 3 <IDE,printf>
 3 <DEL,(>
-3 <CAC,"Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!">
+3 <CAC,"Hello, World!">
 3 <DEL,)>
 3 <DEL,;>
 4 <PRE,return>
@@ -18,4 +18,3 @@
 4 <DEL,;>
 5 <DEL,}>
 0 <TMF,#include>
-3 <CMF,"Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!Hello, World!>

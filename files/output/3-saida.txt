@@ -17,12 +17,12 @@
 2 <DEL,;>
 3 <IDE,printf>
 3 <DEL,(>
-3 <CAC,"Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: ">
+3 <CAC,"Enter two numbers: ">
 3 <DEL,)>
 3 <DEL,;>
 4 <IDE,scanf>
 4 <DEL,(>
-4 <CAC,"%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf">
+4 <CAC,"%lf %lf">
 4 <DEL,,>
 4 <DEL,,>
 4 <DEL,)>
@@ -35,7 +35,7 @@
 7 <DEL,;>
 10 <IDE,printf>
 10 <DEL,(>
-10 <CAC,"Product = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lf">
+10 <CAC,"Product = %.2lf">
 10 <DEL,,>
 10 <IDE,product>
 10 <DEL,)>
@@ -45,8 +45,5 @@
 12 <DEL,;>
 13 <DEL,}>
 0 <TMF,#include>
-3 <CMF,"Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: Enter two numbers: >
 4 <TMF,&a>
 4 <TMF,&b>
-4 <CMF,"%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf%lf %lf>
-10 <CMF,"Product = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lfProduct = %.2lf>

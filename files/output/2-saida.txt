@@ -13,18 +13,18 @@
 2 <DEL,;>
 4 <IDE,printf>
 4 <DEL,(>
-4 <CAC,"Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: ">
+4 <CAC,"Enter an integer: ">
 4 <DEL,)>
 4 <DEL,;>
 7 <IDE,scanf>
 7 <DEL,(>
-7 <CAC,"%d%d">
+7 <CAC,"%d">
 7 <DEL,,>
 7 <DEL,)>
 7 <DEL,;>
 10 <IDE,printf>
 10 <DEL,(>
-10 <CAC,"You entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %d">
+10 <CAC,"You entered: %d">
 10 <DEL,,>
 10 <IDE,number>
 10 <DEL,)>
@@ -34,7 +34,4 @@
 12 <DEL,;>
 13 <DEL,}>
 0 <TMF,#include>
-4 <CMF,"Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: Enter an integer: >
 7 <TMF,&number>
-7 <CMF,"%d%d>
-10 <CMF,"You entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %dYou entered: %d>

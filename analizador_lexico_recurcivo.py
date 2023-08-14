@@ -78,26 +78,28 @@ class cadeia_de_caracter(comportamento):
         if txts == []:
             return
         cadeia = '"'
-        flag = True # precisa acha cadeia
+        flag = True # true = precisa acha cadeia # indica se o pedaço do vetor vem de abertura de '"' ou da de fechamento
         quebrado = False
         for txt in txts:
             if flag:
-                flag = False # indica se o pedaço do vetor vem de abertura de '"' ou da de fechamento
+                flag = False  # cadeia achada
                 for char in txt:
                     if char not in printable:
                         quebrado = True
                     cadeia += char 
             else:
-                flag = True
+                flag = True # precisa acha cadia na proxima iteração
                 if quebrado: # se a cadeia foi fechada e existe erro dentre os caracteres dela, geramos token de erro
                     yield 9,cadeia+'"'
                     quebrado = False
-                    cadeia = '"'
                 else:# se a cadeia passada fecho e nao tem erro emitimos o token
                     yield 3,cadeia+'"'
+                cadeia = '"'
+                if txt == '':
+                    continue
                 for token in get_token(txt,chars_list[1:],executions):
                     yield token
-        if flag: # se tiver numero impar de elementos no vetor recebido um '"' foi aberto e nao fechado entao geramos erro
+        if not flag: # se terminou sem precisar acha cadeia de caracter quer dizer q nao foi fechado
             yield 9,cadeia
 
 class operadores_delimitadores(comportamento):

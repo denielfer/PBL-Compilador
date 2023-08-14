@@ -17,12 +17,12 @@
 3 <DEL,;>
 5 <IDE,printf>
 5 <DEL,(>
-5 <CAC,"Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: ">
+5 <CAC,"Enter two integers: ">
 5 <DEL,)>
 5 <DEL,;>
 6 <IDE,scanf>
 6 <DEL,(>
-6 <CAC,"%d %d%d %d%d %d%d %d%d %d">
+6 <CAC,"%d %d">
 6 <DEL,,>
 6 <DEL,,>
 6 <DEL,)>
@@ -35,7 +35,7 @@
 9 <DEL,;>
 11 <IDE,printf>
 11 <DEL,(>
-11 <CAC,"%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d">
+11 <CAC,"%d + %d = %d">
 11 <DEL,,>
 11 <IDE,number1>
 11 <DEL,,>
@@ -49,8 +49,5 @@
 12 <DEL,;>
 13 <DEL,}>
 0 <TMF,#include>
-5 <CMF,"Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: Enter two integers: >
 6 <TMF,&number1>
 6 <TMF,&number2>
-6 <CMF,"%d %d%d %d%d %d%d %d%d %d>
-11 <CMF,"%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d%d + %d = %d>
