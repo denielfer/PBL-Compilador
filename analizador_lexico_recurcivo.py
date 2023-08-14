@@ -25,7 +25,7 @@ class comentario_bloco_excption(Exception):
 
 # nao tem ponto pois este pode ser usado para gerar numero e pode dar problema ainda nao pensei em como seria entao ta fora ate o momento
 # '/*' e '//' tem mesma ordem de prioridade assim escolhe-se quebra em '/*' e caso exista um '//' antes usa o raise Exception para cancelar o continuamento da função de analize para linha
-prioridade = '/* // " ++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ; ,'.split()
+prioridade = '/* // " ++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,'.split()
 
 class comportamento:
     def ação(txts:list[str],chars_list: list[str],executions:dict[str:object]):
@@ -147,7 +147,9 @@ comportamentos = {
     '{':operadores_delimitadores,
     '}':operadores_delimitadores,
     ';':operadores_delimitadores,
-    ',':operadores_delimitadores
+    ',':operadores_delimitadores,
+    '(':operadores_delimitadores,
+    ')':operadores_delimitadores,
 }
 #Para variavel faz strip ( tira ' ' do inicio e fim, uma vez que no final temos um separador ), verifica se o primeiro char é digito ou letra, sendo letra segue pegando char ate o fim verificando se é valido ( letra + digito + '_') se nao for ver se é ' ' se for termina token se nao gera erro, se achar primeiro numero continua verificando numeros fim ou ' ' ou ponto, se ponto pega numero no proximo se nao gera erro, 
 # para palavra reservada antes de emitir token de variavel ve se ta na lista de reservada

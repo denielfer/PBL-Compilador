@@ -4,6 +4,9 @@
 0 <IDE,h>
 0 <REL,>>
 1 <PRE,int>
+1 <PRE,main>
+1 <DEL,(>
+1 <DEL,)>
 1 <DEL,{>
 2 <PRE,int>
 2 <IDE,dividend>
@@ -14,15 +17,27 @@
 2 <DEL,,>
 2 <IDE,remainder>
 2 <DEL,;>
+3 <IDE,printf>
+3 <DEL,(>
 3 <CAC,"Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: ">
+3 <DEL,)>
 3 <DEL,;>
+4 <IDE,scanf>
+4 <DEL,(>
 4 <CAC,"%d%d">
 4 <DEL,,>
+4 <DEL,)>
 4 <DEL,;>
+5 <IDE,printf>
+5 <DEL,(>
 5 <CAC,"Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: ">
+5 <DEL,)>
 5 <DEL,;>
+6 <IDE,scanf>
+6 <DEL,(>
 6 <CAC,"%d%d">
 6 <DEL,,>
+6 <DEL,)>
 6 <DEL,;>
 9 <IDE,quotient>
 9 <REL,=>
@@ -35,34 +50,31 @@
 12 <IDE,dividend>
 12 <IDE,divisor>
 12 <DEL,;>
+14 <IDE,printf>
+14 <DEL,(>
 14 <CAC,"Quotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\n">
 14 <DEL,,>
+14 <IDE,quotient>
+14 <DEL,)>
 14 <DEL,;>
+15 <IDE,printf>
+15 <DEL,(>
 15 <CAC,"Remainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %d">
 15 <DEL,,>
+15 <IDE,remainder>
+15 <DEL,)>
 15 <DEL,;>
 16 <PRE,return>
 16 <NRO,0>
 16 <DEL,;>
 17 <DEL,}>
 0 <TMF,#include>
-1 <IMF,main()>
-3 <IMF,printf(>
-3 <TMF,)>
 3 <CMF,"Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: Enter dividend: >
-4 <IMF,scanf(>
-4 <TMF,&dividend)>
+4 <TMF,&dividend>
 4 <CMF,"%d%d>
-5 <IMF,printf(>
-5 <TMF,)>
 5 <CMF,"Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: Enter divisor: >
-6 <IMF,scanf(>
-6 <TMF,&divisor)>
+6 <TMF,&divisor>
 6 <CMF,"%d%d>
 12 <TMF,%>
-14 <IMF,printf(>
-14 <IMF,quotient)>
 14 <CMF,"Quotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\nQuotient = %d\n>
-15 <IMF,printf(>
-15 <IMF,remainder)>
 15 <CMF,"Remainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %dRemainder = %d>
