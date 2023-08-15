@@ -1,6 +1,6 @@
 import re
 
-txt = 'sadasd.dasd'
+txt = 'sadasd.dasd 2.2 2..2'
 
 print('PRE:')
 print(re.findall(r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b', txt))
