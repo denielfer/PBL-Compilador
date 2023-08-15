@@ -251,7 +251,6 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
         txt = txt.strip()
         tokens = []
         while txt != '':
-            print(txt)
         # for token in txt:
             result = search(i_pr_n.re_PRE, txt)
             if( result is None ):
@@ -264,7 +263,8 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                             break
                         else:
                             #acho '.'
-                            tokens.append(result)
+                            tokens.append((result,5))
+                            txt = txt[:result.start()] + txt[result.end():]
                     else:
                         #acho pre
                         tokens.append((result,4))
@@ -278,11 +278,11 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                 tokens.append((result,1))
                 txt = txt[:result.start()] + txt[result.end():]
             txt = txt.strip()
-        print(tokens)
         tokens.sort(key=lambda x: x[0].start(), reverse=True)
         retorno = []
         for token in tokens:
-            retorno.append((result.string,token[1]))
+            print(token[0].group())
+            retorno.append((str(token[0].group()),token[1]))
         return tokens, ''
 
 
