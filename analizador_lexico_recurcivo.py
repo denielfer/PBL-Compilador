@@ -261,25 +261,22 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                     if result is None:
                         result = search(r'\.', txt)
                         if result is None:
-                            result = search(i_pr_n.re_NRO, txt)
-                            if result is not None:
-                                tokens.append((result,5))
-                                txt = txt[:result.start()] + txt[result.end()]
+                            break
                         else:
-                            #acho pre
+                            #acho '.'
                             tokens.append(result)
                     else:
                         #acho pre
                         tokens.append((result,4))
-                        txt = txt[:result.start()] + txt[result.end()]
+                        txt = txt[:result.start()] + txt[result.end():]
                 else:
                     #acho IND
                     tokens.append((result,2))
-                    txt = txt[:result.start()] + txt[result.end()]
+                    txt = txt[:result.start()] + txt[result.end():]
             else:
                 #acho pre
                 tokens.append((result,1))
-                txt = txt[:result.start()] + txt[result.end()]
+                txt = txt[:result.start()] + txt[result.end():]
             txt = txt.strip()
         print(tokens)
         tokens.sort(key=lambda x: x[0].start(), reverse=True)
@@ -333,11 +330,16 @@ if __name__ == '__main__':
     #     print(a)
     
     #teste erros erro identificador, erro numero e erro token
-    s = 'asd_12 asd.123 asds.. as@# 123 12.3 12..3 1.2.3 .3 1. @as %$#'
-    for a in get_token(s,prioridade,comportamentos):
-        print(a)
+    # s = 'asd_12 asd.123 asds.. as@# 123 12.3 12..3 1.2.3 .3 1. @as %$#'
+    # for a in get_token(s,prioridade,comportamentos):
+    #     print(a)
 
     #teste erros erro identificador, erro numero e erro token
     # s = 'a "asdasdas'
     # for a in get_token(s,prioridade,comportamentos):
     #     print(a)
+
+    #test rejex:
+    s = 'asd_12 asd.123 123 12.3'
+    for a in get_token(s,prioridade,comportamentos):
+        print(a)
