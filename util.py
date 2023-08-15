@@ -4,7 +4,7 @@ def load_files(base_dir:str = 'files') -> list[str]:
             de um diretorio raiz
     '''
     #coloque aqui o caminho da pasta das imagens
-    from os import walk,path
+    from os import walk, path
     returned = []
     for (dirpath, dirnames, filenames) in walk(base_dir):
         for filename in filenames: 
