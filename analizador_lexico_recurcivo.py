@@ -283,7 +283,7 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
         for token in tokens:
             print(token[0].group())
             retorno.append((str(token[0].group()),token[1]))
-        return tokens, ''
+        return retorno, ''
 
 
                                                 
