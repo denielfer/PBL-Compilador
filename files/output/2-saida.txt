@@ -1,37 +1,37 @@
-0 <REL,<>
-0 <IDE,stdio>
-0 <DEL,.>
-0 <IDE,h>
-0 <REL,>>
-1 <PRE,int>
-1 <PRE,main>
-1 <DEL,(>
-1 <DEL,)>
-1 <DEL,{>
-2 <PRE,int>
-2 <IDE,number>
-2 <DEL,;>
-4 <IDE,printf>
-4 <DEL,(>
-4 <CAC,"Enter an integer: ">
-4 <DEL,)>
-4 <DEL,;>
-7 <IDE,scanf>
-7 <DEL,(>
-7 <CAC,"%d">
-7 <DEL,,>
-7 <DEL,)>
-7 <DEL,;>
-10 <IDE,printf>
-10 <DEL,(>
-10 <CAC,"You entered: %d">
-10 <DEL,,>
-10 <IDE,number>
-10 <DEL,)>
-10 <DEL,;>
-12 <PRE,return>
-12 <NRO,0>
-12 <DEL,;>
-13 <DEL,}>
-0 <TMF,#include>
-7 <TMF,&number>
+1 <REL, <>
+1 <IDE, stdio>
+1 <DEL, .>
+1 <IDE, h>
+1 <REL, >>
+2 <PRE, int>
+2 <PRE, main>
+2 <DEL, (>
+2 <DEL, )>
+2 <DEL, {>
+3 <PRE, int>
+3 <IDE, number>
+3 <DEL, ;>
+5 <IDE, printf>
+5 <DEL, (>
+5 <CAC, "Enter an integer: ">
+5 <DEL, )>
+5 <DEL, ;>
+8 <IDE, scanf>
+8 <DEL, (>
+8 <CAC, "%d">
+8 <DEL, ,>
+8 <DEL, )>
+8 <DEL, ;>
+11 <IDE, printf>
+11 <DEL, (>
+11 <CAC, "You entered: %d">
+11 <DEL, ,>
+11 <IDE, number>
+11 <DEL, )>
+11 <DEL, ;>
+13 <PRE, return>
+13 <NRO, 0>
+13 <DEL, ;>
+14 <DEL, }>
+1 <TMF, #include>
+8 <TMF, &number>
