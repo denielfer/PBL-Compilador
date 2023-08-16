@@ -1,20 +1,20 @@
-0 <REL,<>
-0 <IDE,stdio>
-0 <DEL,.>
-0 <IDE,h>
-0 <REL,>>
-1 <PRE,int>
-1 <PRE,main>
-1 <DEL,(>
-1 <DEL,)>
-1 <DEL,{>
-3 <IDE,printf>
-3 <DEL,(>
-3 <CAC,"Hello, World!">
-3 <DEL,)>
-3 <DEL,;>
-4 <PRE,return>
-4 <NRO,0>
-4 <DEL,;>
-5 <DEL,}>
-0 <TMF,#include>
+1 <REL, <>
+1 <IDE, stdio>
+1 <DEL, .>
+1 <IDE, h>
+1 <REL, >>
+2 <PRE, int>
+2 <PRE, main>
+2 <DEL, (>
+2 <DEL, )>
+2 <DEL, {>
+4 <IDE, printf>
+4 <DEL, (>
+4 <CAC, "Hello, World!">
+4 <DEL, )>
+4 <DEL, ;>
+5 <PRE, return>
+5 <NRO, 0>
+5 <DEL, ;>
+6 <DEL, }>
+1 <TMF, #include>

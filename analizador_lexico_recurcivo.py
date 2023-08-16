@@ -33,13 +33,13 @@ class comportamento:
     def ação(txts:list[str], chars_list: list[str], executions:dict[str:object]):
         ...
 
-def get_token(txt:str, chars_list: list[str], executions:dict[str:comportamento]):
+def get_token(txt:str, chars_list: list[str], executions:dict[str:comportamento],rejex:bool = False):
     if txt.strip() == '':
         # print( f'string vazia para busca de {chars_list[0]}')
         return
     if chars_list == []:
         # print(f'Lista de caracteres a serem buscados acabou')
-        for token in i_pr_n.ação(txt, chars_list, executions):
+        for token in i_pr_n.ação(txt, action = 1 if rejex else 0):
             yield token
         return
     # print(f'A string \/{txt}\/ sera analizada para o token {chars_list[0]}',end=' | ')
@@ -163,11 +163,12 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                            "main", "return", "if", "else", "then", "for", "read", 
                            "print", "void", "int", "real", "boolean", "string", 
                            "true", "false"]
-    def ação(txts:list[str], chars_list: list[str], executions:dict[str:comportamento]):
-        txt = txts.strip()
+    def ação(txt:str, action:int = 0):
+        txt = txt.strip()
+        func = i_pr_n.__monta_token__ if action == 0 else i_pr_n.__monta_token_regex__
         while txt != '':
             # print(txt)
-            tokens,txt = i_pr_n.__monta_token_regex__(txt)
+            tokens,txt = func(txt)
             for token in tokens:
                 yield token
             txt = txt.strip()
@@ -245,8 +246,8 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
 
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
-    re_NRO = r'\b\d+(\.\d*)?\b'
-
+    re_NRO = r'\b\d+\.?\d*\b'
+    
     def __monta_token_regex__(txt):
         if txt == '':
             return [], ''
