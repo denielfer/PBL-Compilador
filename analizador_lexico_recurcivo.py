@@ -246,7 +246,7 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
 
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
-    re_NRO = r'\b\d+\.?\d*\b'
+    re_NRO = r'\b\d+(\.\d*)?\b'
     
     def __monta_token_regex__(txt):
         if txt == '':
