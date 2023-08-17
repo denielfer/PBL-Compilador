@@ -206,12 +206,14 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                     tokens.append((12, identificador))
         elif txt[n] in digits:# verifica numero
             erro = False
+            last_dot = False
             digits_temp = digits + '.'
             for n, char in enumerate(txt[n+1:]):
                         if char in digits_temp:
+                            last_dot = False
                             identificador += char
                         elif char in ' ':
-                            if not erro:
+                            if not erro and not last_dot:
                                 tokens.append((4, identificador))
                             else:
                                 tokens.append((11, identificador))
@@ -220,9 +222,10 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                             erro = True
                             identificador += char
                         if char == '.':
+                            last_dot = True
                             digits_temp = digits
             else:
-                if not erro:
+                if not erro and not last_dot:
                     tokens.append((4, identificador))
                 else:
                     tokens.append((11, identificador))
@@ -339,6 +342,6 @@ if __name__ == '__main__':
     #     print(a)
 
     #test rejex:
-    s = 'asd_12 asd.123 123 12.3'
+    s = 'asd_12 asd.123 123 12.3 3.+ 2......... .2'
     for a in get_token(s, prioridade, comportamentos):
         print(a)
