@@ -3,14 +3,16 @@
 from string import printable, ascii_letters, digits
 from re import search,split,findall
 
-tabela = {
+# Separadores: elementos usados para indicar o fim de um token e inicio de outro, sendo eles: operadores, delimitadores, ' ', '/*','"' e '//'
+#   Excessoes: 'numero.algo', '.' para numero, Cadeia de Caracter so tem '"' de separador
+tabela = { # separadores e seu codigo
         '+': 8, '-': 8, '*': 8, '/': 8, '++': 8, '--': 8, 
         '!=': 6, '==': 6, '<': 6, '<=': 6, '>': 6, '>=': 6, '=': 6,
         '!': 7, '&&': 7, '||': 7, 
         ';': 5, ',': 5, '.': 5, '(': 5, ')': 5, '[': 5, ']': 5, '{': 5, '}': 5, '->': 5,
     }
 
-codigos = {
+codigos = { # tabela de codigos gerados para tokens
     1: 'PRE',
     2: 'IDE',
     3: 'CAC',
@@ -41,6 +43,8 @@ def processar_string(txt:str, chars_list: list[str],rejex:bool = False):
         Esta função so existe pois 'numero.algo' se algo nao for um numero deve gerar erro, como isso impossibilita a geração
             do token que 'algo' seria temos primieramente identificamos este erro para depois seguir para os demais tokens 
             pois este tem maior prioridade uma vez q tem capacidade de interromper todos os outros tokens
+
+        Pelo regex so é aceito depois de 'numero.' outro numero, '/*' e '//', ser aceito significa nao ser processado nessa função
     '''
     NMR = findall(i_pr_n.re_NMR,txt)
     txts = split(i_pr_n.re_NMR,txt)
@@ -109,28 +113,41 @@ def processar_blocos(txt:str, **kargs):
         yield token
 
 def get_token(txt:str, chars_list: list[str],rejex:bool = False):
-    if txt.strip() == '':
+    '''
+        Aqui lidamos com os separadores, quebrando a string em partes menores e lidando com essas partes
+    '''
+    if txt.strip() == '': # se ta vazia retorna
         # print( f'string vazia para busca de {chars_list[0]}')
         return
-    if chars_list == []:
+    if chars_list == []: # se a lista de separadores ta vazia fazemos analize de IDE PRE NRO E TMF
         # print(f'Lista de caracteres a serem buscados acabou')
         for token in i_pr_n.ação(txt, action = 1 if rejex else 0):
             yield token
         return
     txts = [txt]
     token_delimitadores = []
-    for delimitador in chars_list:
-        for n in range(len(txts))[::-1]:
-            txt = txts.pop(n)
+    for delimitador in chars_list: # para cada delimitador
+        for n in range(len(txts))[::-1]: 
+            '''
+                temos um vetor x/ x é composto de n-strings assim percoremos ele de tras pra frente para processar 
+                    cada string e colocar o resultado inplace. Assim nao precisamos ficar mudando o vetor no codigo
+                    e como estamos na ordem invertida nao pre cisa de matemagia para ajusta indicec dos nao processados
+            '''
+            txt = txts.pop(n) 
             new_txt = txt.split(delimitador)
-            txts.insert(n, new_txt[-1])
+            txts.insert(n, new_txt[-1]) # split nescessariamente tem elemento 0, assim pelo menos 1 elemento existe
+            '''
+                mesma logica do loop de cima, começa em -2 pq ja processamos o -1 encima, assim podemos no mesmo loop adicionar 
+                    o delimitador que gerou essa divisao na string no seu vetor e a sub-string. assim lidamos com o fato de 
+                    que esse delimitador fica sempre entre 2 substrings geradas pelo split. 
+            '''
             for txt in new_txt[-2::-1]:
                 token_delimitadores.insert(n,delimitador)
                 txts.insert(n, txt)
-    for txt in txts:
+    for txt in txts: # depois de lidarmos com todos os delimitadores precisamos processar cada string 
         for token in i_pr_n.ação(txt, action = 1 if rejex else 0):
             yield token
-        try:
+        try: # apos gerarmos os tokens para a substring liberamos o delimitador que foi responsavel pela sub-divisão
             delimitador = token_delimitadores.pop(0)
             yield tabela[delimitador], delimitador
         except:
@@ -145,26 +162,29 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                            "print", "void", "int", "real", "boolean", "string", 
                            "true", "false"]
     def ação(txt:str, action:int = 0):
-        txt = txt.strip()
+        txt = txt.strip()  # remove ' ' do inicio e fim
         func = i_pr_n.__monta_token__ if action == 0 else i_pr_n.__monta_token_regex__
-        while txt != '':
+        while txt != '': # enquanto tiver coisas na string
             # print(txt)
-            tokens,txt = func(txt)
+            tokens,txt = func(txt) # pegamos a primeira lista de token da string, pois existem casos onde mais de 1 sao geradas. ex:'@.'
             for token in tokens:
                 yield token
-            txt = txt.strip()
+            txt = txt.strip() # limpamos inicio e fim dos ' ' para continuar analize
                 
     def __monta_token__(txt, n = 0):
+        '''
+            Esta função avalia uma string se tem IDE, PRE, NRO, NMF,TMF e emite delimitador '.'
+        '''
         if txt == '':
             return [], ''
         tokens = []
-        identificador = txt[n]
+        identificador = txt[n] # sempre so pega tokens apartir do 1 char, e so olha ate o final deste token, gerando possivel token ligado. ex:'@.'
         if txt[n] in ascii_letters: # verifica indentificador ou palavra reservada
             erro = False
             for n,char in enumerate(txt[n+1:]):
                         if char in i_pr_n.indent_char:
                             identificador += char
-                        elif char in ' .':
+                        elif char in ' .': # se acho um dos separadores que sobrou
                             if erro:
                                 tokens.append((12, identificador))
                             else:
@@ -175,10 +195,10 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                             if char == '.':
                                 tokens.append((5, char))
                             break
-                        else:
+                        else: # se nao é char valido pra identificador ou um dos separadores q sobrou é char q gera erro no identificador
                             erro = True
                             identificador += char
-            else:
+            else: # se olhou a string inteira e nao acabou o token de identificador
                 if not erro:
                     if identificador in i_pr_n.palavras_reservadas:
                         tokens.append((1, identificador))
@@ -187,36 +207,37 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                 else:
                     tokens.append((12, identificador))
         elif txt[n] in digits:# verifica numero
+            '''
+                Aqui nao analiza so analiza erro de numero ter mais de 1 '.' pois os demias de '.' sao pegos em processar_string()
+            '''
             erro = False
-            last_dot = False
             digits_temp = digits + '.'
             for n, char in enumerate(txt[n+1:]):
                         if char in digits_temp:
-                            last_dot = False
                             identificador += char
-                        elif char in ' ':
-                            if not erro and not last_dot:
+                        elif char == ' ': # neste caso so sobra o separador ' '
+                            if not erro:
                                 tokens.append((4, identificador))
                             else:
                                 tokens.append((11, identificador))
                             break
-                        else:
+                        else: # pegou algum char q nao é separador ou numero da erro
                             erro = True
                             identificador += char
-                        if char == '.':
-                            last_dot = True
+                        if char == '.': # se acho um ponto, qualquer ponto que vinher vai gerar erro, pois ele é removido da lista de aceitos
                             digits_temp = digits
-            else:
-                if not erro and not last_dot:
+            else:# se acabou a string e nao gerou token do numero
+                if not erro:
                     tokens.append((4, identificador))
                 else:
                     tokens.append((11, identificador))
-        else:#se nao é token mal formado
+        else:#se nao, so sobra token mal formado ou '.' de delimitador
             # print(identificador,end ='->')
-            if identificador != '.':
+            if identificador != '.': # se pegou '.' é delimitador entao so buscamos mais caractesres se nao for '.'
                 for n, char in enumerate(txt[n+1:]):
                     # print(char,end ='->')
-                    if char in ' .':
+                    if char in ' .': # separadores restantes para estes casos
+                        # se o separador é '.' geramos o token mal formado e o token do '.'
                         tokens.append((13, identificador))
                         if char == '.':
                             tokens.append((5, '.'))
@@ -227,8 +248,9 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                 else: # acabou a string com token mal formado gera o token
                     tokens.append((13, identificador))
             else:
+                #se o 1 elemento do vetor é '.', geramos o token e passamos para a proxima busca começar no elemento seguinte
                 # print()
-                n=n-1
+                n=n-1 # -1 póis no retorno a sub-string para proxima busca assume que pegou o proximo elemento ja
                 tokens.append((5, '.'))
         # print(txt,' -> ',txt[n+1:],tokens)
         return tokens, txt[n+2:]
