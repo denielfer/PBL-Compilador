@@ -47,6 +47,7 @@ def processar_string(txt:str, chars_list: list[str],rejex:bool = False):
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex= False):
         yield token
     for n,txt in enumerate(txts[1:]):
+        # print(NMR, n) 
         yield (11, NMR[n].strip())
         for token in processar_blocos(txt, chars_list = chars_list, rejex= False):
             yield token
@@ -211,18 +212,22 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                 else:
                     tokens.append((11, identificador))
         else:#se nao é token mal formado
+            # print(identificador,end ='->')
             if identificador != '.':
                 for n, char in enumerate(txt[n+1:]):
-                    if char == ' ':
+                    # print(char,end ='->')
+                    if char in ' .':
                         tokens.append((13, identificador))
-                        break
-                    elif char == '.': # so olhamos o '.' dos separadores, pois os demais ja foram separados em cima
-                        tokens.append((13, identificador))
-                        tokens.append((5, '.'))
+                        if char == '.':
+                            tokens.append((5, '.'))
+                        # print()
                         break
                     else:
                         identificador += char
+                else: # acabou a string com token mal formado gera o token
+                    tokens.append((13, identificador))
             else:
+                # print()
                 n=n-1
                 tokens.append((5, '.'))
         # print(txt,' -> ',txt[n+1:],tokens)
@@ -231,8 +236,8 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
-    # re_NMR = r'\b\d+\.[^0-9/*//][\w\.]*'
-    re_NMR = r"\b\.(?!\d|\/\*|\/\/)([^.]+)"
+    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/][\w\.]*'
+    # re_NMR = r"\b\d+\.(?!\d*|\/\*|\/\/)([[\w\.]*)"
     
     def __monta_token_regex__(txt):
         if txt == '':
