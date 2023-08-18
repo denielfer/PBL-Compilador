@@ -4,10 +4,8 @@ import analizador_lexico_recurcivo
 CoMF_CODE = 10
 
 def analizar_lexico_files(paths:list[str]):
-    retornos = {}
     for path in paths:
         path_code = path.replace('.txt', '')
-        retornos[path_code] = []
         with open(path, 'r') as file:
             with open(path.replace("input", 'output', 1)
                     .replace('.txt', '-saida.txt'), 'w') as out_file:
@@ -32,7 +30,6 @@ def analizar_lexico_files(paths:list[str]):
                                 if token[0] > 8:
                                     erros.append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>\n')
                                 else:
-                                    retornos[path_code].append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>')
                                     out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>\n')
                     except analizador_lexico_recurcivo.comentario_linha_excption:
                         pass  
@@ -43,13 +40,10 @@ def analizar_lexico_files(paths:list[str]):
                         
 
                 for erro in erros:
-                    retornos[path_code].append(erro)
                     out_file.write(erro)
 
                 if FBC: # terminou o arquivo e ta com comentario de bloco sem termina
-                    retornos[path_code].append(f'{LINE_FBC + 1} <{analizador_lexico_recurcivo.codigos[CoMF_CODE]}, {TEXT_FBC}>\n')
                     out_file.write(f'{LINE_FBC + 1} <{analizador_lexico_recurcivo.codigos[CoMF_CODE]}, {TEXT_FBC}>\n')
-    return retornos
 
 
 if __name__ == '__main__':

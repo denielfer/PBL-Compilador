@@ -358,10 +358,12 @@ if __name__ == '__main__':
 
     #test rejex:
     s = 'asd_12 asd.123 123 12.3 3.+ 2......... .2'
+    print(s)
     for a in processar_string(s, prioridade, comportamentos):
         print(a)
 
-    # #test rejex:
-    # s = '3."asdasd 2.{asdasd 3.+123123+'
-    # for a in processar_string(s, prioridade, comportamentos):
-    #     print(a)
+    #test rejex:
+    s = '3."asdasd 2.{asdasd 3.+123123+'
+    print(s)
+    for a in processar_string(s, prioridade, comportamentos):
+        print(a)
