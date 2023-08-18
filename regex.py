@@ -1,15 +1,15 @@
 import re
 
-txt = 'sadasd.dasd 2.2 2..2'
+txt = ' 3.3.3 '
 
 print('PRE:')
 print(re.findall(r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b', txt))
 print('NRO:')
-print(re.findall(r'\b\d+\.?\d*\b', txt))
+print(re.findall(r'\b\d+(\.\d*)?\b', txt))
 print('IDE:')
 print(re.findall(r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b', txt))
 print('CAC:')
-print(re.findall(r'\".*\"', txt))
+print(re.findall(r'\b\".*\"\b', txt))
 print('ART:')
 print(re.findall(r'\+\+|--|[+*/-]', txt))
 print('REL:')
