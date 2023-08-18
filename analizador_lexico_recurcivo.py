@@ -211,23 +211,26 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
         else:#se nao é token mal formado
             if identificador != '.':
                 for n, char in enumerate(txt[n+1:]):
-                    if char in ' .':
+                    if char == ' ':
+                        tokens.append((13, identificador))
+                        break
+                    elif char == '.': # so olhamos o '.' dos separadores, pois os demais ja foram separados em cima
+                        tokens.append((13, identificador))
+                        tokens.append((5, '.'))
                         break
                     else:
                         identificador += char
             else:
                 n=n-1
-            if identificador == '.':
                 tokens.append((5, '.'))
-            else:
-                tokens.append((13, identificador))
         # print(txt,' -> ',txt[n+1:],tokens)
         return tokens, txt[n+2:]
 
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
-    re_NMR = r'\b\d+\.[^0-9][\w\.]*'
+    # re_NMR = r'\b\d+\.[^0-9/*//][\w\.]*'
+    re_NMR = r"\b\.(?!\d|\/\*|\/\/)([^.]+)"
     
     def __monta_token_regex__(txt):
         if txt == '':
@@ -340,9 +343,16 @@ if __name__ == '__main__':
     # for a in processar_string(s, prioridade, ):
     #     print(a)
 
+    # # cadeia de caracter
+    # s = '"asdasd// /*" "áa\zsdds/* //" "asdasd'
+    # print(s)
+    # for a in processar_string(s, prioridade):
+    #     print(a)
+
     # cadeia de caracter
-    s = '"asdasd// /*" "áa\zsdds/* //" "asdasd'
-    print(s)
+    s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
+    # 3. coment | 3. coment 3 | &as && | & & | &as& | "\n" | "Ç" | @ . 2
+    print(s) # aparece 2 linhas porque o \n é usado como quebra de linha
     for a in processar_string(s, prioridade):
         print(a)
     
