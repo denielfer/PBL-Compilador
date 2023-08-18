@@ -1,5 +1,5 @@
 
-#Mudar '"' para  ' "' pois 'asd"...' é erro, '1.' é erro.
+#'1.' é erro,
 from string import printable, ascii_letters, digits
 from re import search, match
 
@@ -341,6 +341,6 @@ if __name__ == '__main__':
     #     print(a)
 
     #test rejex:
-    s = 'asd_12 asd.123 123 12.3'
+    s = 'asd_12 asd.123 123 12.3 3...'
     for a in get_token(s, prioridade, comportamentos):
         print(a)
