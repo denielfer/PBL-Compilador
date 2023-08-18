@@ -5,34 +5,33 @@ CoMF_CODE = 10
 
 def analizar_lexico_files(paths:list[str]):
     for path in paths:
-        path_code = path.replace('.txt', '')
         with open(path, 'r') as file:
             with open(path.replace("input", 'output', 1)
                     .replace('.txt', '-saida.txt'), 'w') as out_file:
                 FBC = False #flag_bloco_de_comentario = False
-                TEXT_FBC = ''
-                LINE_FBC = -1
+                TEXT_FBC = '' # texto comentario de bloco
+                LINE_FBC = -1 # linha que acontece
                 erros = []
                 for n, line in enumerate(file.readlines()):
-                    n+=1
-                    line = line[:-1] if line[-1] == '\n' else line
-                    if FBC:
+                    n+=1 # normalizar ( questao index vs posição natural )
+                    line = line[:-1] if line[-1] == '\n' else line # remove o \n do final da linha se existir que seria a quebra de linha, nao gera erro caso o arquivo termine em \n como visto no 10.txt
+                    if FBC: # se estamos em erro de bloco
                         if '*/' in line:
                             FBC = False
                             line = line.split('*/', 1)[1]
-                        else:
+                        else: # se nao fecha nessa linha pulamos a analize dela
                             TEXT_FBC += line
                             continue
                     try:
                         for token in analizador_lexico_recurcivo.processar_string(line,
                                                             analizador_lexico_recurcivo.prioridade,):
-                                if token[0] > 8:
+                                if token[0] > 8: # se token for de erro vai pra lista
                                     erros.append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>\n')
-                                else:
+                                else:# se nao escrevemos
                                     out_file.write(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>\n')
-                    except analizador_lexico_recurcivo.comentario_linha_excption:
+                    except analizador_lexico_recurcivo.comentario_linha_excption: # se recebeu essa excption so seguirmos, ela é usada para parar a recurção
                         pass  
-                    except analizador_lexico_recurcivo.comentario_bloco_excption as e:
+                    except analizador_lexico_recurcivo.comentario_bloco_excption as e: # se recebemos excption para buscar comentario de bloco
                         FBC = True
                         TEXT_FBC = str(e)
                         LINE_FBC = n
