@@ -1,5 +1,3 @@
-
-#'1.' é erro,
 from string import printable, ascii_letters, digits
 from re import search,split,findall
 
