@@ -42,11 +42,11 @@ def processar_string(txt:str, chars_list: list[str],rejex:bool = False):
     '''
     NMR = findall(i_pr_n.re_NMR,txt)
     txts = split(i_pr_n.re_NMR,txt)
-    for token in processar_blocos(txts[0], chars_list = chars_list, executions = executions,rejex= False):
+    for token in processar_blocos(txts[0], chars_list = chars_list, rejex= False):
         yield token
     for n,txt in enumerate(txts[1:]):
         yield (11, NMR[n].strip())
-        for token in processar_blocos(txt, chars_list = chars_list, executions = executions,rejex= False):
+        for token in processar_blocos(txt, chars_list = chars_list, rejex= False):
             yield token
 
 def processar_blocos(txt:str, **kargs):
