@@ -25,8 +25,7 @@ def analizar_lexico_files(paths:list[str]):
                             continue
                     try:
                         for token in analizador_lexico_recurcivo.processar_string(line,
-                                                            analizador_lexico_recurcivo.prioridade,
-                                                            analizador_lexico_recurcivo.comportamentos):
+                                                            analizador_lexico_recurcivo.prioridade,):
                                 if token[0] > 8:
                                     erros.append(f'{n} <{analizador_lexico_recurcivo.codigos[token[0]]}, {token[1]}>\n')
                                 else:
