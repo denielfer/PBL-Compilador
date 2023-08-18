@@ -1,5 +1,3 @@
-
-# 3.+asd gera erro e tudo isso seria um token, para no proximo delimitador ou ' '
 from string import printable, ascii_letters, digits
 from re import search,split,findall
 
