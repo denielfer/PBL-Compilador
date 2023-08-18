@@ -1,0 +1,17 @@
+6 <IDE, a2>
+6 <DEL, .>
+6 <NRO, 2>
+2 <NMF, 2..2>
+2 <NMF, 2.......>
+2 <NMF, 2.@>
+2 <NMF, 2.a>
+2 <NMF, 2.2.2>
+2 <NMF, 2.+asdas>
+9 <TMF, @as>
+9 <TMF, #$@$>
+9 <TMF, @.2>
+9 <TMF, @#>
+12 <IMF, as@>
+15 <CMF, "asdasdas 212038yu890 ja0j)*)UY)* @J) >
+16 <CMF, "á">
+20 <CoMF,  adsad>

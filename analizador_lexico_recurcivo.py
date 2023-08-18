@@ -1,7 +1,7 @@
 
-#Mudar '"' para  ' "' pois 'asd"...' é erro, '1.' é erro.
+# 3.+asd gera erro e tudo isso seria um token, para no proximo delimitador ou ' '
 from string import printable, ascii_letters, digits
-from re import search, match
+from re import search,split,findall
 
 codigos = {
     1: 'PRE',
@@ -32,6 +32,22 @@ prioridade = '/* // " ++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,
 class comportamento:
     def ação(txts:list[str], chars_list: list[str], executions:dict[str:object]):
         ...
+
+def processar_string(txt:str, chars_list: list[str], executions:dict[str:comportamento],rejex:bool = False):
+    '''
+        Esta função so existe pois 'numero.algo' se algo nao for um numero deve gerar erro, como isso impossibilita a geração
+            do token que 'algo' seria temos primieramente identificamos este erro para depois seguir para os demais tokens 
+            pois este tem maior prioridade uma vez q tem capacidade de interromper todos os outros tokens
+    '''
+    NMR = findall(i_pr_n.re_NMR,txt)
+    txt = split(i_pr_n.re_NMR,txt)
+    for token in get_token(txt[0],chars_list,executions,rejex):
+        yield token
+    for n,txt in enumerate(txt[1:]):
+        yield (11, NMR[n].strip())
+        for token in get_token(txt,chars_list,executions,rejex):
+            yield token
+
 
 def get_token(txt:str, chars_list: list[str], executions:dict[str:comportamento],rejex:bool = False):
     if txt.strip() == '':
@@ -172,7 +188,6 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
             for token in tokens:
                 yield token
             txt = txt.strip()
-
                 
     def __monta_token__(txt, n = 0):
         if txt == '':
@@ -185,13 +200,13 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
                         if char in i_pr_n.indent_char:
                             identificador += char
                         elif char in ' .':
-                            if not erro:
+                            if erro:
+                                tokens.append((12, identificador))
+                            else:
                                 if identificador in i_pr_n.palavras_reservadas:
                                     tokens.append((1, identificador))
                                 else:
                                     tokens.append((2, identificador))
-                            else:
-                                tokens.append((12, identificador))
                             if char == '.':
                                 tokens.append((5, char))
                             break
@@ -250,6 +265,7 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
+    re_NMR = r'\b\d+\.[^0-9][\w\.]*'
     
     def __monta_token_regex__(txt):
         if txt == '':
@@ -291,7 +307,6 @@ class i_pr_n(comportamento): # identificadores, palavras reservadas e numeros
             print(token[0].group())
             retorno.append((str(token[0].group()), token[1]))
         return retorno, ''
-
 
 if __name__ == '__main__':
     # Teste inicial para operadores e delimitadores
@@ -345,5 +360,10 @@ if __name__ == '__main__':
 
     #test rejex:
     s = 'asd_12 asd.123 123 12.3 3.+ 2......... .2'
-    for a in get_token(s, prioridade, comportamentos):
+    for a in processar_string(s, prioridade, comportamentos):
         print(a)
+
+    # #test rejex:
+    # s = '3."asdasd 2.{asdasd 3.+123123+'
+    # for a in processar_string(s, prioridade, comportamentos):
+    #     print(a)

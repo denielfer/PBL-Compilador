@@ -2,14 +2,18 @@
 2..2 2....... 2.@ 2.a 2.2.2 2.+asdas
 // .2 é erro?
 
+// nao é erro
+a2.2
+
 // erro token
-@as #$@$ @.2 asd.@#
+@as #$@$ @.2 @#
 
 // erro identificador
 as@ 
 
 // erro cadia mal formada
 "asdasdas 212038yu890 ja0j)*)UY)* @J) 
+"á"
 
 // erro comentario mal formador
 /* adsad
