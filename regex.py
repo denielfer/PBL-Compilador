@@ -22,6 +22,9 @@ print(re.findall(r'\b\d+(\.\d+)?', txt))
 # print('DEL:')
 # print(re.findall(r';|,|\.|\(|\)|\[|\]|\{|\}|->', txt))
 
+# AQUI
+# [^(\+\+|+|--|[+*/-]|\|\||&&|!|!=|==|<=|>=|[=<>]|;|,|\(|\)|\[|\]|\{|\}|->)]
+
 # RegEx possíveis (use with findall)
 
 # r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b' PRE
