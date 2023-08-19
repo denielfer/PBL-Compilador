@@ -1,8 +1,10 @@
+4 <DEL, ,>
+4 <NRO, 2>
 5 <DEL, ]>
 5 <DEL, [>
 1 <NMF, 9..abc>
 2 <TMF, |&|id_789>
 3 <NMF, 3.4.5.>
-4 <NMF, 1.,2>
+4 <NMF, 1.>
 6 <NMF, 1nt>
 8 <CoMF, >

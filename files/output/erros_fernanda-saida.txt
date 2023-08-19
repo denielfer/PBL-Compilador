@@ -1,4 +1,3 @@
-1 <NRO, 2.>
 6 <IDE, mal>
 7 <IDE, f>
 8 <IDE, o>
@@ -7,7 +6,7 @@
 11 <IDE, a>
 12 <IDE, d>
 13 <IDE, a>
-1 <NMF, 2.>
+1 <NMF, 2.2.>
 2 <IMF, variavel$>
 3 <IMF, v@riavel_>
 4 <NMF, 8aaa>

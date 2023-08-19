@@ -48,10 +48,6 @@ def processar_string(txt:str, chars_list:list[str], rejex:bool = False):
     txts = split(i_pr_n.re_NMR, txt)
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex = False):
         yield token
-    print('__')
-    print(txt)
-    print(NMR)
-    print(txts)
     for n,txt in enumerate(txts[1:]):
         # print(NMR, n) 
         yield (11, NMR[n].strip())
@@ -213,12 +209,17 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                 Aqui nao analiza so analiza erro de numero ter mais de 1 '.' pois os demias de '.' sao pegos em processar_string()
             '''
             erro = False
+            erro2 = False # erro_nao_numero_apos_ponto
             digits_temp = digits + '.'
             for n, char in enumerate(txt[n+1:]):
                 if char in digits_temp:
+                    erro2 = False
+                    if char == '.': # se acho um ponto, qualquer ponto que vinher vai gerar erro, pois ele é removido da lista de aceitos
+                        digits_temp = digits
+                        erro2 = True
                     identificador += char
                 elif char == ' ': # neste caso so sobra o separador ' '
-                    if not erro:
+                    if not erro and not erro2:
                         tokens.append((4, identificador))
                     else:
                         tokens.append((11, identificador))
@@ -226,10 +227,8 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                 else: # pegou algum char q nao é separador ou numero da erro
                     erro = True
                     identificador += char
-                if char == '.': # se acho um ponto, qualquer ponto que vinher vai gerar erro, pois ele é removido da lista de aceitos
-                    digits_temp = digits
             else:# se acabou a string e nao gerou token do numero
-                if not erro:
+                if not erro and not erro2:
                     tokens.append((4, identificador))
                 else:
                     tokens.append((11, identificador))
@@ -260,11 +259,12 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
+    string = '\+\+|\+|--|->|-|>=|<=|!=|==|=|!|&&||||*|/|<|>|[|]|{|}|(|)|;|,'
     string = '++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,'
-    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/]*'
-    # T = {r'\b\d+\.\d+\.'}
-    # re_num_varios_pontos = f"{T}[{escape(string)}]"
-    re_NMR = r"{re_NMR}([{escape(string)}])"
+    # re_NMR = r'\b\d+\.[^(\d|\/*|\/\/)][^(\+|\*|\/|\-|\|\||&&|!|!=|==|<=|>=|\=\<\>|;|,|\(|\)|\[|\]|\{|\})]*'
+    re_NMR = r'\b\d+(\.[^(\d|\/*|\/\/)])+'
+    re_NMR = r"{re_NMR}[{escape(string)}]"
+
 
     # re_NMR = r"\b\d+\.(?!\d*|\/\*|\/\/)([[\w\.]*)"
     
