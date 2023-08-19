@@ -1,0 +1,4 @@
+class {
+	const s7gsgv43%6543 = "nothingtoseehere
+	read a+b@=umdoistres""
+}

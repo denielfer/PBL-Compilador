@@ -1,0 +1,9 @@
+3.3.3.3@1@a=5a@n=3
+
+int a@a@a@a = "Árvore"
+
+3..................2
+
+/*
+
+COMENTÁRIO DE BLOCO MAL FORMADO (?)

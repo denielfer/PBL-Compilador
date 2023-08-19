@@ -1,5 +1,5 @@
 from string import printable, ascii_letters, digits
-from re import search,split,findall
+from re import search, split, findall
 
 # Separadores: elementos usados para indicar o fim de um token e inicio de outro, sendo eles: operadores, delimitadores, ' ', '/*','"' e '//'
 #   Excessoes: 'numero.algo', '.' para numero, Cadeia de Caracter so tem '"' de separador
@@ -36,7 +36,7 @@ class comentario_bloco_excption(Exception):
 # '/*' e '//' tem mesma ordem de prioridade assim escolhe-se quebra em '/*' e caso exista um '//' antes usa o raise Exception para cancelar o continuamento da função de analize para linha
 prioridade = '++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,'.split()
 
-def processar_string(txt:str, chars_list: list[str],rejex:bool = False):
+def processar_string(txt:str, chars_list: list[str], rejex:bool = False):
     '''
         Esta função so existe pois 'numero.algo' se algo nao for um numero deve gerar erro, como isso impossibilita a geração
             do token que 'algo' seria temos primieramente identificamos este erro para depois seguir para os demais tokens 
@@ -44,8 +44,8 @@ def processar_string(txt:str, chars_list: list[str],rejex:bool = False):
 
         Pelo regex so é aceito depois de 'numero.' outro numero, '/*' e '//', ser aceito significa nao ser processado nessa função
     '''
-    NMR = findall(i_pr_n.re_NMR,txt)
-    txts = split(i_pr_n.re_NMR,txt)
+    NMR = findall(i_pr_n.re_NMR, txt)
+    txts = split(i_pr_n.re_NMR, txt)
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex= False):
         yield token
     for n,txt in enumerate(txts[1:]):
@@ -63,54 +63,54 @@ def processar_blocos(txt:str, **kargs):
     cb = txt.find('/*')
     cl = txt.find('//')
     cc = txt.find('"')
-    cb = cb if cb!=-1 else len(txt)+1
-    cl = cl if cl!=-1 else len(txt)+1
-    cc = cc if cc!=-1 else len(txt)+1
+    cb = cb if cb != -1 else len(txt) + 1
+    cl = cl if cl != -1 else len(txt) + 1
+    cc = cc if cc != -1 else len(txt) + 1
     # print(cb,cl,cc)
-    while len(set([cb,cl,cc])) != 1: # se todos sao iguais entao nao achou, logo skipa o while
+    while len(set([cb, cl, cc])) != 1: # se todos sao iguais entao nao achou, logo skipa o while
         if (cb < cl and cb < cc):
-            txt = txt.split('/*',1)
+            txt = txt.split('/*', 1)
             for token in get_token(txt[0], **kargs):
                 yield token
             if '*/' in txt[1]:
-                txt = txt[1].split('*/',1)[1]
+                txt = txt[1].split('*/', 1)[1]
             else:
                 raise comentario_bloco_excption(txt[1])
         elif(cl < cb and cl < cc):
-            txt = txt.split('//',1)
+            txt = txt.split('//', 1)
             for token in get_token(txt[0], **kargs):
                 yield token
             raise comentario_linha_excption
         else: # se o primeiro nao foi os outros é comentario de bloco
             # print('--------')
-            txt = txt.split('"',2) # tentamos quebra nos 2 '"'
+            txt = txt.split('"', 2) # tentamos quebra nos 2 '"'
             for token in get_token(txt[0], **kargs): # analizamos o token antes do 1 '"' e os emitimos
                 yield token
             match len(txt):
                 case 2: # se tiver 2 de tamanho o comentario nao ta fechado
-                    yield 9,f'"{txt[1]}'
+                    yield 9, f'"{txt[1]}'
                     return
                 case 3: # se tiver 3 de tamanho o comentario
                     for char in txt[1]:
                         if char not in printable: # se tiver caracter invalido emitimos o token de comentario mal formado
-                            yield 9,f'"{txt[1]}"' 
+                            yield 9, f'"{txt[1]}"' 
                             break
                     else: # se chegou aqui nao tem caracter invalido entao emitimos o token de ok
-                        yield  3,f'"{txt[1]}"'
+                        yield 3, f'"{txt[1]}"'
                     txt = txt[2] # setamos o texto para proxima iteração do loop
         # variaveis pra procima iteração
         # print(txt)
         cb = txt.find('/*')
         cl = txt.find('//')
         cc = txt.find('"')
-        cb = cb if cb!=-1 else len(txt)+1
-        cl = cl if cl!=-1 else len(txt)+1
-        cc = cc if cc!=-1 else len(txt)+1
+        cb = cb if cb != -1 else len(txt) + 1
+        cl = cl if cl != -1 else len(txt) + 1
+        cc = cc if cc != -1 else len(txt) + 1
         # print(cb,cl,cc)
     for token in get_token(txt, **kargs):
         yield token
 
-def get_token(txt:str, chars_list: list[str],rejex:bool = False):
+def get_token(txt:str, chars_list: list[str], rejex:bool = False):
     '''
         Aqui lidamos com os separadores, quebrando a string em partes menores e lidando com essas partes
     '''
@@ -140,7 +140,7 @@ def get_token(txt:str, chars_list: list[str],rejex:bool = False):
                     que esse delimitador fica sempre entre 2 substrings geradas pelo split. 
             '''
             for txt in new_txt[-2::-1]:
-                token_delimitadores.insert(n,delimitador)
+                token_delimitadores.insert(n, delimitador)
                 txts.insert(n, txt)
     for txt in txts: # depois de lidarmos com todos os delimitadores precisamos processar cada string 
         for token in i_pr_n.ação(txt, action = 1 if rejex else 0):
@@ -164,14 +164,14 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
         func = i_pr_n.__monta_token__ if action == 0 else i_pr_n.__monta_token_regex__
         while txt != '': # enquanto tiver coisas na string
             # print(txt)
-            tokens,txt = func(txt) # pegamos a primeira lista de token da string, pois existem casos onde mais de 1 sao geradas. ex:'@.'
+            tokens, txt = func(txt) # pegamos a primeira lista de token da string, pois existem casos onde mais de 1 sao geradas. ex:'@.'
             for token in tokens:
                 yield token
             txt = txt.strip() # limpamos inicio e fim dos ' ' para continuar analize
                 
     def __monta_token__(txt, n = 0):
         '''
-            Esta função avalia uma string se tem IDE, PRE, NRO, NMF,TMF e emite delimitador '.'
+            Esta função avalia uma string se tem IDE, PRE, NRO, NMF, TMF e emite delimitador '.'
         '''
         if txt == '':
             return [], ''
@@ -179,7 +179,7 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
         identificador = txt[n] # sempre so pega tokens apartir do 1 char, e so olha ate o final deste token, gerando possivel token ligado. ex:'@.'
         if txt[n] in ascii_letters: # verifica indentificador ou palavra reservada
             erro = False
-            for n,char in enumerate(txt[n+1:]):
+            for n, char in enumerate(txt[n+1:]):
                         if char in i_pr_n.indent_char:
                             identificador += char
                         elif char in ' .': # se acho um dos separadores que sobrou
@@ -248,7 +248,7 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
             else:
                 #se o 1 elemento do vetor é '.', geramos o token e passamos para a proxima busca começar no elemento seguinte
                 # print()
-                n=n-1 # -1 póis no retorno a sub-string para proxima busca assume que pegou o proximo elemento ja
+                n = n - 1 # -1 póis no retorno a sub-string para proxima busca assume que pegou o proximo elemento ja
                 tokens.append((5, '.'))
         # print(txt,' -> ',txt[n+1:],tokens)
         return tokens, txt[n+2:]
@@ -377,7 +377,9 @@ if __name__ == '__main__':
     #     print(a)
 
     # cadeia de caracter
-    s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
+    # s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
+    # s = ' 3.3.3 6.a35#.99; 2.2. 1.1.1.! 9.0.0 10'
+    s = '6.a35#.99;'
     # 3. coment | 3. coment 3 | &as && | & & | &as& | "\n" | "Ç" | @ . 2
     print(s) # aparece 2 linhas porque o \n é usado como quebra de linha
     for a in processar_string(s, prioridade):
