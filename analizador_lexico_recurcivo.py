@@ -48,6 +48,10 @@ def processar_string(txt:str, chars_list:list[str], rejex:bool = False):
     txts = split(i_pr_n.re_NMR, txt)
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex = False):
         yield token
+    print('__')
+    print(txt)
+    print(NMR)
+    print(txts)
     for n,txt in enumerate(txts[1:]):
         # print(NMR, n) 
         yield (11, NMR[n].strip())
@@ -257,8 +261,10 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
     string = '++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,'
-    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/]'
-    re_NMR = f"{re_NMR}([{escape(string)}])"
+    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/]*'
+    # T = {r'\b\d+\.\d+\.'}
+    # re_num_varios_pontos = f"{T}[{escape(string)}]"
+    re_NMR = r"{re_NMR}([{escape(string)}])"
 
     # re_NMR = r"\b\d+\.(?!\d*|\/\*|\/\/)([[\w\.]*)"
     
@@ -381,8 +387,8 @@ if __name__ == '__main__':
 
     # cadeia de caracter
     # s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
-    # s = ' 3.3.3 6.a35#.99; 2.2. 1.1.1.! 9.0.0 10'
-    s = '6.a35#.99;'
+    s = ' 3.3.3 6.a35#.99; 2.2. 1.1.1.! 9.0.0 10 9.9@& '
+    # s = '6.a35#.99;'
     # 3. coment | 3. coment 3 | &as && | & & | &as& | "\n" | "Ç" | @ . 2
     print(s) # aparece 2 linhas porque o \n é usado como quebra de linha
     for a in processar_string(s, prioridade):
