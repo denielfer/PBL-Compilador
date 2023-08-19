@@ -1,5 +1,5 @@
 from string import printable, ascii_letters, digits
-from re import search, split, findall
+from re import search, split, findall,escape
 
 # Separadores: elementos usados para indicar o fim de um token e inicio de outro, sendo eles: operadores, delimitadores, ' ', '/*','"' e '//'
 #   Excessoes: 'numero.algo', '.' para numero, Cadeia de Caracter so tem '"' de separador
@@ -211,19 +211,19 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
             erro = False
             digits_temp = digits + '.'
             for n, char in enumerate(txt[n+1:]):
-                        if char in digits_temp:
-                            identificador += char
-                        elif char == ' ': # neste caso so sobra o separador ' '
-                            if not erro:
-                                tokens.append((4, identificador))
-                            else:
-                                tokens.append((11, identificador))
-                            break
-                        else: # pegou algum char q nao é separador ou numero da erro
-                            erro = True
-                            identificador += char
-                        if char == '.': # se acho um ponto, qualquer ponto que vinher vai gerar erro, pois ele é removido da lista de aceitos
-                            digits_temp = digits
+                if char in digits_temp:
+                    identificador += char
+                elif char == ' ': # neste caso so sobra o separador ' '
+                    if not erro:
+                        tokens.append((4, identificador))
+                    else:
+                        tokens.append((11, identificador))
+                    break
+                else: # pegou algum char q nao é separador ou numero da erro
+                    erro = True
+                    identificador += char
+                if char == '.': # se acho um ponto, qualquer ponto que vinher vai gerar erro, pois ele é removido da lista de aceitos
+                    digits_temp = digits
             else:# se acabou a string e nao gerou token do numero
                 if not erro:
                     tokens.append((4, identificador))
@@ -256,7 +256,10 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
-    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/][\w\.]*'
+    string = '++ + -- -> - >= <= != == = ! && || * / < > [ ] { } ( ) ; ,'
+    re_NMR = r'\b\d+\.[^\d|^\/*|^\/\/]'
+    re_NMR = f"{re_NMR}([{escape(string)}])"
+
     # re_NMR = r"\b\d+\.(?!\d*|\/\*|\/\/)([[\w\.]*)"
     
     def __monta_token_regex__(txt):
