@@ -5,8 +5,8 @@ CoMF_CODE = 10
 
 def analizar_lexico_files(paths:list[str]):
     for path in paths:
-        with open(path, 'r') as file:
-            with open(path.replace('.txt', '-saida.txt'), 'w') as out_file:
+        with open(path, 'r', encoding="utf8") as file:
+            with open(path.replace('.txt', '-saida.txt'), 'w', encoding="utf8") as out_file:
                 FBC = False #flag_bloco_de_comentario = False
                 TEXT_FBC = '' # texto comentario de bloco
                 LINE_FBC = -1 # linha que acontece
