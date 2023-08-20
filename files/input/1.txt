@@ -4,3 +4,6 @@ int main() {
    printf("Hello, World!");
    return 0;
 }
+// "nao vai aparecer
+/*"nao vai aparecer //"*/
+"/*vai aparecer*/ // tudo"

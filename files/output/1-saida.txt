@@ -17,4 +17,5 @@
 5 <NRO, 0>
 5 <DEL, ;>
 6 <DEL, }>
+9 <CAC, "/*vai aparecer*/ // tudo">
 1 <TMF, #include>
