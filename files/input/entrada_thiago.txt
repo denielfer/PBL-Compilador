@@ -1,0 +1,4 @@
+int main
+int a = 3 const a_2=5
+3 = 5 = a325;
+b = "string"

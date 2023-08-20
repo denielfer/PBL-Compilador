@@ -46,10 +46,10 @@ def processar_string(txt:str, chars_list:list[str], rejex:bool = False):
     '''
     NMR = findall(i_pr_n.re_NMR, txt)
     txts = split(i_pr_n.re_NMR, txt)
-    print('________________')
-    print(txt)
-    print(NMR)
-    print(txts)
+    # print('________________')
+    # print(txt)
+    # print(NMR)
+    # print(txts)
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex = False):
         yield token
     for n,txt in enumerate(txts[1:]):

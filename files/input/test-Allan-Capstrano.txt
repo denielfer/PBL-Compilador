@@ -1,0 +1,5 @@
+void main() {
+    int i = 0, j = 0
+    int k = i + j
+    print(k)
+}
