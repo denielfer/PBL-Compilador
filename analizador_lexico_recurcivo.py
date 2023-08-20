@@ -46,10 +46,10 @@ def processar_string(txt:str, chars_list:list[str], rejex:bool = False):
     '''
     NMR = findall(i_pr_n.re_NMR, txt)
     txts = split(i_pr_n.re_NMR, txt)
-    # print('________________')
-    # print(txt)
-    # print(NMR)
-    # print(txts)
+    print('________________')
+    print(txt)
+    print(NMR)
+    print(txts)
     for token in processar_blocos(txts[0], chars_list = chars_list, rejex = False):
         yield token
     for n,txt in enumerate(txts[1:]):
@@ -266,10 +266,10 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
     re_PRE = r'\b(variables|const|class|methods|objects|main|return|if|else|then|for|read|print|void|int|real|boolean|string|true|false)\b'
     re_IDE = r'\b[a-zA-Z]{1}\w*[^(\.\s)]\b'
     re_NRO = r'\b\d+(\.\d*)?\b'
-    string = '+-=!&|*/<>[]{}();,'
+    string = '+-=!&|*/<>[]{}();, '
     # print(escape(string))
     # re_NMR =  fr"\b\d+\.(?![\d|\/\*|\/\/])[.]+?(?:[{escape(string)}]\b)"
-    re_NMR =  fr"\b\d+\.[^(\d|\/\*|\/\/)][^{string}]+"
+    re_NMR =  r"\b\d+\.[.\+\=\-\!\&\|\*\/\<\>\[\]\{\}\(\)\;\,][^(\+\=\-\!\&\|\*\/\<\>\[\]\{\}\(\)\;\,\s)]*"
     
     def __monta_token_regex__(txt):
         if txt == '':
@@ -389,9 +389,10 @@ if __name__ == '__main__':
     #     print(a)
 
     # cadeia de caracter
-    s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
-    s += ' 3.3.3 6.a35#.99; 2.2. 1.1.1.!23.3 9.0.0 10 9.9@& '
-    s += ' 6.a35#.99;'
+    # s = '3./*ad*/ 3./*3*/3 &as&& &/**/& &as& "\n" "Ç" @.2 2@ 2.2@' 
+    # s += ' 3.3.3 6.a35#.99; 2.2. 1.1.1.!23.3 9.0.0 10 9.9@& '
+    # s += ' 6.a35#.99; 2.+as+'
+    s = ' 6.a35#.99; 2.+231{23as+ 2.{2132}31 }'
     # 3. coment | 3. coment 3 | &as && | & & | &as& | "\n" | "Ç" | @ . 2
     print(s) # aparece 2 linhas porque o \n é usado como quebra de linha
     for a in processar_string(s, prioridade):

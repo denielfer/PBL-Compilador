@@ -1,0 +1,6 @@
+method methods method# {
+	
+	if um===dois & a=b{
+		/*badcoment 123
+	}
+}

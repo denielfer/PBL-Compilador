@@ -1,0 +1,21 @@
+public void connect() {
+    try {
+      printlnDebug(
+        "Trying to connect to the MQTT broker " + this.serverURI + "..."
+      );
+
+      this.mqttClient =
+        new MqttClient(
+          this.serverURI,
+          String.format("cliente_java_%d", System.currentTimeMillis()),
+          new MqttDefaultFilePersistence(System.getProperty("java.io.tmpdir"))
+        );
+
+      this.mqttClient.setCallback(this);
+      this.mqttClient.connect(mqttOptions);
+    } catch (MqttException ex) {
+      printlnDebug(
+        "Error connecting to MQTT broker " + this.serverURI + " - " + ex
+      );
+    }
+}
