@@ -1,5 +1,3 @@
-2 <ART, +>
-2 <IDE, asdas>
 6 <IDE, a2>
 6 <DEL, .>
 6 <NRO, 2>
@@ -10,7 +8,7 @@
 2 <NMF, 2.@>
 2 <NMF, 2.a>
 2 <NMF, 2.2.2>
-2 <NMF, 2.>
+2 <NMF, 2.+asdas>
 9 <TMF, @as>
 9 <TMF, #$@$>
 9 <TMF, @>

@@ -1,7 +1,5 @@
 1 <ART, +>
 1 <NRO, 1>
-1 <ART, +>
-1 <IDE, hji>
 1 <DEL, ,>
 1 <NRO, 7>
 1 <LOG, !>
@@ -16,7 +14,7 @@
 4 <IDE, just>
 4 <DEL, ;>
 1 <NMF, 3....>
-1 <NMF, 156.>
+1 <NMF, 156.+hji>
 2 <IMF, Aaa$eof56&_>
 3 <CMF, "isso é uma cadeia errada">
 4 <TMF, &>

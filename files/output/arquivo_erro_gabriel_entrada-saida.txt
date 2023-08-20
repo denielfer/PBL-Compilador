@@ -19,8 +19,6 @@
 6 <PRE, int>
 6 <IDE, resultado>
 6 <REL, =>
-6 <ART, +>
-6 <IDE, aa>
 6 <ART, ->
 6 <IDE, ab>
 7 <DEL, }>
@@ -30,4 +28,4 @@
 2 <NMF, 1.1.1.>
 3 <NMF, 1.>
 3 <NMF, 9.0.0>
-6 <NMF, 3.>
+6 <NMF, 3.+aa>
