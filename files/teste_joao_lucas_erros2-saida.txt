@@ -12,4 +12,4 @@
 3 <DEL, {>
 1 <IMF, method#>
 3 <TMF, &>
-5 <CoMF, badcoment 123	}}>
+5 <CoMF, /*badcoment 123	}}>

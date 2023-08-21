@@ -10,4 +10,4 @@
 13 <CMF, ">
 16 <TMF, $token>
 17 <TMF, &>
-21 <CoMF,  comentario    mal    formado>
+21 <CoMF, /* comentario    mal    formado>

@@ -20,4 +20,4 @@
 4 <TMF, &>
 4 <NMF, 15.3.2.1>
 5 <CMF, " não vou fechar isso>
-7 <CoMF, Isso não é um comentário de bloco*Jksjsjsksksjsksks>
+7 <CoMF, /*Isso não é um comentário de bloco*Jksjsjsksksjsksks>

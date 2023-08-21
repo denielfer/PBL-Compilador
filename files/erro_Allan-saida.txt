@@ -4,4 +4,4 @@
 2 <NRO, 5>
 1 <NMF, 8.1.2>
 2 <IMF, test@test>
-4 <CoMF,  Estenãoé umcomentário de bloco*/>
+4 <CoMF, /* Estenãoé umcomentário de bloco*/>

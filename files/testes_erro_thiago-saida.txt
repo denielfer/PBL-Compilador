@@ -8,4 +8,4 @@
 3 <IMF, a@a@a@a>
 3 <CMF, "Árvore">
 5 <NMF, 3..................2>
-8 <CoMF, COMENTÁRIO DE BLOCO MAL FORMADO (?)>
+8 <CoMF, /*COMENTÁRIO DE BLOCO MAL FORMADO (?)>
