@@ -15,3 +15,4 @@
 5 <IDE, texto>
 5 <REL, =>
 5 <CAC, "cadeia de caracteres/*88/8594@#%*&(*">
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

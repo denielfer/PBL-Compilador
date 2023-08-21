@@ -18,3 +18,4 @@
 9 <PRE, string>
 9 <PRE, true>
 9 <PRE, false>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

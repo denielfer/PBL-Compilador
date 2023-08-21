@@ -18,3 +18,4 @@
 7 <ART, *>
 7 <ART, *>
 7 <NRO, 3>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

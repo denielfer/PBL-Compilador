@@ -23,3 +23,4 @@
 9 <CAC, "isso e uma cadeia*&">
 10 <DEL, }>
 10 <DEL, }>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

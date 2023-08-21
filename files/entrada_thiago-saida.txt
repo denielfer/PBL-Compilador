@@ -17,3 +17,4 @@
 4 <IDE, b>
 4 <REL, =>
 4 <CAC, "string">
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

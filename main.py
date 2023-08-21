@@ -43,9 +43,11 @@ def analizar_lexico_files(paths:list[str]):
                             TEXT_FBC = str(e)
                             LINE_FBC = n
                             
-
-                    for erro in erros:
-                        out_file.write(erro)
+                    if erros:
+                        for erro in erros:
+                            out_file.write(erro)
+                    else:
+                        out_file.write("A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.")
 
                     if FBC: # terminou o arquivo e ta com comentario de bloco sem termina
                         out_file.write(f'{LINE_FBC + 1} <{CODIGOS[CoMF_CODE]}, {TEXT_FBC}>\n')

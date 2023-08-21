@@ -14,3 +14,4 @@
 4 <IDE, a>
 4 <ART, *>
 4 <IDE, b>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

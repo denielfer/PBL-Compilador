@@ -22,3 +22,4 @@
 4 <IDE, k>
 4 <DEL, )>
 5 <DEL, }>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

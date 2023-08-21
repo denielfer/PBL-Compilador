@@ -10,3 +10,4 @@
 4 <IDE, a>
 4 <REL, =>
 4 <NRO, 2>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
