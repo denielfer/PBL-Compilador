@@ -50,8 +50,11 @@ class comentario_bloco_excption(Exception):
     pass
 
 def get_tokens(text):
+    '''
+        Deve ser chamada para uma linha de caracter
+    '''
     # print(text, len(text))
-    text += '\n'
+    text += '\n' # para nao quebra o text[n+1]
     token = ''
     controle = -1
     erro_ponto = None
@@ -198,6 +201,7 @@ def __get_controle__(char,next):
     return controle
 
 if __name__ == '__main__':
-    s = '/*/'
+    # s = '/*/'
+    s = '++'
     for a in get_tokens(s):
         print(a)
