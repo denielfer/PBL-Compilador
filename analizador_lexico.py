@@ -116,7 +116,7 @@ def get_tokens(text):
                 if erro_ponto == False:
                     erro_ponto = True
                 token += char
-                if char == '.':
+                if char == '.' and controle == 4:
                     if erro_ponto is None:
                         erro_ponto = False
                     else:
@@ -202,6 +202,7 @@ def __get_controle__(char,next):
 
 if __name__ == '__main__':
     # s = '/*/'
-    s = '++'
+    # s = '++'
+    s = '3&.+a 3&&&.'
     for a in get_tokens(s):
         print(a)
