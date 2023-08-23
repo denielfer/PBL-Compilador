@@ -9,14 +9,14 @@ sys.stdout = open(file_path, "w")
 
 def analizar_lexico_files(paths:list[str]):
         for path in paths:
-            with open(path, 'r', encoding="utf8") as file:
-                with open(path.replace('.txt', '-saida.txt'), 'w', encoding="utf8") as out_file:
+            with open(path, 'r', encoding = "utf8") as file:
+                with open(path.replace('.txt', '-saida.txt'), 'w', encoding = "utf8") as out_file:
                     FBC = False #flag_bloco_de_comentario = False
                     TEXT_FBC = '' # texto comentario de bloco
                     LINE_FBC = -1 # linha que acontece
                     erros = []
                     for n, line in enumerate(file.readlines()):
-                        n+=1 # normalizar ( questao index vs posição natural )
+                        n += 1 # normalizar ( questao index vs posição natural )
                         line = line[:-1] if line[-1] == '\n' else line # remove o \n do final da linha se existir que seria a quebra de linha, nao gera erro caso o arquivo termine em \n como visto no 10.txt
                         if FBC: # se estamos em erro de bloco
                             if '*/' in line:
