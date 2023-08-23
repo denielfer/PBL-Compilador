@@ -71,7 +71,8 @@ def get_tokens(text):
                 controle = 9
             token += char
         elif controle == 14: # comentario bloco
-            if token[-1] + char == '*/':
+            if char + text[n+1] == '*/':
+                force_continue = True
                 token = ''
                 controle = -1
             else:
@@ -197,6 +198,6 @@ def __get_controle__(char,next):
     return controle
 
 if __name__ == '__main__':
-    s = '1++'
+    s = '/*/'
     for a in get_tokens(s):
         print(a)
