@@ -233,6 +233,9 @@
  6	| Controle: 7	|Token: !	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
 (7, '!')
 (7, '!')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
+ 2	| Controle: 14	|Token: /*	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 3.	|Char Analizado: "3"	|erro_ponto: False	|force_continue: False
