@@ -1,8 +1,8 @@
 # Conjunto de palavras reservadas
 PRE =  ["variables", "const", "class", "methods", "objects", "main", "return", "if", "else", "then", "for", "read", "print", "void", "int", "real","boolean", "string", "true", "false"]
+
 from string import ascii_letters, digits, printable
 from re import search
-# printable= printable.replace('"','')
 
 # Conjunto de operadores aritméticos
 op_ar = ["+", "-", "*", '/', "++", "--"]
@@ -63,12 +63,12 @@ def get_tokens(text):
     '''
         Analisa uma linha de lexemas para gerar respectivos tokens
     '''
-    # print(text, len(text))
-    text += '\n' # para nao quebra o text[n+1]
+    text += '\n' # para não quebrar o text[n+1]
     token = ''
     controle = -1 # estado atual
     erro_ponto = None
     force_continue = False
+    char = None
 
     # Percorre os caracteres até o final da linha
     for n, char in enumerate(text[:-1]):
@@ -91,7 +91,7 @@ def get_tokens(text):
             token += char
 
         # Procura o final do comentário de bloco
-        elif (controle == 14): # comentario bloco
+        elif (controle == 14): # comentário bloco
             if (char + text[n+1] == '*/'):
                 force_continue = True
                 token = ''
@@ -99,8 +99,8 @@ def get_tokens(text):
             else:
                 token += char
 
-        # Percorre o comentário de linha até o final        
-        elif (controle == 15): #comentario linha
+        # Percorre o comentário de linha até o final
+        elif (controle == 15): # comentário linha
             return
         
         # Identifica um comentário de linha
@@ -120,25 +120,25 @@ def get_tokens(text):
         elif (search(r'\s', char)):
             for token_gerado in __gera_token_saida__(controle, token, erro_ponto):
                 yield token_gerado
-            erro_ponto = None # reseta erro de ponto de numero, pois caso seja teria valor
+            erro_ponto = None # reseta erro de ponto de número, pois, caso for, terá valor
             token = ''
             controle = -1
 
-        # NÃO SEI O QUE FAZ
+        # Continua a iteração para procurar o tipo de token que será avaliado
         elif (controle == -1):
-            controle = __get_controle__(char, text[n+1]) # nao precisa do force continue para 14, pois esse acabou de ser verificado encima
+            controle = __get_controle__(char, text[n+1]) # não precisa do force continue para 14, pois esse acabou de ser verificado acima
             if (controle != -1):
                 token += char
 
         # Analisa se o token é um IDE ou IMF
         elif (controle in [2, 12]):
-            if (char in IDE_CHAR): # se ainda é char valido em indentificador
+            if (char in IDE_CHAR): # se ainda é char válido em indentificador
                 token += char
                 continue
             sep = __get_if_sep__(char, text[n+1], default_not_in = 12)
-            if (sep[1] != 12): # se nao for char invalido, é separador 
+            if (sep[1] != 12): # se não for char inválido, é separador 
                 yield (1 if token in PRE else controle, token)  # geramos IDE ou PRE
-                token = '' # limpamos o token q esta sendo gerado
+                token = '' # limpamos o token que está sendo gerado
             token += char
             controle = sep[1]
 
@@ -154,14 +154,14 @@ def get_tokens(text):
                     else:
                         controle = 11
                 continue
-            elif (erro_ponto == False): # precisa especificar se é false pois (not erro_ponto) triga no None
-                #consome o token logo apos o '.' se nao estiver em digits
+            elif (erro_ponto == False): # precisa especificar se é false, pois (not erro_ponto) lança None
+                # consome o token logo apos o '.' se não estiver em digitos
                 token += char
                 erro_ponto = True
                 controle = 11
                 continue
             sep = __get_if_sep__(char, text[n+1], separadores = SEPARADORES_NUMERO, default_not_in = 11)
-            if (sep[1] != 11): # 11 seria nao achar separador, entao entra no if se achar separador
+            if (sep[1] != 11): # 11 seria nao achar separador, então entra no if se achar separador
                 yield (controle, token)
                 token = ''
                 erro_ponto = None
@@ -169,11 +169,11 @@ def get_tokens(text):
             controle = sep[1]
 
         # Analisa se o token é um DEL, REL, LOG ou ART
-        elif (4 < controle < 9): # separadores e delimitadores#####################################################################################
+        elif (4 < controle < 9): # separadores e delimitadores
             sep = __get_if_sep__(token, char, separadores = SEPARADORES, default_not_in = -1)
             if (sep[1] != -1):
                 yield (sep[1], sep[0])
-                if (len(sep[0]) == 1): # se achou separador de 2 char entao ja emitiu para esse char, se nao precisamos descobri o que ele é
+                if (len(sep[0]) == 1): # se achou separador de 2 chars então já emitiu para esse char, senão, precisamos descobrir o que ele é
                     token = char
                     controle = __get_controle__(char, text[n+1])
                     force_continue = (controle == 14)
@@ -181,10 +181,10 @@ def get_tokens(text):
                     token = ''
                     controle = -1
             else: # se se nao é -1 
-                yield(controle, token)# emitimos otoken q temos 
+                yield(controle, token) # emitimos o token q temos 
                 token = char
                 controle = __get_controle__(char, text[n+1])
-                force_continue = (controle == 14) # ja foi computado o proximo char, que é '*' e sem isso /*/ seria conciderado um comentario de bloco, para // nao é problema pois o mesmo so para a busca, entao nao importa se paramos no 1º '/' ou no 2º
+                force_continue = (controle == 14) # ja foi computado o próximo char, que é '*' e sem isso /*/ seria conciderado um comentário de bloco, para // não é problema pois o mesmo só para a busca, então não importa se paramos no 1º '/' ou no 2º
         
         # Percorre até o final do TMF
         elif (controle == 13): # token mal formado
@@ -197,7 +197,7 @@ def get_tokens(text):
 
     # Gera o token com o estado atual quando termina o loop
     else: # else for, quando string acaba
-        print(f' fim de string\t| Controle: {controle}\t|Token: {token}\t|Char Analizado: "{char}"\t|erro_ponto: {erro_ponto}\t|force_continue: {force_continue}')
+        print(f' fim de string\t| Controle: {controle}\t|Token: {token}\t|Char Analizado: "{char if char else ""}"\t|erro_ponto: {erro_ponto}\t|force_continue: {force_continue}')
         for token_gerado in __gera_token_saida__(controle, token, erro_ponto):
             yield token_gerado
 
@@ -206,11 +206,11 @@ def __gera_token_saida__(controle, token, erro_ponto):
     if (controle in [3, 9]):
         yield (9, token)
     elif (controle in [2, 12]):
-        yield (controle if token not in PRE else 1, token) # se 12 o token nao vai ta em PRE, logo so solta 2 se token for PRE
+        yield (controle if token not in PRE else 1, token) # se o controle for 12 o token não vai ta em PRE, logo só lança 2 se o token for PRE
     elif (controle in [4, 11]):
         yield (controle if erro_ponto != False  else 11, token)
     elif (4 < controle < 9):
-        yield (controle, token) # nao verificamos pois temos o que ele é, e nao existe proximo char
+        yield (controle, token) # não verificamos, pois temos o que ele é, e nao existe próximo char
     elif (controle == 13):
         yield (controle, token)
     elif (controle == 14):
@@ -244,6 +244,6 @@ if __name__ == '__main__':
     # s = '/*/'
     # s = '++'
     # s = '3&.+a 3&&&.'
-    s = '+-'
+    s = ''
     for a in get_tokens(s):
         print(a)

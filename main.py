@@ -1,17 +1,15 @@
 import util
-# import analizador_lexico_recurcivo
 from analizador_lexico import get_tokens, comentario_bloco_excption, CODIGOS
 CoMF_CODE = 10
 import sys
 file_path = 'log_ultima_execução.txt'
 sys.stdout = open(file_path, "w")
 
-
 def analizar_lexico_files(paths:list[str]):
         for path in paths:
             with open(path, 'r', encoding = "utf8") as file:
                 with open(path.replace('.txt', '-saida.txt'), 'w', encoding = "utf8") as out_file:
-                    FBC = False #flag_bloco_de_comentario = False
+                    FBC = False # flag_bloco_de_comentario = False
                     TEXT_FBC = '' # texto comentario de bloco
                     LINE_FBC = -1 # linha que acontece
                     erros = []
@@ -33,7 +31,7 @@ def analizar_lexico_files(paths:list[str]):
                                     print(token)
                                     if token[0] > 8: # se token for de erro vai pra lista
                                         erros.append(f'{n} <{CODIGOS[token[0]]}, {token[1]}>\n')
-                                    else:# se nao escrevemos
+                                    else: # se nao escrevemos
                                         out_file.write(f'{n} <{CODIGOS[token[0]]}, {token[1]}>\n')
                         # except analizador_lexico_recurcivo.comentario_linha_excption: # se recebeu essa excption so seguirmos, ela é usada para parar a recurção
                         #     pass  

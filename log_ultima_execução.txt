@@ -41,6 +41,7 @@
  35	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  36	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  37	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: main	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
 (1, 'main')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
@@ -96,6 +97,7 @@
  43	| Controle: 2	|Token: fals	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  44	| Controle: 2	|Token: false	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'false')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: "&	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
@@ -104,12 +106,14 @@
  5	| Controle: 3	|Token: "&@#!	|Char Analizado: "$"	|erro_ponto: None	|force_continue: False
  6	| Controle: 3	|Token: "&@#!$	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"&@#!$"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (4, '1')
  2	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 08	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
@@ -117,6 +121,7 @@
  4	| Controle: 4	|Token: 08.8	|Char Analizado: "0"	|erro_ponto: True	|force_continue: False
  5	| Controle: 4	|Token: 08.80	|Char Analizado: " "	|erro_ponto: True	|force_continue: False
 (4, '08.80')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 37	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
@@ -126,6 +131,7 @@
  5	| Controle: 8	|Token: +	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (8, '+')
  6	| Controle: -1	|Token: 	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 4	|Token: 5	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
 (4, '5')
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
@@ -144,6 +150,7 @@
  11	| Controle: -1	|Token: 	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
  12	| Controle: 6	|Token: =	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (6, '=')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 7	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 72	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
@@ -151,6 +158,7 @@
  3	| Controle: 8	|Token: /	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (8, '/')
  4	| Controle: -1	|Token: 	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 4	|Token: 2	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
 (4, '2')
  0	| Controle: -1	|Token: 	|Char Analizado: "6"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 6	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -158,6 +166,7 @@
 (4, '64')
  3	| Controle: 8	|Token: *	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (8, '*')
+ fim de string	| Controle: 4	|Token: 3	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (4, '3')
  0	| Controle: -1	|Token: 	|Char Analizado: "6"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 6	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -169,6 +178,7 @@
 (8, '*')
  5	| Controle: 4	|Token: 3	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (4, '3')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
@@ -193,6 +203,7 @@
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -210,6 +221,7 @@
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -246,6 +258,7 @@
  25	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  26	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -261,8 +274,10 @@
  10	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  11	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
@@ -290,6 +305,7 @@
  22	| Controle: 14	|Token: /*"nao vai aparecer //	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  23	| Controle: 14	|Token: /*"nao vai aparecer //"	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
  24	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: True
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: "/	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
@@ -317,6 +333,7 @@
  24	| Controle: 3	|Token: "/*vai aparecer*/ // tud	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  25	| Controle: 3	|Token: "/*vai aparecer*/ // tudo	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"/*vai aparecer*/ // tudo"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
@@ -334,6 +351,7 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  9	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: >	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '>')
@@ -408,6 +426,7 @@ Erros:
  47	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  48	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: >	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '>')
@@ -425,8 +444,11 @@ Erros:
  9	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  10	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
@@ -503,6 +525,7 @@ Erros:
  49	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  50	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
@@ -522,10 +545,13 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  12	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -603,6 +629,7 @@ Erros:
  50	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  51	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -623,10 +650,12 @@ Erros:
  12	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  13	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -642,6 +671,7 @@ Erros:
 (6, '<')
  9	| Controle: 6	|Token: <	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 6	|Token: <	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
 (6, '<')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -651,6 +681,7 @@ Erros:
  5	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  6	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -662,6 +693,7 @@ Erros:
 (6, '>')
  7	| Controle: 6	|Token: >	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '>')
+ fim de string	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '+')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -677,6 +709,7 @@ Erros:
 (6, '<')
  9	| Controle: 6	|Token: <	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 6	|Token: <	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
 (6, '<')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -696,11 +729,13 @@ Erros:
 (6, '>')
  11	| Controle: 6	|Token: >	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (6, '>')
+ fim de string	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '-')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: ]	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
 (5, ']')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -794,6 +829,8 @@ Erros:
  60	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
  61	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '--')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -802,6 +839,7 @@ Erros:
 (6, '<')
  5	| Controle: 6	|Token: <	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '+')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -809,10 +847,12 @@ Erros:
  3	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  4	| Controle: 6	|Token: >	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (6, '>')
+ fim de string	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '-')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: ]	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
 (5, ']')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -905,6 +945,8 @@ Erros:
  59	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
  60	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '--')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
@@ -912,19 +954,23 @@ Erros:
 (6, '<')
  4	| Controle: 6	|Token: <	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '+')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '-')
  0	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
  1	| Controle: 5	|Token: ]	|Char Analizado: "\"	|erro_ponto: None	|force_continue: False
 (5, ']')
  2	| Controle: 13	|Token: \	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: \n	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
 (13, '\\n')
 
 Erros:
@@ -951,6 +997,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -972,6 +1019,7 @@ Erros:
 (5, '{')
  13	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  14	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -989,10 +1037,12 @@ Erros:
  13	| Controle: 2	|Token: numbe	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  14	| Controle: 2	|Token: number	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'number')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1033,10 +1083,12 @@ Erros:
  33	| Controle: 5	|Token: ;	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ';')
  34	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1073,7 +1125,9 @@ Erros:
 (13, '&number')
  24	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1123,11 +1177,13 @@ Erros:
 (2, 'number')
  37	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1143,8 +1199,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -1171,6 +1229,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1188,6 +1247,7 @@ Erros:
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1220,6 +1280,7 @@ Erros:
  23	| Controle: 2	|Token: produc	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  24	| Controle: 2	|Token: product	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'product')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1259,6 +1320,7 @@ Erros:
  32	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  33	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1300,7 +1362,9 @@ Erros:
  29	| Controle: 5	|Token: ;	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ';')
  30	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1331,7 +1395,9 @@ Erros:
  18	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  19	| Controle: 2	|Token: b	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'b')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1382,11 +1448,13 @@ Erros:
 (2, 'product')
  38	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1402,8 +1470,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -1430,6 +1500,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1452,6 +1523,8 @@ Erros:
  13	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  14	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  15	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1488,11 +1561,13 @@ Erros:
  28	| Controle: 2	|Token: su	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
  29	| Controle: 2	|Token: sum	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'sum')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1532,6 +1607,7 @@ Erros:
  33	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  34	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1580,7 +1656,9 @@ Erros:
 (13, '&number2')
  38	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1626,10 +1704,12 @@ Erros:
  31	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  32	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  33	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1690,6 +1770,7 @@ Erros:
 (2, 'sum')
  49	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1706,8 +1787,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -1734,6 +1817,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1751,6 +1835,7 @@ Erros:
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1783,6 +1868,7 @@ Erros:
  23	| Controle: 2	|Token: produc	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  24	| Controle: 2	|Token: product	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'product')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1822,6 +1908,7 @@ Erros:
  32	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  33	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1863,7 +1950,9 @@ Erros:
  29	| Controle: 5	|Token: ;	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ';')
  30	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1894,7 +1983,9 @@ Erros:
  18	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  19	| Controle: 2	|Token: b	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'b')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1945,11 +2036,13 @@ Erros:
 (2, 'product')
  38	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1965,8 +2058,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -1985,6 +2080,7 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  9	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: >	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '>')
@@ -2059,6 +2155,7 @@ Erros:
  47	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  48	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: >	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '>')
@@ -2076,8 +2173,11 @@ Erros:
  9	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  10	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
@@ -2154,6 +2254,7 @@ Erros:
  49	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  50	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
@@ -2173,9 +2274,11 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  12	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2206,6 +2309,7 @@ Erros:
 (6, '<')
  17	| Controle: 6	|Token: <	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 5	|Token: .	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
 (5, '.')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2220,10 +2324,12 @@ Erros:
 (6, '>')
  8	| Controle: 6	|Token: >	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (6, '>')
+ fim de string	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '-')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: ]	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
 (5, ']')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2316,6 +2422,8 @@ Erros:
  59	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
  60	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '--')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "<"	|erro_ponto: None	|force_continue: False
@@ -2323,16 +2431,20 @@ Erros:
 (6, '<')
  4	| Controle: 6	|Token: <	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (6, '<')
+ fim de string	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '+')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 8	|Token: -	|Char Analizado: "-"	|erro_ponto: None	|force_continue: False
 (8, '-')
  0	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: ]	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
 (5, ']')
 
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
@@ -2358,6 +2470,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -2375,6 +2488,7 @@ Erros:
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2388,6 +2502,7 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  9	| Controle: 2	|Token: a	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'a')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2445,6 +2560,7 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  12	| Controle: 2	|Token: e	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'e')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2467,7 +2583,9 @@ Erros:
  16	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  17	| Controle: 2	|Token: f	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'f')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2529,6 +2647,7 @@ Erros:
 (5, ')')
  51	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2595,6 +2714,7 @@ Erros:
 (5, ')')
  55	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2666,6 +2786,7 @@ Erros:
 (5, ')')
  60	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2730,6 +2851,7 @@ Erros:
 (5, ')')
  53	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2799,11 +2921,13 @@ Erros:
 (5, ')')
  58	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2819,8 +2943,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -2847,6 +2973,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -2864,6 +2991,7 @@ Erros:
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2920,6 +3048,7 @@ Erros:
  45	| Controle: 2	|Token: remainde	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  46	| Controle: 2	|Token: remainder	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'remainder')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2956,6 +3085,7 @@ Erros:
  29	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  30	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -2990,6 +3120,7 @@ Erros:
 (13, '&dividend')
  26	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3025,6 +3156,7 @@ Erros:
  28	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  29	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3058,7 +3190,9 @@ Erros:
 (13, '&divisor')
  25	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3103,7 +3237,9 @@ Erros:
  32	| Controle: 2	|Token: diviso	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  33	| Controle: 2	|Token: divisor	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'divisor')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3149,7 +3285,9 @@ Erros:
  33	| Controle: 2	|Token: diviso	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  34	| Controle: 2	|Token: divisor	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'divisor')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3196,6 +3334,7 @@ Erros:
 (2, 'quotient')
  39	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3243,6 +3382,7 @@ Erros:
 (2, 'remainder')
  39	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3259,8 +3399,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -3287,6 +3429,7 @@ Erros:
 (5, '.')
  17	| Controle: 2	|Token: h	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (2, 'h')
+ fim de string	| Controle: 6	|Token: >	|Char Analizado: ">"	|erro_ponto: None	|force_continue: False
 (6, '>')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -3304,6 +3447,7 @@ Erros:
  10	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  11	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3360,6 +3504,7 @@ Erros:
  45	| Controle: 2	|Token: remainde	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  46	| Controle: 2	|Token: remainder	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'remainder')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3396,6 +3541,7 @@ Erros:
  29	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  30	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3430,6 +3576,7 @@ Erros:
 (13, '&dividend')
  26	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3465,6 +3612,7 @@ Erros:
  28	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  29	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3498,7 +3646,9 @@ Erros:
 (13, '&divisor')
  25	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3543,7 +3693,9 @@ Erros:
  32	| Controle: 2	|Token: diviso	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  33	| Controle: 2	|Token: divisor	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'divisor')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3589,7 +3741,9 @@ Erros:
  33	| Controle: 2	|Token: diviso	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  34	| Controle: 2	|Token: divisor	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'divisor')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3636,6 +3790,7 @@ Erros:
 (2, 'quotient')
  39	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3683,6 +3838,7 @@ Erros:
 (2, 'remainder')
  39	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -3699,8 +3855,10 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  12	| Controle: 4	|Token: 0	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '0')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -3746,8 +3904,10 @@ Erros:
  33	| Controle: 11	|Token: 2.+as	|Char Analizado: "d"	|erro_ponto: True	|force_continue: False
  34	| Controle: 11	|Token: 2.+asd	|Char Analizado: "a"	|erro_ponto: True	|force_continue: False
  35	| Controle: 11	|Token: 2.+asda	|Char Analizado: "s"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 2.+asdas	|Char Analizado: "s"	|erro_ponto: True	|force_continue: False
 (11, '2.+asdas')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
@@ -3755,7 +3915,9 @@ Erros:
 (2, 'a2')
  3	| Controle: 5	|Token: .	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
 (5, '.')
+ fim de string	| Controle: 4	|Token: 2	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
 (4, '2')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: @	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -3777,13 +3939,17 @@ Erros:
 (4, '2')
  13	| Controle: -1	|Token: 	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  14	| Controle: 13	|Token: @	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: @#	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
 (13, '@#')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: as	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  3	| Controle: 12	|Token: as@	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (12, 'as@')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -3823,11 +3989,14 @@ Erros:
  35	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @	|Char Analizado: "J"	|erro_ponto: None	|force_continue: False
  36	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  37	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J)	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J) 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (9, '"asdasdas 212038yu890 ja0j)*)UY)* @J) ')
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "á"	|erro_ponto: None	|force_continue: False
  2	| Controle: 9	|Token: "á	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (9, '"á"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
@@ -3837,6 +4006,7 @@ Erros:
  5	| Controle: 14	|Token: /* ad	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  6	| Controle: 14	|Token: /* ads	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  7	| Controle: 14	|Token: /* adsa	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* adsad	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
@@ -3890,7 +4060,9 @@ Erros:
 (11, '2.@')
  41	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: @	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -3912,13 +4084,17 @@ Erros:
 (4, '2')
  13	| Controle: -1	|Token: 	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  14	| Controle: 13	|Token: @	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: @#	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
 (13, '@#')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: as	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  3	| Controle: 12	|Token: as@	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (12, 'as@')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -3958,7 +4134,9 @@ Erros:
  35	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @	|Char Analizado: "J"	|erro_ponto: None	|force_continue: False
  36	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  37	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J)	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J) 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (9, '"asdasdas 212038yu890 ja0j)*)UY)* @J) ')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
@@ -3968,6 +4146,7 @@ Erros:
  5	| Controle: 14	|Token: /* ad	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  6	| Controle: 14	|Token: /* ads	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  7	| Controle: 14	|Token: /* adsa	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* adsad	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
@@ -4012,6 +4191,7 @@ Erros:
 (8, '+')
  35	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  36	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
@@ -4041,6 +4221,7 @@ Erros:
  20	| Controle: 11	|Token: 1.1.1	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  21	| Controle: 11	|Token: 1.1.1.	|Char Analizado: "!"	|erro_ponto: True	|force_continue: False
 (11, '1.1.1.')
+ fim de string	| Controle: 7	|Token: !	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
 (7, '!')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
@@ -4069,6 +4250,7 @@ Erros:
  19	| Controle: 4	|Token: 9.	|Char Analizado: "0"	|erro_ponto: False	|force_continue: False
  20	| Controle: 4	|Token: 9.0	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  21	| Controle: 11	|Token: 9.0.	|Char Analizado: "0"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 9.0.0	|Char Analizado: "0"	|erro_ponto: True	|force_continue: False
 (11, '9.0.0')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
@@ -4105,6 +4287,8 @@ Erros:
  28	| Controle: 3	|Token: "test	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  29	| Controle: 3	|Token: "teste	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"teste"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -4139,6 +4323,7 @@ Erros:
 (2, 'ab')
  26	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -4151,6 +4336,7 @@ Erros:
  5	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  6	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  7	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: main	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
 (1, 'main')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -4180,6 +4366,7 @@ Erros:
 (2, 'a_2')
  20	| Controle: 6	|Token: =	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
 (6, '=')
+ fim de string	| Controle: 4	|Token: 5	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
 (4, '5')
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4199,6 +4386,7 @@ Erros:
  11	| Controle: 2	|Token: a32	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
  12	| Controle: 2	|Token: a325	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'a325')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: b	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4215,6 +4403,7 @@ Erros:
  10	| Controle: 3	|Token: "strin	|Char Analizado: "g"	|erro_ponto: None	|force_continue: False
  11	| Controle: 3	|Token: "string	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"string"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
@@ -4244,6 +4433,7 @@ Erros:
 (4, '7')
  20	| Controle: 7	|Token: !	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
 (7, '!')
+ fim de string	| Controle: 4	|Token: 1	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
 (4, '1')
  0	| Controle: -1	|Token: 	|Char Analizado: "A"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: A	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -4270,6 +4460,7 @@ Erros:
  19	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  20	| Controle: 2	|Token: a	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  21	| Controle: 2	|Token: ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: abc	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
 (2, 'abc')
  0	| Controle: -1	|Token: 	|Char Analizado: "A"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: A	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
@@ -4305,6 +4496,7 @@ Erros:
  28	| Controle: 9	|Token: "isso é uma cadeia errad	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  29	| Controle: 9	|Token: "isso é uma cadeia errada	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (9, '"isso é uma cadeia errada"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: &	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (13, '&')
@@ -4354,9 +4546,11 @@ Erros:
  18	| Controle: 9	|Token: " não vou fechar i	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  19	| Controle: 9	|Token: " não vou fechar is	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  20	| Controle: 9	|Token: " não vou fechar iss	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 9	|Token: " não vou fechar isso	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
 (9, '" não vou fechar isso')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
+ fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
@@ -4365,6 +4559,7 @@ Erros:
  3	| Controle: 11	|Token: 9..	|Char Analizado: "a"	|erro_ponto: True	|force_continue: False
  4	| Controle: 11	|Token: 9..a	|Char Analizado: "b"	|erro_ponto: True	|force_continue: False
  5	| Controle: 11	|Token: 9..ab	|Char Analizado: "c"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 9..abc	|Char Analizado: "c"	|erro_ponto: True	|force_continue: False
 (11, '9..abc')
  0	| Controle: -1	|Token: 	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: |	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
@@ -4375,6 +4570,7 @@ Erros:
  6	| Controle: 13	|Token: |&|id_	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
  7	| Controle: 13	|Token: |&|id_7	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
  8	| Controle: 13	|Token: |&|id_78	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: |&|id_789	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
 (13, '|&|id_789')
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
@@ -4382,22 +4578,27 @@ Erros:
  3	| Controle: 4	|Token: 3.4	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  4	| Controle: 11	|Token: 3.4.	|Char Analizado: "5"	|erro_ponto: True	|force_continue: False
  5	| Controle: 11	|Token: 3.4.5	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 3.4.5.	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
 (11, '3.4.5.')
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 1.	|Char Analizado: ","	|erro_ponto: False	|force_continue: False
  3	| Controle: 11	|Token: 1.,	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 1.,2	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
 (11, '1.,2')
  0	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
  1	| Controle: 5	|Token: ]	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, ']')
+ fim de string	| Controle: 5	|Token: [	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (5, '[')
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 11	|Token: 1n	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 11	|Token: 1nt	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
 (11, '1nt')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
+ fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
@@ -4406,6 +4607,7 @@ Erros:
  3	| Controle: 4	|Token: 2.2	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  4	| Controle: 11	|Token: 2.2.	|Char Analizado: " "	|erro_ponto: True	|force_continue: False
 (11, '2.2.')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -4415,6 +4617,7 @@ Erros:
  6	| Controle: 2	|Token: variav	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  7	| Controle: 2	|Token: variave	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
  8	| Controle: 2	|Token: variavel	|Char Analizado: "$"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 12	|Token: variavel$	|Char Analizado: "$"	|erro_ponto: None	|force_continue: False
 (12, 'variavel$')
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: v	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
@@ -4427,10 +4630,12 @@ Erros:
  8	| Controle: 12	|Token: v@riavel	|Char Analizado: "_"	|erro_ponto: None	|force_continue: False
  9	| Controle: 12	|Token: v@riavel_	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (12, 'v@riavel_')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 8	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  2	| Controle: 11	|Token: 8a	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  3	| Controle: 11	|Token: 8aa	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 11	|Token: 8aaa	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
 (11, '8aaa')
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
@@ -4454,27 +4659,36 @@ Erros:
  19	| Controle: 3	|Token: "cadeia de caracter	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  20	| Controle: 3	|Token: "cadeia de caractere	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  21	| Controle: 3	|Token: "cadeia de caracteres	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 3	|Token: "cadeia de caracteres 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (9, '"cadeia de caracteres ')
  0	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: ma	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
  3	| Controle: 2	|Token: mal	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'mal')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: f	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
 (2, 'f')
  0	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: o	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
 (2, 'o')
  0	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: r	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
 (2, 'r')
  0	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: m	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
 (2, 'm')
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: a	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
 (2, 'a')
  0	| Controle: -1	|Token: 	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: d	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
 (2, 'd')
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'a')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
@@ -4486,6 +4700,7 @@ Erros:
 (11, '8.1.2')
  6	| Controle: 8	|Token: +	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
 (8, '+')
+ fim de string	| Controle: 4	|Token: 9	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
 (4, '9')
  0	| Controle: -1	|Token: 	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: t	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
@@ -4502,6 +4717,7 @@ Erros:
  11	| Controle: 6	|Token: =	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (6, '=')
  12	| Controle: -1	|Token: 	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 4	|Token: 5	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
 (4, '5')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
@@ -4510,6 +4726,7 @@ Erros:
  4	| Controle: 14	|Token: /* E	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  5	| Controle: 14	|Token: /* Es	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  6	| Controle: 14	|Token: /* Est	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* Este	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -4545,6 +4762,7 @@ Erros:
 (5, '.')
  23	| Controle: 4	|Token: 1	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  24	| Controle: 4	|Token: 1.	|Char Analizado: "0"	|erro_ponto: False	|force_continue: False
+ fim de string	| Controle: 4	|Token: 1.0	|Char Analizado: "0"	|erro_ponto: True	|force_continue: False
 (4, '1.0')
  0	| Controle: -1	|Token: 	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
  1	| Controle: 5	|Token: ;	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
@@ -4576,6 +4794,7 @@ Erros:
  19	| Controle: 3	|Token: "&&	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  20	| Controle: 3	|Token: "&&&	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"&&&"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
  1	| Controle: 7	|Token: |	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
 (7, '||')
@@ -4596,6 +4815,8 @@ Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  2	| Controle: 14	|Token: /*	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
  1	| Controle: 7	|Token: !	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (7, '!')
@@ -4621,9 +4842,11 @@ Erros:
  21	| Controle: 3	|Token: "isso e uma cadeia*	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  22	| Controle: 3	|Token: "isso e uma cadeia*&	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"isso e uma cadeia*&"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  1	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
@@ -4633,7 +4856,9 @@ Erros:
  3	| Controle: 2	|Token: abc	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  4	| Controle: 12	|Token: abc&	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  5	| Controle: 12	|Token: abc&d	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 12	|Token: abc&de	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
 (12, 'abc&de')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
@@ -4644,6 +4869,7 @@ Erros:
  6	| Controle: 11	|Token: 1253..	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
  7	| Controle: 11	|Token: 1253..2	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
  8	| Controle: 11	|Token: 1253..22	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 1253..222	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
 (11, '1253..222')
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
@@ -4654,6 +4880,7 @@ Erros:
  6	| Controle: 11	|Token: 10nume	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  7	| Controle: 11	|Token: 10numer	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  8	| Controle: 11	|Token: 10numero	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 11	|Token: 10numeros	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
 (11, '10numeros')
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
@@ -4661,7 +4888,9 @@ Erros:
  3	| Controle: 11	|Token: 10E	|Char Analizado: "^"	|erro_ponto: None	|force_continue: False
  4	| Controle: 11	|Token: 10E^	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  5	| Controle: 11	|Token: 10E^1	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 11	|Token: 10E^17	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
 (11, '10E^17')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
@@ -4682,6 +4911,7 @@ Erros:
  16	| Controle: 3	|Token: "cadeia mal form	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  17	| Controle: 3	|Token: "cadeia mal forma	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  18	| Controle: 3	|Token: "cadeia mal formad	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 3	|Token: "cadeia mal formada	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
 (9, '"cadeia mal formada')
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -4725,6 +4955,7 @@ Erros:
  39	| Controle: 9	|Token: "não é permitido acentuar(fora do ASCII	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  40	| Controle: 9	|Token: "não é permitido acentuar(fora do ASCII)	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (9, '"não é permitido acentuar(fora do ASCII)"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: "n	|Char Analizado: "ã"	|erro_ponto: None	|force_continue: False
@@ -4734,6 +4965,7 @@ Erros:
  6	| Controle: 9	|Token: "não p	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  7	| Controle: 9	|Token: "não po	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  8	| Controle: 9	|Token: "não pod	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 9	|Token: "não pode	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
 (9, '"não pode')
  0	| Controle: -1	|Token: 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: p	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
@@ -4749,7 +4981,9 @@ Erros:
  10	| Controle: 2	|Token: linh	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  11	| Controle: 2	|Token: linha	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (2, 'linha')
+ fim de string	| Controle: 3	|Token: "	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (9, '"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "$"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: $	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -4757,10 +4991,13 @@ Erros:
  3	| Controle: 13	|Token: $to	|Char Analizado: "k"	|erro_ponto: None	|force_continue: False
  4	| Controle: 13	|Token: $tok	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  5	| Controle: 13	|Token: $toke	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: $token	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
 (13, '$token')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: &	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
 (13, '&')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
@@ -4775,6 +5012,7 @@ Erros:
  10	| Controle: 14	|Token: /* comenta	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  11	| Controle: 14	|Token: /* comentar	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  12	| Controle: 14	|Token: /* comentari	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* comentario	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
@@ -4794,6 +5032,7 @@ Erros:
  11	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  12	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4822,6 +5061,7 @@ Erros:
  18	| Controle: 6	|Token: =	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (6, '=')
  19	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 4	|Token: 0	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
 (4, '0')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4845,6 +5085,7 @@ Erros:
  15	| Controle: 8	|Token: +	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (8, '+')
  16	| Controle: -1	|Token: 	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: j	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
 (2, 'j')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4861,8 +5102,10 @@ Erros:
 (5, '(')
  11	| Controle: 2	|Token: k	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (2, 'k')
+ fim de string	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
@@ -4882,6 +5125,7 @@ Erros:
  13	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  14	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  15	| Controle: 2	|Token: cons	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: const	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
 (1, 'const')
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
@@ -4890,6 +5134,7 @@ Erros:
  4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'class')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -4924,6 +5169,7 @@ Erros:
 (1, 'return')
  28	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  29	| Controle: 2	|Token: i	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: if	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
 (1, 'if')
  0	| Controle: -1	|Token: 	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: e	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
@@ -4946,21 +5192,25 @@ Erros:
  15	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  16	| Controle: 2	|Token: re	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  17	| Controle: 2	|Token: rea	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: read	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
 (1, 'read')
  0	| Controle: -1	|Token: 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: p	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: pr	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  3	| Controle: 2	|Token: pri	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  4	| Controle: 2	|Token: prin	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: print	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
 (1, 'print')
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: v	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: vo	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  3	| Controle: 2	|Token: voi	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: void	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
 (1, 'void')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: int	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
 (1, 'int')
  0	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
@@ -4968,6 +5218,7 @@ Erros:
  3	| Controle: 2	|Token: rea	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
  4	| Controle: 2	|Token: real	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'real')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: b	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: bo	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
@@ -4998,6 +5249,7 @@ Erros:
  24	| Controle: 2	|Token: fals	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  25	| Controle: 2	|Token: false	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'false')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -5017,6 +5269,7 @@ Erros:
  13	| Controle: 2	|Token: int	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  14	| Controle: 2	|Token: inta	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'inta')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: fo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -5034,6 +5287,7 @@ Erros:
  12	| Controle: 2	|Token: afo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  13	| Controle: 2	|Token: afor	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'afor')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -5042,6 +5296,7 @@ Erros:
  4	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  5	| Controle: 2	|Token: a	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'a')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -5054,6 +5309,7 @@ Erros:
 (6, '=')
  7	| Controle: 4	|Token: 2	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (4, '2')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: !	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
@@ -5080,6 +5336,7 @@ Erros:
  16	| Controle: 6	|Token: >	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (6, '>=')
  17	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: "&	|Char Analizado: """	|erro_ponto: None	|force_continue: False
@@ -5096,6 +5353,7 @@ Erros:
  11	| Controle: 3	|Token: "&&&	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"&&&"')
  12	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "@"	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: "@	|Char Analizado: """	|erro_ponto: None	|force_continue: False
@@ -5109,12 +5367,15 @@ Erros:
  9	| Controle: 3	|Token: "k@k#	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"k@k#"')
  10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  2	| Controle: 14	|Token: /*	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: 14	|Token: /* 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /* c	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
@@ -5136,6 +5397,7 @@ Erros:
  11	| Controle: -1	|Token: 	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
  12	| Controle: 5	|Token: ;	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -5162,6 +5424,7 @@ Erros:
  20	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  21	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  22	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: if	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5177,6 +5440,7 @@ Erros:
  9	| Controle: 3	|Token: "a!	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"a!"')
  10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: t	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
@@ -5226,18 +5490,21 @@ Erros:
  43	| Controle: 3	|Token: "cadeia de caracteres/*88/8594@#%*&(*	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"cadeia de caracteres/*88/8594@#%*&(*"')
  44	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (2, 'a')
  2	| Controle: 6	|Token: =	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
 (6, '=')
+ fim de string	| Controle: 4	|Token: 2	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
 (4, '2')
  0	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: b	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (2, 'b')
  2	| Controle: 6	|Token: =	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (6, '=')
+ fim de string	| Controle: 4	|Token: 3	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (4, '3')
  0	| Controle: -1	|Token: 	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: s	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
@@ -5251,6 +5518,7 @@ Erros:
 (2, 'a')
  7	| Controle: 8	|Token: +	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
 (8, '+')
+ fim de string	| Controle: 2	|Token: b	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
 (2, 'b')
  0	| Controle: -1	|Token: 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: p	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -5279,6 +5547,7 @@ Erros:
  20	| Controle: 2	|Token: som	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  21	| Controle: 2	|Token: soma	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (2, 'soma')
+ fim de string	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
 
 Erros:
@@ -5288,6 +5557,7 @@ Erros:
  3	| Controle: 4	|Token: 045	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  4	| Controle: 4	|Token: 045.	|Char Analizado: "!"	|erro_ponto: False	|force_continue: False
  5	| Controle: 11	|Token: 045.!	|Char Analizado: "&"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 045.!&	|Char Analizado: "&"	|erro_ponto: True	|force_continue: False
 (11, '045.!&')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5298,6 +5568,7 @@ Erros:
 (11, '045.!')
  6	| Controle: 7	|Token: &	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
 (7, '&&')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 04	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
@@ -5307,12 +5578,14 @@ Erros:
 (4, '045.1')
  6	| Controle: 7	|Token: &	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
 (7, '&&')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 04	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
  3	| Controle: 4	|Token: 045	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  4	| Controle: 4	|Token: 045.	|Char Analizado: "1"	|erro_ponto: False	|force_continue: False
  5	| Controle: 4	|Token: 045.1	|Char Analizado: "&"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 045.1&	|Char Analizado: "&"	|erro_ponto: True	|force_continue: False
 (11, '045.1&')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5320,6 +5593,7 @@ Erros:
  3	| Controle: 4	|Token: 045	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  4	| Controle: 4	|Token: 045.	|Char Analizado: "!"	|erro_ponto: False	|force_continue: False
  5	| Controle: 11	|Token: 045.!	|Char Analizado: "|"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 045.!|	|Char Analizado: "|"	|erro_ponto: True	|force_continue: False
 (11, '045.!|')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5330,6 +5604,7 @@ Erros:
 (11, '045.!')
  6	| Controle: 7	|Token: |	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
 (7, '||')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 04	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
@@ -5339,12 +5614,14 @@ Erros:
 (4, '045.1')
  6	| Controle: 7	|Token: |	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
 (7, '||')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 04	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
  3	| Controle: 4	|Token: 045	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  4	| Controle: 4	|Token: 045.	|Char Analizado: "1"	|erro_ponto: False	|force_continue: False
  5	| Controle: 4	|Token: 045.1	|Char Analizado: "|"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 045.1|	|Char Analizado: "|"	|erro_ponto: True	|force_continue: False
 (11, '045.1|')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5357,6 +5634,7 @@ Erros:
  8	| Controle: 11	|Token: 045.!&ab	|Char Analizado: "c"	|erro_ponto: True	|force_continue: False
  9	| Controle: 11	|Token: 045.!&abc	|Char Analizado: ";"	|erro_ponto: True	|force_continue: False
 (11, '045.!&abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5372,6 +5650,7 @@ Erros:
  9	| Controle: 2	|Token: ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  10	| Controle: 2	|Token: abc	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5387,6 +5666,7 @@ Erros:
  9	| Controle: 2	|Token: ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  10	| Controle: 2	|Token: abc	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5399,6 +5679,7 @@ Erros:
  8	| Controle: 11	|Token: 045.1&ab	|Char Analizado: "c"	|erro_ponto: True	|force_continue: False
  9	| Controle: 11	|Token: 045.1&abc	|Char Analizado: ";"	|erro_ponto: True	|force_continue: False
 (11, '045.1&abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5415,6 +5696,7 @@ Erros:
  10	| Controle: 13	|Token: &ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  11	| Controle: 13	|Token: &abc	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (13, '&abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5433,6 +5715,7 @@ Erros:
  11	| Controle: 2	|Token: ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  12	| Controle: 2	|Token: abc	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'abc')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
@@ -5443,10 +5726,12 @@ Erros:
 (11, '045.!')
  6	| Controle: 7	|Token: !	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
 (7, '!')
+ fim de string	| Controle: 7	|Token: !	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
 (7, '!')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  2	| Controle: 14	|Token: /*	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /*/	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "6"	|erro_ponto: None	|force_continue: False
@@ -5475,6 +5760,7 @@ Erros:
  20	| Controle: 14	|Token: /*te	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  21	| Controle: 14	|Token: /*tes	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  22	| Controle: 14	|Token: /*test	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /*teste	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "|"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: |	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -5482,6 +5768,7 @@ Erros:
  4	| Controle: 13	|Token: |ab	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  5	| Controle: 13	|Token: |abc	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  6	| Controle: 13	|Token: |abc2	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: |abc28	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
 (13, '|abc28')
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
@@ -5512,6 +5799,7 @@ Erros:
  24	| Controle: 3	|Token: "origin*&/o	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  25	| Controle: 3	|Token: "origin*&/op	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"origin*&/op"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "y"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: y	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: y2	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
@@ -5529,6 +5817,7 @@ Erros:
  13	| Controle: 3	|Token: "ib34@%!(H	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"ib34@%!(H"')
  14	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: s	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: so	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
@@ -5540,6 +5829,7 @@ Erros:
 (8, '*')
  7	| Controle: 13	|Token: %	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  8	| Controle: 13	|Token: %a	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 13	|Token: %ao	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
 (13, '%ao')
  0	| Controle: -1	|Token: 	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 9	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
@@ -5551,6 +5841,7 @@ Erros:
  6	| Controle: 8	|Token: -	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
 (8, '-')
  7	| Controle: 4	|Token: 4	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 4	|Token: 47	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
 (4, '47')
 
 Erros:
@@ -5582,6 +5873,7 @@ Erros:
  21	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  22	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5593,6 +5885,7 @@ Erros:
  7	| Controle: 2	|Token: try	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'try')
  8	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5614,6 +5907,7 @@ Erros:
  17	| Controle: 2	|Token: printlnDebu	|Char Analizado: "g"	|erro_ponto: None	|force_continue: False
  18	| Controle: 2	|Token: printlnDebug	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (2, 'printlnDebug')
+ fim de string	| Controle: 5	|Token: (	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (5, '(')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5694,6 +5988,7 @@ Erros:
  70	| Controle: 3	|Token: "..	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  71	| Controle: 3	|Token: "...	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"..."')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5703,7 +5998,9 @@ Erros:
  6	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  7	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5730,6 +6027,7 @@ Erros:
  21	| Controle: 2	|Token: mqttClient	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'mqttClient')
  22	| Controle: -1	|Token: 	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 6	|Token: =	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (6, '=')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5756,6 +6054,7 @@ Erros:
  21	| Controle: 2	|Token: MqttClien	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  22	| Controle: 2	|Token: MqttClient	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (2, 'MqttClient')
+ fim de string	| Controle: 5	|Token: (	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (5, '(')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5785,6 +6084,7 @@ Erros:
  23	| Controle: 2	|Token: serverUR	|Char Analizado: "I"	|erro_ponto: None	|force_continue: False
  24	| Controle: 2	|Token: serverURI	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
 (2, 'serverURI')
+ fim de string	| Controle: 5	|Token: ,	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
 (5, ',')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5869,6 +6169,7 @@ Erros:
 (5, ')')
  70	| Controle: 5	|Token: )	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ,	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
 (5, ',')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5957,6 +6258,7 @@ Erros:
  76	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  77	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -5969,7 +6271,9 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  9	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6018,6 +6322,7 @@ Erros:
 (2, 'this')
  39	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6070,6 +6375,7 @@ Erros:
 (2, 'mqttOptions')
  42	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6109,6 +6415,7 @@ Erros:
  30	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  31	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6130,6 +6437,7 @@ Erros:
  17	| Controle: 2	|Token: printlnDebu	|Char Analizado: "g"	|erro_ponto: None	|force_continue: False
  18	| Controle: 2	|Token: printlnDebug	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (2, 'printlnDebug')
+ fim de string	| Controle: 5	|Token: (	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
 (5, '(')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6211,6 +6519,7 @@ Erros:
 (8, '+')
  70	| Controle: -1	|Token: 	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  71	| Controle: 2	|Token: e	|Char Analizado: "x"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: ex	|Char Analizado: "x"	|erro_ponto: None	|force_continue: False
 (2, 'ex')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6221,14 +6530,17 @@ Erros:
  6	| Controle: -1	|Token: 	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
  7	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
@@ -6253,7 +6565,9 @@ Erros:
 (11, '5a@n')
  17	| Controle: 6	|Token: =	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (6, '=')
+ fim de string	| Controle: 4	|Token: 3	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 (4, '3')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -6280,6 +6594,8 @@ Erros:
  20	| Controle: 9	|Token: "Árvor	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  21	| Controle: 9	|Token: "Árvore	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (9, '"Árvore"')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 3.	|Char Analizado: "."	|erro_ponto: False	|force_continue: False
@@ -6300,9 +6616,12 @@ Erros:
  17	| Controle: 11	|Token: 3................	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  18	| Controle: 11	|Token: 3.................	|Char Analizado: "."	|erro_ponto: True	|force_continue: False
  19	| Controle: 11	|Token: 3..................	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
+ fim de string	| Controle: 11	|Token: 3..................2	|Char Analizado: "2"	|erro_ponto: True	|force_continue: False
 (11, '3..................2')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
+ fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
@@ -6313,6 +6632,7 @@ Erros:
  5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'class')
  6	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
@@ -6357,6 +6677,7 @@ Erros:
  37	| Controle: 3	|Token: "nothingtoseeh	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  38	| Controle: 3	|Token: "nothingtoseehe	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  39	| Controle: 3	|Token: "nothingtoseeher	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 3	|Token: "nothingtoseehere	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
 (9, '"nothingtoseehere')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -6388,7 +6709,9 @@ Erros:
 (2, 'umdoistres')
  22	| Controle: 3	|Token: "	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '""')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
 Erros:
@@ -6419,8 +6742,10 @@ Erros:
  22	| Controle: 12	|Token: method#	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (12, 'method#')
  23	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: i	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
@@ -6450,6 +6775,7 @@ Erros:
 (6, '=')
  19	| Controle: 2	|Token: b	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (2, 'b')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: "	"	|erro_ponto: None	|force_continue: False
@@ -6468,6 +6794,7 @@ Erros:
  14	| Controle: 14	|Token: /*badcoment 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  15	| Controle: 14	|Token: /*badcoment 1	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  16	| Controle: 14	|Token: /*badcoment 12	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 14	|Token: /*badcoment 123	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
 
 Erros:
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
@@ -6484,6 +6811,7 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  9	| Controle: 4	|Token: 3	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '3')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -6499,7 +6827,9 @@ Erros:
  8	| Controle: -1	|Token: 	|Char Analizado: "6"	|erro_ponto: None	|force_continue: False
  9	| Controle: 4	|Token: 6	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '6')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: d	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: do	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
@@ -6563,8 +6893,10 @@ Erros:
  27	| Controle: 2	|Token: arg	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  28	| Controle: 2	|Token: argv	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (2, 'argv')
+ fim de string	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
  0	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6602,6 +6934,7 @@ Erros:
  26	| Controle: 5	|Token: )	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ')')
  27	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6652,6 +6985,7 @@ Erros:
  43	| Controle: 3	|Token: "Error on libsodium init!\n	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"Error on libsodium init!\\n"')
  44	| Controle: -1	|Token: 	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6674,12 +7008,14 @@ Erros:
 (8, '-')
  17	| Controle: 4	|Token: 1	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (4, '1')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6719,6 +7055,7 @@ Erros:
 (2, 'argv')
  30	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6734,6 +7071,7 @@ Erros:
  10	| Controle: -1	|Token: 	|Char Analizado: "w"	|erro_ponto: None	|force_continue: False
  11	| Controle: 2	|Token: w	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'w')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6753,6 +7091,7 @@ Erros:
 (5, '(')
  12	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -6780,7 +7119,9 @@ Erros:
 (5, '(')
  19	| Controle: 5	|Token: )	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ')')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
 
