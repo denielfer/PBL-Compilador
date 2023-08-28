@@ -73,7 +73,7 @@ def get_tokens(text):
     # Percorre os caracteres até o final da linha
     for n, char in enumerate(text[:-1]):
         print(f' {n}\t| Controle: {controle}\t|Token: {token}\t|Char Analizado: "{char}"\t|erro_ponto: {erro_ponto}\t|force_continue: {force_continue}')
-        
+    
         # Pula o caracter
         if (force_continue):
             force_continue = False
@@ -197,6 +197,7 @@ def get_tokens(text):
 
     # Gera o token com o estado atual quando termina o loop
     else: # else for, quando string acaba
+        print(f' fim de string\t| Controle: {controle}\t|Token: {token}\t|Char Analizado: "{char}"\t|erro_ponto: {erro_ponto}\t|force_continue: {force_continue}')
         for token_gerado in __gera_token_saida__(controle, token, erro_ponto):
             yield token_gerado
 
@@ -242,6 +243,7 @@ def __get_controle__(char, next):
 if __name__ == '__main__':
     # s = '/*/'
     # s = '++'
-    s = '3&.+a 3&&&.'
+    # s = '3&.+a 3&&&.'
+    s = '+-'
     for a in get_tokens(s):
         print(a)
