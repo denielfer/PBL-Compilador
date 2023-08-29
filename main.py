@@ -40,10 +40,8 @@ def analizar_lexico_files(paths:list[str]):
                             FBC = True
                             TEXT_FBC = str(e)
                             LINE_FBC = n
-                            
-                    print()
                     if erros:
-                        print("Erros:")
+                        out_file.write("\nErros:\n")
                         for erro in erros:
                             out_file.write(erro)
                     else:

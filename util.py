@@ -12,7 +12,16 @@ def load_files(base_dir:str = 'files') -> list[str]:
                 returned.append(path.join(dirpath, filename))
     return returned
 
+def apaga_output(base_dir:str = 'files'):
+    
+    from os import walk, path, remove
+    for (dirpath, dirnames, filenames) in walk(base_dir):
+        for filename in filenames: 
+            if filename.endswith("-saida.txt"):
+                remove(path.join(dirpath, filename))
+
 if __name__ == '__main__':
     # import sys
     # print(load_files(sys.argv[0]))
-    print(load_files())
+    # print(load_files())
+    apaga_output()
