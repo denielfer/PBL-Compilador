@@ -1,5 +1,5 @@
 # Conjunto de palavras reservadas
-PRE =  ["variables", "const", "class", "methods", "objects", "main", "return", "if", "else", "then", "for", "read", "print", "void", "int", "real","boolean", "string", "true", "false"]
+PRE =  ["variables","extends","this",'constructor', "const", "class", "methods", "objects", "main", "return", "if", "else", "then", "for", "read", "print", "void", "int", "real","boolean", "string", "true", "false"]
 
 from string import ascii_letters, digits, printable
 from re import search
