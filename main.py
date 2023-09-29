@@ -61,7 +61,7 @@ def analizador_sintatico_files(paths:list):
     sys.stdout = open('log_execução_sintatico.txt', "w", encoding=encode)
     # sys.stdout = console_print_stdout
     arquivos_lidos = []
-    regex_line = r'(\d)+\s\<(.+)\,\ (.+)\>'
+    regex_line = r'(\d+)\s\<(.+)\,\ (.+)\>'
 
     for path in paths:
         with open(path, 'r', encoding = encode) as file:
