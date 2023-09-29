@@ -1,0 +1,23 @@
+﻿1 <REL, <>
+1 <IDE, stdio>
+1 <DEL, .>
+1 <IDE, h>
+1 <REL, >>
+2 <PRE, int>
+2 <PRE, main>
+2 <DEL, (>
+2 <DEL, )>
+2 <DEL, {>
+4 <IDE, printf>
+4 <DEL, (>
+4 <CAC, "Hello, World!">
+4 <DEL, )>
+4 <DEL, ;>
+5 <PRE, return>
+5 <NRO, 0>
+5 <DEL, ;>
+6 <DEL, }>
+9 <CAC, "/*vai aparecer*/ // tudo">
+
+Erros:
+1 <TMF, #include>

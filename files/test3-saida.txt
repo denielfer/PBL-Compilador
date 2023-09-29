@@ -1,13 +1,2 @@
-﻿1 <REL, !=>
-1 <REL, ==>
-1 <REL, =>
-1 <REL, >>
-1 <REL, <>
-1 <REL, <=>
-1 <REL, >=>
-2 <CAC, "&">
-2 <LOG, &&>
-2 <CAC, "&&&">
-3 <CAC, "@">
-3 <CAC, "k@k#">
-A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
+﻿Erro sintatico:
+Na linha 1, era esperado ['const'] porém foi obtido !=

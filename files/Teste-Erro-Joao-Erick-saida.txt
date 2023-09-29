@@ -1,17 +1,2 @@
-﻿1 <DEL, ;>
-1 <IDE, numb>
-3 <NRO, 4025>
-3 <CAC, "origin*&/op">
-4 <IDE, y25>
-4 <CAC, "ib34@%!(H">
-5 <IDE, sofjv>
-5 <ART, *>
-6 <ART, ->
-6 <NRO, 47>
-
-Erros:
-1 <NMF, 6.a35&.99>
-2 <TMF, |abc28>
-3 <NMF, 07084.!&>
-5 <TMF, %ao>
-6 <NMF, 923.<>
+﻿Erro sintatico:
+Na linha 1, era esperado ['const'] porém foi obtido ;

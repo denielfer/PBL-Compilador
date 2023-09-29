@@ -8,7 +8,7 @@ def load_files(base_dir:str = 'files') -> list[str]:
     returned = []
     for (dirpath, dirnames, filenames) in walk(base_dir):
         for filename in filenames: 
-            if filename.endswith(".txt") and not filename.endswith("-saida.txt"):
+            if filename.endswith(".txt") and not filename.endswith("-saida.txt")and not filename.endswith("-saida_lexico.txt"):
                 returned.append(path.join(dirpath, filename))
     return returned
 

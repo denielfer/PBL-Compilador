@@ -1,21 +1,2 @@
-﻿6 <IDE, a2>
-6 <DEL, .>
-6 <NRO, 2>
-9 <DEL, .>
-9 <NRO, 2>
-
-Erros:
-2 <NMF, 2..2>
-2 <NMF, 2.......>
-2 <NMF, 2.@>
-2 <NMF, 2.a>
-2 <NMF, 2.2.2>
-2 <NMF, 2.+asdas>
-9 <TMF, @as>
-9 <TMF, #$@$>
-9 <TMF, @>
-9 <TMF, @#>
-12 <IMF, as@>
-15 <CMF, "asdasdas 212038yu890 ja0j)*)UY)* @J) >
-16 <CMF, "á">
-20 <CoMF, /* adsad>
+﻿Erro sintatico:
+Na linha 6, era esperado ['const'] porém foi obtido a2

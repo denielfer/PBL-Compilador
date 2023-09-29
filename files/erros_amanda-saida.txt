@@ -1,10 +1,2 @@
-﻿5 <DEL, ]>
-5 <DEL, [>
-
-Erros:
-1 <NMF, 9..abc>
-2 <TMF, |&|id_789>
-3 <NMF, 3.4.5.>
-4 <NMF, 1.,2>
-6 <NMF, 1nt>
-8 <CoMF, /*>
+﻿Erro sintatico:
+Na linha 5, era esperado ['const'] porém foi obtido ]

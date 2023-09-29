@@ -1,5 +1,4 @@
-files\01.txt
- 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+Ôªø 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  3	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
@@ -108,7 +107,6 @@ files\01.txt
  6	| Controle: 3	|Token: "&@#!$	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"&@#!$"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-files\02.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 1	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (4, '1')
@@ -180,7 +178,6 @@ files\02.txt
  5	| Controle: 4	|Token: 3	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (4, '3')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\1.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -335,7 +332,6 @@ files\1.txt
  25	| Controle: 3	|Token: "/*vai aparecer*/ // tudo	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"/*vai aparecer*/ // tudo"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-files\10.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  1	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
@@ -972,7 +968,6 @@ files\10.txt
  2	| Controle: 13	|Token: \	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 13	|Token: \n	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
 (13, '\\n')
-files\2.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1203,7 +1198,6 @@ files\2.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\3.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1473,7 +1467,6 @@ files\3.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\4.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -1789,7 +1782,6 @@ files\4.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\5.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -2059,7 +2051,6 @@ files\5.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\6.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
  1	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
 (8, '++')
@@ -2441,7 +2432,6 @@ files\6.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: ]	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
 (5, ']')
-files\7.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -2943,7 +2933,6 @@ files\7.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\8.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -3398,7 +3387,6 @@ files\8.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\9.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "#"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: #	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 13	|Token: #i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -3853,7 +3841,6 @@ files\9.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\arquivo_erros.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 2	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
@@ -3984,9 +3971,9 @@ files\arquivo_erros.txt
  fim de string	| Controle: 3	|Token: "asdasdas 212038yu890 ja0j)*)UY)* @J) 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (9, '"asdasdas 212038yu890 ja0j)*)UY)* @J) ')
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
- 1	| Controle: 3	|Token: "	|Char Analizado: "·"	|erro_ponto: None	|force_continue: False
- 2	| Controle: 9	|Token: "·	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-(9, '"·"')
+ 1	| Controle: 3	|Token: "	|Char Analizado: "√°"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 9	|Token: "√°	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+(9, '"√°"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
@@ -3999,7 +3986,6 @@ files\arquivo_erros.txt
  6	| Controle: 14	|Token: /* ads	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  7	| Controle: 14	|Token: /* adsa	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /* adsad	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
-files\arquivo_erros_daniel.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 2	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
@@ -4138,7 +4124,6 @@ files\arquivo_erros_daniel.txt
  6	| Controle: 14	|Token: /* ads	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  7	| Controle: 14	|Token: /* adsa	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /* adsad	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
-files\arquivo_erro_gabriel_entrada.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: fo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -4315,7 +4300,6 @@ files\arquivo_erro_gabriel_entrada.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\entrada_thiago.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -4393,7 +4377,6 @@ files\entrada_thiago.txt
  11	| Controle: 3	|Token: "string	|Char Analizado: """	|erro_ponto: None	|force_continue: False
 (3, '"string"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-files\erros-mateus.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 3.	|Char Analizado: "."	|erro_ponto: False	|force_continue: False
@@ -4464,27 +4447,27 @@ files\erros-mateus.txt
  7	| Controle: 3	|Token: "is	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  8	| Controle: 3	|Token: "iss	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  9	| Controle: 3	|Token: "isso	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 10	| Controle: 3	|Token: "isso 	|Char Analizado: "È"	|erro_ponto: None	|force_continue: False
- 11	| Controle: 9	|Token: "isso È	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 12	| Controle: 9	|Token: "isso È 	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
- 13	| Controle: 9	|Token: "isso È u	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
- 14	| Controle: 9	|Token: "isso È um	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 15	| Controle: 9	|Token: "isso È uma	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 16	| Controle: 9	|Token: "isso È uma 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
- 17	| Controle: 9	|Token: "isso È uma c	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 18	| Controle: 9	|Token: "isso È uma ca	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
- 19	| Controle: 9	|Token: "isso È uma cad	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 20	| Controle: 9	|Token: "isso È uma cade	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
- 21	| Controle: 9	|Token: "isso È uma cadei	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 22	| Controle: 9	|Token: "isso È uma cadeia	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 23	| Controle: 9	|Token: "isso È uma cadeia 	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 24	| Controle: 9	|Token: "isso È uma cadeia e	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 25	| Controle: 9	|Token: "isso È uma cadeia er	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 26	| Controle: 9	|Token: "isso È uma cadeia err	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 27	| Controle: 9	|Token: "isso È uma cadeia erra	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
- 28	| Controle: 9	|Token: "isso È uma cadeia errad	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 29	| Controle: 9	|Token: "isso È uma cadeia errada	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-(9, '"isso È uma cadeia errada"')
+ 10	| Controle: 3	|Token: "isso 	|Char Analizado: "√©"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 9	|Token: "isso √©	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 9	|Token: "isso √© 	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 9	|Token: "isso √© u	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 9	|Token: "isso √© um	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 9	|Token: "isso √© uma	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 9	|Token: "isso √© uma 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 9	|Token: "isso √© uma c	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 9	|Token: "isso √© uma ca	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 9	|Token: "isso √© uma cad	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 9	|Token: "isso √© uma cade	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 21	| Controle: 9	|Token: "isso √© uma cadei	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 22	| Controle: 9	|Token: "isso √© uma cadeia	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 23	| Controle: 9	|Token: "isso √© uma cadeia 	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 24	| Controle: 9	|Token: "isso √© uma cadeia e	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 25	| Controle: 9	|Token: "isso √© uma cadeia er	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 26	| Controle: 9	|Token: "isso √© uma cadeia err	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 27	| Controle: 9	|Token: "isso √© uma cadeia erra	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 28	| Controle: 9	|Token: "isso √© uma cadeia errad	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 29	| Controle: 9	|Token: "isso √© uma cadeia errada	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+(9, '"isso √© uma cadeia errada"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "&"	|erro_ponto: None	|force_continue: False
  1	| Controle: 13	|Token: &	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -4517,30 +4500,29 @@ files\erros-mateus.txt
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  2	| Controle: 3	|Token: " 	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
- 3	| Controle: 3	|Token: " n	|Char Analizado: "„"	|erro_ponto: None	|force_continue: False
- 4	| Controle: 9	|Token: " n„	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 5	| Controle: 9	|Token: " n„o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 6	| Controle: 9	|Token: " n„o 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
- 7	| Controle: 9	|Token: " n„o v	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 8	| Controle: 9	|Token: " n„o vo	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
- 9	| Controle: 9	|Token: " n„o vou	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 10	| Controle: 9	|Token: " n„o vou 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
- 11	| Controle: 9	|Token: " n„o vou f	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 12	| Controle: 9	|Token: " n„o vou fe	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
- 13	| Controle: 9	|Token: " n„o vou fec	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
- 14	| Controle: 9	|Token: " n„o vou fech	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 15	| Controle: 9	|Token: " n„o vou fecha	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 16	| Controle: 9	|Token: " n„o vou fechar	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 17	| Controle: 9	|Token: " n„o vou fechar 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
- 18	| Controle: 9	|Token: " n„o vou fechar i	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
- 19	| Controle: 9	|Token: " n„o vou fechar is	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
- 20	| Controle: 9	|Token: " n„o vou fechar iss	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: 9	|Token: " n„o vou fechar isso	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
-(9, '" n„o vou fechar isso')
+ 3	| Controle: 3	|Token: " n	|Char Analizado: "√£"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 9	|Token: " n√£	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 9	|Token: " n√£o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 9	|Token: " n√£o 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 9	|Token: " n√£o v	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 9	|Token: " n√£o vo	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 9	|Token: " n√£o vou	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 9	|Token: " n√£o vou 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 9	|Token: " n√£o vou f	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 9	|Token: " n√£o vou fe	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 9	|Token: " n√£o vou fec	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 9	|Token: " n√£o vou fech	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 9	|Token: " n√£o vou fecha	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 9	|Token: " n√£o vou fechar	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 9	|Token: " n√£o vou fechar 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 9	|Token: " n√£o vou fechar i	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 9	|Token: " n√£o vou fechar is	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 9	|Token: " n√£o vou fechar iss	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 9	|Token: " n√£o vou fechar isso	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+(9, '" n√£o vou fechar isso')
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
-files\erros_amanda.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "9"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 9	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 9.	|Char Analizado: "."	|erro_ponto: False	|force_continue: False
@@ -4587,7 +4569,6 @@ files\erros_amanda.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
-files\erros_fernanda.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 2	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 2.	|Char Analizado: "2"	|erro_ponto: False	|force_continue: False
@@ -4676,7 +4657,6 @@ files\erros_fernanda.txt
  1	| Controle: 2	|Token: a	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'a')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\erro_Allan.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "8"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 8	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 8.	|Char Analizado: "1"	|erro_ponto: False	|force_continue: False
@@ -4713,7 +4693,6 @@ files\erro_Allan.txt
  5	| Controle: 14	|Token: /* Es	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
  6	| Controle: 14	|Token: /* Est	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /* Este	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
-files\matheus.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: ab	|Char Analizado: "g"	|erro_ponto: None	|force_continue: False
@@ -4833,7 +4812,6 @@ files\matheus.txt
 (5, '}')
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\minimo_gramatica.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -5092,7 +5070,6 @@ files\minimo_gramatica.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\Test File - Joao Pedro.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
@@ -5159,58 +5136,58 @@ files\Test File - Joao Pedro.txt
 (9, '"cadeia mal formada')
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
- 2	| Controle: 3	|Token: "n	|Char Analizado: "„"	|erro_ponto: None	|force_continue: False
- 3	| Controle: 9	|Token: "n„	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 4	| Controle: 9	|Token: "n„o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 5	| Controle: 9	|Token: "n„o 	|Char Analizado: "È"	|erro_ponto: None	|force_continue: False
- 6	| Controle: 9	|Token: "n„o È	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 7	| Controle: 9	|Token: "n„o È 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
- 8	| Controle: 9	|Token: "n„o È p	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 9	| Controle: 9	|Token: "n„o È pe	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 10	| Controle: 9	|Token: "n„o È per	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
- 11	| Controle: 9	|Token: "n„o È perm	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
- 12	| Controle: 9	|Token: "n„o È permi	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
- 13	| Controle: 9	|Token: "n„o È permit	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
- 14	| Controle: 9	|Token: "n„o È permiti	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
- 15	| Controle: 9	|Token: "n„o È permitid	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 16	| Controle: 9	|Token: "n„o È permitido	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 17	| Controle: 9	|Token: "n„o È permitido 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 18	| Controle: 9	|Token: "n„o È permitido a	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
- 19	| Controle: 9	|Token: "n„o È permitido ac	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 20	| Controle: 9	|Token: "n„o È permitido ace	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
- 21	| Controle: 9	|Token: "n„o È permitido acen	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
- 22	| Controle: 9	|Token: "n„o È permitido acent	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
- 23	| Controle: 9	|Token: "n„o È permitido acentu	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 24	| Controle: 9	|Token: "n„o È permitido acentua	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 25	| Controle: 9	|Token: "n„o È permitido acentuar	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
- 26	| Controle: 9	|Token: "n„o È permitido acentuar(	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
- 27	| Controle: 9	|Token: "n„o È permitido acentuar(f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 28	| Controle: 9	|Token: "n„o È permitido acentuar(fo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 29	| Controle: 9	|Token: "n„o È permitido acentuar(for	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 30	| Controle: 9	|Token: "n„o È permitido acentuar(fora	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 31	| Controle: 9	|Token: "n„o È permitido acentuar(fora 	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
- 32	| Controle: 9	|Token: "n„o È permitido acentuar(fora d	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 33	| Controle: 9	|Token: "n„o È permitido acentuar(fora do	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 34	| Controle: 9	|Token: "n„o È permitido acentuar(fora do 	|Char Analizado: "A"	|erro_ponto: None	|force_continue: False
- 35	| Controle: 9	|Token: "n„o È permitido acentuar(fora do A	|Char Analizado: "S"	|erro_ponto: None	|force_continue: False
- 36	| Controle: 9	|Token: "n„o È permitido acentuar(fora do AS	|Char Analizado: "C"	|erro_ponto: None	|force_continue: False
- 37	| Controle: 9	|Token: "n„o È permitido acentuar(fora do ASC	|Char Analizado: "I"	|erro_ponto: None	|force_continue: False
- 38	| Controle: 9	|Token: "n„o È permitido acentuar(fora do ASCI	|Char Analizado: "I"	|erro_ponto: None	|force_continue: False
- 39	| Controle: 9	|Token: "n„o È permitido acentuar(fora do ASCII	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
- 40	| Controle: 9	|Token: "n„o È permitido acentuar(fora do ASCII)	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-(9, '"n„o È permitido acentuar(fora do ASCII)"')
+ 2	| Controle: 3	|Token: "n	|Char Analizado: "√£"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 9	|Token: "n√£	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 9	|Token: "n√£o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 9	|Token: "n√£o 	|Char Analizado: "√©"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 9	|Token: "n√£o √©	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 9	|Token: "n√£o √© 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 9	|Token: "n√£o √© p	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 9	|Token: "n√£o √© pe	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 9	|Token: "n√£o √© per	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 9	|Token: "n√£o √© perm	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 9	|Token: "n√£o √© permi	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 9	|Token: "n√£o √© permit	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 9	|Token: "n√£o √© permiti	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 9	|Token: "n√£o √© permitid	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 9	|Token: "n√£o √© permitido	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 9	|Token: "n√£o √© permitido 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 9	|Token: "n√£o √© permitido a	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 9	|Token: "n√£o √© permitido ac	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 9	|Token: "n√£o √© permitido ace	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 21	| Controle: 9	|Token: "n√£o √© permitido acen	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 22	| Controle: 9	|Token: "n√£o √© permitido acent	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 23	| Controle: 9	|Token: "n√£o √© permitido acentu	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 24	| Controle: 9	|Token: "n√£o √© permitido acentua	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 25	| Controle: 9	|Token: "n√£o √© permitido acentuar	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
+ 26	| Controle: 9	|Token: "n√£o √© permitido acentuar(	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
+ 27	| Controle: 9	|Token: "n√£o √© permitido acentuar(f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 28	| Controle: 9	|Token: "n√£o √© permitido acentuar(fo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 29	| Controle: 9	|Token: "n√£o √© permitido acentuar(for	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 30	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 31	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora 	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 32	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora d	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 33	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 34	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do 	|Char Analizado: "A"	|erro_ponto: None	|force_continue: False
+ 35	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do A	|Char Analizado: "S"	|erro_ponto: None	|force_continue: False
+ 36	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do AS	|Char Analizado: "C"	|erro_ponto: None	|force_continue: False
+ 37	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do ASC	|Char Analizado: "I"	|erro_ponto: None	|force_continue: False
+ 38	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do ASCI	|Char Analizado: "I"	|erro_ponto: None	|force_continue: False
+ 39	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do ASCII	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
+ 40	| Controle: 9	|Token: "n√£o √© permitido acentuar(fora do ASCII)	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+(9, '"n√£o √© permitido acentuar(fora do ASCII)"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  1	| Controle: 3	|Token: "	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
- 2	| Controle: 3	|Token: "n	|Char Analizado: "„"	|erro_ponto: None	|force_continue: False
- 3	| Controle: 9	|Token: "n„	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 4	| Controle: 9	|Token: "n„o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 5	| Controle: 9	|Token: "n„o 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
- 6	| Controle: 9	|Token: "n„o p	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 7	| Controle: 9	|Token: "n„o po	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
- 8	| Controle: 9	|Token: "n„o pod	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: 9	|Token: "n„o pode	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
-(9, '"n„o pode')
+ 2	| Controle: 3	|Token: "n	|Char Analizado: "√£"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 9	|Token: "n√£	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 9	|Token: "n√£o	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 9	|Token: "n√£o 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 9	|Token: "n√£o p	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 9	|Token: "n√£o po	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 9	|Token: "n√£o pod	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 9	|Token: "n√£o pode	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+(9, '"n√£o pode')
  0	| Controle: -1	|Token: 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: p	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: pu	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
@@ -5257,7 +5234,6 @@ files\Test File - Joao Pedro.txt
  11	| Controle: 14	|Token: /* comentar	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  12	| Controle: 14	|Token: /* comentari	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /* comentario	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
-files\test-Allan-Capstrano.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: v	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: vo	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
@@ -5350,7 +5326,6 @@ files\test-Allan-Capstrano.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\test-geral-01.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -10360,7 +10335,6 @@ files\test-geral-01.txt
 (5, '}')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
-files\test-geral-02.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -13706,7 +13680,6 @@ files\test-geral-02.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\test-geral-03.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -15571,7 +15544,6 @@ files\test-geral-03.txt
 (5, '}')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
-files\test-geral-04.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -22310,7 +22282,6 @@ files\test-geral-04.txt
 (5, '}')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
-files\test1.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: v	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: vi	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -22453,7 +22424,6 @@ files\test1.txt
  25	| Controle: 2	|Token: false	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'false')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\test2.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -22513,7 +22483,6 @@ files\test2.txt
  7	| Controle: 4	|Token: 2	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (4, '2')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\test3.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "!"	|erro_ponto: None	|force_continue: False
  1	| Controle: 6	|Token: !	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (6, '!=')
@@ -22579,7 +22548,6 @@ files\test3.txt
  fim de string	| Controle: 14	|Token: /* c	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\test4.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "f"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: f	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: fo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
@@ -22694,7 +22662,6 @@ files\test4.txt
 (3, '"cadeia de caracteres/*88/8594@#%*&(*"')
  44	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
-files\test5.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: a	|Char Analizado: "="	|erro_ponto: None	|force_continue: False
 (2, 'a')
@@ -22739,9 +22706,9 @@ files\test5.txt
  11	| Controle: 3	|Token: "a so	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
  12	| Controle: 3	|Token: "a som	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
  13	| Controle: 3	|Token: "a soma	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
- 14	| Controle: 3	|Token: "a soma 	|Char Analizado: "È"	|erro_ponto: None	|force_continue: False
- 15	| Controle: 9	|Token: "a soma È	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-(9, '"a soma È"')
+ 14	| Controle: 3	|Token: "a soma 	|Char Analizado: "√©"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 9	|Token: "a soma √©	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+(9, '"a soma √©"')
  16	| Controle: -1	|Token: 	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
  17	| Controle: 5	|Token: ,	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
 (5, ',')
@@ -22752,7 +22719,6 @@ files\test5.txt
 (2, 'soma')
  fim de string	| Controle: 5	|Token: )	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
 (5, ')')
-files\test6.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "0"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 0	|Char Analizado: "4"	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 04	|Char Analizado: "5"	|erro_ponto: None	|force_continue: False
@@ -22934,7 +22900,6 @@ files\test6.txt
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  2	| Controle: 14	|Token: /*	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /*/	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
-files\Teste da Gram·tica Geral.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
@@ -28076,7 +28041,6 @@ files\Teste da Gram·tica Geral.txt
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
-files\Teste-Erro-Joao-Erick.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "6"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 6	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 6.	|Char Analizado: "a"	|erro_ponto: False	|force_continue: False
@@ -28186,7 +28150,6 @@ files\Teste-Erro-Joao-Erick.txt
  7	| Controle: 4	|Token: 4	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 4	|Token: 47	|Char Analizado: "7"	|erro_ponto: None	|force_continue: False
 (4, '47')
-files\Teste-Joao-Erick.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "p"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: p	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: pu	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
@@ -28884,7 +28847,6 @@ files\Teste-Joao-Erick.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\testes_erro_thiago.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  1	| Controle: 4	|Token: 3	|Char Analizado: "."	|erro_ponto: None	|force_continue: False
  2	| Controle: 4	|Token: 3.	|Char Analizado: "3"	|erro_ponto: False	|force_continue: False
@@ -28928,14 +28890,14 @@ files\testes_erro_thiago.txt
  13	| Controle: 6	|Token: =	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (6, '=')
  14	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
- 15	| Controle: 3	|Token: "	|Char Analizado: "¡"	|erro_ponto: None	|force_continue: False
- 16	| Controle: 9	|Token: "¡	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 17	| Controle: 9	|Token: "¡r	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
- 18	| Controle: 9	|Token: "¡rv	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
- 19	| Controle: 9	|Token: "¡rvo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
- 20	| Controle: 9	|Token: "¡rvor	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
- 21	| Controle: 9	|Token: "¡rvore	|Char Analizado: """	|erro_ponto: None	|force_continue: False
-(9, '"¡rvore"')
+ 15	| Controle: 3	|Token: "	|Char Analizado: "√Å"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 9	|Token: "√Å	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 9	|Token: "√År	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 9	|Token: "√Årv	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 9	|Token: "√Årvo	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 9	|Token: "√Årvor	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 21	| Controle: 9	|Token: "√Årvore	|Char Analizado: """	|erro_ponto: None	|force_continue: False
+(9, '"√Årvore"')
  fim de string	| Controle: -1	|Token: 	|Char Analizado: """	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  0	| Controle: -1	|Token: 	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
@@ -28964,7 +28926,6 @@ files\testes_erro_thiago.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
  1	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: True
  fim de string	| Controle: 14	|Token: /*	|Char Analizado: "*"	|erro_ponto: None	|force_continue: False
-files\teste_joao_lucas_erros1.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: cl	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
@@ -29054,7 +29015,6 @@ files\teste_joao_lucas_erros1.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
-files\teste_joao_lucas_erros2.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -29135,7 +29095,6 @@ files\teste_joao_lucas_erros2.txt
  15	| Controle: 14	|Token: /*badcoment 1	|Char Analizado: "2"	|erro_ponto: None	|force_continue: False
  16	| Controle: 14	|Token: /*badcoment 12	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 14	|Token: /*badcoment 123	|Char Analizado: "3"	|erro_ponto: None	|force_continue: False
-files\test_gabriel.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
@@ -29194,7 +29153,6 @@ files\test_gabriel.txt
  17	| Controle: 2	|Token: b	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (2, 'b')
  18	| Controle: -1	|Token: 	|Char Analizado: "/"	|erro_ponto: None	|force_continue: False
-files\test_rios.txt
  0	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False

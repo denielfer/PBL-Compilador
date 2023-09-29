@@ -1,15 +1,2 @@
-﻿13 <IDE, pular>
-13 <IDE, linha>
-
-Erros:
-2 <IMF, abc&de>
-5 <NMF, 1253..222>
-6 <NMF, 10numeros>
-7 <NMF, 10E^17>
-10 <CMF, "cadeia mal formada>
-11 <CMF, "não é permitido acentuar(fora do ASCII)">
-12 <CMF, "não pode>
-13 <CMF, ">
-16 <TMF, $token>
-17 <TMF, &>
-21 <CoMF, /* comentario    mal    formado>
+﻿Erro sintatico:
+Na linha 3, era esperado ['const'] porém foi obtido pular

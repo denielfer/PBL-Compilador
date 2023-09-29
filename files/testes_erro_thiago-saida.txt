@@ -1,13 +1,2 @@
-﻿1 <REL, =>
-1 <REL, =>
-1 <NRO, 3>
-3 <PRE, int>
-3 <REL, =>
-
-Erros:
-1 <NMF, 3.3.3.3@1@a>
-1 <NMF, 5a@n>
-3 <IMF, a@a@a@a>
-3 <CMF, "Árvore">
-5 <NMF, 3..................2>
-8 <CoMF, /*COMENTÁRIO DE BLOCO MAL FORMADO (?)>
+﻿Erro sintatico:
+Na linha 1, era esperado ['const'] porém foi obtido =

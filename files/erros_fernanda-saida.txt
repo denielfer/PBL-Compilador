@@ -1,15 +1,2 @@
-﻿6 <IDE, mal>
-7 <IDE, f>
-8 <IDE, o>
-9 <IDE, r>
-10 <IDE, m>
-11 <IDE, a>
-12 <IDE, d>
-13 <IDE, a>
-
-Erros:
-1 <NMF, 2.2.>
-2 <IMF, variavel$>
-3 <IMF, v@riavel_>
-4 <NMF, 8aaa>
-5 <CMF, "cadeia de caracteres >
+﻿Erro sintatico:
+Na linha 6, era esperado ['const'] porém foi obtido mal
