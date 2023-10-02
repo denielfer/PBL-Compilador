@@ -1,7 +1,14 @@
-﻿token: {'line': '1', 'type': 'PRE', 'token': 'const'}	| stack:[('const', 0)]
-Buscando:{'key': 'token', 'value': 'const', 'next': ('const', 1)}	|True
-token: {'line': '1', 'type': 'DEL', 'token': '{'}	| stack:[('const', 1)]
-Buscando:{'key': 'token', 'value': '{', 'next': ('const', 2)}	|True
-token: {'line': '2', 'type': 'PRE', 'token': 'variables'}	| stack:[('const', 2)]
-Buscando:{'key': 'token', 'value': '}', 'next': ('variables', 0)}	|False
-Na linha 2, era esperado ['}'] porém foi obtido variables
+﻿token: {'line': 1, 'type': 'PRE', 'token': 'const'}	| stack:[('END', 0), ('class', 0), ('variables', 0), ('const', 0)]
+Buscando:{'key': 'token', 'value': 'const', 'next': [('const', 1)]}	|True
+token: {'line': 1, 'type': 'DEL', 'token': '{'}	| stack:[('END', 0), ('class', 0), ('variables', 0), ('const', 1)]
+Buscando:{'key': 'token', 'value': '{', 'next': [('end_block', 0)]}	|True
+token: {'line': 2, 'type': 'PRE', 'token': 'variables'}	| stack:[('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
+Buscando:{'key': 'token', 'value': '}', 'next': []}	|False
+modo thiago segue pra frente
+token: {'line': 2, 'type': 'DEL', 'token': '{'}	| stack:[('END', 0), ('class', 0), ('variables', 0)]
+Buscando:{'key': 'token', 'value': 'variables', 'next': [('variables', 1)]}	|False
+modo thiago segue pra frente
+token: {'line': 2, 'type': 'DEL', 'token': '}'}	| stack:[('END', 0), ('class', 0), ('variables', 1)]
+Buscando:{'key': 'token', 'value': '{', 'next': [('end_block', 0)]}	|False
+modo thiago segue pra frente
+acabou a lista de tokens logo erro

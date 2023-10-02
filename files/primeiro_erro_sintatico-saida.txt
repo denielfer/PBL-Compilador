@@ -1,2 +1,12 @@
-﻿Erro sintatico:
+﻿1 <PRE, const>
+1 <DEL, {>
+2 <PRE, variables>
+2 <DEL, {>
+2 <DEL, }>
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
+
+Erros Sintaticos identificados:
 Na linha 2, era esperado ['}'] porém foi obtido variables
+Na linha 2, era esperado ['variables'] porém foi obtido {
+Na linha 2, era esperado ['{'] porém foi obtido }
+Na linha 3, era esperado ['}'] porém foi obtido 'EOF'
