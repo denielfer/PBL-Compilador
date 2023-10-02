@@ -4,22 +4,24 @@ class erro_sintaico(Exception):
 
 class file_end(Exception):
     pass
-## alterar next para ser uma função que recebe estado atual e decide o que deve ser empilhado com base nisso
+
 get_functions = {
-    'const':[{"test":[{"key":'token',"value":'const','next':[('const'   ,1)]}],"erro":'next'},
-             {"test":[{"key":'token',"value":'{'    ,'next':[('end_block'   ,0)]}],"erro":'next'},
+    'const':[{"test":[{"key":'token',"value":'const','next':[('const',1)]}],"erro":'next'},
+             {"test":[{"key":'token',"value":'{'    ,'next':[('end_block',0)]}],"erro":'next'},
             ],
     'variables':[
-                {"test":[{"key":'token',"value":'variables','next':[('variables'   ,1)]}],"erro":'next'},
-                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block'   ,0)]}],"erro":'next'},
+                {"test":[{"key":'token',"value":'variables','next':[('variables',1)]}],"erro":'next'},
+                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block',0)]}],"erro":'next'},
                 ],
     'class': [
               {"test":[{'key':'token',"value":'class',"next":[('class',1)]}],"erro":'next'},
               {"test":[
-                {'key':'token',"value":'main',"next":[('end_block'   ,0),('class',4)]},
-                {'key':'type',"value":'IDE',"next":[('end_block'   ,0),('constructor',0),('class',2)]}
+                {'key':'token',"value":'main',"next":[('end_block',0),('class',4)]},
+                {'key':'type',"value":'IDE',"next":[('end_block',0),('constructor',0),('class',2)]}
                 ],"erro":'next'},
-              {"test":[{'key':'token',"value":'extends',"next":[("class",3)]}],"erro":'next'},
+              {"test":[{'key':'token',"value":'extends',"next":[("class",3)]},
+                       {'key':'token',"value":'',"next":[("class",4)]},
+                       ],"erro":'next'},
               {"test":[{'key':'type',"value":'IDE',"next":[("class",4)]}],"erro":'next'},
               {"test":[{'key':'token',"value":'{',"next":[('methods',0),('object',0),("variables",0)]}],"erro":'next'}
               ],
