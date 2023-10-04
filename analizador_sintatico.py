@@ -6,36 +6,36 @@ class file_end(Exception):
     pass
 
 get_functions = {
-    'const':[{"test":[{"key":'token',"value":'const','next':[('const',1)]}],"erro":'next'},
-             {"test":[{"key":'token',"value":'{'    ,'next':[('end_block',0)]}],"erro":'next'},
+    'const':[{"test":[{"key":'token',"value":'const','next':[('const',1)]}],'erro':{'tipo_recuperação':'next'}},
+             {"test":[{"key":'token',"value":'{'    ,'next':[('end_block',0)]}],'erro':{'tipo_recuperação':'next'}},
             ],
     'variables':[
-                {"test":[{"key":'token',"value":'variables','next':[('variables',1)]}],"erro":'next'},
-                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block',0)]}],"erro":'next'},
+                {"test":[{"key":'token',"value":'variables','next':[('variables',1)]}],'erro':{'tipo_recuperação':'next'}},
+                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block',0)]}],'erro':{'tipo_recuperação':'next'}},
                 ],
     'class': [
-              {"test":[{'key':'token',"value":'class',"next":[('class',1)]}],"erro":'next'},
+              {"test":[{'key':'token',"value":'class',"next":[('class',1)]}],'erro':{'tipo_recuperação':'next'}},
               {"test":[
                 {'key':'token',"value":'main',"next":[('end_block',0),('class',4)]},
                 {'key':'type',"value":'IDE',"next":[('end_block',0),('constructor',0),('class',2)]}
-                ],"erro":'next'},
+                ],'erro':{'tipo_recuperação':'next'}},
               {"test":[{'key':'token',"value":'extends',"next":[("class",3)]},
                        {'key':'token',"value":'',"next":[("class",4)]},
-                       ],"erro":'next'},
-              {"test":[{'key':'type',"value":'IDE',"next":[("class",4)]}],"erro":'next'},
-              {"test":[{'key':'token',"value":'{',"next":[('methods',0),('object',0),("variables",0)]}],"erro":'next'}
+                       ],'erro':{'tipo_recuperação':'next'}},
+              {"test":[{'key':'type',"value":'IDE',"next":[("class",4)]}],'erro':{'tipo_recuperação':'next'}},
+              {"test":[{'key':'token',"value":'{',"next":[('methods',0),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}}
               ],
     'object':[
-                {"test":[{"key":'token',"value":'objects','next':[('object',1)]}],"erro":'next'},
-                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block',0)]}],"erro":'next'},
+                {"test":[{"key":'token',"value":'objects','next':[('object',1)]}],'erro':{'tipo_recuperação':'next'}},
+                {"test":[{"key":'token',"value":'{'       ,'next':[('end_block',0)]}],'erro':{'tipo_recuperação':'next'}},
                 ],
     'methods' :[ 
                 {"test":[
                    {'key':'token',"value":'methods',"next":[('methods',1)]},
-                ],"erro":'next'},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'key':'token',"value":'{',"next":[('end_block',0),('func_dec',0)]},
-                ],"erro":'next'},
+                ],'erro':{'tipo_recuperação':'next'}},
                ],
     'func_dec':[
                 {
@@ -70,22 +70,22 @@ get_functions = {
     ],
     'return':[
                 {"test":[
-                    {"key":'token',"value":'return','next':[('return',1)]}],"erro":'next'
+                    {"key":'token',"value":'return','next':[('return',1)]}],'erro':{'tipo_recuperação':'next'}
                 },
                 {"test":[
                         {"key":'token',"value":'','next':[('return',2)]},
-                    ],"erro":'next'
+                    ],'erro':{'tipo_recuperação':'next'}
                 },
                 {"test":[
-                    {"key":'token',"value":';','next':[]}],"erro":'next'
+                    {"key":'token',"value":';','next':[]}],'erro':{'tipo_recuperação':'next'}
                 },
             ],
     'end_block':[
-                {"test":[{"key":'token',"value":'}'       ,'next':[]}],"erro":'next'}
+                {"test":[{"key":'token',"value":'}'       ,'next':[]}],'erro':{'tipo_recuperação':'next'}}
                 ],
     "modelo" : [ 
                 {"test":[
-                ],"erro":'next'}
+                ],'erro':{'tipo_recuperação':'next'}}
                ],
 }
 
@@ -111,6 +111,7 @@ def analize(get_token:iter):
                         stack.append(item)
                     print('True')
                     break
+                # pode dar merda se vazil nao for o primeiro token
                 elif action["value"] == "": # se for token vazio continuamos em busca pelo proximo elemento q vem
                     print('True')
                     stage,pos_stage = action["next"][0]
@@ -120,9 +121,9 @@ def analize(get_token:iter):
                     esperado.append(action["value"])
                     print('False')
             else: # se nao acho ação para token é pq é token nao esperado
-                if get_functions[stage][pos_stage]['erro'] == 'next':
+                if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
                     print('modo thiago segue pra frente')
-                    for item in list_actions[-1]["next"]:
+                    for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
                         stack.append(item)
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido {token['token']}"
     else:
