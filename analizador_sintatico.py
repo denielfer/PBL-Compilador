@@ -1,4 +1,3 @@
-
 class erro_sintaico(Exception):
     pass
 
@@ -483,7 +482,7 @@ def analize(get_token:list):
                     pass
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido \'{token['token']}\' "
     else:
-        stage,pos_stage = stack.pop(-1)
+        stage, pos_stage = stack.pop(-1)
         if stage != 'END':
             list_actions = get_functions[stage][pos_stage]['test']
             esperado = []

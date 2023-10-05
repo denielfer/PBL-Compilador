@@ -33,7 +33,7 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
                             if token[0] > 8: # se token for de erro vai pra lista
                                 erros.append(f'{n} <{CODIGOS[token[0]]}, {token[1]}>\n')
                             else: # se nao escrevemos
-                                tokens_corretos.append({'line':n,'type':CODIGOS[token[0]],'token':token[1]})
+                                tokens_corretos.append({'line':n, 'type':CODIGOS[token[0]], 'token':token[1]})
                                 out_file.write(f'{n} <{CODIGOS[token[0]]}, {token[1]}>\n')
                 # except analizador_lexico_recurcivo.comentario_linha_excption: # se recebeu essa excption so seguirmos, ela é usada para parar a recurção
                 #     pass  
