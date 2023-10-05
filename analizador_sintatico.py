@@ -22,12 +22,36 @@ BOOL = ['true', 'false']
 
 get_functions = {
     'const':[
-                {"test":[{'is_terminal':True,"key":'token',"value":['const'],'next':[('const',1)]}],'erro':{'tipo_recuperação':'next'}},
-                {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0)]}],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['const'],'next':[('const',1)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('const',2)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":TYPE,'next':[('const',2),('const',3)]},
+                    {'is_terminal':True,"key":'token',"value":[''],'next':[]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('const',4)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['='],'next':[('const',5)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'type',"value": BOOL + ['NRO','CAC'],'next':[('const',6)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value": [','],'next':[('const',3)]},
+                ],'erro':{'tipo_recuperação':'next'}},
             ],
     'variables':[
-                    {"test":[{'is_terminal':True,"key":'token',"value":['variables'],'next':[('variables',1)]}],'erro':{'tipo_recuperação':'next'}},
-                    {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0)]}],'erro':{'tipo_recuperação':'next'}},
+                    {"test":[
+                        {'is_terminal':True,"key":'token',"value":['variables'],'next':[('variables',1)]}
+                    ],'erro':{'tipo_recuperação':'next'}},
+                    {"test":[
+                        {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0)]}
+                    ],'erro':{'tipo_recuperação':'next'}},
                 ],
     'class': [
               {"test":[{'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}],'erro':{'tipo_recuperação':'next'}},
