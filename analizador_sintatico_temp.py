@@ -104,8 +104,9 @@ def get_list_actions(stage:str,pos_stage:int):
             list_actions.append[action]
         elif action['comp'] == 'NT':
             for nao_terminal in action['terminais']:
-                for action in get_list_actions(*nao_terminal):
-                    list_actions.append(action)
+                for action_new in get_list_actions(*nao_terminal):
+                    action_new['next'] = action['next'] + action_new['next']
+                    list_actions.append(action_new)
     return list_actions
 
 def analize(get_token:list):

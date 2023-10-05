@@ -4,11 +4,11 @@ token: {'line': 1, 'type': 'DEL', 'token': '{'}	| stack:[('END', 0), ('class', 0
 Buscando:{'key': 'token', 'value': ['{'], 'next': [('end_block', 0)]}	|True
 token: {'line': 2, 'type': 'PRE', 'token': 'variables'}	| stack:[('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
 Buscando:{'key': 'token', 'value': ['}'], 'next': []}	|False
-modo thiago segue pra frente	Na linha 2, era esperado ['}'] porém foi obtido variables
+modo thiago segue pra frente -> Na linha 2, era esperado ['}'] porém foi obtido variables
 token: {'line': 2, 'type': 'DEL', 'token': '{'}	| stack:[('END', 0), ('class', 0), ('variables', 0)]
 Buscando:{'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}	|False
-modo thiago segue pra frente	Na linha 2, era esperado ['variables'] porém foi obtido {
+modo thiago segue pra frente -> Na linha 2, era esperado ['variables'] porém foi obtido {
 token: {'line': 2, 'type': 'DEL', 'token': '}'}	| stack:[('END', 0), ('class', 0), ('variables', 1)]
 Buscando:{'key': 'token', 'value': ['{'], 'next': [('end_block', 0)]}	|False
-modo thiago segue pra frente	Na linha 2, era esperado ['{'] porém foi obtido }
+modo thiago segue pra frente -> Na linha 2, era esperado ['{'] porém foi obtido }
 acabou a lista de tokens e stack é end_block logo erros de esperado mas erro de fim de arquivo
