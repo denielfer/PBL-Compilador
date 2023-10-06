@@ -70,14 +70,15 @@ get_functions = {
               {"test":[{'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}],'erro':{'tipo_recuperação':'next'}},
               {"test":[ 
                 # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacota construtor, precisando de branch para main e classe normal assim colocando aqui reduz codigo
-                {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',4)]},
+                {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)]},
                 {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)]}
                 ],'erro':{'tipo_recuperação':'next'}},
               {"test":[{'is_terminal':True,"key":'token',"value":['extends'],'next':[("class",3)]},
                        {'is_terminal':True,"key":'token',"value":[''],'next':[("class",4)]},
                        ],'erro':{'tipo_recuperação':'next'}},
               {"test":[{'is_terminal':True,"key":'type',"value":['IDE'],'next':[("class",4)]}],'erro':{'tipo_recuperação':'next'}},
-              {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',0),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}}
+              {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',0),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}},
+              {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',2),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}},
               ],
     'object':[
                 {"test":[
@@ -105,7 +106,24 @@ get_functions = {
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('func_dec',0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[ # para main pois precisamos forma função main como primeira e ela é diferente
+                   {'is_terminal':True,"key":'token',"value":['methods'],'next':[('methods',3)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('func_dec',0),('func_main',0)]},
+                ],'erro':{'tipo_recuperação':'next'}},
                ],
+    'func_main':[
+                {'test':[
+                        {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_main',1)]},
+                    ],'erro':{'tipo_recuperação':'next'}},
+                {'test':[
+                        {'is_terminal':True,"key":'token',"value":['main'],'next':[('func_main',2)]},
+                    ],'erro':{'tipo_recuperação':'next'}},
+                {'test':[
+                        {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0)]},
+                    ],'erro':{'tipo_recuperação':'next'}},
+    ],
     'func_dec':[
                 {'test':[
                         {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_dec',1)]},
@@ -114,7 +132,6 @@ get_functions = {
                     ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
                         {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)]},
-                        {'is_terminal':True,"key":'token',"value":['main'],'next':[('func_dec',0),('func_dec',2)]},
                     ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
                         {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0),('dec_parameter',0)]},
@@ -448,7 +465,7 @@ def analize(get_token:list):
         flag = True # se tiver produção vazia continuamos a analize com o mesmo token
         while flag: # ta aqui pra suporta produção vazia
             stage,pos_stage = stack.pop(-1) # por ser pop em '-1' le a pilha da direita pra esquerda
-            print(stage,pos_stage,'token : ',token,' |',' stack :',stack)
+            print('\t',stage,pos_stage,'token : ',token,' |',' stack :',stack)
             flag = False
             if stage == 'END':
                 yield f"Na linha {token['line']}, era esperado 'EOF' porém foi obtido {token['token']}"
@@ -456,7 +473,7 @@ def analize(get_token:list):
             list_actions = __get_list_actions__(stage,pos_stage)
             esperado = []
             for action in list_actions: # para cada token na lista de tokens esperados
-                print(f'\tbuscando {action}')
+                print(f'\t\tbuscando {action}')
                 # print(f'Buscando:{action}',end='\t|')
                 # print(token[action['key']],action["value"],token[action['key']] == action["value"])
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
@@ -476,7 +493,7 @@ def analize(get_token:list):
                     # print('False')
             else: # se nao acho ação para token é pq é token nao esperado
                 if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
-                    print(f'modo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido {token["token"]}')
+                    print(f'\t\t\tmodo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido {token["token"]}')
                     # for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
                     #     stack.append(item)
                     pass
