@@ -22377,3 +22377,926 @@
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: cons	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: const	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'const')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 10	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: cl	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: cla	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'class')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: main	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 14	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: met	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: meth	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: metho	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: method	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: methods	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'methods')
+ 12	| Controle: 5	|Token: {	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '{')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: int	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'int')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: 5	|Token: (	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
+(5, '(')
+ 18	| Controle: 5	|Token: )	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, ')')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 20	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: re	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: ret	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: retu	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: retur	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: return	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'return')
+ 19	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 4	|Token: 1	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(4, '1')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(5, ';')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 5	|Token: }	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '}')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: cons	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: const	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'const')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 10	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: cl	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: cla	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'class')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: main	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 14	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: met	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: meth	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: metho	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: method	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: methods	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'methods')
+ 12	| Controle: 5	|Token: {	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '{')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: int	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'int')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: 5	|Token: (	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
+(5, '(')
+ 18	| Controle: 5	|Token: )	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, ')')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 20	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: re	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: ret	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: retu	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: retur	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: return	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'return')
+ 19	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 4	|Token: 1	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(4, '1')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(5, ';')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 5	|Token: }	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '}')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: cl	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: cla	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'class')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: main	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 14	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: met	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: meth	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: metho	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: method	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: methods	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'methods')
+ 12	| Controle: 5	|Token: {	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '{')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: int	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'int')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: 5	|Token: (	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
+(5, '(')
+ 18	| Controle: 5	|Token: )	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, ')')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 20	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: re	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: ret	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: retu	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: retur	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: return	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'return')
+ 19	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 4	|Token: 1	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(4, '1')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(5, ';')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 5	|Token: }	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '}')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: cons	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: const	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'const')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 10	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: c	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 2	|Token: cl	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 3	| Controle: 2	|Token: cla	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'class')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: main	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "v"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: v	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: va	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: var	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: vari	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: varia	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: variab	|Char Analizado: "l"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: variabl	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 2	|Token: variable	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: variables	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'variables')
+ 14	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: o	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: ob	|Char Analizado: "j"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: obj	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: obje	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: objec	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: object	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: objects	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'objects')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 5	| Controle: 2	|Token: m	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 6	| Controle: 2	|Token: me	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: met	|Char Analizado: "h"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: meth	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: metho	|Char Analizado: "d"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: method	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: methods	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(1, 'methods')
+ 12	| Controle: 5	|Token: {	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(5, '{')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: i	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 2	|Token: in	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 11	| Controle: 2	|Token: int	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'int')
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: "("	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: 5	|Token: (	|Char Analizado: ")"	|erro_ponto: None	|force_continue: False
+(5, '(')
+ 18	| Controle: 5	|Token: )	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, ')')
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "m"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: m	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: ma	|Char Analizado: "i"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: mai	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: main	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+(1, 'main')
+ 17	| Controle: -1	|Token: 	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(5, '{')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
+(5, '}')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+ fim de string	| Controle: 2	|Token: o	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
+(2, 'o')

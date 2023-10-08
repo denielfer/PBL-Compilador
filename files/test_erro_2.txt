@@ -1,0 +1,34 @@
+const {
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            main {
+            }
+            objects {
+            }
+            return 1;
+        } 
+    }
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            main {
+            }
+            objects {
+            }
+            return 1;
+        } 
+    }
+}

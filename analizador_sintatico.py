@@ -67,18 +67,27 @@ get_functions = {
                     ],'erro':{'tipo_recuperação':'next'}},
                 ],
     'class': [
-              {"test":[{'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}],'erro':{'tipo_recuperação':'next'}},
-              {"test":[ 
-                # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacota construtor, precisando de branch para main e classe normal assim colocando aqui reduz codigo
-                {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)]},
-                {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)]}
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}
                 ],'erro':{'tipo_recuperação':'next'}},
-              {"test":[{'is_terminal':True,"key":'token',"value":['extends'],'next':[("class",3)]},
-                       {'is_terminal':True,"key":'token',"value":[''],'next':[("class",4)]},
-                       ],'erro':{'tipo_recuperação':'next'}},
-              {"test":[{'is_terminal':True,"key":'type',"value":['IDE'],'next':[("class",4)]}],'erro':{'tipo_recuperação':'next'}},
-              {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',0),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}},
-              {"test":[{'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',2),('object',0),("variables",0)]}],'erro':{'tipo_recuperação':'next'}},
+                {"test":[ 
+                # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacota construtor, precisando de branch para main e classe normal assim colocando aqui reduz codigo
+                    {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)]},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)]}
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['extends'],'next':[("class",3)]},
+                    {'is_terminal':True,"key":'token',"value":[''],'next':[("class",4)]},
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                  {'is_terminal':True,"key":'type',"value":['IDE'],'next':[("class",4)]}
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',0),('object',0),("variables",0)]}
+                ],'erro':{'tipo_recuperação':'next'}},
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',2),('object',0),("variables",0)]}
+                ],'erro':{'tipo_recuperação':'next'}},
               ],
     'object':[
                 {"test":[
@@ -115,43 +124,45 @@ get_functions = {
                ],
     'func_main':[
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_main',1)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_main',1)]},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":['main'],'next':[('func_main',2)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":['main'],'next':[('func_main',2)]},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0)]},
+                ],'erro':{'tipo_recuperação':'next'}},
     ],
     'func_dec':[
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_dec',1)]},
-                        {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',1)]},
-                        {'is_terminal':True,"key":'type',"value":[''],'next':[]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_dec',1)]},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',1)]},
+                    {'is_terminal':True,"key":'type',"value":[''],'next':[]},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)]},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0),('dec_parameter',0)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0),('dec_parameter',0)]},
+                ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('return',0),("command",0),('object',0),('variables',0)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
+                    {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('return',0),("command",0),('object',0),('variables',0)]},
+                ],'erro':{'tipo_recuperação':'next'}},
     ],
     'return':[
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['return'],'next':[('return',1)]}],'erro':{'tipo_recuperação':'next'}
-                },
+                    {'is_terminal':True,"key":'token',"value":['return'],'next':[('return',1)]}
+                ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                        {'is_terminal':False,'terminais':[('value',0)],'next':[(";",0)]},
-                        {'is_terminal':True,"key":'token',"value":[''],'next':[(";",0)]},
-                    ],'erro':{'tipo_recuperação':'next'}
+                    {'is_terminal':False,'terminais':[('value',0)],'next':[(";",0)]},
+                    {'is_terminal':True,"key":'token',"value":[''],'next':[(";",0)]},
+                ],'erro':{'tipo_recuperação':'next'}
                 },
             ],
     'end_block':[ # ("end_block",0),
-                {"test":[{'is_terminal':True,"key":'token',"value":['}'],'next':[]}],'erro':{'tipo_recuperação':'next'}}
+                {"test":[
+                    {'is_terminal':True,"key":'token',"value":['}'],'next':[]}
+                ],'erro':{'tipo_recuperação':'next'}}
                 ],
     'dec_parameter':[
                 {"test":[
@@ -260,8 +271,8 @@ get_functions = {
                 {"test":[ # logical_expression_begin
                     {'is_terminal':True,"key":'token',"value":['!'],'next':[('logical_expression',0)]},
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('logical_expression',1),('logical_expression',0)]},
-                    {'is_terminal':True,"key":'token',"value":BOOL,'next':[]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[("relational_expression_value",0),('method_access',0),('object_access',0),("dimention_acess",0)]},
+                    {'is_terminal':True,"key":'token',"value":BOOL,'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[# logical_expression_end
                     {'is_terminal':True,"key":'token',"value":LOG,'next':[('logical_expression',1),('logical_expression',0)]},
@@ -275,8 +286,8 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ # <RELATIONAL_EXPRESSION_VALUE>
-                    {'is_terminal':True,"key":'type',"value":['NRO','CAC'],'next':[]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('method_access',0),('object_access',0),("dimention_acess",0)]},
+                    {'is_terminal':True,"key":'type',"value":['NRO','CAC'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ 
                     {'is_terminal':True,"key":'token',"value":REL,'next':[('relational_expression_value',1)]},
@@ -310,8 +321,8 @@ get_functions = {
     ],
     'vetor_assinement':[
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE','CAC','NRO'],'next':[('vetor_assinement',1)]},
                     {'is_terminal':True,"key":'token',"value":['['],'next':[('vetor_assinement',1),('vetor_assinement',0)]},
+                    {'is_terminal':True,"key":'type',"value":['IDE','CAC','NRO'],'next':[('vetor_assinement',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":[','],'next':[('vetor_assinement',0)]},
@@ -328,8 +339,8 @@ get_functions = {
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ #<SIMPLE_EXPRESSION>
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('arit_expression',0),('object_access',0),("dimention_acess",0)]},
-                    {'is_terminal':True,"key":'type',"value":['NRO'],'next':[('arit_expression',0)]},
                     {'is_terminal':True,"key":'token',"value":['('],'next':[('arit_expression',0),('close_parentesis',0),('arit_expression',1)]},
+                    {'is_terminal':True,"key":'type',"value":['NRO'],'next':[('arit_expression',0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ # <END_EXPRESSION>
                     {'is_terminal':True,"key":'token',"value":ART,'next':[('arit_expression',1)]},
@@ -366,8 +377,8 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('print',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['CAC','NRO'],'next':[]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)]},
+                    {'is_terminal':True,"key":'type',"value":['CAC','NRO'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
     "close_parentesis":[ # ("close_parentesis",0),
@@ -459,8 +470,8 @@ def analize(get_token:list):
     for token in get_token:
         if token['token'] in ['this','constructor']:
             token['type'] = 'IDE'
-        if stage == 'END':
-            break
+        # if stage == 'END':
+        #     break
         # print(f'token: {token}\t| stack:{stack}')
         flag = True # se tiver produção vazia continuamos a analize com o mesmo token
         while flag: # ta aqui pra suporta produção vazia
@@ -469,6 +480,7 @@ def analize(get_token:list):
             flag = False
             if stage == 'END':
                 yield f"Na linha {token['line']}, era esperado 'EOF' porém foi obtido {token['token']}"
+                stack.append(('END',0))
                 continue
             list_actions = __get_list_actions__(stage,pos_stage)
             esperado = []
@@ -493,19 +505,20 @@ def analize(get_token:list):
                     # print('False')
             else: # se nao acho ação para token é pq é token nao esperado
                 if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
-                    print(f'\t\t\tmodo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido {token["token"]}')
-                    # for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
-                    #     stack.append(item)
+                    print(f'\t\t\tmodo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
+                    for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
+                        stack.append(item)
                     pass
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido \'{token['token']}\' "
     else:
-        stage, pos_stage = stack.pop(-1)
-        if stage != 'END':
-            list_actions = get_functions[stage][pos_stage]['test']
-            esperado = []
-            for action in list_actions:
-                esperado += action["value"] 
-            # print (f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'")
-            yield f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'"
-            # print(f'acabou a lista de tokens e stack é {stage} logo erros de esperado mas erro de fim de arquivo')
+        for item in stack[::-1]:
+            stage, pos_stage = item
+            if stage != 'END':
+                list_actions = get_functions[stage][pos_stage]['test']
+                esperado = []
+                for action in list_actions:
+                    esperado += action["value"] 
+                # print (f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'")
+                yield f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'"
+                # print(f'acabou a lista de tokens e stack é {stage} logo erros de esperado mas erro de fim de arquivo')
         

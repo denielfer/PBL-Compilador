@@ -1,0 +1,14 @@
+const {
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            main {
+            }
+            o
