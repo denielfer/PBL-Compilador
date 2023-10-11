@@ -1,5 +1,5 @@
 import util
-CoMF_CODE = 10
+from analizador_lexico import CoMF_CODE # codigo de cadeia mal formada
 encode = "utf-8-sig"
 import sys
 console_print_stdout = sys.stdout

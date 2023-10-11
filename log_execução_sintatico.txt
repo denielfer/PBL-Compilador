@@ -16979,304 +16979,299 @@ files\Teste da Gramática Geral-saida.txt
 	 end_block 0 token :  {'line': 164, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 files\test_erro_1-saida.txt
-	 const 0 token :  {'line': 1, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 0 token :  {'line': 2, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['const'], 'next': [('const', 1)]}
-	 const 1 token :  {'line': 1, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 1 token :  {'line': 2, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('const', 2)]}
-	 const 2 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
+	 const 2 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('const', 2), ('const', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 end_block 0 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 variables 0 token :  {'line': 3, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 0 token :  {'line': 4, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 3, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 1 token :  {'line': 4, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
+	 end_block 0 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 class 0 token :  {'line': 5, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
+	 class 0 token :  {'line': 6, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)]}
-	 class 1 token :  {'line': 5, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
+	 class 1 token :  {'line': 6, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)]}
-	 class 5 token :  {'line': 5, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 class 5 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('methods', 2), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 6, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 0 token :  {'line': 7, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 1 token :  {'line': 7, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 end_block 0 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 8, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 0 token :  {'line': 9, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-	 object 1 token :  {'line': 8, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 1 token :  {'line': 9, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('object', 2)]}
-	 object 2 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
+	 object 2 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object', 2), ('object', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 end_block 0 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 methods 2 token :  {'line': 10, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 2 token :  {'line': 11, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['methods'], 'next': [('methods', 3)]}
-	 methods 3 token :  {'line': 10, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('func_dec', 0), ('func_main', 0)]}
-	 func_main 0 token :  {'line': 11, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 0 token :  {'line': 12, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_main', 1)]}
-	 func_main 1 token :  {'line': 11, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 1 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('func_main', 2)]}
-	 func_main 2 token :  {'line': 11, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 2 token :  {'line': 12, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('func_dec', 3), ('close_parentesis', 0)]}
-	 close_parentesis 0 token :  {'line': 11, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
+	 close_parentesis 0 token :  {'line': 12, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
-	 func_dec 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_dec 3 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 variables 0 token :  {'line': 13, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-			modo thiago segue pra frente -> Na linha 12, era esperado ['variables'] porém foi obtido 'main'
-	 variables 1 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+			modo thiago segue pra frente -> Na linha 13, era esperado ['variables'] porém foi obtido 'main'
+	 variables 1 token :  {'line': 13, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 end_block 0 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 14, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 object 0 token :  {'line': 15, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-	 object 1 token :  {'line': 14, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 object 1 token :  {'line': 15, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('object', 2)]}
-	 object 2 token :  {'line': 15, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('end_block', 0)]
+	 object 2 token :  {'line': 16, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object', 2), ('object', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 15, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 end_block 0 token :  {'line': 16, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 command 0 token :  {'line': 16, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+	 command 0 token :  {'line': 17, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['read'], 'next': [('command', 0), (';', 0), ('read', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['if'], 'next': [('command', 0), ('if', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['for'], 'next': [('command', 0), ('for', 0)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 return 0 token :  {'line': 16, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 0 token :  {'line': 17, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['return'], 'next': [('return', 1)]}
-	 return 1 token :  {'line': 16, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 1 token :  {'line': 17, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['NRO'], 'next': [(';', 0), ('arit_expression', 0)]}
-	 arit_expression 0 token :  {'line': 16, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), (';', 0)]
+	 arit_expression 0 token :  {'line': 17, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['+', '-', '*', '/'], 'next': [('arit_expression', 1)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 ; 0 token :  {'line': 16, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 ; 0 token :  {'line': 17, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
-	 end_block 0 token :  {'line': 17, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 end_block 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 func_dec 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
+	 func_dec 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_dec', 1)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('func_dec', 1)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
+	 end_block 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 end_block 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
+	 end_block 0 token :  {'line': 20, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 files\test_erro_2-saida.txt
-	 const 0 token :  {'line': 1, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 0 token :  {'line': 2, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['const'], 'next': [('const', 1)]}
-	 const 1 token :  {'line': 1, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 1 token :  {'line': 2, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('const', 2)]}
-	 const 2 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
+	 const 2 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('const', 2), ('const', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 end_block 0 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 variables 0 token :  {'line': 3, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 0 token :  {'line': 4, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 3, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 1 token :  {'line': 4, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
+	 end_block 0 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 class 0 token :  {'line': 5, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
+	 class 0 token :  {'line': 6, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)]}
-	 class 1 token :  {'line': 5, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
+	 class 1 token :  {'line': 6, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)]}
-	 class 5 token :  {'line': 5, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 class 5 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('methods', 2), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 6, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 0 token :  {'line': 7, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 1 token :  {'line': 7, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 end_block 0 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 8, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 0 token :  {'line': 9, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-	 object 1 token :  {'line': 8, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 1 token :  {'line': 9, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('object', 2)]}
-	 object 2 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
+	 object 2 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object', 2), ('object', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 end_block 0 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 methods 2 token :  {'line': 10, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 2 token :  {'line': 11, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['methods'], 'next': [('methods', 3)]}
-	 methods 3 token :  {'line': 10, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('func_dec', 0), ('func_main', 0)]}
-	 func_main 0 token :  {'line': 11, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 0 token :  {'line': 12, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_main', 1)]}
-	 func_main 1 token :  {'line': 11, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 1 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('func_main', 2)]}
-	 func_main 2 token :  {'line': 11, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 2 token :  {'line': 12, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('func_dec', 3), ('close_parentesis', 0)]}
-	 close_parentesis 0 token :  {'line': 11, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
+	 close_parentesis 0 token :  {'line': 12, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
-	 func_dec 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_dec 3 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 variables 0 token :  {'line': 13, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-			modo thiago segue pra frente -> Na linha 12, era esperado ['variables'] porém foi obtido 'main'
-	 variables 1 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 variables 1 token :  {'line': 13, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 end_block 0 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 14, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 object 0 token :  {'line': 15, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-	 object 1 token :  {'line': 14, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 object 1 token :  {'line': 15, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('object', 2)]}
-	 object 2 token :  {'line': 15, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('end_block', 0)]
+	 object 2 token :  {'line': 16, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object', 2), ('object', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 15, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+	 end_block 0 token :  {'line': 16, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 command 0 token :  {'line': 16, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+	 command 0 token :  {'line': 17, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['read'], 'next': [('command', 0), (';', 0), ('read', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['if'], 'next': [('command', 0), ('if', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['for'], 'next': [('command', 0), ('for', 0)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 return 0 token :  {'line': 16, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 0 token :  {'line': 17, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['return'], 'next': [('return', 1)]}
-	 return 1 token :  {'line': 16, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 1 token :  {'line': 17, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['NRO'], 'next': [(';', 0), ('arit_expression', 0)]}
-	 arit_expression 0 token :  {'line': 16, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), (';', 0)]
+	 arit_expression 0 token :  {'line': 17, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['+', '-', '*', '/'], 'next': [('arit_expression', 1)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 ; 0 token :  {'line': 16, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 ; 0 token :  {'line': 17, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
-	 end_block 0 token :  {'line': 17, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 end_block 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 func_dec 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
+	 func_dec 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_dec', 1)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('func_dec', 1)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 18, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
+	 end_block 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 end_block 0 token :  {'line': 19, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
+	 end_block 0 token :  {'line': 20, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 END 0 token :  {'line': 20, 'type': 'PRE', 'token': 'class'}  |  stack : []
-	 END 0 token :  {'line': 20, 'type': 'PRE', 'token': 'main'}  |  stack : []
-	 END 0 token :  {'line': 20, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 21, 'type': 'PRE', 'token': 'variables'}  |  stack : []
+	 END 0 token :  {'line': 21, 'type': 'PRE', 'token': 'class'}  |  stack : []
+	 END 0 token :  {'line': 21, 'type': 'PRE', 'token': 'main'}  |  stack : []
 	 END 0 token :  {'line': 21, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 22, 'type': 'DEL', 'token': '}'}  |  stack : []
-	 END 0 token :  {'line': 23, 'type': 'PRE', 'token': 'objects'}  |  stack : []
-	 END 0 token :  {'line': 23, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 24, 'type': 'DEL', 'token': '}'}  |  stack : []
-	 END 0 token :  {'line': 25, 'type': 'PRE', 'token': 'methods'}  |  stack : []
-	 END 0 token :  {'line': 25, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 26, 'type': 'PRE', 'token': 'int'}  |  stack : []
-	 END 0 token :  {'line': 26, 'type': 'PRE', 'token': 'main'}  |  stack : []
-	 END 0 token :  {'line': 26, 'type': 'DEL', 'token': '('}  |  stack : []
-	 END 0 token :  {'line': 26, 'type': 'DEL', 'token': ')'}  |  stack : []
+	 END 0 token :  {'line': 22, 'type': 'PRE', 'token': 'variables'}  |  stack : []
+	 END 0 token :  {'line': 22, 'type': 'DEL', 'token': '{'}  |  stack : []
+	 END 0 token :  {'line': 23, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 24, 'type': 'PRE', 'token': 'objects'}  |  stack : []
+	 END 0 token :  {'line': 24, 'type': 'DEL', 'token': '{'}  |  stack : []
+	 END 0 token :  {'line': 25, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 26, 'type': 'PRE', 'token': 'methods'}  |  stack : []
 	 END 0 token :  {'line': 26, 'type': 'DEL', 'token': '{'}  |  stack : []
+	 END 0 token :  {'line': 27, 'type': 'PRE', 'token': 'int'}  |  stack : []
 	 END 0 token :  {'line': 27, 'type': 'PRE', 'token': 'main'}  |  stack : []
+	 END 0 token :  {'line': 27, 'type': 'DEL', 'token': '('}  |  stack : []
+	 END 0 token :  {'line': 27, 'type': 'DEL', 'token': ')'}  |  stack : []
 	 END 0 token :  {'line': 27, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 28, 'type': 'DEL', 'token': '}'}  |  stack : []
-	 END 0 token :  {'line': 29, 'type': 'PRE', 'token': 'objects'}  |  stack : []
-	 END 0 token :  {'line': 29, 'type': 'DEL', 'token': '{'}  |  stack : []
-	 END 0 token :  {'line': 30, 'type': 'DEL', 'token': '}'}  |  stack : []
-	 END 0 token :  {'line': 31, 'type': 'PRE', 'token': 'return'}  |  stack : []
-	 END 0 token :  {'line': 31, 'type': 'NRO', 'token': '1'}  |  stack : []
-	 END 0 token :  {'line': 31, 'type': 'DEL', 'token': ';'}  |  stack : []
-	 END 0 token :  {'line': 32, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 28, 'type': 'PRE', 'token': 'main'}  |  stack : []
+	 END 0 token :  {'line': 28, 'type': 'DEL', 'token': '{'}  |  stack : []
+	 END 0 token :  {'line': 29, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 30, 'type': 'PRE', 'token': 'objects'}  |  stack : []
+	 END 0 token :  {'line': 30, 'type': 'DEL', 'token': '{'}  |  stack : []
+	 END 0 token :  {'line': 31, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 32, 'type': 'PRE', 'token': 'return'}  |  stack : []
+	 END 0 token :  {'line': 32, 'type': 'NRO', 'token': '1'}  |  stack : []
+	 END 0 token :  {'line': 32, 'type': 'DEL', 'token': ';'}  |  stack : []
 	 END 0 token :  {'line': 33, 'type': 'DEL', 'token': '}'}  |  stack : []
 	 END 0 token :  {'line': 34, 'type': 'DEL', 'token': '}'}  |  stack : []
+	 END 0 token :  {'line': 35, 'type': 'DEL', 'token': '}'}  |  stack : []
 files\test_erro_3-saida.txt
-	 const 0 token :  {'line': 1, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 0 token :  {'line': 2, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['const'], 'next': [('const', 1)]}
-	 const 1 token :  {'line': 1, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 const 1 token :  {'line': 2, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('const', 2)]}
-	 const 2 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
+	 const 2 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('const', 2), ('const', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 2, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+	 end_block 0 token :  {'line': 3, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 variables 0 token :  {'line': 3, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 0 token :  {'line': 4, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 3, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
+	 variables 1 token :  {'line': 4, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
+	 end_block 0 token :  {'line': 5, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 class 0 token :  {'line': 5, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
+	 class 0 token :  {'line': 6, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)]}
-	 class 1 token :  {'line': 5, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
+	 class 1 token :  {'line': 6, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)]}
-	 class 5 token :  {'line': 5, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 class 5 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('methods', 2), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 6, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 0 token :  {'line': 7, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-	 variables 1 token :  {'line': 6, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 variables 1 token :  {'line': 7, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 7, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
+	 end_block 0 token :  {'line': 8, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 8, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 0 token :  {'line': 9, 'type': 'PRE', 'token': 'objects'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-	 object 1 token :  {'line': 8, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 object 1 token :  {'line': 9, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('object', 2)]}
-	 object 2 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
+	 object 2 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object', 2), ('object', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 9, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
+	 end_block 0 token :  {'line': 10, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('methods', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 methods 2 token :  {'line': 10, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 2 token :  {'line': 11, 'type': 'PRE', 'token': 'methods'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['methods'], 'next': [('methods', 3)]}
-	 methods 3 token :  {'line': 10, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
+	 methods 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('func_dec', 0), ('func_main', 0)]}
-	 func_main 0 token :  {'line': 11, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 0 token :  {'line': 12, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_main', 1)]}
-	 func_main 1 token :  {'line': 11, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 1 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('func_main', 2)]}
-	 func_main 2 token :  {'line': 11, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_main 2 token :  {'line': 12, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('func_dec', 3), ('close_parentesis', 0)]}
-	 close_parentesis 0 token :  {'line': 11, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
+	 close_parentesis 0 token :  {'line': 12, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('func_dec', 3)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
-	 func_dec 3 token :  {'line': 11, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 func_dec 3 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('variables', 0)]}
-	 variables 0 token :  {'line': 12, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 variables 0 token :  {'line': 13, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
-			modo thiago segue pra frente -> Na linha 12, era esperado ['variables'] porém foi obtido 'main'
-	 variables 1 token :  {'line': 12, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 variables 1 token :  {'line': 13, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('variables', 2)]}
-	 variables 2 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
+	 variables 2 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('variables', 2), ('variables', 3)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 13, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
+	 end_block 0 token :  {'line': 14, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 object 0 token :  {'line': 14, 'type': 'IDE', 'token': 'o'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['objects'], 'next': [('object', 1)]}
-			modo thiago segue pra frente -> Na linha 14, era esperado ['objects'] porém foi obtido 'o'

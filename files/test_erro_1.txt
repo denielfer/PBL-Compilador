@@ -1,3 +1,4 @@
+// neste arquivo espra erro na linha 13 tem 'main' mas esperava 'variables'
 const {
 }
 variables {

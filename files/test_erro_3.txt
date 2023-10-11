@@ -1,3 +1,4 @@
+// neste arquivo espra erro na linha ?14-15? pois codigo acabou mas deveria ter mais coisa 
 const {
 }
 variables {
@@ -9,6 +10,5 @@ class main{
     }
     methods{ 
         int main(){
-            main {
+            variables {
             }
-            o

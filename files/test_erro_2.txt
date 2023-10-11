@@ -1,3 +1,4 @@
+// neste arquivo espra erro na linha 21 codigo devia ter acabado pois main é ultima coisa, mas ainda existe codigo
 const {
 }
 variables {
@@ -9,7 +10,7 @@ class main{
     }
     methods{ 
         int main(){
-            main {
+            variables {
             }
             objects {
             }

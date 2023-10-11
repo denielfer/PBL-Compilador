@@ -37,6 +37,7 @@ CODIGOS = {
     12: 'IMF',
     13: 'TMF'
 }
+CoMF_CODE = 10
 
 # SEPARADORES = op_ar + op_re + op_log + coment_cadeia + coment_block + coment_linha
 SEPARADORES = { # separadores e respectivos códigos de token
