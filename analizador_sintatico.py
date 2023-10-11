@@ -1,9 +1,3 @@
-class erro_sintaico(Exception):
-    pass
-
-class file_end(Exception):
-    pass
-
 TYPE = ['int', 'real', 'boolean', 'string']
 TYPES = TYPE +['void'] # menos IDE
 

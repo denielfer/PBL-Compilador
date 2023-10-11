@@ -1,4 +1,11 @@
-﻿ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+﻿ 0	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
+ 1	| Controle: 2	|Token: a	|Char Analizado: "'"	|erro_ponto: None	|force_continue: False
+ 2	| Controle: 12	|Token: a'	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
+(12, "a'")
+ 3	| Controle: 8	|Token: +	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
+(8, '++')
+ fim de string	| Controle: -1	|Token: 	|Char Analizado: "+"	|erro_ponto: None	|force_continue: False
+ 0	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
  1	| Controle: 2	|Token: c	|Char Analizado: "o"	|erro_ponto: None	|force_continue: False
  2	| Controle: 2	|Token: co	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
  3	| Controle: 2	|Token: con	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False

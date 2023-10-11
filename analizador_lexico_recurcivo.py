@@ -1,3 +1,5 @@
+# codigo incompleto para PBL, for decidigo nas seções alguns comportamentos que esta versao comporta
+
 from string import printable, ascii_letters, digits
 from re import search, split, findall,escape
 

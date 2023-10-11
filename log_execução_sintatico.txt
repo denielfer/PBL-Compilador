@@ -1,4 +1,8 @@
-﻿files\minimo_gramatica-saida.txt
+﻿files\a-saida.txt
+	 const 0 token :  {'line': 1, 'type': 'ART', 'token': '++'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['const'], 'next': [('const', 1)]}
+			modo thiago segue pra frente -> Na linha 1, era esperado ['const'] porém foi obtido '++'
+files\minimo_gramatica-saida.txt
 	 const 0 token :  {'line': 1, 'type': 'PRE', 'token': 'const'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['const'], 'next': [('const', 1)]}
 	 const 1 token :  {'line': 1, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('variables', 0)]
