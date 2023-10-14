@@ -501,10 +501,10 @@ def analize(get_token:list):
                         stack.append(item)
                     pass
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido \'{token['token']}\' "
-    else:
-        for item in stack[::-1]:
+    else:# quando os tokens acabarem
+        for item in stack[::-1]: # para cada item na stack
             stage, pos_stage = item
-            if stage != 'END':
+            if stage != 'END': # se nao for o fim gera o erro
                 list_actions = get_functions[stage][pos_stage]['test']
                 esperado = []
                 for action in list_actions:
