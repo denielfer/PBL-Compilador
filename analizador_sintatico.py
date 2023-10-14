@@ -11,9 +11,6 @@ LOG = ['&&', '||']
 
 BOOL = ['true', 'false']
 
-# REVISAR 'is_terminal':False para garantir que nao tem nao terminal que tenha '' nas produções
-
-
 get_functions = {
     'const':[
                 {"test":[
