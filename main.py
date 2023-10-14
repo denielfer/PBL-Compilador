@@ -43,11 +43,11 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
                     TEXT_FBC = str(e)
                     LINE_FBC = n
             if erros:
-                out_file.write("\nErros:\n")
+                out_file.write("\n\nErros:\n")
                 for erro in erros:
                     out_file.write(erro)
             else:
-                out_file.write("A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.")
+                out_file.write("\n\nA análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.")
 
             if FBC: # terminou o arquivo e ta com comentario de bloco sem termina
                 out_file.write(f'{LINE_FBC + 1} <{CODIGOS[CoMF_CODE]}, {TEXT_FBC}>\n')
@@ -66,7 +66,6 @@ def analizador_sintatico_files(list_tokens:list[dict],path:str):
                 out_file.write(f'{erro}\n')
         else:
             out_file.write(f'\n\nSem erros Sintaticos')
-
 
 if __name__ == '__main__':
     
