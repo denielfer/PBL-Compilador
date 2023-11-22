@@ -1,4 +1,4 @@
-# codigo incompleto para PBL, for decidigo nas seções alguns comportamentos que esta versao comporta
+# codigo incompleto para PBL, por algumas decisoes na seção essa versao nao é aceita para PBL
 
 from string import printable, ascii_letters, digits
 from re import search, split, findall,escape
@@ -295,7 +295,7 @@ class i_pr_n(): # identificadores, palavras reservadas e numeros
                             tokens.append((result, 5))
                             txt = txt[:result.start()] + txt[result.end():]
                     else:
-                        #acho pre
+                        #acho NRO
                         tokens.append((result, 4))
                         txt = txt[:result.start()] + txt[result.end():]
                 else:
