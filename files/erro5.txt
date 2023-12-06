@@ -1,0 +1,21 @@
+﻿// nao exist object como variavle fundamental entao erro na linha 5 pois tem ide iniciando a linha de declaração entao erro
+const {
+}
+variables {
+    object a,t;;
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

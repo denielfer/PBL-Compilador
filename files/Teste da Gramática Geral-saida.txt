@@ -1024,6 +1024,8 @@
 162 <DEL, }>
 163 <DEL, }>
 164 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Sem erros Sintaticos

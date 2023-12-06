@@ -1,0 +1,85 @@
+﻿2 <PRE, const>
+2 <DEL, {>
+3 <PRE, real>
+3 <IDE, PI>
+3 <REL, =>
+3 <NRO, 3.14>
+3 <DEL, ,>
+3 <IDE, E>
+3 <REL, =>
+3 <CAC, "asdas">
+3 <DEL, ;>
+3 <DEL, ;>
+4 <DEL, }>
+5 <PRE, variables>
+5 <DEL, {>
+6 <DEL, }>
+7 <PRE, class>
+7 <PRE, main>
+7 <DEL, {>
+8 <PRE, variables>
+8 <DEL, {>
+9 <DEL, }>
+10 <PRE, objects>
+10 <DEL, {>
+11 <DEL, }>
+12 <PRE, methods>
+12 <DEL, {>
+13 <PRE, int>
+13 <PRE, main>
+13 <DEL, (>
+13 <DEL, )>
+13 <DEL, {>
+14 <PRE, variables>
+14 <DEL, {>
+15 <DEL, }>
+16 <PRE, objects>
+16 <DEL, {>
+17 <DEL, }>
+18 <PRE, return>
+18 <DEL, ;>
+19 <DEL, }>
+20 <DEL, }>
+21 <DEL, }>
+
+
+A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
+
+Erros Sintaticos identificados:
+Na linha 3, era esperado ['}'] porém foi obtido ';' 
+Na linha 4, era esperado ['variables'] porém foi obtido '}' 
+Na linha 5, era esperado ['{'] porém foi obtido 'variables' 
+Na linha 5, era esperado ['}'] porém foi obtido '{' 
+Na linha 6, era esperado ['class'] porém foi obtido '}' 
+Na linha 7, era esperado ['main', IDE] porém foi obtido 'class' 
+Na linha 7, era esperado ['{'] porém foi obtido 'main' 
+Na linha 7, era esperado ['variables'] porém foi obtido '{' 
+Na linha 8, era esperado ['{'] porém foi obtido 'variables' 
+Na linha 8, era esperado ['}'] porém foi obtido '{' 
+Na linha 9, era esperado ['objects'] porém foi obtido '}' 
+Na linha 10, era esperado ['{'] porém foi obtido 'objects' 
+Na linha 10, era esperado ['}'] porém foi obtido '{' 
+Na linha 11, era esperado ['methods'] porém foi obtido '}' 
+Na linha 12, era esperado ['{'] porém foi obtido 'methods' 
+Na linha 12, era esperado ['}'] porém foi obtido '{' 
+Na linha 13, era esperado ['constructor'] porém foi obtido 'int' 
+Na linha 13, era esperado ['('] porém foi obtido 'main' 
+Na linha 13, era esperado [')'] porém foi obtido '(' 
+Na linha 13, era esperado ['{'] porém foi obtido ')' 
+Na linha 13, era esperado ['variables'] porém foi obtido '{' 
+Na linha 14, era esperado ['{'] porém foi obtido 'variables' 
+Na linha 14, era esperado ['}'] porém foi obtido '{' 
+Na linha 15, era esperado ['objects'] porém foi obtido '}' 
+Na linha 16, era esperado ['{'] porém foi obtido 'objects' 
+Na linha 16, era esperado ['}'] porém foi obtido '{' 
+Na linha 18, era esperado ['}'] porém foi obtido 'return' 
+Na linha 18, era esperado ['class'] porém foi obtido ';' 
+Na linha 19, era esperado ['main', IDE] porém foi obtido '}' 
+Na linha 20, era esperado ['{'] porém foi obtido '}' 
+Na linha 21, era esperado ['variables'] porém foi obtido '}' 
+Na linha 22, era esperado ['{'] porém foi obtido 'EOF'
+Na linha 22, era esperado ['objects'] porém foi obtido 'EOF'
+Na linha 22, era esperado ['methods'] porém foi obtido 'EOF'
+Na linha 22, era esperado ['constructor'] porém foi obtido 'EOF'
+Na linha 22, era esperado ['}'] porém foi obtido 'EOF'
+Na linha 22, era esperado ['class'] porém foi obtido 'EOF'

@@ -1,0 +1,21 @@
+﻿// erro na linha 3, tem 2 ;; mas entre eles deviam ter uma declaração de variavel
+const {
+real PI = 3.14, E = "asdas";;
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

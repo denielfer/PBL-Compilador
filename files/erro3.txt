@@ -1,0 +1,21 @@
+﻿// erro na linha 5, nao existe '=' em variables
+const {
+}
+variables {
+real PI = ;
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

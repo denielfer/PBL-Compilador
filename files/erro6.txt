@@ -1,0 +1,20 @@
+﻿// erro na linha 12 pois na main obrigatoriamente a primeira função tem q ser a função 'main'
+const {
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int fist(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

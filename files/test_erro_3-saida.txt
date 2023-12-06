@@ -23,13 +23,15 @@
 13 <PRE, variables>
 13 <DEL, {>
 14 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Erros Sintaticos identificados:
 Na linha 15, era esperado ['objects'] porém foi obtido 'EOF'
-Na linha 15, era esperado ['print', 'read', 'if', 'for', 'IDE', ''] porém foi obtido 'EOF'
+Na linha 15, era esperado ['print', 'read', 'if', 'for', IDE, ''] porém foi obtido 'EOF'
 Na linha 15, era esperado ['return'] porém foi obtido 'EOF'
 Na linha 15, era esperado ['}'] porém foi obtido 'EOF'
-Na linha 15, era esperado ['int', 'real', 'boolean', 'string', 'void', 'IDE', ''] porém foi obtido 'EOF'
+Na linha 15, era esperado ['int', 'real', 'boolean', 'string', 'void', IDE, ''] porém foi obtido 'EOF'
 Na linha 15, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 15, era esperado ['}'] porém foi obtido 'EOF'

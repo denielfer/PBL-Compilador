@@ -1,0 +1,21 @@
+﻿// erro na linha 3, esperado valor porem nao tem foi dero para ';'
+const {
+real PI = 3.14, E = ;
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

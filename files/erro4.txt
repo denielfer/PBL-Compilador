@@ -1,0 +1,22 @@
+﻿// erro na linha 6,  ';;' nao existe pois o ';' deve ser o fim de uma linha de criação de variavel, entao ';;' nao existe pois precisa ter 1 linha de declaração no meio 
+// nota: no erro vai aparecer que a lista de esperados era ['}'], nao aparece tipo pq na produção que faz a linha suporta vazio, logo a produção que gera a linha é fechada e o erro esta onde começa a procura o bloco de fecha
+const {
+}
+variables {
+    real a,t; real dois;;
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

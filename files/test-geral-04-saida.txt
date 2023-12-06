@@ -1245,6 +1245,8 @@
 230 <DEL, }>
 231 <DEL, }>
 232 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Sem erros Sintaticos

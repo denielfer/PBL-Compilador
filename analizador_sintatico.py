@@ -495,6 +495,7 @@ def analize(get_token:list):
                     esperado += action["value"] 
                     # print('False')
             else: # se nao acho ação para token é pq é token nao esperado
+                esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
                 if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
                     print(f'\t\t\tmodo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
                     for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
@@ -509,6 +510,7 @@ def analize(get_token:list):
                 esperado = []
                 for action in list_actions:
                     esperado += action["value"] 
+                esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
                 # print (f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'")
                 yield f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'"
                 # print(f'acabou a lista de tokens e stack é {stage} logo erros de esperado mas erro de fim de arquivo')

@@ -3,6 +3,8 @@
 2 <PRE, variables>
 2 <DEL, {>
 2 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Erros Sintaticos identificados:

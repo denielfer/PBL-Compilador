@@ -241,6 +241,8 @@
 70 <DEL, }>
 71 <DEL, }>
 72 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Sem erros Sintaticos

@@ -60,6 +60,8 @@
 33 <DEL, }>
 34 <DEL, }>
 35 <DEL, }>
+
+
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Erros Sintaticos identificados:

@@ -1,0 +1,21 @@
+﻿// erro linha 14 pois nao pode dar valor em variables
+const {
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+                real PI = 3.14, E = ;
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}

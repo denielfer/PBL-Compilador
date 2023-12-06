@@ -1,0 +1,16 @@
+// espera alguns 'EOF' porque o codigo nao foi finalizada
+const {
+}
+variables {
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
