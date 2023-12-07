@@ -461,9 +461,6 @@ def analize(get_token:list):
     for token in get_token:
         if token['token'] in ['this','constructor']:
             token['type'] = 'IDE'
-        # if stage == 'END':
-        #     break
-        # print(f'token: {token}\t| stack:{stack}')
         flag = True # se tiver produção vazia continuamos a analize com o mesmo token
         while flag: # ta aqui pra suporta produção vazia
             stage,pos_stage = stack.pop(-1) # por ser pop em '-1' le a pilha da direita pra esquerda
@@ -477,23 +474,18 @@ def analize(get_token:list):
             esperado = []
             for action in list_actions: # para cada token na lista de tokens esperados
                 print(f'\t\tbuscando {action}')
-                # print(f'Buscando:{action}',end='\t|')
-                # print(token[action['key']],action["value"],token[action['key']] == action["value"])
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
                     for item in action["next"]:
                         stack.append(item)
-                    # print('True')
                     break
                 # pode dar merda se vazil nao for o primeiro token
                 elif "" in action["value"]: # se for token vazio continuamos em busca pelo proximo elemento q vem
-                    # print('True')
                     for item in action["next"]:
                         stack.append(item)
                     flag = True
                     break
                 else: # se nao é token esperado e o nao tem token vazio esperado adicionamos a lsita de esperados
                     esperado += action["value"] 
-                    # print('False')
             else: # se nao acho ação para token é pq é token nao esperado
                 esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
                 if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
@@ -511,7 +503,5 @@ def analize(get_token:list):
                 for action in list_actions:
                     esperado += action["value"] 
                 esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
-                # print (f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'")
                 yield f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'"
-                # print(f'acabou a lista de tokens e stack é {stage} logo erros de esperado mas erro de fim de arquivo')
         
