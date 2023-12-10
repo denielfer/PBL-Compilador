@@ -51,9 +51,9 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
 
             if FBC: # terminou o arquivo e ta com comentario de bloco sem termina
                 out_file.write(f'{LINE_FBC + 1} <{CODIGOS[CoMF_CODE]}, {TEXT_FBC}>\n')
-    return tokens_corretos, new_file
+    return tokens_corretos,new_file
 
-def analizador_sintatico_files(list_tokens:list[dict], path:str):
+def analizador_sintatico_files(list_tokens:list[dict],path:str):
     print(path)
     from analizador_sintatico import analize
     erros = []
@@ -73,11 +73,11 @@ if __name__ == '__main__':
     if not paths:
         print('Nenhum arquivo encontrado')
         exit()
-    log_lex = open('log_execução_lexico.txt', "w", encoding=encode)
-    log_sint = open('log_execução_sintatico.txt', "w", encoding=encode)
+    log_lex =  open('log_execução_lexico.txt', "w", encoding=encode)
+    log_sint =  open('log_execução_sintatico.txt', "w", encoding=encode)
     for path in paths:
         sys.stdout = log_lex
-        tokens_corretos, new_file = analizar_lexico_files(path)
+        tokens_corretos,new_file = analizar_lexico_files(path)
         sys.stdout = log_sint
         # sys.stdout = console_print_stdout
-        analizador_sintatico_files(tokens_corretos, new_file)
+        analizador_sintatico_files(tokens_corretos,new_file)
