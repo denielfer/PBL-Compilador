@@ -1,16 +1,26 @@
+
+# Tipos
 TYPE = ['int', 'real', 'boolean', 'string']
+
+# Tipos com void
 TYPES = TYPE +['void'] # menos IDE
 
+# Aritméticos simples
 ART = ['+', '-', '*', '/']
 
+# Aritméticos incremento
 ART_DOUBLE = ['++', '--']
 
+# Relacionais
 REL =  ['<', '<=', '>', '>=', '!=', '==']
 
+# Lógicos
 LOG = ['&&', '||']
 
+# Booleanos
 BOOL = ['true', 'false']
 
+# Gramática do Problema 2 ajustada
 get_functions = {
     'const':[
                 {"test":[
@@ -62,7 +72,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ 
-                # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacota construtor, precisando de branch para main e classe normal assim colocando aqui reduz codigo
+                # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacotar construtor, precisando de branch para main e classe normal, assim, colocando aqui reduz codigo
                     {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)]}
                 ],'erro':{'tipo_recuperação':'next'}},
@@ -106,7 +116,7 @@ get_functions = {
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('func_dec',0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
-                {"test":[ # para main pois precisamos forma função main como primeira e ela é diferente
+                {"test":[ # para main pois precisamos formar a função main como primeira e ela é diferente
                    {'is_terminal':True,"key":'token',"value":['methods'],'next':[('methods',3)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
@@ -437,7 +447,7 @@ get_functions = {
 }
 
 
-def __get_list_actions__(stage:str,pos_stage:int):
+def __get_list_actions__(stage:str, pos_stage:int):
     list_actions_return = []
     for ac in get_functions[stage][pos_stage]['test']:
         if ac['is_terminal']:
@@ -445,9 +455,9 @@ def __get_list_actions__(stage:str,pos_stage:int):
             list_actions_return.append(ac)
         else:
             for nao_terminal in ac['terminais']: 
-                # nao lida com indeterminação, se tiver 2 caminhos pra ide vai ir no que aparecer primeiro na lista
-                # se tiver '' nas produções do action ele vai ser chamado assim q aparecer na lista la embaixo o que gera problema, 
-                #    entao nao chama isso para nao-terminal que tenha '' nas produções
+                # não lida com indeterminação, se tiver 2 caminhos pra IDE vai ir no que aparecer primeiro na lista
+                # se tiver '' nas produções do action ele vai ser chamado assim q aparecer na lista lá embaixo, o que gera um problema, 
+                # então não é chamado para não-terminais que tenham '' nas produções
                 for action_new in __get_list_actions__(*nao_terminal):
                     new_dic = action_new.copy()
                     new_dic['next'] = ac['next'] + action_new['next']
@@ -456,21 +466,21 @@ def __get_list_actions__(stage:str,pos_stage:int):
     return list_actions_return
 
 def analize(get_token:list):
-    stack = [('END',0),('class',0),('variables',0),("const",0)]
+    stack = [('END', 0), ('class', 0), ('variables', 0), ("const", 0)]
     stage = None
     for token in get_token:
-        if token['token'] in ['this','constructor']:
+        if token['token'] in ['this', 'constructor']:
             token['type'] = 'IDE'
-        flag = True # se tiver produção vazia continuamos a analize com o mesmo token
-        while flag: # ta aqui pra suporta produção vazia
+        flag = True # se tiver produção vazia continuamos a análise com o mesmo token
+        while flag: # suporte para produção vazia
             stage,pos_stage = stack.pop(-1) # por ser pop em '-1' le a pilha da direita pra esquerda
-            print('\t',stage,pos_stage,'token : ',token,' |',' stack :',stack)
+            print('\t', stage, pos_stage, 'token : ', token, ' |', ' stack :', stack)
             flag = False
             if stage == 'END':
                 yield f"Na linha {token['line']}, era esperado 'EOF' porém foi obtido {token['token']}"
-                stack.append(('END',0))
+                stack.append(('END', 0))
                 continue
-            list_actions = __get_list_actions__(stage,pos_stage)
+            list_actions = __get_list_actions__(stage, pos_stage)
             esperado = []
             for action in list_actions: # para cada token na lista de tokens esperados
                 print(f'\t\tbuscando {action}')
@@ -478,30 +488,30 @@ def analize(get_token:list):
                     for item in action["next"]:
                         stack.append(item)
                     break
-                # pode dar merda se vazil nao for o primeiro token
-                elif "" in action["value"]: # se for token vazio continuamos em busca pelo proximo elemento q vem
+                # pode dar erro se vazio não for o primeiro token
+                elif "" in action["value"]: # se for token vazio, continuamos em busca pelo próximo elemento
                     for item in action["next"]:
                         stack.append(item)
                     flag = True
                     break
-                else: # se nao é token esperado e o nao tem token vazio esperado adicionamos a lsita de esperados
+                else: # se não for o token esperado e não tiver token vazio esperado, adicionamos a lista de esperados
                     esperado += action["value"] 
-            else: # se nao acho ação para token é pq é token nao esperado
+            else: # se não achou ação para o token é porque é token não esperado
                 esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
                 if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
-                    print(f'\t\t\tmodo thiago segue pra frente -> Na linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
-                    for item in list_actions[-1]["next"]: # adiciona a pilha a ultima possibilidade do token
+                    print(f'\t\t\tNa linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
+                    for item in list_actions[-1]["next"]: # adiciona a pilha a última possibilidade do token
                         stack.append(item)
                     pass
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido \'{token['token']}\' "
-    else:# quando os tokens acabarem
+    else: # quando os tokens acabarem
         for item in stack[::-1]: # para cada item na stack
             stage, pos_stage = item
-            if stage != 'END': # se nao for o fim gera o erro
+            if stage != 'END': # se não for o fim gera o erro
                 list_actions = get_functions[stage][pos_stage]['test']
                 esperado = []
                 for action in list_actions:
                     esperado += action["value"] 
-                esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
-                yield f"Na linha {token['line']+1}, era esperado {esperado} porém foi obtido 'EOF'"
+                esperado = str(esperado).replace("'IDE'", "IDE").replace("'NRO'", "NRO").replace("'CAC'", "CAC")
+                yield f"Na linha {token['line'] + 1}, era esperado {esperado} porém foi obtido 'EOF'"
         
