@@ -1,6 +1,5 @@
-const {
-    int sete = 4, oito = 25, oito = 25;
-    int this=1;
+﻿const {
+    int sete = 4, oito = 25;
     real um = 4, dois = 1.1;
     string variavel="false", variavel2="4";
     boolean teste = false;
@@ -23,7 +22,6 @@ class a{
         int metodo1(Pessoa p, int a, Object ob, boolean b, real c){
             variables {}
             objects {}
-
             this->metodo3();
             this->metodo4(a, 3, b, 5, 6);
             return a;
@@ -31,15 +29,12 @@ class a{
         void metodo2(){
             variables {real c; int b;}
             objects {Pessoa person;}
-        
-
+       
             this->metodo3();
             this->metodo4(a, 3, b, 5, 6);
             if (REL) then {
                 this->metodo3();
-
             } else {
-
                 person.cloth.t_shirt.model->set("oversized");
                 vehicle.car->drive();
                 vehicle->add("motorcycle");
@@ -73,60 +68,6 @@ class a extends a{
     }
 }
 
-class Pessoa extends Humanos{
-    variables{
-    string nome;
-    int idade;}
-    objects{
-    Pessoa p1;
-    }
-    methods{
-    void apresentar() {
-        variables{}
-        objects{}
-        print("Meu nome e nome e tenho  idade anos.");
-        print(a.concact);
-        
-        for (i = 0; i < matriz.length; i++) {
-            for (j = 0; j < matriz[i].length; j++) {
-                temp = matriz[i][j] / 2;
-                if ( temp == 0) 
-                then{
-                    print("O numero na posicao e par: ");
-                } else {
-                    for (i = 0; i < numeros.length; i++) {
-                        temp = numeros[i] / 2;
-                        if ( temp == 0) 
-                            then{
-                                print("O numero numeros[i] e par.");
-                        } else {
-                            print("O numero numeros[i] e impar.");
-                        }
-                    }
-                }
-            }
-        }
-        return;
-    }
-    
-    }
-    constructor () {
-        variables{}
-        objects{}
-    }
-
-}
-
-class Estudante extends Pessoa {
-        variables{string instituicao;}
-        objects{}
-        methods{}
-        constructor (String nome, int idade, String instituicao) {
-            variables{}
-            objects{}
-            Ppessoa->super(nome, idade);
-        }
-}
 class main{
     variables {
         boolean flag;
@@ -169,38 +110,30 @@ class main{
             conta = (4 * (5 + 1)) / ((2 + 3) * (8 - 6));
             if (opa > 2) then {
                 this->metodo3();
-
             }
             if (mat->calc(2, 2) > 1) then {
                 this->metodo3();
-
             }
             if (this.mat->calc(2, 2) > 1) then {
                 this->metodo3();
-
             }
             if (this->calc(2, 2) > 1) then {
                 this->metodo3();
-
             }
             if (!test) then {
                 this->metodo3();
-
             }
             if (test && test_2) then {
                 this->metodo3();
-
             }
             if (test || false) then {
                 this->metodo3();
-
             }
             if ((t > 2) || false) then {
                 this->metodo3();
             }
             if ((t > 2) && (b <3)) then {
                 this->metodo3();
-
             }
             not = !yes;
             not = yes && yes;
@@ -216,7 +149,6 @@ class main{
             }
             for(i=1;i>=10;i=i+1){
                 this->metodo3();
-
             }
             
             return;
@@ -224,12 +156,21 @@ class main{
          int metodo1(Pessoa p, int a, Object ob, boolean b, real c){
             variables {}
             objects {}
-
             this->metodo3();
             this->metodo4(a, 3, b, 5, 6);
             return a;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 

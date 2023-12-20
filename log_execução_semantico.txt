@@ -1,0 +1,14 @@
+﻿files\test-geral-01-saida.txt
+{'line': 16, 'type': 'DEL', 'token': '['}
+{'line': 16, 'type': 'NRO', 'token': '2'}
+Na linha 59, i declarado novamente
+
+Na linha 72, i declarado novamente
+
+{'line': 76, 'type': 'DEL', 'token': '['}
+{'line': 76, 'type': 'IDE', 'token': 'i'}
+Na linha 138, tentou extender a classe Pessoa, porém esta não foi declarado
+
+{'line': 184, 'type': 'DEL', 'token': '['}
+{'line': 184, 'type': 'NRO', 'token': '3'}
+{'line': 206, 'type': 'DEL', 'token': '['}

@@ -53,12 +53,19 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
                 out_file.write(f'{LINE_FBC + 1} <{CODIGOS[CoMF_CODE]}, {TEXT_FBC}>\n')
     return tokens_corretos,new_file
 
-def analizador_sintatico_files(list_tokens:list[dict], path:str):
+def analizador_sintatico_files(list_tokens:list[dict], path:str,log_sem):
     print(path)
+    print(path,file=log_sem)
     from analizador_sintatico import analize
     erros = []
-    for erro in analize(list_tokens):
-        erros.append(erro)
+    analizer = analize(list_tokens,log_sem)
+    semantico = None
+    try:
+        while True:
+            erro = next(analizer)
+            erros.append(erro)
+    except StopIteration as e:
+        semantico = e
     with open(path, 'a', encoding = encode) as out_file:
         if erros != []:
             out_file.write('\n\nErros Sintaticos identificados:\n')
@@ -66,6 +73,16 @@ def analizador_sintatico_files(list_tokens:list[dict], path:str):
                 out_file.write(f'{erro}\n')
         else:
             out_file.write(f'\n\nSem erros Sintaticos')
+        sys.stdout = log_sem
+        print("___________________")
+        print(semantico)
+        if semantico is None or semantico != []:
+            out_file.write(f'\n\nSem erros Semanticos')
+        else:
+            out_file.write('\n\nErros Semanticos identificados:\n')
+            out_file.write(f'{semantico}\n')
+
+
 
 if __name__ == '__main__':
     
@@ -75,9 +92,11 @@ if __name__ == '__main__':
         exit()
     log_lex =  open('log_execução_lexico.txt', "w", encoding=encode)
     log_sint =  open('log_execução_sintatico.txt', "w", encoding=encode)
+    log_sem =  open('log_execução_semantico.txt', "w", encoding=encode)
     for path in paths:
         sys.stdout = log_lex
         tokens_corretos, new_file = analizar_lexico_files(path)
         sys.stdout = log_sint
         # sys.stdout = console_print_stdout
-        analizador_sintatico_files(tokens_corretos, new_file)
+        # analizador_sintatico_files(tokens_corretos, new_file,console_print_stdout)
+        analizador_sintatico_files(tokens_corretos, new_file,log_sem)

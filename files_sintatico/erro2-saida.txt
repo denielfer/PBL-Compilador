@@ -1,12 +1,18 @@
 ﻿2 <PRE, const>
 2 <DEL, {>
-3 <DEL, }>
-4 <PRE, variables>
-4 <DEL, {>
-5 <PRE, real>
-5 <IDE, PI>
-5 <REL, =>
-5 <DEL, ;>
+3 <PRE, real>
+3 <IDE, PI>
+3 <REL, =>
+3 <NRO, 3.14>
+3 <DEL, ,>
+3 <IDE, E>
+3 <REL, =>
+3 <CAC, "asdas">
+3 <DEL, ;>
+3 <DEL, ;>
+4 <DEL, }>
+5 <PRE, variables>
+5 <DEL, {>
 6 <DEL, }>
 7 <PRE, class>
 7 <PRE, main>
@@ -40,8 +46,10 @@
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Erros Sintaticos identificados:
-Na linha 5, era esperado [';'] porém foi obtido '=' 
-Na linha 5, era esperado ['}'] porém foi obtido ';' 
+Na linha 3, era esperado ['}'] porém foi obtido ';' 
+Na linha 4, era esperado ['variables'] porém foi obtido '}' 
+Na linha 5, era esperado ['{'] porém foi obtido 'variables' 
+Na linha 5, era esperado ['}'] porém foi obtido '{' 
 Na linha 6, era esperado ['class'] porém foi obtido '}' 
 Na linha 7, era esperado ['main', IDE] porém foi obtido 'class' 
 Na linha 7, era esperado ['{'] porém foi obtido 'main' 
@@ -75,3 +83,6 @@ Na linha 22, era esperado ['methods'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['constructor'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['class'] porém foi obtido 'EOF'
+
+
+Sem erros Semanticos

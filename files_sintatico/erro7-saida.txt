@@ -58,3 +58,6 @@ Na linha 18, era esperado 'EOF' porém foi obtido ;
 Na linha 19, era esperado 'EOF' porém foi obtido }
 Na linha 20, era esperado 'EOF' porém foi obtido }
 Na linha 21, era esperado 'EOF' porém foi obtido }
+
+
+Sem erros Semanticos

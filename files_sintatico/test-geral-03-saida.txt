@@ -246,3 +246,5 @@
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Sem erros Sintaticos
+
+Sem erros Semanticos

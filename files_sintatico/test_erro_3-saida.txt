@@ -35,3 +35,6 @@ Na linha 15, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 15, era esperado ['int', 'real', 'boolean', 'string', 'void', IDE, ''] porém foi obtido 'EOF'
 Na linha 15, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 15, era esperado ['}'] porém foi obtido 'EOF'
+
+
+Sem erros Semanticos

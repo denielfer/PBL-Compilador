@@ -16,18 +16,17 @@
 11 <PRE, methods>
 11 <DEL, {>
 12 <PRE, int>
-12 <PRE, main>
+12 <IDE, fist>
 12 <DEL, (>
 12 <DEL, )>
 12 <DEL, {>
-13 <PRE, main>
+13 <PRE, variables>
 13 <DEL, {>
 14 <DEL, }>
 15 <PRE, objects>
 15 <DEL, {>
 16 <DEL, }>
 17 <PRE, return>
-17 <NRO, 1>
 17 <DEL, ;>
 18 <DEL, }>
 19 <DEL, }>
@@ -37,4 +36,7 @@
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
 
 Erros Sintaticos identificados:
-Na linha 13, era esperado ['variables'] porém foi obtido 'main' 
+Na linha 12, era esperado ['main'] porém foi obtido 'fist' 
+
+
+Sem erros Semanticos
