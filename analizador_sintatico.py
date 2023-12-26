@@ -32,17 +32,17 @@ get_functions = {
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":TYPE,'next':[('const',2),('const',3)]},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[1]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack']}},
                 {"test":[
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('const',4)]},
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[2]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['insert_const_or_var','set_const']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['='],'next':[('const',5)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value": BOOL,'next':[('const',6)]},
                     {'is_terminal':True,"key":'type',"value": ['NRO','CAC'],'next':[('const',6)]},
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[3]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['atr_const']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value": [','],'next':[('const',3)]},
                     {'is_terminal':True,"key":'token',"value": [''],'next':[(";",0)]},
@@ -51,44 +51,44 @@ get_functions = {
     'variables':[
                     {"test":[
                         {'is_terminal':True,"key":'token',"value":['variables'],'next':[('variables',1)]},
-                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':[-1]}},
+                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':['clear_stack']}},
                     {"test":[
                         {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('variables',2)]},
                     ],'erro':{'tipo_recuperação':'next'}},
                     {"test":[
                         {'is_terminal':True,"key":'token',"value":TYPE,'next':[('variables',2),('variables',3)]},
                         {'is_terminal':True,"key":'token',"value":[''],'next':[]},
-                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':[1]}},
+                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack']}},
                     {"test":[
                         {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('variables',4),('dimention_acess',0)]},
-                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':[2]}},
+                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':['insert_const_or_var']}},
                     {"test":[
                         {'is_terminal':True,"key":'token',"value": [','],'next':[('variables',3)]},
                         {'is_terminal':True,"key":'token',"value": [''],'next':[(";",0)]},
-                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':[-2]}},
+                    ],'erro':{'tipo_recuperação':'next'},'s':{'do':['pop_stack','pop_stack']}},
                 ],
     'class': [
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)]}
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[-1]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['clear_stack']}},
                 {"test":[ 
                 # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacotar construtor, precisando de branch para main e classe normal, assim, colocando aqui reduz codigo
                     {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)]}
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[6]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['dec_class']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['extends'],'next':[("class",3)]},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[("class",4)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                   {'is_terminal':True,"key":'type',"value":['IDE'],'next':[("class",4)]}
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[7]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['extends_class']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',0),('object',0),("variables",0)]}
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[8]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack_class']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('methods',2),('object',0),("variables",0)]}
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[8]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack_class']}},
               ],
     'object':[
                 {"test":[
@@ -96,14 +96,14 @@ get_functions = {
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('object',2)]}
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack_temp']}},
                 {"test":[
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object',2),('object',3)]},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['verify_type_class']}},
                 {"test":[
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object',4),('dimention_acess',0)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['insert_object']}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value": [','],'next':[('object',3)]},
                     {'is_terminal':True,"key":'token',"value": [''],'next':[(";",0)]},
@@ -126,39 +126,38 @@ get_functions = {
     'func_main':[
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_main',1)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack']}},
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":['main'],'next':[('func_main',2)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['creat_func']}},
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['move_param']}}, # tem move_param pois apesar de nao ter parametro, o proximo ('func_dec',3) começa com scopo.pop()
     ],
     'func_dec':[
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":TYPES,'next':[('func_dec',1)]},
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',1)]},
                     {'is_terminal':True,"key":'type',"value":[''],'next':[]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['append_stack']}},
                 {'test':[
                     {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['creat_func']}},
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0),('dec_parameter',0)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['move_param']}},
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('return',0),("command",0),('object',0),('variables',0)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['change_scopo_to_data']}},
     ],
     'return':[
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['return'],'next':[('return',1)]}
-                ],'erro':{'tipo_recuperação':'next'}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['return_func_data']}},
                 {"test":[
                     {'is_terminal':False,'terminais':[('value',0)],'next':[(";",0)]},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[(";",0)]},
-                ],'erro':{'tipo_recuperação':'next'}
-                },
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':['validate_return']}},
             ],
     'end_block':[ # ("end_block",0),
                 {"test":[
@@ -394,7 +393,7 @@ get_functions = {
                 ],'erro':{'tipo_recuperação':'next'},'s':{'do':[4]}},
                 {"test":[
                     {'is_terminal':True,"key":'type',"value":['IDE','NRO'],'next':[("dimention_acess",2)]},
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[4]}},
+                ],'erro':{'tipo_recuperação':'next'},'s':{'do':[5]}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":[']'],'next':[("dimention_acess",0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
@@ -530,11 +529,13 @@ def analize(get_token:list,log_sem):
 # to do : mudar para varias funçoes?
 #          implementa no codigo a cima chamada
 def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
-    # print(controle,tabela,file = log_sem)
+    print(controle,tabela,token,file = log_sem)
     match controle:
-        case 1:
+        case 'append_stack':
+            # stack: ...
             tabela['stack'].append(token["token"])
-        case 2:
+            # stack: ..., tipo
+        case 'insert_const_or_var':
             a = _get_scopo(tabela,scopo)
             from analizador_lexico import PRE
             if token["token"] in a:
@@ -542,11 +543,21 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                 return f"Na linha {token['line'] + 1}, {token['token']} declarado novamente\n"
             elif token["token"] in PRE:
                 # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palabra reservada\n"    
-            a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False}
+                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palavra reservada\n"    
+            a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False,'is_const':False}
             tabela['stack'].append(token["token"])
-        case 3:
+            # stack: ..., tipo, var
+            tabela['stack'].append(controle)
+            # stack: ..., tipo, var, controle
+        case "set_const":
+            a = _get_scopo(tabela,scopo)
+            a[token['token']]["is_const"] = True
+        case "atr_const":
+            # stack: ..., tipo, var, controle
+            tabela['stack'].pop()
+            # stack: ..., tipo, var
             var = tabela['stack'].pop()
+            # stack: ..., tipo
             tipo = tabela['stack'][-1]
             match tipo:
                 case 'string':
@@ -570,12 +581,21 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
         case 4:
             print(token,file = log_sem)
 
-            var = tabela['stack'][-1]
-            a = _get_in_scopo(var, tabela,scopo)
-            if var not in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line'] + 1}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo\n"
-            a[var]["is_vetor"] = True
+            t = tabela['stack'][-1]
+            var = tabela['stack'][-2]
+            if(t == 2):
+                a = _get_in_scopo(var, tabela,scopo)
+                if var not in a:
+                    # print(f'retorno {controle} - 1',file = log_sem)
+                    return f"Na linha {token['line'] + 1}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo\n"
+                a[var]["is_vetor"] = True
+            else:
+                a = _get_in_scopo(var, tabela,scopo)
+                if var not in a:
+                    # print(f'retorno {controle} - 1',file = log_sem)
+                    return f"Na linha {token['line'] + 1}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo\n"
+                if not a[var]["is_vetor"]:
+                    return f"Na linha {token['line'] + 1}, tentando acessar vetor porém {var} não é vetor\n"
         case 5:
             var = token['token']
             match token['type']:
@@ -591,9 +611,7 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                     if '.' in token["token"]:
                         # print(f'retorno {controle} - 3',file = log_sem)
                         return f"Na linha {token['line'] + 1}, tentando realizar acesso em vetor com valor float ( {var} )\n"
-            a = _get_scopo(tabela,scopo)
-            a[var]['is_instanciado'] = True
-        case 6:
+        case 'dec_class':
             a = _get_scopo(tabela,scopo)
             from analizador_lexico import PRE
             if token["token"] in a:
@@ -601,12 +619,12 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                 return f"Na linha {token['line'] + 1}, {token['token']} declarado novamente\n"
             elif token["token"] in PRE and token['token'] != 'main':
                 # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palabra reservada\n"    
+                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palavra reservada\n"    
             a[token['token']] = {"type":'class',"data":{}}
             # print(tabela['stack'],file = log_sem)
             tabela['stack'].append(token["token"])
             # print(tabela['stack'],file = log_sem)
-        case 7:
+        case 'extends_class':
             a = _get_scopo(tabela,scopo)
             if token['token'] not in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
@@ -616,7 +634,7 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                 return f"Na linha {token['line'] + 1}, tentou extender {token['token']}, porém este não é uma classe\n"
             var = tabela['stack'][-1]
             a[var]['data'] = a[token['token']]['data']
-        case 8:
+        case 'append_stack_class':
             # print(tabela['stack'],file = log_sem)
             # print(tabela['stack'],file = log_sem)
             # print(tabela['stack'],file = log_sem)
@@ -624,20 +642,125 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             # print(tabela['stack'],file = log_sem)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
-        case 9:
-            a = _get_scopo(tabela,scopo)
+        # case 9:
+        #     a = _get_scopo(tabela,scopo)
+        #     if token["token"] not in a:
+        #         # print(f'retorno {controle} - 1',file = log_sem)
+        #         return f"Na linha {token['line'] + 1}, classe {token['token']} não foi declarado novamente\n"
+        #     elif token["token"] in PRE:
+        #         # print(f'retorno {controle} - 2',file = log_sem)
+        #         return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palavra reservada\n"    
+        #     a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False}
+        #     tabela['stack'].append(token["token"])
+        case 'verify_type_class':
+            tabela['stack'].pop()
+            a = tabela['global']
             if token["token"] not in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line'] + 1}, classe {token['token']} não foi declarado novamente\n"
+                return f"Na linha {token['line'] + 1}, classe {token['token']} não foi encontrada\n"
+            else:
+                if a[token['token']]["type"] != 'class':
+                    return f"Na linha {token['line'] + 1}, {token['token']} foi usado como classe porem é {a[token['token']]['type']}\n"
+            tabela['stack'].append(token["token"])
+        case 'insert_object':
+            a = _get_scopo(tabela,scopo)
+            from analizador_lexico import PRE
+            if token["token"] in a:
+                # print(f'retorno {controle} - 1',file = log_sem)
+                return f"Na linha {token['line'] + 1}, {token['token']} declarado novamente\n"
             elif token["token"] in PRE:
                 # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palabra reservada\n"    
-            a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False}
-            tabela['stack'].append(token["token"])
-        case -1:
-            tabela['stack'] = []
-        case -2:
+                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palavra reservada\n"    
+            # stack: ..., class, data
+            a[token['token']] = {"type":tabela['stack'][-2],"data":a[tabela['stack'][-2]]['data']}
+        case 'append_stack_temp':
+            # stack: ...
+            tabela['stack'].append('temp')
+            scopo.append(tabela['stack'][-1])
+            scopo.append('data')
+            # stack: ..., temp
+        case 'pop_stack':
+            # stack: ..., _
             tabela['stack'].pop()
+            # stack: ...
+        case 'clear_stack':
+            # stack: ...
+            tabela['stack'] = []
+            # stack: 
+        case 'creat_func':
+            # stack: ..., tipo
+            tipo = tabela['stack'].pop()
+            # stack: ...
+            a = _get_scopo(tabela,scopo)
+            from analizador_lexico import PRE
+            if token["token"] in a:
+                # print(f'retorno {controle} - 1',file = log_sem)
+                return f"Na linha {token['line'] + 1}, {token['token']} declarado novamente\n"
+            elif token["token"] in PRE and token['token'] != "main":
+                # print(f'retorno {controle} - 2',file = log_sem)
+                return f"Na linha {token['line'] + 1}, {token['token']} foi declarado porém é palavra reservada\n"    
+            a[token['token']] = {"type":tipo,'param':{}}
+            # scopo: ...            
+            scopo.append(token["token"])
+            # scopo: ..., func
+            # # stack: ...
+            # tabela['stack'].append(token["token"])
+            # # stack: ..., func
+        case 'move_param':
+            # scopo: ..., func
+            scopo.append(token["param"])
+            # scopo: ..., func, param
+        case 'change_scopo_to_data':
+            # stack: ..., func, param
+            scopo.pop()
+            # stack: ..., func
+            a = _get_scopo(tabela,scopo)
+            a['data'] = {}
+            scopo.append(token["data"])
+            # stack: ..., func, data
+        case 'return_func_data':
+            # scopo: ..., func, data
+            scopo.pop()
+            # scopo: ..., func
+            a = _get_scopo(tabela,scopo)
+            # del(a['data'])
+            tabela['stack'].append(scopo.pop())
+            # scopo: ...
+            # stack: ...,func
+        case 'validate_return':
+            # scopo: ...,func
+            func = tabela['stack'].pop()
+            # scopo: ...,
+            a = _get_scopo(tabela,scopo)
+            tipo = a[func]['type']
+            match tipo:
+                case 'string':
+                    if token["type"] != 'CAC':
+                        # print(f'retorno {controle} - 1',file = log_sem)
+                        return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}\n"
+                case 'boolean':
+                    if token["token"] not in BOOL:
+                        # print(f'retorno {controle} - 2',file = log_sem)
+                        return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}\n"
+                case 'real':
+                    if token["type"] != 'NRO' and '.' not in token["token"]:
+                        # print(f'retorno {controle} - 3',file = log_sem)
+                        return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}\n"
+                case 'int':
+                    if token["type"] != 'NRO' and '.' in token["token"]:
+                        # print(f'retorno {controle} - 4',file = log_sem)
+                        return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}\n"
+                case 'void':
+                    return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}\n"    
+                case _:
+                    a = _get_in_scopo(token['token'],tabela,scopo+[func,'data'])
+                    if token['token'] not in a:
+                        return f"Na linha {token['line'] + 1}, tentou retorna {token['token']}, porem não existe no scopo\n"
+                    elif a[token['token']]['type'] != a[func]['type']:
+                        return f"Na linha {token['line'] + 1}, retorno da função {func} devia ser {tipo}, porém é {token['token']}, do tipo {a[token['token']]['type']}\n"
+                        
+                        
+
         case _:
             pass
 
