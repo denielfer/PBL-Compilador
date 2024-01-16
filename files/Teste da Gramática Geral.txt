@@ -52,18 +52,7 @@ class main{
         void main(){
             variables {}
             objects {}
+            return;
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

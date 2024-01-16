@@ -188,9 +188,25 @@
 54 <PRE, objects>
 54 <DEL, {>
 54 <DEL, }>
-55 <DEL, }>
+55 <PRE, return>
+55 <DEL, ;>
 56 <DEL, }>
 57 <DEL, }>
+58 <DEL, }>
 
 
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
+
+Sem erros Sintaticos
+
+Erros Semanticos identificados:
+Na linha 12, sete declarado novamente
+Na linha 12, oito declarado novamente
+Na linha 13, um declarado novamente
+Na linha 13, dois declarado novamente
+Na linha 14, variavel declarado novamente
+Na linha 14, variavel2 declarado novamente
+Na linha 15, teste declarado novamente
+Na linha 18, a declarado novamente
+Na linha 28, a declarado novamente
+Na linha 49, classe Math não foi encontrada

@@ -230,8 +230,11 @@
  15	| Controle: 2	|Token: ret	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
  16	| Controle: 2	|Token: retu	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
  17	| Controle: 2	|Token: retur	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
- 18	| Controle: 2	|Token: return	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: return	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'return')
+ 19	| Controle: -1	|Token: 	|Char Analizado: "1"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: 4	|Token: 1	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(4, '1')
  fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
@@ -1341,6 +1344,28 @@
  5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 8	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 9	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 11	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 12	| Controle: -1	|Token: 	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: r	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: re	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 15	| Controle: 2	|Token: ret	|Char Analizado: "u"	|erro_ponto: None	|force_continue: False
+ 16	| Controle: 2	|Token: retu	|Char Analizado: "r"	|erro_ponto: None	|force_continue: False
+ 17	| Controle: 2	|Token: retur	|Char Analizado: "n"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: return	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(1, 'return')
+ fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+(5, ';')
+ 0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 1	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 2	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 3	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 4	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 5	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 6	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 7	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
  8	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
@@ -1354,15 +1379,3 @@
  0	| Controle: -1	|Token: 	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
  fim de string	| Controle: 5	|Token: }	|Char Analizado: "}"	|erro_ponto: None	|force_continue: False
 (5, '}')
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False
- fim de string	| Controle: -1	|Token: 	|Char Analizado: ""	|erro_ponto: None	|force_continue: False

@@ -27,6 +27,7 @@
 14 <DEL, {>
 15 <DEL, }>
 16 <PRE, return>
+16 <NRO, 1>
 16 <DEL, ;>
 17 <DEL, }>
 18 <DEL, }>
@@ -37,4 +38,5 @@ A análise léxica foi realizada com sucesso e não identificou nenhum erro de m
 
 Sem erros Sintaticos
 
-Sem erros Semanticos
+Erros Semanticos identificados:
+
