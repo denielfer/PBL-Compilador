@@ -188,11 +188,31 @@
 54 <PRE, objects>
 54 <DEL, {>
 54 <DEL, }>
-55 <PRE, return>
+55 <PRE, print>
+55 <DEL, (>
+55 <IDE, sete>
+55 <DEL, )>
 55 <DEL, ;>
-56 <DEL, }>
-57 <DEL, }>
-58 <DEL, }>
+56 <PRE, print>
+56 <DEL, (>
+56 <CAC, "asdads">
+56 <DEL, )>
+56 <DEL, ;>
+57 <PRE, print>
+57 <DEL, (>
+57 <NRO, 1>
+57 <DEL, )>
+57 <DEL, ;>
+58 <PRE, print>
+58 <DEL, (>
+58 <NRO, 1.12>
+58 <DEL, )>
+58 <DEL, ;>
+60 <PRE, return>
+60 <DEL, ;>
+61 <DEL, }>
+62 <DEL, }>
+63 <DEL, }>
 
 
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.

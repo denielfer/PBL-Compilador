@@ -52,6 +52,11 @@ class main{
         void main(){
             variables {}
             objects {}
+            print(sete);
+            print("asdads");
+            print(1);
+            print(1.12);
+            
             return;
         }
     }

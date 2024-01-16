@@ -668,16 +668,65 @@ files\Teste da Gramática Geral-saida.txt
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
 	 end_block 0 token :  {'line': 54, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 command 0 token :  {'line': 55, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+	 command 0 token :  {'line': 55, 'type': 'PRE', 'token': 'print'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
+	 print 0 token :  {'line': 55, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
+	 print 1 token :  {'line': 55, 'type': 'IDE', 'token': 'sete'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+	 dimention_acess 0 token :  {'line': 55, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0), ('object_access', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['['], 'next': [('dimention_acess', 1)], 's': {'do': ['validate_is_vector']}}
+		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': [], 's': {'do': ['pop_stack']}}
+	 object_access 0 token :  {'line': 55, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['.'], 'next': [('object_access', 1)]}
+		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
+	 close_parentesis 0 token :  {'line': 55, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
+	 ; 0 token :  {'line': 55, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
+	 command 0 token :  {'line': 56, 'type': 'PRE', 'token': 'print'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
+	 print 0 token :  {'line': 56, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
+	 print 1 token :  {'line': 56, 'type': 'CAC', 'token': '"asdads"'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
+	 close_parentesis 0 token :  {'line': 56, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
+	 ; 0 token :  {'line': 56, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
+	 command 0 token :  {'line': 57, 'type': 'PRE', 'token': 'print'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
+	 print 0 token :  {'line': 57, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
+	 print 1 token :  {'line': 57, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
+	 close_parentesis 0 token :  {'line': 57, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
+	 ; 0 token :  {'line': 57, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
+	 command 0 token :  {'line': 58, 'type': 'PRE', 'token': 'print'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
+	 print 0 token :  {'line': 58, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
+	 print 1 token :  {'line': 58, 'type': 'NRO', 'token': '1.12'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
+	 close_parentesis 0 token :  {'line': 58, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
+	 ; 0 token :  {'line': 58, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
+	 command 0 token :  {'line': 60, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['print'], 'next': [('command', 0), (';', 0), ('print', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['read'], 'next': [('command', 0), (';', 0), ('read', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['if'], 'next': [('command', 0), ('if', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['for'], 'next': [('command', 0), ('for', 0)]}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 return 0 token :  {'line': 55, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 0 token :  {'line': 60, 'type': 'PRE', 'token': 'return'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['return'], 'next': [('return', 1)], 's': {'do': ['return_func_data']}}
-	 return 1 token :  {'line': 55, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 return 1 token :  {'line': 60, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['NRO'], 'next': [(';', 0), ('arit_expression', 0)], 's': {'do': ['stack_NRO', 'validate_return', 'validate_return']}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC'], 'next': [(';', 0)], 's': {'do': ['stack_CAC', 'validate_return', 'validate_return']}}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['['], 'next': [(';', 0), ('vetor_assinement', 0)], 's': {'do': ['validate_return']}}
@@ -686,15 +735,15 @@ files\Teste da Gramática Geral-saida.txt
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [(';', 0), ('aritimetic_or_logical_expression', 0), ('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validate_return']}}
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['true', 'false'], 'next': [(';', 0)], 's': {'do': ['stack_BOOL', 'validate_return', 'validate_return']}}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': [(';', 0)], 's': {'do': ['validate_return_void']}}
-	 ; 0 token :  {'line': 55, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
+	 ; 0 token :  {'line': 60, 'type': 'DEL', 'token': ';'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [';'], 'next': []}
-	 end_block 0 token :  {'line': 56, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
+	 end_block 0 token :  {'line': 61, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 func_dec 0 token :  {'line': 57, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
+	 func_dec 0 token :  {'line': 62, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string', 'void'], 'next': [('func_dec', 1)], 's': {'do': ['append_stack']}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('func_dec', 1)], 's': {'do': ['append_stack']}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': [''], 'next': []}
-	 end_block 0 token :  {'line': 57, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
+	 end_block 0 token :  {'line': 62, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
-	 end_block 0 token :  {'line': 58, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
+	 end_block 0 token :  {'line': 63, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}

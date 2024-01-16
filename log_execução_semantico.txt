@@ -6276,7 +6276,7 @@ stack:[
     "boolean",
     "flag"
 ]
--> return_func_data | ['global', 'main', 'data', 'main', 'data'] | {'line': 55, 'type': 'PRE', 'token': 'return'}
+-> validade_IDE | ['global', 'main', 'data', 'main', 'data'] | {'line': 55, 'type': 'IDE', 'token': 'sete'}
 data:{
     "sete": {
         "type": "int",
@@ -6395,9 +6395,9 @@ stack:[
     "main",
     "boolean",
     "flag",
-    "main"
+    "sete"
 ]
--> validate_return_void | ['global', 'main', 'data'] | {'line': 55, 'type': 'DEL', 'token': ';'}
+-> add_void_stack | ['global', 'main', 'data', 'main', 'data'] | {'line': 55, 'type': 'IDE', 'token': 'sete'}
 data:{
     "sete": {
         "type": "int",
@@ -6515,7 +6515,373 @@ data:{
 stack:[
     "main",
     "boolean",
-    "flag"
+    "flag",
+    "sete",
+    "void"
+]
+-> pop_stack | ['global', 'main', 'data', 'main', 'data'] | {'line': 55, 'type': 'DEL', 'token': ')'}
+data:{
+    "sete": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "oito": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "um": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "dois": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel2": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste_2": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "a": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "c": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aa": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "a_2": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b0_c": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "tres4quatro": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aaa": {
+        "type": "tres4quatro",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "main": {
+        "type": "class",
+        "data": {
+            "flag": {
+                "type": "boolean",
+                "is_instanciado": false,
+                "is_vetor": false,
+                "is_const": false
+            },
+            "main": {
+                "type": "void",
+                "param": {},
+                "data": {}
+            }
+        }
+    }
+}
+stack:[
+    "main",
+    "boolean",
+    "flag",
+    "sete"
+]
+-> return_func_data | ['global', 'main', 'data', 'main', 'data'] | {'line': 60, 'type': 'PRE', 'token': 'return'}
+data:{
+    "sete": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "oito": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "um": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "dois": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel2": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste_2": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "a": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "c": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aa": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "a_2": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b0_c": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "tres4quatro": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aaa": {
+        "type": "tres4quatro",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "main": {
+        "type": "class",
+        "data": {
+            "flag": {
+                "type": "boolean",
+                "is_instanciado": false,
+                "is_vetor": false,
+                "is_const": false
+            },
+            "main": {
+                "type": "void",
+                "param": {},
+                "data": {}
+            }
+        }
+    }
+}
+stack:[
+    "main",
+    "boolean",
+    "flag",
+    "sete",
+    "main"
+]
+-> validate_return_void | ['global', 'main', 'data'] | {'line': 60, 'type': 'DEL', 'token': ';'}
+data:{
+    "sete": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "oito": {
+        "type": "int",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "um": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "dois": {
+        "type": "real",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "variavel2": {
+        "type": "string",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "teste_2": {
+        "type": "boolean",
+        "is_instanciado": true,
+        "is_vetor": false,
+        "is_const": true
+    },
+    "a": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "c": {
+        "type": "int",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aa": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "a_2": {
+        "type": "boolean",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "b0_c": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "tres4quatro": {
+        "type": "real",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "aaa": {
+        "type": "tres4quatro",
+        "is_instanciado": false,
+        "is_vetor": false,
+        "is_const": false
+    },
+    "main": {
+        "type": "class",
+        "data": {
+            "flag": {
+                "type": "boolean",
+                "is_instanciado": false,
+                "is_vetor": false,
+                "is_const": false
+            },
+            "main": {
+                "type": "void",
+                "param": {},
+                "data": {}
+            }
+        }
+    }
+}
+stack:[
+    "main",
+    "boolean",
+    "flag",
+    "sete"
 ]
 ___________________
 ['Na linha 12, sete declarado novamente', 'Na linha 12, oito declarado novamente', 'Na linha 13, um declarado novamente', 'Na linha 13, dois declarado novamente', 'Na linha 14, variavel declarado novamente', 'Na linha 14, variavel2 declarado novamente', 'Na linha 15, teste declarado novamente', 'Na linha 18, a declarado novamente', 'Na linha 28, a declarado novamente', 'Na linha 49, classe Math não foi encontrada']
