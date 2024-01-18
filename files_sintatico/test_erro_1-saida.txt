@@ -38,6 +38,3 @@ A análise léxica foi realizada com sucesso e não identificou nenhum erro de m
 
 Erros Sintaticos identificados:
 Na linha 13, era esperado ['variables'] porém foi obtido 'main' 
-
-
-Sem erros Semanticos

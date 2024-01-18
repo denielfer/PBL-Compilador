@@ -14,6 +14,3 @@ Na linha 2, era esperado ['{'] porém foi obtido '}'
 Na linha 3, era esperado ['int', 'real', 'boolean', 'string', ''] porém foi obtido 'EOF'
 Na linha 3, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 3, era esperado ['class'] porém foi obtido 'EOF'
-
-
-Sem erros Semanticos

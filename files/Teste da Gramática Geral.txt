@@ -15,7 +15,7 @@ variables {
     boolean teste[5], aaa;
 
 }
-class a{
+class qwe{
     variables{}
     objects{}
     methods{

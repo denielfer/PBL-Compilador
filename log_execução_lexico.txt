@@ -720,9 +720,11 @@
  4	| Controle: 2	|Token: clas	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
  5	| Controle: 2	|Token: class	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'class')
- 6	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 7	| Controle: 2	|Token: a	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
-(2, 'a')
+ 6	| Controle: -1	|Token: 	|Char Analizado: "q"	|erro_ponto: None	|force_continue: False
+ 7	| Controle: 2	|Token: q	|Char Analizado: "w"	|erro_ponto: None	|force_continue: False
+ 8	| Controle: 2	|Token: qw	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: qwe	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
+(2, 'qwe')
  fim de string	| Controle: 5	|Token: {	|Char Analizado: "{"	|erro_ponto: None	|force_continue: False
 (5, '{')
  0	| Controle: -1	|Token: 	|Char Analizado: " "	|erro_ponto: None	|force_continue: False

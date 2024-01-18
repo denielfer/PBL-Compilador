@@ -37,6 +37,3 @@ A análise léxica foi realizada com sucesso e não identificou nenhum erro de m
 
 Erros Sintaticos identificados:
 Na linha 12, era esperado ['main'] porém foi obtido 'fist' 
-
-
-Sem erros Semanticos

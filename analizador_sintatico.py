@@ -69,7 +69,7 @@ get_functions = {
                 ],
     'class': [
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)],'s':{'do':['clear_stack']}}
+                    {'is_terminal':True,"key":'token',"value":['class'],'next':[('class',1)],'s':{'do':['clear_stack','mov_to_global_scopo']}}
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ 
                 # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacotar construtor, precisando de branch para main e classe normal, assim, colocando aqui reduz codigo
@@ -116,7 +116,7 @@ get_functions = {
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),('func_dec',0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
-                {"test":[ # para main pois precisamos formar a função main como primeira e ela é diferente
+                {"test":[ # para main pois precisamos forçar a função main como primeira e ela é diferente
                    {'is_terminal':True,"key":'token',"value":['methods'],'next':[('methods',3)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
@@ -180,11 +180,8 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":TYPE,'next':[('mult_dec_parameter',2)],"s":{'do':['dec_param_type']}},
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('mult_dec_parameter',2)],"s":{'do':['dec_param_IDE'],'erro':[('mult_dec_parameter',0)]}},
-                ],'erro':{'tipo_recuperação':'next'}},
-                {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('mult_dec_parameter',0)],'s':{'do':['dec_param']}},
+                    {'is_terminal':True,"key":'token',"value":TYPE,'next':[('dec_parameter',1)],"s":{'do':['dec_param_type']}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('dec_parameter',1)],"s":{'do':['dec_param_IDE'],'erro':[('mult_dec_parameter',0)]}},
                 ],'erro':{'tipo_recuperação':'next'}},
     ],
     'command':[#########################################################################################################################
@@ -295,7 +292,7 @@ get_functions = {
     ],
     'method_access':[
                 {"test":[ # <optional_method_access>
-                    {'is_terminal':True,"key":'token',"value":['->'],'next':[('method_access',1)]},
+                    {'is_terminal':True,"key":'token',"value":['->'],'next':[('method_access',1)],"s":{'do':["valid_method_acess"], "erro":[('close_parentesis',0),(';',0)]}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
@@ -304,9 +301,6 @@ get_functions = {
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['('],'next':[('close_parentesis',0),("parameters",0)]},
-                ],'erro':{'tipo_recuperação':'next'}},
-                {"test":[
-                    {'is_terminal':True,"key":'token',"value":['->'],'next':[('method_access',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
     ],
     'parameters':[
@@ -377,7 +371,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('print',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validade_IDE","add_void_stack"]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validade_IDE","add_void_stack"],'erro':[("close_parentesis",0)]}},
                     {'is_terminal':True,"key":'type',"value":['CAC','NRO'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
@@ -421,29 +415,15 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['constructor'],'next':[("constructor",1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                        {'is_terminal':True,"key":'token',"value":['('],'next':[('constructor',6),("close_parentesis",0),('constructor',2)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
-                {'test':[
-                    {'is_terminal':True,"key":'token',"value":TYPE,'next':[('constructor',3)]},
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('constructor',3)]},
-                    {'is_terminal':True,"key":'token',"value":[''],'next':[]},
-                    ],'erro':{'tipo_recuperação':'next'}},
-                {'test':[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('constructor',4)]},
-                    ],'erro':{'tipo_recuperação':'next'}},
-                {'test':[
-                    {'is_terminal':True,"key":'token',"value":[','],'next':[('constructor',5)]},
-                    {'is_terminal':True,"key":'token',"value":[''],'next':[]},
-                    ],'erro':{'tipo_recuperação':'next'}},
-                {'test':[
-                    {'is_terminal':True,"key":'token',"value":TYPE,'next':[('constructor',3)]},
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('constructor',3)]},
+                        {'is_terminal':True,"key":'token',"value":['('],'next':[('constructor',2),("close_parentesis",0),('dec_parameter',0)]},
                     ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
                         {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),("command",0),('object',0),('variables',0)]},
                     ],'erro':{'tipo_recuperação':'next'}},
             ],
 }
+
+import Analizador_semantico
 
 def _get_list_actions(stage:str, pos_stage:int):
     list_actions_return = []
@@ -474,10 +454,7 @@ def _get_list_actions(stage:str, pos_stage:int):
 def analize(get_token:list,log_sem):
     stack = [('END', 0), ('class', 0), ('variables', 0), ("const", 0)]
     stage = None
-    tabela = {'global':{},'stack':[]}
-    scopo = ["global"]
-    erro_sem = None
-    retorno_semantico = []
+    Analizador_semantico.init()
     for token in get_token:
         if token['token'] in ['this', 'constructor']:
             token['type'] = 'IDE'
@@ -497,42 +474,14 @@ def analize(get_token:list,log_sem):
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
                     for item in action["next"]:
                         stack.append(item)
-                    if erro_sem:
-                        if (stage,pos_stage) in erro_sem:
-                            erro_sem = None
-                    if erro_sem is None:
-                        for ret in sem_analize(action,token,tabela,scopo,log_sem):
-                            if ret is not None:
-                                print(ret,file=log_sem)
-                                retorno_semantico.append(ret)
-                                if 'erro' in action['s']:
-                                    erro_sem = action['s']['erro']
-                    if 'programado' in tabela:
-                        if tabela['programado'][-1]['when'] == (stage,pos_stage):
-                            for func,args in tabela['programado'].pop()['do']:
-                                ret = func(**args)
-                                if ret is not None:
-                                    print(ret,file=log_sem)
-                                    retorno_semantico.append(ret)
-                            if len(tabela['programado']) == 0:
-                                del(tabela['programado'])
-
+                    Analizador_semantico.analize(stage,pos_stage,action,token,log_sem)
                     #     getattr(semant, get_functions[stage][pos_stage]['s']['do'])(**get_functions[stage][pos_stage]['s']['param'],token = token,scopo=scopo)
                     break
                 # pode dar erro se vazio não for o primeiro token
                 elif "" in action["value"]: # se for token vazio, continuamos em busca pelo próximo elemento
                     for item in action["next"]:
                         stack.append(item)
-                    if erro_sem:
-                        if (stage,pos_stage) in erro_sem:
-                            erro_sem = None
-                    if erro_sem is None:
-                        for ret in sem_analize(action,token,tabela,scopo,log_sem):
-                            if ret is not None:
-                                print(ret,file=log_sem)
-                                retorno_semantico.append(ret)
-                                if 'erro' in action['s']:
-                                    erro_sem = action['s']['erro']
+                    Analizador_semantico.analize(stage,pos_stage,action,token,log_sem)
                     flag = True
                     break
                 else: # se não for o token esperado e não tiver token vazio esperado, adicionamos a lista de esperados
@@ -555,383 +504,4 @@ def analize(get_token:list,log_sem):
                     esperado += action["value"] 
                 esperado = str(esperado).replace("'IDE'", "IDE").replace("'NRO'", "NRO").replace("'CAC'", "CAC")
                 yield f"Na linha {token['line'] + 1}, era esperado {esperado} porém foi obtido 'EOF'"
-    return retorno_semantico
-
-def sem_analize(action,token,tabela,scopo,log_sem):
-    if "s" in action:
-        for controle in action['s']['do']:
-            yield _sem(controle, token, tabela,scopo,log_sem)
-
-import json
-
-def log(func):
-
-    def warp(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
-        print('-> '+controle,scopo,token,file = log_sem,sep=' | ')
-        r = func(controle, token, tabela,scopo,log_sem)
-        print('data:'+json.dumps(tabela['global'],indent=4),"stack:"+json.dumps(tabela['stack'],indent=4),sep='\n',file = log_sem)
-        return r
-    return warp
-
-# to do : mudar para varias funçoes?
-#          implementa no codigo a cima chamada
-@log
-def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
-    match controle:
-        case 'append_stack':
-            # stack: ...
-            tabela['stack'].append(token["token"])
-            # stack: ..., tipo
-        case 'insert_const_or_var':
-            a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
-            if token["token"] in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} declarado novamente"
-            elif token["token"] in PRE:
-                # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False,'is_const':False}
-            tabela['stack'].append(token["token"])
-            # stack: ..., tipo, var
-            tabela['stack'].append(controle)
-            # stack: ..., tipo, var, controle
-        case "set_const":
-            a = _get_scopo(tabela,scopo)
-            a[token['token']]["is_const"] = True
-        case "atr_const":
-            # stack: ..., tipo, var, controle
-            tabela['stack'].pop()
-            # stack: ..., tipo, var
-            var = tabela['stack'].pop()
-            # stack: ..., tipo
-            tipo = tabela['stack'][-1]
-            match tipo:
-                case 'string':
-                    if token["type"] != 'CAC':
-                        # print(f'retorno {controle} - 1',file = log_sem)
-                        return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
-                case 'boolean':
-                    if token["token"] not in BOOL:
-                        # print(f'retorno {controle} - 2',file = log_sem)
-                        return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
-                case 'real':
-                    if token["type"] != 'NRO' and '.' not in token["token"]:
-                        # print(f'retorno {controle} - 3',file = log_sem)
-                        return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
-                case 'int':
-                    if token["type"] != 'NRO' and '.' in token["token"]:
-                        # print(f'retorno {controle} - 4',file = log_sem)
-                        return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
-            a = _get_scopo(tabela,scopo)
-            a[var]['is_instanciado'] = True
-        case 'validate_is_vector':
-            t = tabela['stack'].pop()
-            var = tabela['stack'][-1]
-            if(t == "insert_const_or_var"):
-                a = _get_in_scopo(var, tabela,scopo)
-                if var not in a:
-                    # print(f'retorno {controle} - 1',file = log_sem)
-                    return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
-                a[var]["is_vetor"] = True
-            else:
-                a = _get_in_scopo(var, tabela,scopo)
-                if var not in a:
-                    # print(f'retorno {controle} - 1',file = log_sem)
-                    return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
-                if not a[var]["is_vetor"]:
-                    return f"Na linha {token['line']}, tentando acessar vetor porém {var} não é vetor"
-        case 'validate_dimention_acess':
-            var = token['token']
-            match token['type']:
-                case 'IDE':
-                    a = _get_in_scopo(var, tabela,scopo)
-                    if var not in a:
-                        # print(f'retorno {controle} - 1',file = log_sem)
-                        return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
-                    if a[var]['type'] != 'int':
-                        # print(f'retorno {controle} - 2',file = log_sem)
-                        return f"Na linha {token['line']}, tentando acessar vetor porém {var} não é interio ( {a[var]['type']} )"
-                case 'NRO':
-                    if '.' in token["token"]:
-                        # print(f'retorno {controle} - 3',file = log_sem)
-                        return f"Na linha {token['line']}, tentando realizar acesso em vetor com valor float ( {var} )"
-        case 'dec_class':  
-            a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
-            if token["token"] in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} declarado novamente"
-            elif token["token"] in PRE and token['token'] != 'main':
-                # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type":'class',"data":{}}
-            # print(tabela['stack'],file = log_sem)
-            tabela['stack'].append(token["token"])
-            # print(tabela['stack'],file = log_sem)
-        case 'extends_class':
-            a = _get_scopo(tabela,scopo)
-            if token['token'] not in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, tentou extender a classe {token['token']}, porém esta não foi declarado"
-            if a[token['token']]['type'] != "class":
-                # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line']}, tentou extender {token['token']}, porém este não é uma classe"
-            var = tabela['stack'][-1]
-            a[var]['data'] = a[token['token']]['data']
-        case 'append_stack_class':
-            #scopo: ...
-            scopo.append(tabela['stack'][-1])
-            #scopo: ...,class_name
-            scopo.append('data')
-            #scopo: ...,class_name, data
-        # case 9:
-        #     a = _get_scopo(tabela,scopo)
-        #     if token["token"] not in a:
-        #         # print(f'retorno {controle} - 1',file = log_sem)
-        #         return f"Na linha {token['line']}, classe {token['token']} não foi declarado novamente"
-        #     elif token["token"] in PRE:
-        #         # print(f'retorno {controle} - 2',file = log_sem)
-        #         return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-        #     a[token['token']] = {"type":tabela['stack'][-1],'is_instanciado':False,'is_vetor':False}
-        #     tabela['stack'].append(token["token"])
-        case 'verify_type_class':
-            a = tabela['global']
-            if token["token"] not in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, classe {token['token']} não foi encontrada"
-            else:
-                if a[token['token']]["type"] != 'class':
-                    return f"Na linha {token['line']}, {token['token']} foi usado como classe porem é {a[token['token']]['type']}"
-            tabela['stack'].append(token["token"])
-        case 'insert_object':
-            a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
-            if token["token"] in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} declarado novamente"
-            elif token["token"] in PRE:
-                # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            # stack: ..., class, data
-            a[token['token']] = {"type":tabela['stack'][-2],"data":a[tabela['stack'][-2]]['data']}
-        case 'pop_stack':
-            # stack: ..., _
-            tabela['stack'].pop()
-            # stack: ...
-        case 'clear_stack':
-            # stack: ...
-            tabela['stack'] = []
-            # stack: 
-        case 'creat_func':
-            # stack: ..., tipo
-            tipo = tabela['stack'].pop()
-            # stack: ...
-            a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
-            if token["token"] in a:
-                # print(f'retorno {controle} - 1',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} declarado novamente"
-            elif token["token"] in PRE and token['token'] != "main":
-                # print(f'retorno {controle} - 2',file = log_sem)
-                return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type":tipo,'param':{}}
-            # scopo: ...            
-            scopo.append(token["token"])
-            # scopo: ..., func
-            # # stack: ...
-            # tabela['stack'].append(token["token"])
-            # # stack: ..., func
-        case 'move_param':
-            # scopo: ..., func
-            scopo.append("param")
-            # scopo: ..., func, param
-        case 'change_scopo_to_data':
-            # scopo: ..., func, param
-            scopo.pop()
-            # scopo: ..., func
-            a = _get_scopo(tabela,scopo)
-            a['data'] = a['param']
-            scopo.append("data")
-            # scopo: ..., func, data
-        case 'return_func_data':
-            # scopo: ..., func, data
-            scopo.pop()
-            # scopo: ..., func
-            a = _get_scopo(tabela,scopo)
-            # del(a['data'])
-            tabela['stack'].append(scopo.pop())
-            # scopo: ...
-            # stack: ...,func
-        case 'validate_return':
-            # stack: ...,func
-            tabela['stack'].pop()
-            func = tabela['stack'].pop()
-            # stack: ...,
-            a = _get_scopo(tabela,scopo)
-            tipo = a[func]['type']
-            if token['type'] == 'IDE': # se retorno ide
-                scopo_var = a[func]['data']
-                if token["token"] not in scopo_var:
-                            return f"Na linha {token['line']}, no retorno da função {func} tentou retorna {token['token']}, porém este nao existe no scopo"
-                else:
-                    if scopo_var[token['token']]['type'] != tipo:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {scopo_var[token['token']]['type']}"
-            else:
-                match tipo:
-                    case 'string':
-                        if token["type"] != 'CAC':
-                            # print(f'retorno {controle} - 1',file = log_sem)
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'boolean':
-                        if token["token"] not in BOOL:
-                            # print(f'retorno {controle} - 2',file = log_sem)
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'real':
-                        if token["type"] != 'NRO' and '.' not in token["token"]:
-                            # print(f'retorno {controle} - 3',file = log_sem)
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'int':
-                        if token["type"] != 'NRO' and '.' in token["token"]:
-                            # print(f'retorno {controle} - 4',file = log_sem)
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'void':
-                        return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"    
-                    case _:
-                        a = _get_in_scopo(token['token'],tabela,scopo+[func,'data'])
-                        if token['token'] not in a:
-                            return f"Na linha {token['line']}, tentou retorna {token['token']}, porem não existe no scopo"
-                        elif a[token['token']]['type'] != a[func]['type']:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}, do tipo {a[token['token']]['type']}"  
-        case "validate_return_void":
-            # stack: ...,func
-            func = tabela['stack'].pop()
-            # stack: ...,
-            a = _get_scopo(tabela,scopo)
-            if a[func]['type'] != 'void':
-                return f"Na linha {token['line']}, retorno da função {func} não foi encontrado"                  
-        case 'dec_param_type':
-            #stack: ...
-            tabela['stack'].append(token['token'])
-            #stack: ...,TYPE
-        case 'dec_param_IDE':
-            if token['token'] in tabela['global']:
-                if tabela['global'][token['token']]['type'] != 'class':
-                    return f"Na linha {token['line']}, tipo de parametro {token['token']} nao é classe, portanto não pode ser tipo de variavel"
-            else:
-                return f"Na linha {token['line']}, tipo de parametro {token['token']} não foi encontrado"  
-            #stack: ...
-            tabela['stack'].append(token['token'])
-            #stack: ...,TYPE-IDE
-        case 'dec_param':
-            #stack: ...,TYPE-?
-            tipo = tabela['stack'].pop()
-            #stack: ...
-            # verifica se ja foi declarado esse parametro
-            a = _get_scopo(tabela,scopo)
-            if token['token'] in a:
-                return f"Na linha {token['line']}, parametro {token['token']} foi declarado novamente"  
-            a[token['token']] = {'type':tipo}
-        case "validade_IDE":
-            var = token['token']
-            a = _get_in_scopo(var, tabela,scopo)
-            if var not in a:
-                return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
-            #stack: ...,
-            tabela['stack'].append(var)
-            #stack: ..., var
-        case 'add_void_stack':
-            #stack: ...,
-            tabela['stack'].append('void')
-            #stack: ..., var
-        case 'validate_last_object':
-            ide = tabela['stack'][-1]
-            a = _get_in_scopo(var, tabela,scopo)
-            if a[ide]['type'] in TYPES:
-                return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
-        case 'atribuição':
-            #stack: ...,ide
-            if 'programado' not in tabela:
-                tabela['programado'] = []
-            tabela['programado'].append({'when':(';',0),'do':[
-                                                         (validate_same_type_with_stack_last,
-                                                            {
-                                                                "type":tabela['stack'].pop(),
-                                                                'tabela': tabela,
-                                                                'process':lambda _,y,z: z.replace('\%\%',y),
-                                                                "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% a {ide} que é do tipo {a[ide]['type']}",
-                                                            }
-                                                         )
-                                                        ]
-                                    }
-                                   )
-            #stack: ...
-        # case 'end_func':
-        #     if 'programado' not in tabela:
-        #         tabela['programado'] = []
-        #     tabela['programado'].append({'when':("end_block",0),'do':[
-        #                                                  (duble_pop,
-        #                                                     {
-        #                                                         'scopo':scopo
-        #                                                     }
-        #                                                  )
-        #                                                 ]
-        #                             }
-        #                            )
-        case 'duble_art':
-            #stack: ...,ide
-            ide = tabela['stack'].pop()
-            a = _get_in_scopo(var, tabela,scopo)
-            if a[ide]['type'] not in ['int', 'real']:
-                return f"Na linha {token['line']}, tentativa de {token['token']}, na varialvel {ide}, porém esta é {a[ide]['type']}" 
-        case 'validade_is_str':
-            var = token['token']
-            a = _get_in_scopo(var, tabela,scopo)
-            if var not in a:
-                return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
-            if a[var]['type'] != 'string':
-                return f"Na linha {token['line']}, tentativa de carregar string em {var} porém esta é {a[var]['type']}"
-        case 'stack_NRO':
-            if '.' in token['token']:
-                tabela['stack'].append('real')
-            else:
-                tabela['stack'].append('int')
-        case 'stack_CAC':
-                tabela['stack'].append('string')
-        case 'stack_BOOL':
-                tabela['stack'].append('boolean')
-
-        case _:
-            pass
-
-# revisar return
-
-def duble_pop(scopo):
-    #scopo: ...,func_name,'data'
-    scopo.pop()
-    #scopo: ...,func_name
-    scopo.pop()
-    #scopo: ...
-
-def validate_same_type_with_stack_last(type:str,tabela,erro_msg:str,on_success:callable=None,process:str=None):
-    _type = tabela['stack'].pop()
-    if type != _type:
-        if process:
-            erro_msg = process(type, _type,erro_msg)
-        return erro_msg
-    if on_success:
-        on_success()
-
-def _get_in_scopo(var, tabela,scopo):
-    a = tabela
-    for s in scopo:
-        a = a[s]
-    if var not in a:
-        a = tabela['global']
-    return a
-
-def _get_scopo(tabela,scopo):
-    a = tabela
-    for s in scopo:
-        a = a[s]
-    return a
+    return Analizador_semantico.erros_semantico

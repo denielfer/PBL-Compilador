@@ -94,7 +94,7 @@
 15 <DEL, ;>
 17 <DEL, }>
 18 <PRE, class>
-18 <IDE, a>
+18 <IDE, qwe>
 18 <DEL, {>
 19 <PRE, variables>
 19 <DEL, {>
@@ -227,6 +227,5 @@ Na linha 13, dois declarado novamente
 Na linha 14, variavel declarado novamente
 Na linha 14, variavel2 declarado novamente
 Na linha 15, teste declarado novamente
-Na linha 18, a declarado novamente
 Na linha 28, a declarado novamente
 Na linha 49, classe Math não foi encontrada

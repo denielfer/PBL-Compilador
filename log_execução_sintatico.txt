@@ -18,7 +18,7 @@
 	 end_block 0 token :  {'line': 4, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 	 class 0 token :  {'line': 5, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack']}}
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack', 'mov_to_global_scopo']}}
 	 class 1 token :  {'line': 5, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
 	 class 5 token :  {'line': 5, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
@@ -384,8 +384,8 @@ files\Teste da Gramática Geral-saida.txt
 	 end_block 0 token :  {'line': 17, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 	 class 0 token :  {'line': 18, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack']}}
-	 class 1 token :  {'line': 18, 'type': 'IDE', 'token': 'a'}  |  stack : [('END', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack', 'mov_to_global_scopo']}}
+	 class 1 token :  {'line': 18, 'type': 'IDE', 'token': 'qwe'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('class', 0), ('end_block', 0), ('constructor', 0), ('class', 2)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
 	 class 2 token :  {'line': 18, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 0)]
@@ -424,14 +424,14 @@ files\Teste da Gramática Geral-saida.txt
 	 constructor 0 token :  {'line': 23, 'type': 'IDE', 'token': 'constructor'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['constructor'], 'next': [('constructor', 1)]}
 	 constructor 1 token :  {'line': 23, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('constructor', 6), ('close_parentesis', 0), ('constructor', 2)]}
-	 constructor 2 token :  {'line': 23, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('constructor', 3)]}
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('constructor', 3)]}
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('constructor', 2), ('close_parentesis', 0), ('dec_parameter', 0)]}
+	 dec_parameter 0 token :  {'line': 23, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('dec_parameter', 1)], 's': {'do': ['dec_param_type']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('dec_parameter', 1)], 's': {'do': ['dec_param_IDE']}, 'erro': [('mult_dec_parameter', 0)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 close_parentesis 0 token :  {'line': 23, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6)]
+	 close_parentesis 0 token :  {'line': 23, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
-	 constructor 6 token :  {'line': 23, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
+	 constructor 2 token :  {'line': 23, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('command', 0), ('object', 0), ('variables', 0)]}
 	 variables 0 token :  {'line': 24, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('end_block', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
@@ -463,7 +463,7 @@ files\Teste da Gramática Geral-saida.txt
 	 end_block 0 token :  {'line': 27, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 	 class 0 token :  {'line': 28, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack']}}
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack', 'mov_to_global_scopo']}}
 	 class 1 token :  {'line': 28, 'type': 'IDE', 'token': 'a'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('class', 0), ('end_block', 0), ('constructor', 0), ('class', 2)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
@@ -540,24 +540,24 @@ files\Teste da Gramática Geral-saida.txt
 	 constructor 0 token :  {'line': 38, 'type': 'IDE', 'token': 'constructor'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['constructor'], 'next': [('constructor', 1)]}
 	 constructor 1 token :  {'line': 38, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('constructor', 6), ('close_parentesis', 0), ('constructor', 2)]}
-	 constructor 2 token :  {'line': 38, 'type': 'IDE', 'token': 'Math'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('constructor', 3)]}
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('constructor', 3)]}
-	 constructor 3 token :  {'line': 38, 'type': 'IDE', 'token': 'math'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('constructor', 4)]}
-	 constructor 4 token :  {'line': 38, 'type': 'DEL', 'token': ','}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': [','], 'next': [('constructor', 5)]}
-	 constructor 5 token :  {'line': 38, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('constructor', 3)]}
-	 constructor 3 token :  {'line': 38, 'type': 'IDE', 'token': 'a'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('constructor', 4)]}
-	 constructor 4 token :  {'line': 38, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': [','], 'next': [('constructor', 5)]}
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('constructor', 2), ('close_parentesis', 0), ('dec_parameter', 0)]}
+	 dec_parameter 0 token :  {'line': 38, 'type': 'IDE', 'token': 'Math'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('dec_parameter', 1)], 's': {'do': ['dec_param_type']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('dec_parameter', 1)], 's': {'do': ['dec_param_IDE']}, 'erro': [('mult_dec_parameter', 0)]}
+	 dec_parameter 1 token :  {'line': 38, 'type': 'IDE', 'token': 'math'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('mult_dec_parameter', 0)], 's': {'do': ['dec_param']}}
+	 mult_dec_parameter 0 token :  {'line': 38, 'type': 'DEL', 'token': ','}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [','], 'next': [('mult_dec_parameter', 1)]}
+	 mult_dec_parameter 1 token :  {'line': 38, 'type': 'PRE', 'token': 'int'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['int', 'real', 'boolean', 'string'], 'next': [('dec_parameter', 1)], 's': {'do': ['dec_param_type']}}
+	 dec_parameter 1 token :  {'line': 38, 'type': 'IDE', 'token': 'a'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('mult_dec_parameter', 0)], 's': {'do': ['dec_param']}}
+	 mult_dec_parameter 0 token :  {'line': 38, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2), ('close_parentesis', 0)]
+		buscando {'is_terminal': True, 'key': 'token', 'value': [','], 'next': [('mult_dec_parameter', 1)]}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': []}
-	 close_parentesis 0 token :  {'line': 38, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 6)]
+	 close_parentesis 0 token :  {'line': 38, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('constructor', 2)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
-	 constructor 6 token :  {'line': 38, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
+	 constructor 2 token :  {'line': 38, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['{'], 'next': [('end_block', 0), ('command', 0), ('object', 0), ('variables', 0)]}
 	 variables 0 token :  {'line': 39, 'type': 'PRE', 'token': 'variables'}  |  stack : [('END', 0), ('class', 0), ('end_block', 0), ('end_block', 0), ('command', 0), ('object', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['variables'], 'next': [('variables', 1)]}
@@ -589,7 +589,7 @@ files\Teste da Gramática Geral-saida.txt
 	 end_block 0 token :  {'line': 42, 'type': 'DEL', 'token': '}'}  |  stack : [('END', 0), ('class', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['}'], 'next': []}
 	 class 0 token :  {'line': 44, 'type': 'PRE', 'token': 'class'}  |  stack : [('END', 0)]
-		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack']}}
+		buscando {'is_terminal': True, 'key': 'token', 'value': ['class'], 'next': [('class', 1)], 's': {'do': ['clear_stack', 'mov_to_global_scopo']}}
 	 class 1 token :  {'line': 44, 'type': 'PRE', 'token': 'main'}  |  stack : [('END', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['main'], 'next': [('end_block', 0), ('class', 5)], 's': {'do': ['dec_class'], 'erro': [('class', 0)]}}
 	 class 5 token :  {'line': 44, 'type': 'DEL', 'token': '{'}  |  stack : [('END', 0), ('end_block', 0)]
@@ -673,7 +673,7 @@ files\Teste da Gramática Geral-saida.txt
 	 print 0 token :  {'line': 55, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
 	 print 1 token :  {'line': 55, 'type': 'IDE', 'token': 'sete'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack'], 'erro': [('close_parentesis', 0)]}}
 	 dimention_acess 0 token :  {'line': 55, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0), ('object_access', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['['], 'next': [('dimention_acess', 1)], 's': {'do': ['validate_is_vector']}}
 		buscando {'is_terminal': True, 'key': 'token', 'value': [''], 'next': [], 's': {'do': ['pop_stack']}}
@@ -689,7 +689,7 @@ files\Teste da Gramática Geral-saida.txt
 	 print 0 token :  {'line': 56, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
 	 print 1 token :  {'line': 56, 'type': 'CAC', 'token': '"asdads"'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack'], 'erro': [('close_parentesis', 0)]}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
 	 close_parentesis 0 token :  {'line': 56, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
@@ -700,7 +700,7 @@ files\Teste da Gramática Geral-saida.txt
 	 print 0 token :  {'line': 57, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
 	 print 1 token :  {'line': 57, 'type': 'NRO', 'token': '1'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack'], 'erro': [('close_parentesis', 0)]}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
 	 close_parentesis 0 token :  {'line': 57, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}
@@ -711,7 +711,7 @@ files\Teste da Gramática Geral-saida.txt
 	 print 0 token :  {'line': 58, 'type': 'DEL', 'token': '('}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': ['('], 'next': [('close_parentesis', 0), ('print', 1)]}
 	 print 1 token :  {'line': 58, 'type': 'NRO', 'token': '1.12'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0), ('close_parentesis', 0)]
-		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack']}}
+		buscando {'is_terminal': True, 'key': 'type', 'value': ['IDE'], 'next': [('object_access', 0), ('dimention_acess', 0)], 's': {'do': ['validade_IDE', 'add_void_stack'], 'erro': [('close_parentesis', 0)]}}
 		buscando {'is_terminal': True, 'key': 'type', 'value': ['CAC', 'NRO'], 'next': []}
 	 close_parentesis 0 token :  {'line': 58, 'type': 'DEL', 'token': ')'}  |  stack : [('END', 0), ('end_block', 0), ('end_block', 0), ('func_dec', 0), ('end_block', 0), ('return', 0), ('command', 0), (';', 0)]
 		buscando {'is_terminal': True, 'key': 'token', 'value': [')'], 'next': []}

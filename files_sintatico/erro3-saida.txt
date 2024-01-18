@@ -75,6 +75,3 @@ Na linha 22, era esperado ['methods'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['constructor'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['}'] porém foi obtido 'EOF'
 Na linha 22, era esperado ['class'] porém foi obtido 'EOF'
-
-
-Sem erros Semanticos

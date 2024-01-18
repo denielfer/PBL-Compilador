@@ -2,7 +2,7 @@
 const {
 }
 variables {
-    object a,t;;
+    object a,t;
 }
 class main{
     variables {
