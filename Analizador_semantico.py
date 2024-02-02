@@ -142,6 +142,8 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             from analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
+                a[token['token']] = {"type":'class',"data":{}}
+                tabela['stack'].append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
             elif token["token"] in PRE and token['token'] != 'main':
                 # print(f'retorno {controle} - 2',file = log_sem)

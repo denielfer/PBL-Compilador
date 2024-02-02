@@ -73,8 +73,8 @@ get_functions = {
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ 
                 # ('end_block',0) é colocado aqui pois da forma como é feita ao colocar no 4 daria problema com empacotar construtor, precisando de branch para main e classe normal, assim, colocando aqui reduz codigo
-                    {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)],'s':{'do':['dec_class'], 'erro':[('class',0)]}},
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)],'s':{'do':['dec_class'], 'erro':[('class',0)]}}
+                    {'is_terminal':True,"key":'token',"value":['main'],'next':[('end_block',0),('class',5)],'s':{'do':['dec_class']}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('class',0),('end_block',0),('constructor',0),('class',2)],'s':{'do':['dec_class']}}
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['extends'],'next':[("class",3)]},
