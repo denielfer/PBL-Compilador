@@ -363,7 +363,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('read',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],"s":{'do':['validade_is_str']}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],"s":{'do':['validade_is_str'],'erro':[("close_parentesis",0),(';',0)]}},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
     "print":[ 
@@ -371,7 +371,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('print',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validade_IDE","add_void_stack"],'erro':[("close_parentesis",0)]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validade_IDE","add_void_stack"],'erro':[("close_parentesis",0),(';',0)]}},
                     {'is_terminal':True,"key":'type',"value":['CAC','NRO'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
@@ -380,20 +380,20 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[')'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
-    'dimention_acess':[ 
+    'dimention_acess':[  #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)],'s':{'do':["validate_is_vector"]}},
+                    {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)],'s':{'do':["validate_is_vector"],'erro':[("dimention_acess",2)]}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[],'s':{'do':["pop_stack"]}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE','NRO'],'next':[("dimention_acess",2)]},
-                ],'erro':{'tipo_recuperação':'next'},'s':{'do':["validate_dimention_acess"]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE','NRO'],'next':[("dimention_acess",2)],'s':{'do':["validade_is_interger"]}},
+                ],'erro':{'tipo_recuperação':'next'}}, # ,'s':{'do':["validate_dimention_acess"]}
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":[']'],'next':[("dimention_acess",0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
-                {"test":[
-                    {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)]},
-                ],'erro':{'tipo_recuperação':'next'}},
+                # {"test":[
+                #     {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)]},
+                # ],'erro':{'tipo_recuperação':'next'}},
                ],
     'object_access':[ 
         # <DEC_OBJECT_ATRIBUTE_ACCESS> -> começa do index 1

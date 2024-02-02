@@ -490,17 +490,26 @@
  7	| Controle: 2	|Token: int	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (1, 'int')
  8	| Controle: -1	|Token: 	|Char Analizado: "a"	|erro_ponto: None	|force_continue: False
- 9	| Controle: 2	|Token: a	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
+ 9	| Controle: 2	|Token: a	|Char Analizado: "["	|erro_ponto: None	|force_continue: False
 (2, 'a')
- 10	| Controle: 5	|Token: ,	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 10	| Controle: 5	|Token: [	|Char Analizado: "s"	|erro_ponto: None	|force_continue: False
+(5, '[')
+ 11	| Controle: 2	|Token: s	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 12	| Controle: 2	|Token: se	|Char Analizado: "t"	|erro_ponto: None	|force_continue: False
+ 13	| Controle: 2	|Token: set	|Char Analizado: "e"	|erro_ponto: None	|force_continue: False
+ 14	| Controle: 2	|Token: sete	|Char Analizado: "]"	|erro_ponto: None	|force_continue: False
+(2, 'sete')
+ 15	| Controle: 5	|Token: ]	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
+(5, ']')
+ 16	| Controle: 5	|Token: ,	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ',')
- 11	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
- 12	| Controle: 2	|Token: b	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
+ 17	| Controle: -1	|Token: 	|Char Analizado: "b"	|erro_ponto: None	|force_continue: False
+ 18	| Controle: 2	|Token: b	|Char Analizado: ","	|erro_ponto: None	|force_continue: False
 (2, 'b')
- 13	| Controle: 5	|Token: ,	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
+ 19	| Controle: 5	|Token: ,	|Char Analizado: " "	|erro_ponto: None	|force_continue: False
 (5, ',')
- 14	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
- 15	| Controle: 2	|Token: c	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
+ 20	| Controle: -1	|Token: 	|Char Analizado: "c"	|erro_ponto: None	|force_continue: False
+ 21	| Controle: 2	|Token: c	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (2, 'c')
  fim de string	| Controle: 5	|Token: ;	|Char Analizado: ";"	|erro_ponto: None	|force_continue: False
 (5, ';')

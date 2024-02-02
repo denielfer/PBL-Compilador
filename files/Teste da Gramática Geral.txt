@@ -6,7 +6,7 @@
     boolean teste_2 = true;
 }
 variables {
-    int a, b, c;
+    int a[sete], b, c;
     boolean aa, a_2;
     real b0_c;
     int sete[a], oito[3];

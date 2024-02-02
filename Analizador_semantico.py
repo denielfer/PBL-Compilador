@@ -360,6 +360,8 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
 
             if a[var]['type'] != 'string':
                 return f"Na linha {token['line']}, tentativa de carregar string em {var} porém esta é {a[var]['type']}"
+            tabela['stack'].append(var)
+            tabela['stack'].append(controle)
         case 'stack_NRO':
             if '.' in token['token']:
                 tabela['stack'].append('real')
@@ -376,7 +378,24 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                 return
             tabela['stack'].append(a[var]['type'])
             return limpa_last_erro()
-        # case 
+        case 'validade_is_interger':
+            if token['type'] == 'NRO':
+                if '.' in token['token']:
+                    return f"Na linha {token['line']}, posição de acesso a vetor invalida: {token['token']}, deve ser int porém é float"
+            else:
+                var = token['token']
+                a = _get_in_scopo(var, tabela,scopo)
+                if var not in a:
+                    return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"
+                if a[var]['type'] != 'int':
+                    return f"Na linha {token['line']}, usando variavel {token['token']} porém esta é não é int, sendo do tipo {a[var]['type']}"
+        case 'valid_atribut_acess':#  validar
+            var = tabela['stack'].pop()
+            a =  _get_scopo(tabela,scopo[:-2])
+            if var not in a:
+                return
+            tabela['stack'].append(a[var]['type'])
+            return limpa_last_erro()
         case _:
             pass
 
