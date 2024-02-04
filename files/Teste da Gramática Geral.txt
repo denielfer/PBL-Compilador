@@ -33,7 +33,25 @@ class a extends a{
         Livro livro[tamanho];
     }
     
-    methods{}
+    methods{
+        int a(int b, int c, int d){
+            variables{}
+            objects{}
+            return 1;
+        }
+        int a(int b, int t, int d){
+            variables{
+                real t;
+            }
+            objects{
+                a a;
+            }
+            a=1;
+            //this.pessoa[1] = 1;
+            return 2;
+        }
+
+    }
     
     constructor (Math math, int a) {
         variables{}

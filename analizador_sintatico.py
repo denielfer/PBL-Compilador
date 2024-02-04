@@ -4,6 +4,7 @@ TYPE = ['int', 'real', 'boolean', 'string']
 
 # Tipos com void
 TYPES = TYPE +['void'] # menos IDE
+import copy
 
 # Aritméticos simples
 ART = ['+', '-', '*', '/']
@@ -34,7 +35,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('const',4)],'s':{'do':['insert_const_or_var','set_const'],'erro':[('const',6)]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('const',4)],'s':{'do':['insert_const_or_var','set_const']}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['='],'next':[('const',5)]},
@@ -63,7 +64,7 @@ get_functions = {
                         {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('variables',4),('dimention_acess',0)],'s':{'do':['insert_const_or_var'],'erro':[('variables',4)]}},
                     ],'erro':{'tipo_recuperação':'next'}},
                     {"test":[
-                        {'is_terminal':True,"key":'token',"value": [','],'next':[('variables',3)],'s':{'do':["pop_stack"]}},
+                        {'is_terminal':True,"key":'token',"value": [','],'next':[('variables',3)]},
                         {'is_terminal':True,"key":'token',"value": [''],'next':[(";",0)]},
                     ],'erro':{'tipo_recuperação':'next'}},
                 ],
@@ -141,7 +142,7 @@ get_functions = {
                     {'is_terminal':True,"key":'type',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)],'s':{'do':['creat_func'], 'erro':[('func_dec',0)]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('func_dec',0),('func_dec',2)],'s':{'do':['creat_func']}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {'test':[
                     {'is_terminal':True,"key":'token',"value":['('],'next':[('func_dec',3),("close_parentesis",0),('dec_parameter',0)],'s':{'do':['move_param']}},
@@ -436,15 +437,22 @@ def _get_list_actions(stage:str, pos_stage:int):
                 # não lida com indeterminação, se tiver 2 caminhos pra IDE vai ir no que aparecer primeiro na lista
                 # se tiver '' nas produções do action ele vai ser chamado assim q aparecer na lista lá embaixo, o que gera um problema, 
                 # então não é chamado para não-terminais que tenham '' nas produções
+                # print(nao_terminal)
                 for action_new in _get_list_actions(*nao_terminal):
-                    new_dic = action_new.copy()
+                    # print(action_new)
+                    new_dic = copy.deepcopy(action_new)
                     new_dic['next'] = ac['next'] + action_new['next']
                     if 's' in ac:
                         if 's' not in new_dic:
                             new_dic['s'] = {'do':[]}
+                        # print(new_dic['s'])
                         new_dic['s']['do'] += ac['s']['do']
+                        # print(new_dic['s'])
                         if 'erro' in ac['s']:
+                            if 'erro' not in new_dic['s']:
+                                new_dic['s']['erro'] = []
                             new_dic['s']['erro'] += ac['s']['erro']
+                        # print(new_dic['s'])
                     list_actions_return.append(new_dic)
                     # print(f'\t\tis not terminal -> {new_dic}, -> adicionado {ac["next"]}')
     return list_actions_return
@@ -457,7 +465,7 @@ def analize(get_token:list,log_sem):
     Analizador_semantico.init()
     for token in get_token:
         if token['token'] in ['this', 'constructor']:
-            token['type'] = 'IDE'
+            token['type'] = 'PRE'
         flag = True # se tiver produção vazia continuamos a análise com o mesmo token
         while flag: # suporte para produção vazia
             stage,pos_stage = stack.pop(-1) # por ser pop em '-1' le a pilha da direita pra esquerda

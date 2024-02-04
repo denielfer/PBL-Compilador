@@ -1,3 +1,4 @@
+import copy
 
 def init():
     global tabela,scopo, erro_sem, erros_semantico
@@ -39,23 +40,39 @@ def analize(stage,pos_stage,action,token,log_sem= None):
 def _sem_analize(action,token,tabela,scopo,log_sem):
     if "s" in action:
         for controle in action['s']['do']:
-            yield _sem(controle, token, tabela,scopo,log_sem)
+            yield _sem(controle, token, tabela,scopo,log_sem,action)
 
 import json
 class limpa_last_erro():
     pass
 
-def log(func):
+def remove_circular_refs(ob, _seen=None):
+    if _seen is None:
+        _seen = set()
+    if id(ob) in _seen:
+        return None
+    _seen.add(id(ob))
+    res = ob
+    if isinstance(ob, dict):
+        res = {
+            remove_circular_refs(key, _seen): remove_circular_refs(value, _seen)
+            for key, value in ob.items()}
+    elif isinstance(ob, (list, tuple, set, frozenset)):
+        res = type(ob)(remove_circular_refs(v, _seen) for v in ob)
+    _seen.remove(id(ob))
+    return res
 
-    def warp(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
+def log(func):
+    def warp(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem,action):
         print('-> '+controle,scopo,token,erro_sem,file = log_sem,sep=' | ')
         r = func(controle, token, tabela,scopo,log_sem)
-        print(' data:'+json.dumps(tabela['global'],indent=4).replace('\n','\n ')," stack:"+json.dumps(tabela['stack'],indent=4).replace('\n','\n '),sep='\n',file = log_sem)
+        try:
+            print(' data:'+json.dumps(remove_circular_refs(tabela['global']),indent=4).replace('\n','\n ')," stack:"+json.dumps(tabela['stack'],indent=4).replace('\n','\n '),sep='\n',file = log_sem)
+        except ValueError:
+            print(' Data nao pode ser representado pois ele contem loop de referencia.\n'," stack:"+json.dumps(tabela['stack'],indent=4).replace('\n','\n '),sep='\n',file = log_sem)
         return r
     return warp
 
-# to do : mudar para varias funçoes?
-#          implementa no codigo a cima chamada
 @log
 def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
     match controle:
@@ -176,7 +193,9 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             else:
                 if a[token['token']]["type"] != 'class':
                     return f"Na linha {token['line']}, {token['token']} foi usado como classe porem é {a[token['token']]['type']}"
+            #stack: ...
             tabela['stack'].append(token["token"])
+            #stack: ..., type_object
         case 'insert_object':
             a = _get_scopo(tabela,scopo)
             from analizador_lexico import PRE
@@ -187,7 +206,7 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
                 # print(f'retorno {controle} - 2',file = log_sem)
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
             # stack: ..., class, data
-            a[token['token']] = {"type":tabela['stack'][-2],"data":a[tabela['stack'][-2]]['data']}
+            a[token['token']] = {"type":tabela['stack'][-1],"data":tabela['global'][tabela['stack'][-1]]['data']}
         case 'pop_stack':
             # stack: ..., _
             tabela['stack'].pop()
@@ -207,9 +226,13 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             from analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
+                a[token['token']] = {"type":tipo,'param':{}}
+                scopo.append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
             elif token["token"] in PRE and token['token'] != "main":
                 # print(f'retorno {controle} - 2',file = log_sem)
+                a[token['token']] = {"type":tipo,'param':{}}
+                scopo.append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
             a[token['token']] = {"type":tipo,'param':{}}
             # scopo: ...            
@@ -227,7 +250,7 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             scopo.pop()
             # scopo: ..., func
             a = _get_scopo(tabela,scopo)
-            a['data'] = a['param']
+            a['data'] = copy.deepcopy(a['param'])
             scopo.append("data")
             # scopo: ..., func, data
         case 'return_func_data':
@@ -240,7 +263,7 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             # scopo: ...
             # stack: ...,func
         case 'validate_return':
-            # stack: ...,func
+            # stack: ...,func, ??
             tabela['stack'].pop()
             func = tabela['stack'].pop()
             # stack: ...,
@@ -307,7 +330,11 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             a = _get_scopo(tabela,scopo)
             if token['token'] in a:
                 return f"Na linha {token['line']}, parametro {token['token']} foi declarado novamente"  
-            a[token['token']] = {'type':tipo}
+            a[token['token']] = {'type':tipo,
+                         "is_instanciado": False,
+                         "is_vetor": False,
+                         "is_const": False
+                     }
         case "validade_IDE":
             var = token['token']
             a = _get_in_scopo(var, tabela,scopo)
@@ -329,6 +356,8 @@ def _sem(controle:int, token:dict, tabela:dict,scopo:list[str],log_sem):
             #stack: ...,ide
             if 'programado' not in tabela:
                 tabela['programado'] = []
+            ide = tabela['stack'].pop()
+            a = _get_in_scopo(ide, tabela,scopo)
             tabela['programado'].append({'when':(';',0),'do':[
                                                          (validate_same_type_with_stack_last,
                                                             {
@@ -419,10 +448,15 @@ def validate_same_type_with_stack_last(type:str,tabela,erro_msg:str,on_success:c
     if on_success:
         on_success()
 
-def _get_in_scopo(var, tabela,scopo):
-    a = tabela
-    for s in scopo:
-        a = a[s]
+def _get_in_scopo(var, tabela,scopo:list):
+    a = tabela #testa
+    t = copy.deepcopy(scopo)
+    while len(t) >=3:
+        for s in t:
+            a = a[s]
+            if var in a:
+                return a
+        t=t[:-2]
     if var not in a:
         a = tabela['global']
     return a
