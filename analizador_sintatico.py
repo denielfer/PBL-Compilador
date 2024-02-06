@@ -191,6 +191,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['read'],'next':[('command',0),(";",0),('read',0)]},
                     {'is_terminal':True,"key":'token',"value":['if'],'next':[('command',0),('if',0)]},
                     {'is_terminal':True,"key":'token',"value":['for'],'next':[('command',0),('for',0)]},
+                    #adicionar o this, que aponta para o ide daqui de baixo?
                     {'is_terminal':True,"key":'type' ,"value":['IDE'],'next':[('command',0),('assigment_or_method_acess_or_duble',0)],'s':{'do':['validade_IDE',"add_void_stack"]}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}

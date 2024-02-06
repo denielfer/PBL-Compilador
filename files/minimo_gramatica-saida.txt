@@ -38,5 +38,4 @@ A análise léxica foi realizada com sucesso e não identificou nenhum erro de m
 
 Sem erros Sintaticos
 
-Erros Semanticos identificados:
-
+Sem erros Semanticos

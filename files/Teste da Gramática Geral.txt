@@ -13,7 +13,6 @@ variables {
     real um[90], dois, tres4quatro;
     string variavel, variavel2[2];
     boolean teste[5], aaa;
-
 }
 class qwe{
     variables{}

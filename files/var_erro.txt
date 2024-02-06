@@ -1,0 +1,26 @@
+const {
+}
+variables {
+    int a[sete], b, c;
+    boolean aa, a_2;
+    real b0_c;
+    int sete[a], oito[3];
+    real um[90], dois, tres4quatro;
+    string variavel, variavel2[2];
+    boolean teste[5], aaa;
+}
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        void main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        }
+    }
+}
