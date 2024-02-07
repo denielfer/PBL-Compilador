@@ -389,8 +389,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 #                             }
                 #                         )
 
-            if a[var]['type'] != 'string':
-                return f"Na linha {token['line']}, tentativa de carregar string em {var} porém esta é {a[var]['type']}"
+            if a[var]['type'] not in TYPES:
+                return f"Na linha {token['line']}, Nao é possivel ler valores para {var} porém esta é {a[var]['type']}, e read so permite {TYPES}"
             tabela['stack'].append(var)
             tabela['stack'].append(controle)
         case 'stack_NRO':
