@@ -92,9 +92,9 @@ if __name__ == '__main__':
     if not paths:
         print('Nenhum arquivo encontrado')
         exit()
-    log_lex =  open('log_execução_lexico.txt', "w", encoding=encode)
-    log_sint =  open('log_execução_sintatico.txt', "w", encoding=encode)
-    log_sem =  open('log_execução_semantico.txt', "w", encoding=encode)
+    log_lex =  open('logs/log_execução_lexico.txt', "w", encoding=encode)
+    log_sint =  open('logs/log_execução_sintatico.txt', "w", encoding=encode)
+    log_sem =  open('logs/log_execução_semantico.txt', "w", encoding=encode)
     for path in paths:
         sys.stdout = log_lex
         tokens_corretos, new_file = analizar_lexico_files(path)

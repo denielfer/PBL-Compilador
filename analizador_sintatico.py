@@ -1,25 +1,25 @@
 
 # Tipos
-TYPE = ['int', 'real', 'boolean', 'string']
+TYPE = {'int', 'real', 'boolean', 'string'}
 
 # Tipos com void
-TYPES = TYPE +['void'] # menos IDE
+TYPES = TYPE.union({'void'}) # menos IDE
 import copy
 
 # Aritméticos simples
-ART = ['+', '-', '*', '/']
+ART = {'+', '-', '*', '/'}
 
 # Aritméticos incremento
-ART_DOUBLE = ['++', '--']
+ART_DOUBLE = {'++', '--'}
 
 # Relacionais
-REL =  ['<', '<=', '>', '>=', '!=', '==']
+REL =  {'<', '<=', '>', '>=', '!=', '=='}
 
 # Lógicos
-LOG = ['&&', '||']
+LOG = {'&&', '||'}
 
 # Booleanos
-BOOL = ['true', 'false']
+BOOL = {'true', 'false'}
 
 # Gramática do Problema 2 ajustada
 get_functions = {

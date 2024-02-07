@@ -89,7 +89,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             elif token["token"] in PRE:
                 # print(f'retorno {controle} - 2',file = log_sem)
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type":tabela['stack'][-1], 'is_instanciado':False, 'is_vetor':False, 'is_const':False}
+            a[token['token']] = {"type":tabela['stack'][-1], 'is_vetor':False, 'is_const':False}
             tabela['stack'].append(token["token"])
             # stack: ..., tipo, var
             tabela['stack'].append(controle)
@@ -122,11 +122,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                         # print(f'retorno {controle} - 4',file = log_sem)
                         return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
             a = _get_scopo(tabela, scopo)
-            a[var]['is_instanciado'] = True
         case 'validate_is_vector':
             t = tabela['stack'].pop()
             var = tabela['stack'][-1]
-            if(t == "insert_const_or_var"):
+            if(t in {"insert_const_or_var","insert_object"}):
                 a = _get_in_scopo(var, tabela, scopo)
                 if var not in a:
                     # print(f'retorno {controle} - 1',file = log_sem)
@@ -205,8 +204,14 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             elif token["token"] in PRE:
                 # print(f'retorno {controle} - 2',file = log_sem)
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            # stack: ..., class, data
-            a[token['token']] = {"type":tabela['stack'][-1], "data":tabela['global'][tabela['stack'][-1]]['data']}
+            # stack: ..., type_class
+            a[token['token']] = {"type":tabela['stack'][-1],
+                                 "data":tabela['global'][tabela['stack'][-1]]['data'],
+                                 'is_vetor':False,
+                                 'is_const':False}
+            tabela['stack'].append(token['token'])
+            tabela['stack'].append(controle)
+            # stack: ..., type_class, controle
         case 'pop_stack':
             # stack: ..., _
             tabela['stack'].pop()
@@ -331,7 +336,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if token['token'] in a:
                 return f"Na linha {token['line']}, parametro {token['token']} foi declarado novamente"  
             a[token['token']] = {'type':tipo,
-                         "is_instanciado": False,
                          "is_vetor": False,
                          "is_const": False
                      }
