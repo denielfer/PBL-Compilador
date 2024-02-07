@@ -1,0 +1,65 @@
+const {
+}
+
+variables {
+}
+
+class qwe{
+    variables{
+      int a = 0;
+    }
+    objects{
+      Pessoa b;
+    }
+    methods{
+      int metodo(int c, int d) {
+        variables{}
+        objects{}
+        return 0;
+      }
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class qwe{
+    variables{
+      real e = 0;
+    }
+    objects{
+      Animal f;
+    }
+    methods{
+      int metodo(real g) {
+        variables{
+          int teste;
+        }
+        objects{}
+        return 1;
+      }
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class main{
+    variables {
+    }
+
+    objects {
+    }
+
+    methods{ 
+        int main(){
+            variables {
+            }
+            objects {
+            }
+            return 1;
+        } 
+    }
+}
