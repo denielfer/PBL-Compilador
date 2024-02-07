@@ -6,7 +6,7 @@ variables {
 
 class qwe{
     variables{
-      int a = 0;
+      int a;
     }
     objects{
       Pessoa b;
@@ -26,7 +26,7 @@ class qwe{
 
 class qwe{
     variables{
-      real e = 0;
+      real e;
     }
     objects{
       Animal f;
@@ -36,6 +36,11 @@ class qwe{
         variables{
           int teste;
         }
+        objects{}
+        return 1;
+      }
+      int metodo(real h) {
+        variables{}
         objects{}
         return 1;
       }
