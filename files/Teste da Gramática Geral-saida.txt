@@ -101,6 +101,9 @@
 17 <DEL, {>
 18 <PRE, variables>
 18 <DEL, {>
+18 <PRE, int>
+18 <IDE, a>
+18 <DEL, ;>
 18 <DEL, }>
 19 <PRE, objects>
 19 <DEL, {>
@@ -130,7 +133,7 @@
 28 <DEL, }>
 30 <PRE, objects>
 30 <DEL, {>
-31 <IDE, Pessoa>
+31 <IDE, qwe>
 31 <IDE, pessoa>
 31 <DEL, [>
 31 <NRO, 100>
@@ -194,6 +197,11 @@
 46 <DEL, ;>
 47 <DEL, }>
 48 <IDE, a>
+48 <DEL, .>
+48 <IDE, pessoa>
+48 <DEL, [>
+48 <NRO, 1>
+48 <DEL, ]>
 48 <REL, =>
 48 <NRO, 1>
 48 <DEL, ;>
@@ -275,23 +283,3 @@
 
 
 A análise léxica foi realizada com sucesso e não identificou nenhum erro de má formação.
-
-Sem erros Sintaticos
-
-Erros Semanticos identificados:
-Na linha 12, sete declarado novamente
-Na linha 12, oito declarado novamente
-Na linha 13, um declarado novamente
-Na linha 13, dois declarado novamente
-Na linha 14, variavel declarado novamente
-Na linha 14, variavel2 declarado novamente
-Na linha 15, teste declarado novamente
-Na linha 27, a declarado novamente
-Na linha 31, classe Pessoa não foi encontrada
-Na linha 32, classe Livro não foi encontrada
-Na linha 41, a declarado novamente
-Na linha 43, t declarado novamente
-Na linha 48, tentativa de atribuir int a a que é do tipo class
-Na linha 55, tipo de parametro Math não foi encontrado
-Na linha 55, parametro a foi declarado novamente
-Na linha 66, classe Math não foi encontrada

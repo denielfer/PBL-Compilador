@@ -15,7 +15,7 @@ variables {
     boolean teste[5], aaa;
 }
 class qwe{
-    variables{}
+    variables{ int a;}
     objects{}
     methods{
     }
@@ -28,7 +28,7 @@ class a extends a{
     variables{}
     
     objects {
-        Pessoa pessoa[100];
+        qwe pessoa[100];
         Livro livro[tamanho];
     }
     
@@ -45,7 +45,7 @@ class a extends a{
             objects{
                 a a;
             }
-            a=1;
+            a.pessoa[1]=1;
             //this.pessoa[1] = 1;
             return 2;
         }

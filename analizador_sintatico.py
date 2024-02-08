@@ -192,7 +192,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['if'],'next':[('command',0),('if',0)]},
                     {'is_terminal':True,"key":'token',"value":['for'],'next':[('command',0),('for',0)]},
                     #adicionar o this, que aponta para o ide daqui de baixo?
-                    {'is_terminal':True,"key":'type' ,"value":['IDE'],'next':[('command',0),('assigment_or_method_acess_or_duble',0)],'s':{'do':['validade_IDE',"add_void_stack"]}},
+                    {'is_terminal':True,"key":'type' ,"value":['IDE'],'next':[('command',0),('assigment_or_method_acess_or_duble',0)],'s':{'do':['validate_IDE',"add_void_stack"]}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
@@ -224,7 +224,7 @@ get_functions = {
     'var_assinement':[
         # <ASSIGMENT_WITHOUT_SEMICOLON> -> index [0,1]
                 {"test":[ # <DEC_OBJECT_ATRIBUTE_ACCESS>
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('var_assinement',1),('object_access',0),("dimention_acess",0)],'s':{'do':['validade_IDE',"add_void_stack"]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('var_assinement',1),('object_access',0),("dimention_acess",0)],'s':{'do':['validate_IDE',"add_void_stack"]}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[ 
                     {'is_terminal':True,"key":'token',"value":['='],'next':[('value',0)],'s':{'do':['atribuição']}},
@@ -365,7 +365,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('read',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],"s":{'do':['validade_is_str'],'erro':[("close_parentesis",0),(';',0)]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],"s":{'do':['validate_is_str'],'erro':[("close_parentesis",0),(';',0)]}},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
     "print":[ 
@@ -373,7 +373,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":['('],'next':[("close_parentesis",0),('print',1)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validade_IDE","add_void_stack"],'erro':[("close_parentesis",0),(';',0)]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[('object_access',0),("dimention_acess",0)],'s':{'do':["validate_IDE","add_void_stack"],'erro':[("close_parentesis",0),(';',0)]}},
                     {'is_terminal':True,"key":'type',"value":['CAC','NRO'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
@@ -388,10 +388,10 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[''],'next':[],'s':{'do':["pop_stack"]}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE','NRO'],'next':[("dimention_acess",2)],'s':{'do':["validade_is_interger"]}},
+                    {'is_terminal':True,"key":'type',"value":['IDE','NRO'],'next':[("dimention_acess",2)],'s':{'do':["validate_is_interger"]}},
                 ],'erro':{'tipo_recuperação':'next'}}, # ,'s':{'do':["validate_dimention_acess"]}
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":[']'],'next':[("dimention_acess",0)]},
+                    {'is_terminal':True,"key":'token',"value":[']'],'next':[("dimention_acess",0)],'s':{'do':["add_void_stack"]}},
                 ],'erro':{'tipo_recuperação':'next'}},
                 # {"test":[
                 #     {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)]},
@@ -400,11 +400,11 @@ get_functions = {
     'object_access':[ 
         # <DEC_OBJECT_ATRIBUTE_ACCESS> -> começa do index 1
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['.'],'next':[("object_access",1)], 's':{'do':['validade_object']}},
+                    {'is_terminal':True,"key":'token',"value":['.'],'next':[("object_access",1)], 's':{'do':['validate_object']}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[("object_access",0),("dimention_acess",0)]},
+                    {'is_terminal':True,"key":'type',"value":['IDE'],'next':[("object_access",0),("dimention_acess",0)], 's':{'do':['validate_atr','add_void_stack']}},
                 ],'erro':{'tipo_recuperação':'next'}},
                ],
     ';':[ # (";",0),
@@ -423,6 +423,14 @@ get_functions = {
                         {'is_terminal':True,"key":'token',"value":['{'],'next':[('end_block',0),("command",0),('object',0),('variables',0)]},
                     ],'erro':{'tipo_recuperação':'next'}},
             ],
+}
+
+def recuperação_next(list_actions,stack):
+    for item in list_actions[-1]["next"]: # adiciona a pilha a última possibilidade do token
+        stack.append(item)
+
+recuperação_de_erros= {
+    "next":recuperação_next,
 }
 
 import Analizador_semantico
@@ -497,11 +505,11 @@ def analize(get_token:list,log_sem):
                     esperado += action["value"] 
             else: # se não achou ação para o token é porque é token não esperado
                 esperado = str(esperado).replace("'IDE'","IDE").replace("'NRO'","NRO").replace("'CAC'","CAC")
-                if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] == 'next':
-                    print(f'\t\t\tNa linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
-                    for item in list_actions[-1]["next"]: # adiciona a pilha a última possibilidade do token
-                        stack.append(item)
-                    pass
+                print(f'\t\t\tNa linha {token["line"]}, era esperado {esperado} porém foi obtido \'{token["token"]}\'')
+                if get_functions[stage][pos_stage]['erro']['tipo_recuperação'] in recuperação_de_erros:
+                    recuperação_de_erros[get_functions[stage][pos_stage]['erro']['tipo_recuperação']](list_actions,stack)
+                else:
+                     raise Exception('Recuperação requerida mas não implementada')
                 yield f"Na linha {token['line']}, era esperado {esperado} porém foi obtido \'{token['token']}\' "
     else: # quando os tokens acabarem
         for item in stack[::-1]: # para cada item na stack
