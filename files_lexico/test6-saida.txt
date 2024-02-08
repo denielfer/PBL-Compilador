@@ -1,2 +1,0 @@
-﻿Erro sintatico:
-Na linha 2, era esperado ['const'] porém foi obtido &&

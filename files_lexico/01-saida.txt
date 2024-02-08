@@ -1,2 +1,0 @@
-﻿Erro sintatico:
-Na linha 1, era esperado ['{'] porém foi obtido variable

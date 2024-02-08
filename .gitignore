@@ -162,3 +162,5 @@ cython_debug/
 # /files/output
 
 log_*.txt
+
+*-saida.txt
