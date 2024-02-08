@@ -1,11 +1,11 @@
 import util
-from analizador_lexico import CoMF_CODE # codigo de cadeia mal formada
+from Analizador_lexico import CoMF_CODE # codigo de cadeia mal formada
 encode = "utf-8-sig"
 import sys
 console_print_stdout = sys.stdout
 
 def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
-    from analizador_lexico import get_tokens, comentario_bloco_excption, CODIGOS
+    from Analizador_lexico import get_tokens, comentario_bloco_excption, CODIGOS
     tokens_corretos=[]
     with open(path, 'r', encoding = encode) as file:
         new_file = path.replace(replace, replace_to)
@@ -56,7 +56,7 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
 def analizador_sintatico_files(list_tokens:list[dict], path:str,log_sem):
     print(path)
     print(path,file=log_sem)
-    from analizador_sintatico import analize
+    from Analizador_sintatico import analize
     erros = []
     analizer = analize(list_tokens,log_sem)
     semantico = None

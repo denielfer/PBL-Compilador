@@ -7,7 +7,7 @@ def init():
     erro_sem = None
     erros_semantico = []
 
-from analizador_sintatico import TYPE, TYPES, ART, ART_DOUBLE, REL, LOG, BOOL
+from Analizador_sintatico import TYPE, TYPES, ART, ART_DOUBLE, REL, LOG, BOOL
 
 def analize(stage, pos_stage, action, token, log_sem= None):
     if not log_sem:
@@ -82,7 +82,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             # stack: ..., tipo
         case 'insert_const_or_var':
             a = _get_scopo(tabela, scopo)
-            from analizador_lexico import PRE
+            from Analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
@@ -155,7 +155,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                         return f"Na linha {token['line']}, tentando realizar acesso em vetor com valor float ( {var} )"
         case 'dec_class':  
             a = _get_scopo(tabela, scopo)
-            from analizador_lexico import PRE
+            from Analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
                 a[token['token']] = {"type":'class', "data":{}}
@@ -197,7 +197,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             #stack: ..., type_object
         case 'insert_object':
             a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
+            from Analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
@@ -228,7 +228,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             tipo = tabela['stack'].pop()
             # stack: ...
             a = _get_scopo(tabela,scopo)
-            from analizador_lexico import PRE
+            from Analizador_lexico import PRE
             if token["token"] in a:
                 # print(f'retorno {controle} - 1',file = log_sem)
                 a[token['token']] = {"type":tipo, 'param':{}}
