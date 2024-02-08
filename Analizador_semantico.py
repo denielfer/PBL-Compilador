@@ -46,7 +46,7 @@ import json
 class limpa_last_erro():
     pass
 
-def remove_circular_refs(ob, _seen=None):
+def remove_circular_refs(ob, _seen=None): ### NAO FOI EU QUE FIZ PEQUEI E ESQUECI DE ONDE
     if _seen is None:
         _seen = set()
     if id(ob) in _seen:

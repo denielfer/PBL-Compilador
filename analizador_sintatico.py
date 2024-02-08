@@ -382,7 +382,7 @@ get_functions = {
                     {'is_terminal':True,"key":'token',"value":[')'],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}}
     ],
-    'dimention_acess':[  #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    'dimention_acess':[
                 {"test":[
                     {'is_terminal':True,"key":'token',"value":['['],'next':[("dimention_acess",1)],'s':{'do':["validate_is_vector"],'erro':[("dimention_acess",2)]}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[],'s':{'do':["pop_stack"]}},
@@ -400,7 +400,7 @@ get_functions = {
     'object_access':[ 
         # <DEC_OBJECT_ATRIBUTE_ACCESS> -> começa do index 1
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['.'],'next':[("object_access",1)]},
+                    {'is_terminal':True,"key":'token',"value":['.'],'next':[("object_access",1)], 's':{'do':['validade_object']}},
                     {'is_terminal':True,"key":'token',"value":[''],'next':[]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
