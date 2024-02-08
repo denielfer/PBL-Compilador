@@ -201,7 +201,7 @@ get_functions = {
                     {'is_terminal':False,'terminais':[('dimention_acess',0)],'next':[("assigment_or_method_acess_or_duble",1),('object_access',0)]},
                 ],'erro':{'tipo_recuperação':'next'}},
                 {"test":[
-                    {'is_terminal':True,"key":'token',"value":['->'],'next':[(';',0),('method_access',1)],'s':{'do':['validate_last_object']}},####################################################################################
+                    {'is_terminal':True,"key":'token',"value":['->'],'next':[(';',0),('method_access',1)],'s':{'do':['validate_last_object']}},#todo
                     {'is_terminal':True,"key":'token',"value":['='],'next':[(';',0),('value',0)],'s':{'do':['atribuição']}},
                     {'is_terminal':True,"key":'token',"value":ART_DOUBLE,'next':[(';',0)],'s':{'do':['duble_art']}},
                 ],'erro':{'tipo_recuperação':'next'}},
