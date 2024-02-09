@@ -37,7 +37,6 @@ class a extends a{
     methods{
         int a(int b, int c, int d){
             variables{
-                int weao[sete],pjm231k[eko[1]];
             }
             objects{}
             return 1;
