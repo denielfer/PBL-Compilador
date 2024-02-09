@@ -406,14 +406,51 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             tabela['stack'].append(a[var]['type'])
             return limpa_last_erro()
         case 'validate_object':
-            tabela['last_scopo'] = scopo
+            tabela['last_scopo'] = scopo # scopo: ..., class, 'data', method, 'data'
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
+            # scopo: ..., class, 'data', method, 'data', objeto, 'data'
         case 'validate_atr':
             a = _get_scopo(tabela,scopo)
             if token['token'] not in a:
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como atributo do objeto {scopo[-2]}"
             tabela['stack'].append(token['token'])
+        case 'acess_method':
+            a = _get_scopo(tabela,scopo)
+            if token['token'] not in a:
+                return f"Na linha {token['line']}, {token['token']} não foi encontrado como method do objeto {scopo[-2]}"
+            scopo.append(token['token'])
+            scopo.append('param')
+            # scopo: ..., class, 'data', method, 'data', objeto, 'data', func, 'param'
+            tabela['stack'].append(0) # 0 indicando que esperamos o primerio parametro da função
+        case 'change_back_scopo':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            a = _get_in_scopo(ide, tabela, scopo)
+            tabela['programado'].append({'when':(';', 0), 'do':[
+                                                         (change_back_scopo,
+                                                            {
+                                                                'tabela': tabela,
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
+        case 'stack_bool':
+            tabela['stack'].append('boolean')
+        case 'schedule_validade_qtd_param':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            a = _get_in_scopo(ide, tabela, scopo)
+            tabela['programado'].append({'when':('close_parentesis',0), 'do':[
+                                                         (valid_qtd_param,
+                                                            {
+                                                                'tabela': tabela,
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
         case _:
             pass
 
@@ -434,6 +471,12 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
         return erro_msg
     if on_success:
         on_success()
+
+def change_back_scopo(tabela):
+    tabela['scopo'] = tabela['last_scopo'].pop()
+
+def valid_qtd_param(tabela):
+    ('close_parentesis',0) # todo
 
 def _get_in_scopo(var, tabela, scopo:list):
     a = tabela #testa
