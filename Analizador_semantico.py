@@ -119,7 +119,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_is_vector':
             t = tabela['stack'].pop()
             var = tabela['stack'][-1]
-            if(t in {"insert_const_or_var","insert_object"}):
+            if(t in {"insert_const_or_var", "insert_object"}):
                 a = _get_in_scopo(var, tabela, scopo)
                 if var not in a:
                     return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
@@ -336,7 +336,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 tabela['programado'] = []
             ide = tabela['stack'].pop()
             a = _get_in_scopo(ide, tabela, scopo)
-            tabela['programado'].append({'when':(';', 0), 'do':[
+            tabela['programado'].append({'when': (';', 0), 'do': [
                                                          (validate_same_type_with_stack_last,
                                                             {
                                                                 "type":tabela['stack'].pop(),
@@ -411,7 +411,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             scopo.append('data')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
         case 'validate_atr':
-            a = _get_scopo(tabela,scopo)
+            a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como atributo do objeto {scopo[-2]}"
             tabela['stack'].append(token['token'])

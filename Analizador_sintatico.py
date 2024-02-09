@@ -35,7 +35,7 @@ get_functions = {
                     {'is_terminal': True, "key":'token', "value": [''], 'next': []},
                 ],'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('const', 4)], 's': {'do': ['insert_const_or_var', 'set_const']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('const', 4)], 's': {'do': ['insert_const_or_var', 'set_const'], 'erro':[('const', 6)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['='], 'next':[('const', 5)]},
@@ -133,7 +133,7 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {'test': [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('func_dec', 3), ("close_parentesis", 0)], 's': {'do': ['move_param']}},
-                ], 'erro' :{'tipo_recuperação': 'next'}}, # tem move_param pois apesar de nao ter parametro, o proximo ('func_dec',3) começa com scopo.pop()
+                ], 'erro': {'tipo_recuperação': 'next'}}, # tem move_param pois apesar de nao ter parametro, o proximo ('func_dec',3) começa com scopo.pop()
     ],
     'func_dec': [
                 {'test': [
@@ -192,7 +192,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['if'], 'next': [('command', 0), ('if', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['for'], 'next': [('command', 0), ('for', 0)]},
                     #adicionar o this, que aponta para o ide daqui de baixo?
-                    {'is_terminal': True, "key": 'type' , "value": ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validate_IDE', "add_void_stack"]}},
+                    {'is_terminal': True, "key": 'type' , "value": ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}}
     ],
@@ -201,7 +201,7 @@ get_functions = {
                     {'is_terminal': False, 'terminais': [('dimention_acess', 0)], 'next': [("assigment_or_method_acess_or_duble", 1), ('object_access', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object']}},#todo
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object'], 'erro': [(';', 0)]}},#todo
                     {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['atribuição']}},
                     {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -224,7 +224,7 @@ get_functions = {
     'var_assinement': [
         # <ASSIGMENT_WITHOUT_SEMICOLON> -> index [0,1]
                 {"test": [ # <DEC_OBJECT_ATRIBUTE_ACCESS>
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('var_assinement', 1), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', "add_void_stack"]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('var_assinement', 1), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
                     {'is_terminal': True, "key": 'token', "value": ['='], 'next': [('value', 0)], 's': {'do': ['atribuição']}},
@@ -242,7 +242,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('aritimetic_or_logical_parentesis_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('aritimetic_or_logical_expression', 0), ('object_access', 0), ("dimention_acess", 0)]},
-                    {'is_terminal': True, "key": 'token', "value": BOOL,' next': [], 's': {'do': ['stack_BOOL']}},
+                    {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_BOOL']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'aritimetic_or_logical_parentesis_expression': [
@@ -404,10 +404,10 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("object_access", 0), ("dimention_acess", 0)], 's': {'do': ['validate_atr', 'add_void_stack']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("object_access", 0), ("dimention_acess", 0)], 's': {'do': ['validate_atr', 'add_void_stack'], 'erro': [(';', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                ],
-    ';':[ # (";",0),
+    ';': [ # (";",0),
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": [';'], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -429,8 +429,8 @@ def recuperação_next(list_actions, stack):
     for item in list_actions[-1]["next"]: # adiciona a pilha a última possibilidade do token
         stack.append(item)
 
-recuperação_de_erros= {
-    "next":recuperação_next,
+recuperação_de_erros = {
+    "next": recuperação_next,
 }
 
 import Analizador_semantico
@@ -453,7 +453,7 @@ def _get_list_actions(stage:str, pos_stage:int):
                     new_dic['next'] = ac['next'] + action_new['next']
                     if 's' in ac:
                         if 's' not in new_dic:
-                            new_dic['s'] = {'do':[]}
+                            new_dic['s'] = {'do': []}
                         # print(new_dic['s'])
                         new_dic['s']['do'] += ac['s']['do']
                         # print(new_dic['s'])
@@ -468,7 +468,7 @@ def _get_list_actions(stage:str, pos_stage:int):
 
 # from _typeshed import SupportsWrite
 # def analize(get_token:list,log_sem:SupportsWrite[str]):
-def analize(get_token:list,log_sem):
+def analize(get_token:list, log_sem):
     stack = [('END', 0), ('class', 0), ('variables', 0), ("const", 0)]
     stage = None
     Analizador_semantico.init()
@@ -491,14 +491,14 @@ def analize(get_token:list,log_sem):
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
                     for item in action["next"]:
                         stack.append(item)
-                    Analizador_semantico.analize(stage,pos_stage,action,token,log_sem)
+                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     #     getattr(semant, get_functions[stage][pos_stage]['s']['do'])(**get_functions[stage][pos_stage]['s']['param'],token = token,scopo=scopo)
                     break
                 # pode dar erro se vazio não for o primeiro token
                 elif "" in action["value"]: # se for token vazio, continuamos em busca pelo próximo elemento
                     for item in action["next"]:
                         stack.append(item)
-                    Analizador_semantico.analize(stage,pos_stage,action,token,log_sem)
+                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     flag = True
                     break
                 else: # se não for o token esperado e não tiver token vazio esperado, adicionamos a lista de esperados
