@@ -242,7 +242,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('aritimetic_or_logical_parentesis_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('aritimetic_or_logical_expression', 0), ('object_access', 0), ("dimention_acess", 0)]},
-                    {'is_terminal': True, "key": 'token', "value": BOOL,'next': [], 's': {'do': ['stack_BOOL']}},
+                    {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_BOOL']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'aritimetic_or_logical_parentesis_expression': [
@@ -450,12 +450,6 @@ def _get_list_actions(stage:str, pos_stage:int):
                 for action_new in _get_list_actions(*nao_terminal):
                     # print(action_new)
                     new_dic = copy.deepcopy(action_new)
-                    if 'next' not in ac or'next' not in new_dic or'next' not in action_new:
-                        print('%'*40)
-                        print(ac)
-                        print(new_dic)
-                        print(action_new)
-                        print('%'*40)
                     new_dic['next'] = ac['next'] + action_new['next']
                     if 's' in ac:
                         if 's' not in new_dic:
