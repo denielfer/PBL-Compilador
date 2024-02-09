@@ -479,9 +479,10 @@ def valid_qtd_param(tabela):
     ('close_parentesis',0) # todo
 
 def _get_in_scopo(var, tabela, scopo:list):
-    a = tabela #testa
     t = copy.deepcopy(scopo)
+    a = tabela
     while len(t) >= 3:
+        a = tabela #testa
         for s in t:
             a = a[s]
             if var in a:

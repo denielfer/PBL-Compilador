@@ -25,7 +25,9 @@ class qwe{
     }
 }
 class a extends a{
-    variables{}
+    variables{
+        int eko[sete];
+    }
     
     objects {
         qwe pessoa[100];
@@ -34,7 +36,9 @@ class a extends a{
     
     methods{
         int a(int b, int c, int d){
-            variables{}
+            variables{
+                int weao[sete],pjm231k[eko[1]];
+            }
             objects{}
             return 1;
         }
