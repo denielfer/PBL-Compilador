@@ -1,0 +1,96 @@
+const {
+    int sete = 4, oito = 25;
+    real um = 4, dois = 1.1;
+    string variavel="false", variavel2="4";
+    boolean teste = false;
+    boolean teste_2 = true;
+}
+variables {
+    boolean aa, a_2;
+    real b0_c;
+    real tres4quatro;
+}
+class qwe{
+    variables{ int a;}
+    objects{}
+    methods{
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class a extends a{
+    variables{
+        int eko[sete];
+    }
+    
+    objects {
+        qwe pessoa[100];
+    }
+    
+    methods{
+        int a(int b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+        int a(int b, int t, int d){
+            variables{
+            }
+            objects{
+                a a;
+            }
+            a.pessoa[1]=1;
+            //this.pessoa[1] = 1;
+            return 2;
+        }
+
+    }
+    
+    constructor (Math math, int a) {
+        variables{}
+        objects{}
+    }
+}
+
+class a extends qwe{
+    variables{
+        int b;
+    }
+    
+    objects {
+
+    }
+    
+    methods{
+
+    }
+    
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class main{
+    variables {
+        boolean flag;
+    }
+    objects {
+    }
+    methods{ 
+        void main(){
+            variables {}
+            objects {}
+            print(sete);
+            print("asdads");
+            print(1);
+            print(1.12);
+            
+            return;
+        }
+    }
+}

@@ -212,17 +212,17 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             # stack: ..., tipo
             tipo = tabela['stack'].pop()
             # stack: ...
-            a = _get_scopo(tabela,scopo)
+            a = _get_scopo(tabela, scopo)
             from Analizador_lexico import PRE
             if token["token"] in a:
-                a[token['token']] = {"type":tipo, 'param':{}}
+                a[token['token']] = {"type": tipo, 'param': {}}
                 scopo.append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
             elif token["token"] in PRE and token['token'] != "main":
-                a[token['token']] = {"type":tipo, 'param':{}}
+                a[token['token']] = {"type": tipo, 'param': {}}
                 scopo.append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type":tipo, 'param':{}}
+            a[token['token']] = {"type": tipo, 'param': {}}
             # scopo: ...            
             scopo.append(token["token"])
             # scopo: ..., func
@@ -428,7 +428,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como atributo do objeto {scopo[-2]}"
             tabela['stack'].append(token['token'])
         case 'acess_method':
-            a = _get_scopo(tabela,scopo)
+            a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como method do objeto {scopo[-2]}"
             scopo.append(token['token'])
@@ -438,7 +438,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'schedule_change_back_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when':(';', 0), 'do':[
+            tabela['programado'].append({'when':(';', 0), 'do': [
                                                          (change_back_scopo,
                                                             {
                                                                 '_scopo':copy.deepcopy(tabela['last_scopo']),
