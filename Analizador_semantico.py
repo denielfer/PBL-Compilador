@@ -131,10 +131,14 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                     return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
                 a[var]["is_vetor"] = True
             else:
-                a = _get_in_scopo(var, tabela, scopo)
-                if var not in a:
-                    return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
-                if not a[var]["is_vetor"]:
+                try:
+                    a = _get_in_scopo(var, tabela, scopo)
+                    if var not in a:
+                        return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
+                    print(a[var],file=log_sem)
+                    if not a[var]["is_vetor"]:
+                        return f"Na linha {token['line']}, tentando acessar vetor porém {var} não é vetor"
+                except KeyError:
                     return f"Na linha {token['line']}, tentando acessar vetor porém {var} não é vetor"
         case 'validate_dimention_acess':
             var = token['token']
@@ -366,7 +370,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             tabela['programado'].append({'when': (';', 0), 'do': [
                                                          (validate_last_in_types,
                                                             {
-                                                                "type":TYPES,
                                                                 'tabela': tabela,
                                                                 'scopo': scopo,
                                                                 "erro_msg":f"Na linha {token['line']}, a função read so é aceito {TYPES}",
@@ -538,14 +541,12 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
     if on_success:
         on_success()
 
-def validate_last_in_types(tabela,scopo, erro_msg:str, on_success:callable=None, ):
+def validate_last_in_types(tabela,scopo, erro_msg:str):
     try:
         var= tabela['stack'].pop()
         a = _get_scopo(tabela,scopo)
         if a[var]['type'] in TYPES :
             return erro_msg
-        if on_success:
-            on_success()
     except :
         return erro_msg
 

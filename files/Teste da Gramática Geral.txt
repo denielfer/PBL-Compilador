@@ -68,6 +68,7 @@ class a extends a{
             a.pessoa[1]->a(1,2,3,5);
             a.pessoa[1]->a(1,2);
             a.pessoa[1].n++;
+            read(eko[1]);
             //this.pessoa[1] = 1;
             return 2;
         }
