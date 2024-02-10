@@ -191,7 +191,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['read'], 'next': [('command', 0), (";", 0), ('read', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['if'], 'next': [('command', 0), ('if', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['for'], 'next': [('command', 0), ('for', 0)]},
-                    #adicionar o this, que aponta para o ide daqui de baixo?
+                    # e o this???????????
                     {'is_terminal': True, "key": 'type' , "value": ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}}
@@ -294,7 +294,7 @@ get_functions = {
     ],
     'method_access': [
                 {"test": [ # <optional_method_access>
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)], "s": {'do': ["valid_method_acess"], "erro": [('close_parentesis', 0), (';', 0)]}},
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)]}, # , "s": {'do': ["valid_method_acess"], "erro": [('close_parentesis', 0), (';', 0)]}
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
@@ -365,10 +365,10 @@ get_functions = {
     ],
     'read': [
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)]},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)], "s": {'do': ['schadule_move_back_scopo','schadule_clean_last_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['validate_is_str'], 'erro': [("close_parentesis", 0), (';', 0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type'], 'erro': [("close_parentesis", 0), (';', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}}
     ],
     "print": [ 
