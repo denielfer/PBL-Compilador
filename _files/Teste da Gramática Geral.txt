@@ -14,21 +14,11 @@ variables {
     string variavel, variavel2[2];
     boolean teste[5], aaa;
 }
-class ewqweq{
-    variables{}
-    objects{}
-    methods{
-    }
-    constructor () {
-        variables{}
-        objects{}
-    }
-}
 class qwe{
-    variables{ int a,n;}
+    variables{ int a;}
     objects{}
     methods{
-        int a(ewqweq b, int c, int d){
+        int a(int b, int c, int d){
             variables{
             }
             objects{}
@@ -64,10 +54,8 @@ class a extends a{
             objects{
                 a a;
             }
-            a.pessoa[1]->a(1,2,3); // ewqweq->constructor()
+            a.pessoa[1]->a(1,2,3);
             a.pessoa[1]->a(1,2,3,5);
-            a.pessoa[1]->a(1,2);
-            a.pessoa[1].n++;
             //this.pessoa[1] = 1;
             return 2;
         }

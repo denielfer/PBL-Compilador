@@ -64,7 +64,7 @@ get_functions = {
                         {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('variables', 4), ('dimention_acess', 0)], 's': {'do': ['insert_const_or_var'], 'erro': [('variables', 4)]}},
                     ], 'erro': {'tipo_recuperação': 'next'}},
                     {"test": [
-                        {'is_terminal' :True, "key": 'token', "value": [','], 'next': [('variables', 3)]},
+                        {'is_terminal' :True, "key": 'token', "value": [','], 'next': [('variables', 3)], 's': {'do': ['pop_stack']}},
                         {'is_terminal' :True, "key": 'token', "value": [''], 'next': [(";", 0)]},
                     ], 'erro': {'tipo_recuperação': 'next'}},
                 ],
@@ -202,8 +202,8 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object'], 'erro': [(';', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['atribuição']}},
-                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art']}},
+                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back','atribuição']}},
+                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art','move_scopo_back']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'for': [
@@ -298,21 +298,24 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method','change_back_scopo']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method']}},
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},#to do -> requires: constructor declaração
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's':{'do':['schedule_validade_qtd_param']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's':{'do':['schedule_change_back_scopo','schedule_validade_qtd_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
                 {"test": [ #<PARAMETERS>
-                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)]},
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)],'s':{"do":['validate_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <MULT_PARAMETERS>
-                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('value', 0)]},
+                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)],'s':{"do":['move_next_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                ], 'erro': {'tipo_recuperação': 'next'}},
+                {"test": [ 
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)],'s':{"do":['validate_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'vetor_assinement': [
