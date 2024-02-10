@@ -19,9 +19,10 @@ def analize(stage, pos_stage, action, token, log_sem= None):
             erro_sem = None
     if erro_sem is None:
         for ret in _sem_analize(action, token, tabela, scopo, log_sem,(stage, pos_stage)):
-            if ret is limpa_last_erro:
-                erros_semantico.pop()
-            elif ret is not None:
+            # if ret is limpa_last_erro:
+            #     erros_semantico.pop()
+            # elif ret is not None:
+            if ret is not None:
                 print(ret, file=log_sem)
                 erros_semantico.append(ret)
                 if 'erro' in action['s']:
@@ -48,8 +49,8 @@ def _sem_analize(action, token, tabela, scopo, log_sem,stg_pos):
             yield _sem(controle, token, tabela, scopo, log_sem, action,stg_pos)
 
 import json
-class limpa_last_erro():
-    pass
+# class limpa_last_erro():
+#     pass
 
 def remove_circular_refs(ob, _seen=None): ### NAO FOI EU QUE FIZ, PEQUEI E ESQUECI DE ONDE
     if _seen is None:
@@ -359,22 +360,51 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_in_scopo(ide, tabela, scopo)
             if a[ide]['type'] not in ['int', 'real']:
                 return f"Na linha {token['line']}, tentativa de {token['token']}, na varialvel {ide}, porém esta é {a[ide]['type']}" 
-        case 'validate_is_str':
-            var = token['token']
-            a = _get_in_scopo(var, tabela, scopo)
-            if var not in a:
-                # if var not in _get_scopo(tabela,scopo[:-2]):
-                    return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
-                # else:
-                #     tabela['force_next'].append({'is':('object_access',0),
-                #                                  'erro_msg':f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
-                #                             }
-                #                         )
+        case 'schedule_valid_type':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when': (';', 0), 'do': [
+                                                         (validate_last_in_types,
+                                                            {
+                                                                "type":TYPES,
+                                                                'tabela': tabela,
+                                                                'scopo': scopo,
+                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito {TYPES}",
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
+        case 'schadule_move_back_scopo':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':(';', 0), 'do':[
+                                                         (change_back_scopo,
+                                                            {
+                                                                '_scopo':copy.deepcopy(scopo),
+                                                                'scopo':scopo
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
+        case 'schadule_clean_last_scopo':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':(';', 0), 'do':[
+                                                         (change_back_scopo,
+                                                            {
+                                                                '_scopo':[],
+                                                                'scopo':tabela['last_scopo']
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
 
-            if a[var]['type'] not in TYPES:
-                return f"Na linha {token['line']}, Nao é possivel ler valores para {var} porém esta é {a[var]['type']}, e read so permite {TYPES}"
-            tabela['stack'].append(var)
-            tabela['stack'].append(controle)
+        case 'save_scopo':
+            if tabela['last_scopo'] == []:
+                tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
         case 'stack_NRO':
             if '.' in token['token']:
                 tabela['stack'].append('real')
@@ -384,13 +414,13 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 tabela['stack'].append('string')
         case 'stack_BOOL':
                 tabela['stack'].append('boolean')
-        case 'valid_method_acess':
-            var = tabela['stack'].pop()
-            a =  _get_scopo(tabela, scopo[:-2])
-            if var not in a:
-                return
-            tabela['stack'].append(a[var]['type'])
-            return limpa_last_erro()
+        # case 'valid_method_acess':
+        #     var = tabela['stack'].pop()
+        #     a =  _get_scopo(tabela, scopo[:-2])
+        #     if var not in a:
+        #         return
+        #     tabela['stack'].append(a[var]['type'])
+        #     return limpa_last_erro()
         case 'validate_is_interger':
             if token['type'] == 'NRO':
                 if '.' in token['token']:
@@ -402,13 +432,13 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                     return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"
                 if a[var]['type'] != 'int':
                     return f"Na linha {token['line']}, usando variavel {token['token']} porém esta é não é int, sendo do tipo {a[var]['type']}"
-        case 'valid_atribut_acess':#  validar
-            var = tabela['stack'].pop()
-            a =  _get_scopo(tabela, scopo[:-2])
-            if var not in a:
-                return
-            tabela['stack'].append(a[var]['type'])
-            return limpa_last_erro()
+        # case 'valid_atribut_acess':#  validar
+        #     var = tabela['stack'].pop()
+        #     a =  _get_scopo(tabela, scopo[:-2])
+        #     if var not in a:
+        #         return
+        #     tabela['stack'].append(a[var]['type'])
+        #     return limpa_last_erro()
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
@@ -507,6 +537,17 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
         return erro_msg
     if on_success:
         on_success()
+
+def validate_last_in_types(tabela,scopo, erro_msg:str, on_success:callable=None, ):
+    try:
+        var= tabela['stack'].pop()
+        a = _get_scopo(tabela,scopo)
+        if a[var]['type'] in TYPES :
+            return erro_msg
+        if on_success:
+            on_success()
+    except :
+        return erro_msg
 
 def change_back_scopo(_scopo,scopo):
     while len(scopo) !=0:
