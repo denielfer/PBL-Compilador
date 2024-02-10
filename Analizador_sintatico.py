@@ -201,7 +201,7 @@ get_functions = {
                     {'is_terminal': False, 'terminais': [('dimention_acess', 0)], 'next': [("assigment_or_method_acess_or_duble", 1), ('object_access', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object'], 'erro': [(';', 0)]}},#todo
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object'], 'erro': [(';', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['atribuição']}},
                     {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -239,7 +239,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'type', "value": ['NRO'], 'next': [("arit_expression", 0)], 's': {'do': ['stack_NRO']}}, ################################################################################
                     {'is_terminal': True, "key": 'type', "value": ['CAC'], 'next': [], 's': {'do': ['stack_CAC']}},
                     {'is_terminal': True, "key": 'token', "value": ['['], 'next': [("vetor_assinement", 0)]},
-                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)]},
+                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)],'s':{'do':['stack_bool']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('aritimetic_or_logical_parentesis_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('aritimetic_or_logical_expression', 0), ('object_access', 0), ("dimention_acess", 0)]},
                     {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_BOOL']}},
@@ -298,11 +298,11 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)]},
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method','change_back_scopo']}},
+                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},#to do -> requires: constructor declaração
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)]},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's':{'do':['schedule_validade_qtd_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [

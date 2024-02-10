@@ -446,6 +446,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                          (valid_qtd_param,
                                                             {
                                                                 'tabela': tabela,
+                                                                'scopo': scopo,
+                                                                "msg":f"Na linha {token['line']}, quantidade de parametros não conferem"
                                                             }
                                                          )
                                                         ]
@@ -475,9 +477,16 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
 def change_back_scopo(tabela):
     tabela['scopo'] = tabela['last_scopo'].pop()
 
-def valid_qtd_param(tabela):
-    ('close_parentesis',0) # todo
-
+def valid_qtd_param(tabela,scopo, msg):
+    a = -1
+    while a > - len(tabela['stack']): # procura o ultimo numero, concerteza tem 0
+        if tabela['stack'][a].isdigit():
+            a = tabela['stack'][a]
+            break
+    if a<0:
+        return msg
+    if a != len(_get_scopo(tabela,scopo)):
+        return msg
 def _get_in_scopo(var, tabela, scopo:list):
     t = copy.deepcopy(scopo)
     a = tabela
