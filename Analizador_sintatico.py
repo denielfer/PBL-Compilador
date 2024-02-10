@@ -298,19 +298,11 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-<<<<<<< Updated upstream
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method']}},
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},#to do -> requires: constructor declaração
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's':{'do':['schedule_change_back_scopo','schedule_validade_qtd_param']}},
-=======
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method', 'change_back_scopo'], 'erro': [('close_parentesis', 0), (';', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},#to do -> requires: constructor declaração
-                ], 'erro': {'tipo_recuperação': 'next'}},
-                {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['schedule_validade_qtd_param']}},
->>>>>>> Stashed changes
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
