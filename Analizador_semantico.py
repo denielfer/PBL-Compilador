@@ -417,7 +417,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
         case 'move_scopo_back':
             if tabela['last_scopo'] != []:
-                while len(scopo) !=0:
+                while len(scopo) != 0:
                     scopo.pop()
                 for a in tabela['last_scopo']:
                     scopo.append(a)
@@ -481,9 +481,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 if tabela['stack'][a].isdigit():
                     a = tabela['stack'][a]
                     break
-                a-=1
-            a=int(a)
-            if a<0:
+                a -= 1
+            a = int(a)
+            if a < 0:
                 raise ('nenhum parametro foi declarado antes')
             tabela['stack'].append(str(a+1))
 
@@ -508,24 +508,24 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
     if on_success:
         on_success()
 
-def change_back_scopo(_scopo,scopo):
-    while len(scopo) !=0:
+def change_back_scopo(_scopo, scopo):
+    while len(scopo) != 0:
         scopo.pop()
     for a in _scopo:
         scopo.append(a)
 
-def valid_qtd_param(tabela,scopo, msg:str):
+def valid_qtd_param(tabela, scopo, msg:str):
     a = -1
     while a > - len(tabela['stack']): # procura o ultimo numero, concerteza tem 0
         if tabela['stack'][a].isdigit():
             a = tabela['stack'][a]
             break
-        a-=1
-    a=int(a)+1
-    msg = msg.replace('99',str(a)).replace('00',str(len(_get_scopo(tabela,scopo))))
-    if a<0:
+        a -= 1
+    a = int(a) + 1
+    msg = msg.replace('99', str(a)).replace('00', str(len(_get_scopo(tabela, scopo))))
+    if a < 0:
         return msg
-    if a != len(_get_scopo(tabela,scopo)):
+    if a != len(_get_scopo(tabela, scopo)):
         return msg
 def _get_in_scopo(var, tabela, scopo:list):
     t = copy.deepcopy(scopo)
