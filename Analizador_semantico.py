@@ -520,6 +520,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 raise ('nenhum parametro foi declarado antes')
             tabela['stack'].append(str(a+1))
 
+        case 'constructor':
+            a = _get_scopo(tabela, scopo)   
+            a[token['token']] = {"type": scopo[-2], 'param': {}}
+            scopo.append(token["token"])
         case _:
             pass
 

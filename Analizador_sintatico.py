@@ -417,13 +417,13 @@ get_functions = {
         ],
     'constructor': [
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [("constructor", 1)]},
+                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [("constructor", 1)], 's': {'do': ['constructor']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {'test': [
-                        {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('constructor', 2), ("close_parentesis", 0), ('dec_parameter', 0)]},
+                        {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('constructor', 2), ("close_parentesis", 0), ('dec_parameter', 0)], 's': {'do': ['move_param']}},
                     ], 'erro': {'tipo_recuperação': 'next'}},
                 {'test': [
-                        {'is_terminal': True, "key": 'token', "value": ['{'], 'next': [('end_block', 0), ("command", 0), ('object', 0), ('variables', 0)]},
+                        {'is_terminal': True, "key": 'token', "value": ['{'], 'next': [('end_block', 0), ("command", 0), ('object', 0), ('variables', 0)], 's': {'do': ['change_scopo_to_data']}},
                     ], 'erro': {'tipo_recuperação': 'next'}},
             ],
 }
