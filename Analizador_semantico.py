@@ -372,7 +372,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                             {
                                                                 'tabela': tabela,
                                                                 'scopo': scopo,
-                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito {TYPES}",
+                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
                                                             }
                                                          )
                                                         ]
