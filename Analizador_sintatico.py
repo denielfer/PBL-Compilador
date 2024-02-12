@@ -1,9 +1,9 @@
 
 # Tipos
-TYPE = {'int', 'real', 'boolean', 'string'}
+TYPE = ['int', 'real', 'boolean', 'string']
 
 # Tipos com void
-TYPES = TYPE.union({'void'}) # menos IDE
+TYPES = TYPE + ['void'] # menos IDE
 import copy
 
 # Aritméticos simples
@@ -368,7 +368,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)], "s": {'do': ['schadule_move_back_scopo','schadule_clean_last_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type'], 'erro': [("close_parentesis", 0), (';', 0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type','validate_IDE','add_void_stack'], 'erro': [("close_parentesis", 0), (';', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}}
     ],
     "print": [ 

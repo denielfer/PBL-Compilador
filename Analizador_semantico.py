@@ -32,6 +32,8 @@ def analize(stage, pos_stage, action, token, log_sem= None):
         for programado in tabela['programado']:
             if programado['when'] == (stage, pos_stage):
                 d.append(programado)
+                print(programado,file=log_sem)
+                print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
                 for func,args in programado['do']:
                     ret = func(**args)
                     if ret is not None:
@@ -135,7 +137,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                     a = _get_in_scopo(var, tabela, scopo)
                     if var not in a:
                         return f"Na linha {token['line']}, tentando acessar vetor porém {var} não foi encontrado em nenhum escopo"
-                    print(a[var],file=log_sem)
                     if not a[var]["is_vetor"]:
                         return f"Na linha {token['line']}, tentando acessar vetor porém {var} não é vetor"
                 except KeyError:
@@ -348,7 +349,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             tabela['programado'].append({'when': (';', 0), 'do': [
                                                          (validate_same_type_with_stack_last,
                                                             {
-                                                                "type":tabela['stack'].pop(),
+                                                                "type":tabela['stack'][-1],
                                                                 'tabela': tabela,
                                                                 'process':lambda _, y, z: z.replace('\%\%', y),
                                                                 "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% a {ide} que é do tipo {a[ide]['type']}",
@@ -519,7 +520,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if a < 0:
                 raise ('nenhum parametro foi declarado antes')
             tabela['stack'].append(str(a+1))
-
         case 'constructor':
             a = _get_scopo(tabela, scopo)   
             a[token['token']] = {"type": scopo[-2], 'param': {}}
@@ -548,8 +548,8 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
 def validate_last_in_types(tabela,scopo, erro_msg:str):
     try:
         var= tabela['stack'].pop()
-        a = _get_scopo(tabela,scopo)
-        if a[var]['type'] in TYPES :
+        a = _get_in_scopo(var, tabela, scopo)
+        if a[var]['type'] not in TYPES :
             return erro_msg
     except :
         return erro_msg
