@@ -545,7 +545,7 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
     if on_success:
         on_success()
 
-def validate_last_in_types(tabela,scopo, erro_msg:str):
+def validate_last_in_types(tabela, scopo, erro_msg:str):
     try:
         var= tabela['stack'].pop()
         a = _get_scopo(tabela,scopo)

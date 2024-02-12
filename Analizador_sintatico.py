@@ -365,7 +365,7 @@ get_functions = {
     ],
     'read': [
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)], "s": {'do': ['schadule_move_back_scopo','schadule_clean_last_scopo']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)], "s": {'do': ['schadule_move_back_scopo', 'schadule_clean_last_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type'], 'erro': [("close_parentesis", 0), (';', 0)]}},
