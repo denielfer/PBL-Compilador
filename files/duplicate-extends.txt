@@ -1,14 +1,8 @@
 const {
-    int sete = 4, oito = 25;
-    real um = 4, dois = 1.1;
-    string variavel="false", variavel2="4";
-    boolean teste = false;
-    boolean teste_2 = true;
+    int sete = 4;
 }
 
 variables {
-    boolean aa, a_2;
-    real b0_c;
     real tres4quatro;
 }
 
@@ -31,7 +25,6 @@ class qwe{
 
 class a extends a{
     variables{
-        int eko[sete];
         int var1;
     }
     

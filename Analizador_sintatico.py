@@ -239,7 +239,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'type', "value": ['NRO'], 'next': [("arit_expression", 0)], 's': {'do': ['stack_NRO']}}, ################################################################################
                     {'is_terminal': True, "key": 'type', "value": ['CAC'], 'next': [], 's': {'do': ['stack_CAC']}},
                     {'is_terminal': True, "key": 'token', "value": ['['], 'next': [("vetor_assinement", 0)]},
-                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)],'s':{'do':['stack_bool']}},
+                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 1), ('logical_expression', 0)], 's': {'do': ['stack_bool']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('aritimetic_or_logical_parentesis_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('aritimetic_or_logical_expression', 0), ('object_access', 0), ("dimention_acess", 0)]},
                     {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_BOOL']}},
@@ -298,24 +298,24 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method']}},
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)]},#to do -> requires: constructor declaração
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's':{'do':['schedule_change_back_scopo','schedule_validade_qtd_param']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['schedule_change_back_scopo', 'schedule_validade_qtd_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
                 {"test": [ #<PARAMETERS>
-                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)],'s':{"do":['validate_param']}},
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)], 's': {"do": ['validate_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <MULT_PARAMETERS>
-                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)],'s':{"do":['move_next_param']}},
+                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['move_next_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
-                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)],'s':{"do":['validate_param']}},
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)], 's': {"do": ['validate_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'vetor_assinement': [
