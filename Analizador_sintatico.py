@@ -499,14 +499,14 @@ def analize(get_token:list, log_sem):
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
                     for item in action["next"]:
                         stack.append(item)
-                    # Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
+                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     #     getattr(semant, get_functions[stage][pos_stage]['s']['do'])(**get_functions[stage][pos_stage]['s']['param'],token = token,scopo=scopo)
                     break
                 # pode dar erro se vazio não for o primeiro token
                 elif "" in action["value"]: # se for token vazio, continuamos em busca pelo próximo elemento
                     for item in action["next"]:
                         stack.append(item)
-                    # Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
+                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     flag = True
                     break
                 else: # se não for o token esperado e não tiver token vazio esperado, adicionamos a lista de esperados

@@ -46,6 +46,21 @@ class qwe{
         objects{}
     }
 }
+
+class produto{
+    variables {
+        string name_product;
+        int value_product;
+    }
+    objects {
+    }
+    methods{}
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
 class a extends a{
     variables{
         int eko[sete];
@@ -85,12 +100,15 @@ class a extends a{
 
     }
     
-    constructor (Math math, int a) {
-        variables{}
+    constructor (int size, real a) {
+        variables{
+            string produtos[500];
+        }
         objects{}
         if(a>2)
         then{}
         else{}
+
     }
 }
 
