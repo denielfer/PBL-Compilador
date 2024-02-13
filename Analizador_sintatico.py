@@ -268,7 +268,7 @@ get_functions = {
     'logical_expression': [ 
         # <LOGICAL_EXPRESSION> -> todos
                 {"test": [ # logical_expression_begin
-                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('logical_expression', 0)]},
+                    {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('void',0),('logical_expression', 0)],'s':{'do':['schedule_validate_last_boolean']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('logical_expression', 1), ('logical_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)]},
                     {'is_terminal': True, "key": 'token', "value": BOOL, 'next': []},
@@ -404,7 +404,7 @@ get_functions = {
         # <DEC_OBJECT_ATRIBUTE_ACCESS> -> começa do index 1
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['.'], 'next': [("object_access", 1)], 's': {'do': ['validate_object']}},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("object_access", 0), ("dimention_acess", 0)], 's': {'do': ['validate_atr', 'add_void_stack'], 'erro': [(';', 0)]}},
