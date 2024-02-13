@@ -202,7 +202,7 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object'], 'erro': [(';', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back','atribuição']}},
+                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back','atribuição']}}, # to do
                     {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art','move_scopo_back']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
@@ -281,21 +281,21 @@ get_functions = {
     'relational_expression_value': [
         # index [1,2,1] -> <RELATIONAL_EXPRESSION>
                 {"test": [ # <LOG_REL_OPTIONAL>
-                    {'is_terminal': True, "key": 'token', "value": REL, 'next': [('relational_expression_value', 1)]},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": REL, 'next': [('relational_expression_value', 1),('void',0)],'s':{'do':['schedule_valid_type_on_void']}},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's':{'do':['validate_last_bool']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <RELATIONAL_EXPRESSION_VALUE>
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 0), ('object_access', 0), ("dimention_acess", 0)]},
-                    {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': []},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void',0),('method_access', 0), ('object_access', 0), ("dimention_acess", 0)],'s':{'do':['schedule_valid_type_on_void']}},
+                    {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': [], 's':{'do':['match_last']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
-                    {'is_terminal': True, "key": 'token', "value": REL, 'next': [('relational_expression_value', 1)]},
+                    {'is_terminal': True, "key": 'token', "value": REL, 'next': [('relational_expression_value', 1),('void',0)],'s':{'do':['schedule_valid_type_on_void']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'method_access': [
                 {"test": [ # <optional_method_access>
                     {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)]}, # , "s": {'do': ["valid_method_acess"], "erro": [('close_parentesis', 0), (';', 0)]}
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's':{'do':['acess_method']}},
@@ -425,6 +425,11 @@ get_functions = {
                 {'test': [
                         {'is_terminal': True, "key": 'token', "value": ['{'], 'next': [('end_block', 0), ("command", 0), ('object', 0), ('variables', 0)], 's': {'do': ['change_scopo_to_data']}},
                     ], 'erro': {'tipo_recuperação': 'next'}},
+            ],
+    'void': [ # void operation so pra fazer schedule de operação so semantico
+                {"test": [
+                    {'is_terminal': True, "key": 'token', "value": ['']},
+                ], 'erro': {'tipo_recuperação': 'next'}},
             ],
 }
 

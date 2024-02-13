@@ -524,6 +524,34 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_scopo(tabela, scopo)   
             a[token['token']] = {"type": scopo[-2], 'param': {}}
             scopo.append(token["token"])
+        case 'validate_last_bool':
+            if tabela['stack'][-1] == 'boolean':
+                return f"Na linha {token['line']}, {token['token']} deveria ser boolean, mas é {tabela['stack'][-1]}"
+        case 'add_last_var_type':
+            var = token['token']
+            a = _get_in_scopo(var, tabela, scopo)
+            tabela['stack'].append(a[var]['token'])
+        case 'match_last':
+            if token['type'] == 'NRO':
+                if tabela['stack'][-1] not in ['real',"int"]:
+                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-1]}"
+            else:
+                if tabela['stack'][-1] not in ['string']:
+                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-1]}"
+        case 'schedule_valid_type_on_void':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when': ('void',0), 'do': [
+                                                         (validate_last_in_types,
+                                                            {
+                                                                'tabela': tabela,
+                                                                'scopo': scopo,
+                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
         case _:
             pass
 
@@ -573,6 +601,8 @@ def valid_qtd_param(tabela, scopo, msg:str):
         return msg
     if a != len(_get_scopo(tabela, scopo)):
         return msg
+    tabela['stack'].append(scopo[-2])
+    
 def _get_in_scopo(var, tabela, scopo:list):
     t = copy.deepcopy(scopo)
     a = tabela

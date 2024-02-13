@@ -34,6 +34,12 @@ class qwe{
             objects{}
             return 1;
         }
+        int b(int b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
     }
     constructor () {
         variables{}
@@ -67,6 +73,9 @@ class a extends a{
             a.pessoa[1]->a(1,2,3); 
             a.pessoa[1]->a(1,2,3,5);
             a.pessoa[1]->a(1,2);
+            a.pessoa[1]->b(1,2,3); 
+            a.pessoa[1]->b(1,2,3,5);
+            a.pessoa[1]->b(1,2);
             a.pessoa[1].n++;
             read(eko[1]);
             read(sete);
