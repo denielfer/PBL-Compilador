@@ -32,8 +32,8 @@ def analize(stage, pos_stage, action, token, log_sem= None):
         for programado in tabela['programado']:
             if programado['when'] == (stage, pos_stage):
                 d.append(programado)
-                print(programado,file=log_sem)
-                print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+                # print(programado,file=log_sem)
+                # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
                 for func,args in programado['do']:
                     ret = func(**args)
                     if ret is not None:
@@ -371,7 +371,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                          (validate_last_in_types,
                                                             {
                                                                 'tabela': tabela,
-                                                                'scopo': scopo,
                                                                 "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
                                                             }
                                                          )
@@ -524,12 +523,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a[token['token']] = {"type": scopo[-2], 'param': {}}
             scopo.append(token["token"])
         case 'validate_last_bool':
-            if tabela['stack'][-1] == 'boolean':
+            if tabela['stack'][-1] != 'boolean':
+                tabela['stack'].append('boolean')
                 return f"Na linha {token['line']}, {token['token']} deveria ser boolean, mas é {tabela['stack'][-1]}"
         case 'add_last_var_type':
-            var = tabela['stack'][-1]
-            a = _get_in_scopo(var, tabela, scopo)
-            tabela['stack'].append(a[var]['type'])
+            try:
+                var = tabela['stack'][-1]
+                a = _get_in_scopo(var, tabela, scopo)
+                tabela['stack'].append(a[var]['type'])
+            except:
+                pass
         case 'match_last':
             if token['type'] == 'NRO':
                 if tabela['stack'][-1] not in ['real',"int"]:
@@ -537,6 +540,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             else:
                 if tabela['stack'][-1] not in ['string']:
                     return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-1]}"
+            tabela['stack'].append('boolean')
         case 'schedule_valid_type_on_void':
             if 'programado' not in tabela:
                 tabela['programado'] = []
@@ -544,8 +548,21 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                          (validate_last_in_types,
                                                             {
                                                                 'tabela': tabela,
-                                                                'scopo': scopo,
-                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
+                                                                "erro_msg":f"Na linha {token['line']}, para operações relacionais é requerido variaveis de tipos basicos (int, real, boolean ou string)",
+                                                            }
+                                                         )
+                                                        ]
+                                    }
+                                )
+        case 'schedule_match_type_on_void':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when': ('void',0), 'do': [
+                                                         (validate_type_relacional,
+                                                            {
+                                                                'tipo':tabela['stack'][-1], 
+                                                                'tabela':tabela, 
+                                                                'erro_msg':f"Na linha {token['line']}, para operações relacionais é requerido variaveis de tipos basicos (int, real, boolean ou string)", 
                                                             }
                                                          )
                                                         ]
@@ -585,9 +602,9 @@ def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_succes
     if on_success:
         on_success()
 
-def validate_last_in_types(tabela, scopo, erro_msg:str):
+def validate_last_in_types(tabela, erro_msg:str):
     try:
-        tipo= tabela['stack'].pop()
+        tipo= tabela['stack'][-1]
         if tipo not in TYPES :
             return erro_msg
     except :
@@ -614,9 +631,17 @@ def valid_qtd_param(tabela, scopo, msg:str):
         return msg
     tabela['stack'].append(scopo[-2])
     
-def validate_last_is_boolean(tabela,msg):
+def validate_last_is_boolean(tabela,erro_msg):
     if tabela['stack'][-1] != 'boolean':
-        return msg
+        return erro_msg
+
+def validate_type_relacional(tipo,tabela,erro_msg):
+    tabela['stack'].append('boolean')
+    if tipo in ['real','int']:
+        if tabela['stack'][-2] not in ['real','int']:
+            return erro_msg
+    elif tabela['stack'][-2] != tipo:
+        return erro_msg
 
 def _get_in_scopo(var, tabela, scopo:list):
     t = copy.deepcopy(scopo)

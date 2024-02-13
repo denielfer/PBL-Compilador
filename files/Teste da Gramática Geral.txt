@@ -88,6 +88,9 @@ class a extends a{
     constructor (Math math, int a) {
         variables{}
         objects{}
+        if(a>2)
+        then{}
+        else{}
     }
 }
 

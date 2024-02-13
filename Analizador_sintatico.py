@@ -265,13 +265,13 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
-    'logical_expression': [ 
+    'logical_expression': [  #TO DO VALIDAR 
         # <LOGICAL_EXPRESSION> -> todos
                 {"test": [ # logical_expression_begin
                     {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('void',0),('logical_expression', 0)],'s':{'do':['schedule_validate_last_boolean']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('logical_expression', 1), ('logical_expression', 0)]},
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)]},
-                    {'is_terminal': True, "key": 'token', "value": BOOL, 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [],'s':{'do':['stack_bool']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [# logical_expression_end
                     {'is_terminal': True, "key": 'token', "value": LOG, 'next': [('logical_expression', 1), ('logical_expression', 0)]},
@@ -285,7 +285,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's':{'do':['validate_last_bool']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <RELATIONAL_EXPRESSION_VALUE>
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void',0),('method_access', 0), ('object_access', 0), ("dimention_acess", 0)],'s':{'do':['schedule_valid_type_on_void']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void',0),('method_access', 0), ('object_access', 0), ("dimention_acess", 0)],'s':{'do':['schedule_match_type_on_void']}},
                     {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': [], 's':{'do':['match_last']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
@@ -345,7 +345,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ART, 'next': [('arit_expression', 1)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
-    'if': [
+    'if': [ #TO DO VALIDATE
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('if', 1), ("close_parentesis", 0), ('logical_expression', 1), ('logical_expression', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -428,7 +428,7 @@ get_functions = {
             ],
     'void': [ # void operation so pra fazer schedule de operação so semantico
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['']},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
             ],
 }
@@ -499,14 +499,14 @@ def analize(get_token:list, log_sem):
                 if token[action['key']] in action["value"]: # verifica se o token é o esperado
                     for item in action["next"]:
                         stack.append(item)
-                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
+                    # Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     #     getattr(semant, get_functions[stage][pos_stage]['s']['do'])(**get_functions[stage][pos_stage]['s']['param'],token = token,scopo=scopo)
                     break
                 # pode dar erro se vazio não for o primeiro token
                 elif "" in action["value"]: # se for token vazio, continuamos em busca pelo próximo elemento
                     for item in action["next"]:
                         stack.append(item)
-                    Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
+                    # Analizador_semantico.analize(stage, pos_stage, action, token, log_sem)
                     flag = True
                     break
                 else: # se não for o token esperado e não tiver token vazio esperado, adicionamos a lista de esperados
