@@ -31,6 +31,7 @@ def analize(stage, pos_stage, action, token, log_sem= None):
         d = []
         for programado in tabela['programado']:
             if programado['when'] == (stage, pos_stage):
+                print(f"Programado triggered: {programado['when']} -> {programado['log_rep']}", file=log_sem)
                 d.append(programado)
                 # print(programado,file=log_sem)
                 # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
@@ -344,66 +345,71 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             #stack: ...,ide
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            ide = tabela['stack'][-2]
-            a = _get_in_scopo(ide, tabela, scopo)
-            tabela['programado'].append({'when': (';', 0), 'do': [
-                                                         (validate_same_type_with_stack_last,
-                                                            {
-                                                                "type":tabela['stack'][-1],
-                                                                'tabela': tabela,
-                                                                'process':lambda _, y, z: z.replace('\%\%', y),
-                                                                "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% a {ide} que é do tipo {a[ide]['type']}",
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when': (';', 0), 
+                                         'do': [
+                                                    (validate_same_type_with_stack_last,
+                                                    {
+                                                        "type":tabela['stack'][-1],
+                                                        'tabela': tabela,
+                                                        'process':lambda _, y, z: z.replace('\%\%', y),
+                                                        "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% em {tabela['stack'][-2]} que é do tipo {tabela['stack'][-1]}"
+                                                    }
+                                                    )
+                                                ],
+                                        'log_rep':'Atribuição_prog'
                                     }
                                 )
             #stack: ...
         case 'duble_art':
             #stack: ...,ide
-            tipo = tabela['stack'].pop()
+            tipo = tabela['stack'][-1]
             if tipo not in ['int', 'real']:
-                return f"Na linha {token['line']}, tentativa de {token['token']}, na varialvel {ide}, porém esta é {a[ide]['type']}" 
+                return f"Na linha {token['line']}, tentativa de {token['token']}, em variavel do tipo {tipo}" 
         case 'schedule_valid_type':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when': (';', 0), 'do': [
-                                                         (validate_last_in_types,
-                                                            {
-                                                                'tabela': tabela,
-                                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when': (';', 0), 
+                                         'do': [
+                                            (validate_last_in_types,
+                                            {
+                                                'tabela': tabela,
+                                                "erro_msg":f"Na linha {token['line']}, a função read so é aceito int, real, boolean, string ou void",
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'Valid_type_prog'
                                     }
                                 )
         case 'schadule_move_back_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when':(';', 0), 'do':[
-                                                         (change_back_scopo,
-                                                            {
-                                                                '_scopo':copy.deepcopy(scopo),
-                                                                'scopo':scopo
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when':(';', 0), 
+                                         'do':[
+                                            (change_back_scopo,
+                                            {
+                                                '_scopo':copy.deepcopy(scopo),
+                                                'scopo':scopo
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'Move_back_scopo_prog'
                                     }
                                 )
         case 'schadule_clean_last_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when':(';', 0), 'do':[
-                                                         (change_back_scopo,
-                                                            {
-                                                                '_scopo':[],
-                                                                'scopo':tabela['last_scopo']
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when':(';', 0), 
+                                         'do':[
+                                            (change_back_scopo,
+                                            {
+                                                '_scopo':[],
+                                                'scopo':tabela['last_scopo']
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'Clean_last_scopo_prog'
                                     }
                                 )
-
         case 'save_scopo':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
@@ -416,31 +422,17 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 tabela['stack'].append('string')
         case 'stack_BOOL':
                 tabela['stack'].append('boolean')
-        # case 'valid_method_acess':
-        #     var = tabela['stack'].pop()
-        #     a =  _get_scopo(tabela, scopo[:-2])
-        #     if var not in a:
-        #         return
-        #     tabela['stack'].append(a[var]['type'])
-        #     return limpa_last_erro()
         case 'validate_is_interger':
             if token['type'] == 'NRO':
                 if '.' in token['token']:
                     return f"Na linha {token['line']}, posição de acesso a vetor invalida: {token['token']}, deve ser int porém é float"
             else:
                 var = token['token']
-                a = _get_in_scopo(var, tabela, scopo)
+                a = _get_in_scopo(var, tabela, scopo,file=log_sem)
                 if var not in a:
                     return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"
                 if a[var]['type'] != 'int':
                     return f"Na linha {token['line']}, usando variavel {token['token']} porém esta é não é int, sendo do tipo {a[var]['type']}"
-        # case 'valid_atribut_acess':#  validar
-        #     var = tabela['stack'].pop()
-        #     a =  _get_scopo(tabela, scopo[:-2])
-        #     if var not in a:
-        #         return
-        #     tabela['stack'].append(a[var]['type'])
-        #     return limpa_last_erro()
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
@@ -470,31 +462,35 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'schedule_change_back_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when':(';', 0), 'do': [
-                                                         (change_back_scopo,
-                                                            {
-                                                                '_scopo':copy.deepcopy(tabela['last_scopo']),
-                                                                'scopo':scopo
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when':(';', 0), 
+                                         'do': [
+                                            (change_back_scopo,
+                                            {
+                                                '_scopo':copy.deepcopy(tabela['last_scopo']),
+                                                'scopo':scopo
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'change_back_scopo_prog'
                                     }
                                 )
             tabela['last_scopo'] = []
         case 'stack_bool':
             tabela['stack'].append('boolean')
-        case 'schedule_validade_qtd_param':
+        case 'schedule_validate_qtd_param':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when':('close_parentesis',0), 'do':[
-                                                         (valid_qtd_param,
-                                                            {
-                                                                'tabela': tabela,
-                                                                'scopo': scopo,
-                                                                "msg":f"Na linha {token['line']}, quantidade de parametros não conferem, 99 foram fornecidos porém 00 são nescessarios"
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when':('close_parentesis',0), 
+                                         'do':[
+                                            (valid_qtd_param,
+                                            {
+                                                'tabela': tabela,
+                                                'scopo': scopo,
+                                                "msg":f"Na linha {token['line']}, quantidade de parametros não conferem, 99 foram fornecidos porém 00 são nescessarios"
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'validate_qtd_param_prog'
                                     }
                                 )
         case 'validate_param':
@@ -525,60 +521,154 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_last_bool':
             if tabela['stack'][-1] != 'boolean':
                 tabela['stack'].append('boolean')
-                return f"Na linha {token['line']}, {token['token']} deveria ser boolean, mas é {tabela['stack'][-1]}"
+                return f"Na linha {token['line']}, {token['token']} deveria ser boolean, mas é {tabela['stack'][-2]}"
         case 'add_last_var_type':
             try:
                 var = tabela['stack'][-1]
-                a = _get_in_scopo(var, tabela, scopo)
+                a = _get_in_scopo(var,tabela, scopo)
+                # print(a,file=log_sem)
                 tabela['stack'].append(a[var]['type'])
-            except:
+            except Exception as e:
+                print(' Erro: ',e,file=log_sem)
                 pass
         case 'match_last':
-            if token['type'] == 'NRO':
-                if tabela['stack'][-1] not in ['real',"int"]:
-                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-1]}"
-            else:
-                if tabela['stack'][-1] not in ['string']:
-                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-1]}"
             tabela['stack'].append('boolean')
+            if token['type'] == 'NRO':
+                if tabela['stack'][-2] not in ['real',"int"]:
+                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-2]}"
+            else:
+                if tabela['stack'][-2] not in ['string']:
+                    return f"Na linha {token['line']}, {token['token']} deveria ser do tipo {tabela['stack'][-2]}"
         case 'schedule_valid_type_on_void':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when': ('void',0), 'do': [
-                                                         (validate_last_in_types,
-                                                            {
-                                                                'tabela': tabela,
-                                                                "erro_msg":f"Na linha {token['line']}, para operações relacionais é requerido variaveis de tipos basicos (int, real, boolean ou string)",
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when': ('void',0), 
+                                         'do': [
+                                            (validate_last_in_types,
+                                            {
+                                                'tabela': tabela,
+                                                "erro_msg":f"Na linha {token['line']}, para operações relacionais é requerido variaveis de tipos basicos (int, real, boolean ou string)",
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'valid_type_on_void_prog'
                                     }
                                 )
         case 'schedule_match_type_on_void':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when': ('void',0), 'do': [
-                                                         (validate_type_relacional,
-                                                            {
-                                                                'tipo':tabela['stack'][-1], 
-                                                                'tabela':tabela, 
-                                                                'erro_msg':f"Na linha {token['line']}, para operações relacionais é requerido variaveis de tipos basicos (int, real, boolean ou string)", 
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when': ('void',0), 
+                                         'do': [
+                                            (validate_type_relacional,
+                                            {
+                                                'tipo':tabela['stack'][-2], 
+                                                'tabela':tabela, 
+                                                'erro_msg':f"Na linha {token['line']}, operação relacional com tipo diferentes", 
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'match_type_on_void_prog'
                                     }
                                 )
         case 'schedule_validate_last_boolean':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when': ('void',0), 'do': [
-                                                         (validate_last_is_boolean,
-                                                            {
-                                                                'tabela': tabela,
-                                                                "erro_msg":f"Na linha {token['line']}, o que segue '!' deve ser do tipo boolean",
-                                                            }
-                                                         )
-                                                        ]
+            tabela['programado'].append({'when': ('void',0), 
+                                         'do': [
+                                            (validate_last_is_boolean,
+                                            {
+                                                'tabela': tabela,
+                                                "erro_msg":f"Na linha {token['line']}, o que segue '!' deve ser do tipo boolean",
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'validate_last_boolean_prog'
+                                    }
+                                )
+        case 'schadule_change_back_scopo_at_relational':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':('relational_expression_value', 0), 
+                                        'do':[
+                                            (change_back_scopo,
+                                             {
+                                                '_scopo':tabela['last_scopo'],
+                                                'scopo':scopo
+                                             }
+                                            ),
+                                            (clean_last_scopo,{})
+                                        ],
+                                        'log_rep':'Change_back_scopo_at_relational_prog'
+                                    }
+                                )
+        case 'start_vector':
+            if tabela['stack'][-1] != '-':
+                if tabela['stack'][-1] != '|' and tabela['stack'][-2] != '|':
+                    tabela['stack'].append('|')
+                elif tabela['stack'][-2] == '|':
+                    tabela['stack'].append('-')
+        case 'add_type_of_or_validate':
+            if tabela['stack'][-2] == '|':
+                tabela['stack'].append('-')
+            if tabela['stack'][-1] != '-':
+                if token['type'] == 'CAC':
+                    tabela['stack'].append('string')
+                elif token['type'] == 'NRO':
+                    if '.' in token['token']:
+                        tabela['stack'].append('real')
+                    else:
+                        tabela['stack'].append('int')
+                else:
+                    var = token['token']
+                    a = _get_in_scopo(var,tabela,scopo)
+                    if var not in a:
+                        return f"Na linha {token['line']}, {token['token']} não foi declarado"
+                    tabela['stack'].append(a[var]["type"])
+                tabela['stack'].append('-')
+            else:
+                if token['type'] == 'CAC':
+                    if tabela['stack'][-2] != 'string':
+                        return f"Na linha {token['line']}, vetor deve ser do tipo {tabela['stack'][-2]} mas encontrado {token[token]}, do tipo string"
+                elif token['type'] == 'NRO':
+                    if '.' in token['token']:
+                        if tabela['stack'][-2] != 'real':
+                            return f"Na linha {token['line']}, vetor deve ser do tipo {tabela['stack'][-2]} mas encontrado {token[token]}, do tipo real"
+                    else:
+                        if tabela['stack'][-2] != 'int':
+                            return f"Na linha {token['line']}, vetor deve ser do tipo {tabela['stack'][-2]} mas encontrado {token[token]}, do tipo int"
+                else:
+                    var = token['token']
+                    a = _get_in_scopo(var,tabela,scopo)
+                    if var not in a:
+                        return f"Na linha {token['line']}, {token['token']} não foi declarado"                    
+                    if tabela['stack'][-2] != a[var]['type']:
+                        return f"Na linha {token['line']}, vetor deve ser do tipo {tabela['stack'][-2]} mas encontrado {token[token]}, do tipo {a[var]['type']}"
+        case 'vector_end':
+            if tabela['stack'][-1] == '-':
+                tabela['stack'].pop()
+        case 'vector_add_end':
+            if tabela['stack'][-1] != '-':
+                tabela['stack'].append('-')
+        case 'validate_int_or_real':
+            if token['type'] == 'NRO':
+                if '.' in token['token'] and tabela['stack'][-1] != 'real':
+                    return f"Na linha {token['line']}, {token['token']} em operação aritimetica, deveria ser {tabela['stack'][-1]} mas é real"
+                elif '.' not in token['token'] and tabela['stack'][-1] != 'int':
+                    return f"Na linha {token['line']}, {token['token']} em operação aritimetica, deveria ser {tabela['stack'][-1]} mas é int"
+        case 'schedule_match_type_on_arit_expression':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when': ('arit_expression', 0), 
+                                         'do': [
+                                            (validate_type_arit_expression,
+                                            {
+                                                'tipo':tabela['stack'][-1], 
+                                                'tabela':tabela, 
+                                                'erro_msg':f"Na linha {token['line']}, operação aritimetica com tipo diferentes", 
+                                            }
+                                            )
+                                        ],
+                                        'log_rep':'match_type_on_void_prog'
                                     }
                                 )
         case _:
@@ -586,21 +676,15 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
 
 # revisar return
 
-def duble_pop(scopo):
-    #scopo: ...,func_name,'data'
-    scopo.pop()
-    #scopo: ...,func_name
-    scopo.pop()
-    #scopo: ...
+def clean_last_scopo(last_scopo):
+    last_scopo.clean()
 
-def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, on_success:callable=None, process:str=None):
+def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, process:str=None):
     _type = tabela['stack'].pop()
     if type != _type:
         if process:
             erro_msg = process(type, _type, erro_msg)
         return erro_msg
-    if on_success:
-        on_success()
 
 def validate_last_in_types(tabela, erro_msg:str):
     try:
@@ -624,9 +708,9 @@ def valid_qtd_param(tabela, scopo, msg:str):
             break
         a -= 1
     a = int(a) + 1
-    msg = msg.replace('99', str(a)).replace('00', str(len(_get_scopo(tabela, scopo))))
     if a < 0:
-        return msg
+        a = 0
+    msg = msg.replace('99', str(a)).replace('00', str(len(_get_scopo(tabela, scopo))))
     if a != len(_get_scopo(tabela, scopo)):
         return msg
     tabela['stack'].append(scopo[-2])
@@ -635,25 +719,33 @@ def validate_last_is_boolean(tabela,erro_msg):
     if tabela['stack'][-1] != 'boolean':
         return erro_msg
 
+def validate_type_arit_expression(tipo,tabela,erro_msg):
+    tabela['stack'].append(tipo)
+    # print(tipo,tabela['stack'][-2],tabela['stack'],file=file)
+    if tabela['stack'][-2] != tipo:
+        return erro_msg
+
 def validate_type_relacional(tipo,tabela,erro_msg):
     tabela['stack'].append('boolean')
+    # print(tipo,tabela['stack'][-2],tabela['stack'],file=file)
     if tipo in ['real','int']:
         if tabela['stack'][-2] not in ['real','int']:
             return erro_msg
     elif tabela['stack'][-2] != tipo:
         return erro_msg
 
-def _get_in_scopo(var, tabela, scopo:list):
+def _get_in_scopo(var, tabela, scopo:list,file = None):
     t = copy.deepcopy(scopo)
-    a = tabela
-    while len(t) >= 3:
+    a = None
+    print(t,file=file)
+    while len(t) > 2:
         a = tabela #testa
         for s in t:
             a = a[s]
-            if var in a:
-                return a
+        if var in a:
+            return a
         t = t[:-2]
-    if var not in a:
+    if not a or var not in a:
         a = tabela['global']
     return a
 

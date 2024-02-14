@@ -47,7 +47,7 @@ class qwe{
     }
 }
 
-class produto{
+class Produto{
     variables {
         string name_product;
         int value_product;
@@ -85,6 +85,7 @@ class a extends a{
             objects{
                 a a;
             }
+            pessoa[1] = Pessoa->constructor()
             a.pessoa[1]->a(1,2,3); 
             a.pessoa[1]->a(1,2,3,5);
             a.pessoa[1]->a(1,2);
@@ -100,14 +101,22 @@ class a extends a{
 
     }
     
-    constructor (int size, real a) {
+    constructor (int size, int a) {
         variables{
-            string produtos[500];
         }
-        objects{}
+        objects{
+            Produto produtos[500];
+        }
         if(a>2)
         then{}
         else{}
+        for(a=0;a<size;a++) {
+            print("Nome:");
+            read(produtos[a].name_product);
+            print("Valor:");
+            read(produtos[a].value_product);
+            print("Produto adicionado com sucesso!");
+        }
 
     }
 }
