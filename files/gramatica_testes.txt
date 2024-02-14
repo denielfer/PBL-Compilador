@@ -14,11 +14,27 @@ variables {
     string variavel, variavel2[2];
     boolean teste[5], aaa;
 }
-class qwe{
-    variables{ int a;}
+class ewqweq{
+    variables{}
     objects{}
     methods{
-        int a(int b, int c, int d){
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+class qwe{
+    variables{ int a,n;}
+    objects{}
+    methods{
+        int a(ewqweq b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+        int b(int b, int c, int d){
             variables{
             }
             objects{}
@@ -30,6 +46,21 @@ class qwe{
         objects{}
     }
 }
+
+class Produto{
+    variables {
+        string name_product;
+        int value_product;
+    }
+    objects {
+    }
+    methods{}
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
 class a extends a{
     variables{
         int eko[sete];
@@ -54,17 +85,42 @@ class a extends a{
             objects{
                 a a;
             }
-            a.pessoa[1]->a(1,2,3);
+            pessoa[1] = qwe->constructor();
+            eko = 0.0;
+            eko[eko] = "asasa";
+            eko = true;
+            a.pessoa[1]->a(1,2,3); 
             a.pessoa[1]->a(1,2,3,5);
+            a.pessoa[1]->a(1,2);
+            a.pessoa[1]->b(1,2,3); 
+            a.pessoa[1]->b(1,2,3,5);
+            a.pessoa[1]->b(1,2);
+            a.pessoa[1].n++;
+            read(eko[1]);
+            read(sete);
             //this.pessoa[1] = 1;
             return 2;
         }
 
     }
     
-    constructor (Math math, int a) {
-        variables{}
-        objects{}
+    constructor (int size, int a) {
+        variables{
+        }
+        objects{
+            Produto produtos[500];
+        }
+        if(a>2)
+        then{}
+        else{}
+        for(a=0;a<size;a++) {
+            print("Nome:");
+            read(produtos[a].name_product);
+            print("Valor:");
+            read(produtos[a].value_product);
+            print("Produto adicionado com sucesso!");
+        }
+
     }
 }
 
