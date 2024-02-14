@@ -49,7 +49,8 @@ def analize(stage, pos_stage, action, token, log_sem= None):
     except Exception as e:
         import traceback
         erro_sem = []
-        erros_semantico.append('Erro irrecuperavel:\n',traceback.format_exc(),file=log_sem)
+        erros_semantico.append('Erro irrecuperavel')
+        print('\n\n',traceback.format_exc(),file=log_sem)
 
 def _sem_analize(action, token, tabela, scopo, log_sem,stg_pos):
     if "s" in action:
