@@ -85,7 +85,10 @@ class a extends a{
             objects{
                 a a;
             }
-            pessoa[1] = Pessoa->constructor()
+            pessoa[1] = qwe->constructor();
+            eko = 0.0;
+            eko[eko] = "asasa";
+            eko = true;
             a.pessoa[1]->a(1,2,3); 
             a.pessoa[1]->a(1,2,3,5);
             a.pessoa[1]->a(1,2);

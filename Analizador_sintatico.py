@@ -282,7 +282,7 @@ get_functions = {
         # index [1,2,1] -> <RELATIONAL_EXPRESSION>
                 {"test": [ # <LOG_REL_OPTIONAL>
                     {'is_terminal': True, "key": 'token', "value": REL, 'next': [('relational_expression_value', 1),('void',0)],'s':{'do':['schedule_valid_type_on_void']}},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's':{'do':['validate_last_bool']}},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <RELATIONAL_EXPRESSION_VALUE>
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void',0),('method_access', 0), ('object_access', 0), ("dimention_acess", 0)],'s':{'do':['add_void_stack','schedule_match_type_on_void']}},
@@ -298,8 +298,8 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method']}},
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)], 's': {'do': ['acess_method']}},#to do validar
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method',"schedule_add_type_func"]}},
+                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)], 's': {'do': ['acess_method','schedule_add_type_func']}},#to do validar
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['schedule_change_back_scopo', 'schedule_validate_qtd_param']}},

@@ -40,6 +40,7 @@ def analize(stage, pos_stage, action, token, log_sem= None):
                     if ret is not None:
                         print(ret, file=log_sem)
                         erros_semantico.append(ret)
+                    print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), f' {scopo}', sep='\n', file=log_sem)
         for p in d:
             tabela['programado'].remove(p)
         if len(tabela['programado']) == 0:
@@ -339,6 +340,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_in_scopo(ide, tabela, scopo)
             if a[ide]['type'] in TYPES:
                 return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
+            if tabela['stack'][-1] == 'class':
+
+                scopo.clear()
+                scopo.append('global')
             scopo.append(ide)
             scopo.append('data')
         case 'atribuição':
@@ -458,7 +463,23 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             scopo.append(token['token'])
             scopo.append('param')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data', func, 'param'
-            tabela['stack'].append('0') # 0 indicando que esperamos o primerio parametro da função
+            tabela['stack'].append('0') # -1 indicando que esperamos o primerio parametro da função
+        case 'schedule_add_type_func':
+            a = _get_scopo(tabela, scopo[:-1])
+            tipo = a['type'] if 'type' in a else 'desconhecido'
+            print(tipo, a,file = log_sem)
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':('close_parentesis',0), 
+                                         'do':[
+                                            (lambda :tabela['stack'].append(tipo),
+                                            {}
+                                            )
+                                        ],
+                                        'log_rep':'add_func_type_stack_prog'
+                                    }
+                                )
+
         case 'schedule_change_back_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
@@ -492,7 +513,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                         ],
                                         'log_rep':'validate_qtd_param_prog'
                                     }
-                                )
+                    )
         case 'validate_param':
             a = _get_scopo(tabela,scopo)
             index = int(tabela['stack'][-2])
@@ -512,7 +533,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 a -= 1
             a = int(a)
             if a < 0:
-                raise ('nenhum parametro foi declarado antes')
+                raise Exception('nenhum parametro foi declarado antes')
             tabela['stack'].append(str(a+1))
         case 'constructor':
             a = _get_scopo(tabela, scopo)   
@@ -561,7 +582,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                          'do': [
                                             (validate_type_relacional,
                                             {
-                                                'tipo':tabela['stack'][-2], 
+                                                'tipo':tabela['stack'][-1], 
                                                 'tabela':tabela, 
                                                 'erro_msg':f"Na linha {token['line']}, operação relacional com tipo diferentes", 
                                             }
@@ -596,7 +617,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                 'scopo':scopo
                                              }
                                             ),
-                                            (clean_last_scopo,{})
+                                            (clean_last_scopo,{"last_scopo":tabela['last_scopo']})
                                         ],
                                         'log_rep':'Change_back_scopo_at_relational_prog'
                                     }
@@ -677,10 +698,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
 # revisar return
 
 def clean_last_scopo(last_scopo):
-    last_scopo.clean()
+    last_scopo.clear()
 
 def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, process:str=None):
-    _type = tabela['stack'].pop()
+    _type = tabela['stack'][-1]
     if type != _type:
         if process:
             erro_msg = process(type, _type, erro_msg)
@@ -707,13 +728,15 @@ def valid_qtd_param(tabela, scopo, msg:str):
             a = tabela['stack'][a]
             break
         a -= 1
-    a = int(a) + 1
+    a = int(a)
     if a < 0:
         a = 0
-    msg = msg.replace('99', str(a)).replace('00', str(len(_get_scopo(tabela, scopo))))
-    if a != len(_get_scopo(tabela, scopo)):
+    qtd_param_req = len(_get_scopo(tabela, scopo))-1
+    if qtd_param_req <0:
+        qtd_param_req=0
+    msg = msg.replace('99', str(a)).replace('00', str(qtd_param_req))
+    if a != qtd_param_req:
         return msg
-    tabela['stack'].append(scopo[-2])
     
 def validate_last_is_boolean(tabela,erro_msg):
     if tabela['stack'][-1] != 'boolean':
@@ -738,7 +761,7 @@ def _get_in_scopo(var, tabela, scopo:list,file = None):
     t = copy.deepcopy(scopo)
     a = None
     print(t,file=file)
-    while len(t) > 2:
+    while len(t) > 0:
         a = tabela #testa
         for s in t:
             a = a[s]
