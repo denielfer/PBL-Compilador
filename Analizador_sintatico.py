@@ -191,7 +191,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['read'], 'next': [('command', 0), (";", 0), ('read', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['if'], 'next': [('command', 0), ('if', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['for'], 'next': [('command', 0), ('for', 0)]},
-                    # e o this???????????
+                    {'is_terminal': True, "key": 'token' , "value": ['this'], 'next': [("assigment_or_method_acess_or_duble", 1), ('object_access', 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'type' , "value": ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}}

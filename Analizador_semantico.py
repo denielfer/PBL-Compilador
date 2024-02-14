@@ -10,42 +10,46 @@ def init():
 from Analizador_sintatico import TYPE, TYPES, ART, ART_DOUBLE, REL, LOG, BOOL
 
 def analize(stage, pos_stage, action, token, log_sem= None):
-    if not log_sem:
+    if not log_sem: # se for None
         from sys import stdout
         log_sem = stdout
     global erro_sem
     if erro_sem:
         if (stage, pos_stage) in erro_sem:
             erro_sem = None
-    if erro_sem is None:
-        for ret in _sem_analize(action, token, tabela, scopo, log_sem,(stage, pos_stage)):
-            # if ret is limpa_last_erro:
-            #     erros_semantico.pop()
-            # elif ret is not None:
-            if ret is not None:
-                print(ret, file=log_sem)
-                erros_semantico.append(ret)
-                if 'erro' in action['s']:
-                    erro_sem = action['s']['erro']
-    if 'programado' in tabela:
-        d = []
-        for programado in tabela['programado']:
-            if programado['when'] == (stage, pos_stage):
-                print(f"Programado triggered: {programado['when']} -> {programado['log_rep']}", file=log_sem)
-                d.append(programado)
-                # print(programado,file=log_sem)
-                # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
-                for func,args in programado['do']:
-                    ret = func(**args)
-                    if ret is not None:
-                        print(ret, file=log_sem)
-                        erros_semantico.append(ret)
-                    print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), f' {scopo}', sep='\n', file=log_sem)
-        for p in d:
-            tabela['programado'].remove(p)
-        if len(tabela['programado']) == 0:
-            del(tabela['programado'])
-
+    try:
+        if erro_sem is None:
+            for ret in _sem_analize(action, token, tabela, scopo, log_sem,(stage, pos_stage)):
+                # if ret is limpa_last_erro:
+                #     erros_semantico.pop()
+                # elif ret is not None:
+                if ret is not None:
+                    print(ret, file=log_sem)
+                    erros_semantico.append(ret)
+                    if 'erro' in action['s']:
+                        erro_sem = action['s']['erro']
+            if 'programado' in tabela:
+                d = []
+                for programado in tabela['programado']:
+                    if programado['when'] == (stage, pos_stage):
+                        print(f"Programado triggered: {programado['when']} -> {programado['log_rep']}", file=log_sem)
+                        d.append(programado)
+                        # print(programado,file=log_sem)
+                        # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+                        for func,args in programado['do']:
+                            ret = func(**args)
+                            if ret is not None:
+                                print(ret, file=log_sem)
+                                erros_semantico.append(ret)
+                            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), f' {scopo}', sep='\n', file=log_sem)
+                for p in d:
+                    tabela['programado'].remove(p)
+                if len(tabela['programado']) == 0:
+                    del(tabela['programado'])
+    except Exception as e:
+        import traceback
+        erro_sem = []
+        erros_semantico.append('Erro irrecuperavel:\n',traceback.format_exc(),file=log_sem)
 
 def _sem_analize(action, token, tabela, scopo, log_sem,stg_pos):
     if "s" in action:

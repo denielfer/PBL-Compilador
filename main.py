@@ -96,16 +96,16 @@ if __name__ == '__main__':
     log_sint =  open('logs/log_execução_sintatico.txt', "w", encoding=encode)
     log_sem =  open('logs/log_execução_semantico.txt', "w", encoding=encode)
     for path in paths:
-        # try:
+        try:
             sys.stdout = log_lex
             tokens_corretos, new_file = analizar_lexico_files(path)
             sys.stdout = log_sint
             # sys.stdout = console_print_stdout
             # analizador_sintatico_files(tokens_corretos, new_file,console_print_stdout)
             analizador_sintatico_files(tokens_corretos, new_file,log_sem)
-        # except Exception as e:
-        #     import traceback
-        #     sys.stdout = console_print_stdout
-        #     print(path, ':\n')
-        #     print(traceback.format_exc())
-        #     print('_'*50)
+        except Exception as e:
+            import traceback
+            sys.stdout = log_sem
+            print(f'Erro irecuperavel no arquivo {path}', ':\n')
+            print(traceback.format_exc())
+            print('\n'*2)
