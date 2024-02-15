@@ -168,7 +168,7 @@ get_functions = {
     'dec_parameter': [
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": TYPE, 'next': [('dec_parameter', 1)], "s": {'do': ['dec_param_type']}},
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('dec_parameter', 1)], "s": {'do': ['dec_param_IDE']}, 'erro': [('mult_dec_parameter', 0)]},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('dec_parameter', 1)], "s": {'do': ['dec_param_IDE'], 'erro': [('mult_dec_parameter', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
