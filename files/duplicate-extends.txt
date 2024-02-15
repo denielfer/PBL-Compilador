@@ -4,6 +4,7 @@ const {
 
 variables {
     real tres4quatro;
+    int vector[10], vector2[10];
 }
 
 class qwe{
@@ -35,11 +36,21 @@ class a extends a{
     methods{
         int a(int b, int c, int d){
             variables{
+                string logical;
+                boolean truth;
             }
             objects{}
             print(tres4quatro);
+            truth = !logical;
+            truth = true;
+            truth = !truth;
             b = pessoa.a;
+            vector = vector2;
+            vector = tres4quatro;
+            vector2[1] = var1;
+            vector[1] = tres4quatro;
             print(b);
+            logical++;
             return 1;
         }
         int a(int b, int t, int d){
@@ -47,8 +58,9 @@ class a extends a{
             }
             objects{
             }
-            var1 = pessoa->aaa(1);
-            //print(var1);
+            //var1 = pessoa->aaa(1);
+            pessoa = qwe->constructor();
+            print(var1);
             print(2);
             read(tres4quatro);
             return 2;
