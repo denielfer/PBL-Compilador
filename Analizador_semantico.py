@@ -261,11 +261,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             # scopo: ...
             # stack: ...,func
         case 'validate_return':
+            
+
+            # TESTA  return_func_data nao remover scopo e fazer nos validate_return
+
             # stack: ...,func, ??
             tabela['stack'].pop()
             func = tabela['stack'].pop()
             # stack: ...,
             a = _get_scopo(tabela, scopo)
+            print(a,file=log_sem)
             tipo = a[func]['type']
             if token['type'] == 'IDE': # se retorno ide
                 scopo_var = a[func]['data']
@@ -331,6 +336,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case "validate_IDE":
             var = token['token']
             a = _get_in_scopo(var, tabela, scopo)
+            if var == 'this':
+                var = scopo[2]
+                scopo = scopo[:3]
+                a = _get_scopo(tabela,scopo[:3])
             if var not in a:
                 return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
             #stack: ...,
