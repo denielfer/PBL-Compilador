@@ -38,7 +38,7 @@ class a extends a{
             }
             objects{}
             print(tres4quatro);
-            //b = pessoa.a;
+            b = pessoa.a;
             print(b);
             return 1;
         }
@@ -47,7 +47,7 @@ class a extends a{
             }
             objects{
             }
-            //var1 = pessoa->aaa(1);
+            var1 = pessoa->aaa(1);
             //print(var1);
             print(2);
             read(tres4quatro);

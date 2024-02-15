@@ -310,7 +310,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'dec_param_IDE':
             if token['token'] in tabela['global']:
                 if tabela['global'][token['token']]['type'] != 'class':
-                    return f"Na linha {token['line']}, tipo de parametro {token['token']} nao é classe, portanto não pode ser tipo de variavel"
+                    return f"Na linha {token['line']}, tipo de parametro {token['token']} não é classe, portanto não pode ser tipo de variavel"
             else:
                 return f"Na linha {token['line']}, tipo de parametro {token['token']} não foi encontrado"  
             #stack: ...
@@ -346,9 +346,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if a[ide]['type'] in TYPES:
                 return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
             if tabela['stack'][-1] == 'class':
-
                 scopo.clear()
                 scopo.append('global')
+            else:
+                scopo = _get_scopo_of(ide,tabela,scopo)
             scopo.append(ide)
             scopo.append('data')
         case 'atribuição':
@@ -446,6 +447,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
+            scopo = _get_scopo_of(tabela['stack'][-1],tabela,scopo)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
@@ -472,7 +474,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'schedule_add_type_func':
             a = _get_scopo(tabela, scopo[:-1])
             tipo = a['type'] if 'type' in a else 'desconhecido'
-            print(tipo, a,file = log_sem)
             if 'programado' not in tabela:
                 tabela['programado'] = []
             tabela['programado'].append({'when':('close_parentesis',0), 
@@ -762,10 +763,23 @@ def validate_type_relacional(tipo,tabela,erro_msg):
     elif tabela['stack'][-2] != tipo:
         return erro_msg
 
+def _get_scopo_of(var, tabela, scopo:list):
+    t = copy.deepcopy(scopo)
+    a = None
+    while len(t) > 0:
+        a = tabela #testa
+        for s in t:
+            a = a[s]
+        if var in a:
+            return t
+        t = t[:-2]
+    if not a or var not in a:
+        return None
+
+
 def _get_in_scopo(var, tabela, scopo:list,file = None):
     t = copy.deepcopy(scopo)
     a = None
-    print(t,file=file)
     while len(t) > 0:
         a = tabela #testa
         for s in t:

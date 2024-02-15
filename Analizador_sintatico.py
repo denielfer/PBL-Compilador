@@ -298,7 +298,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method',"schedule_add_type_func"]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('method_access', 2)], 's': {'do': ['acess_method',"schedule_add_type_func"], 'erro': [(';', 0), ('close_parentesis', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('method_access', 2)], 's': {'do': ['acess_method','schedule_add_type_func']}},#to do validar
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
