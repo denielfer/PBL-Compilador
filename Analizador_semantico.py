@@ -2,7 +2,7 @@ import copy
 
 def init():
     global tabela,scopo, erro_sem, erros_semantico
-    tabela = {'global': {}, 'stack': [],'last_scopo': []}
+    tabela = {'global':{}, 'stack':[],'last_scopo':[]}
     scopo = ["global"]
     erro_sem = None
     erros_semantico = []
@@ -52,10 +52,10 @@ def analize(stage, pos_stage, action, token, log_sem= None):
     #     erros_semantico.append('Erro irrecuperavel')
     #     print('\n\n',traceback.format_exc(),file=log_sem)
 
-def _sem_analize(action, token, tabela, scopo, log_sem, stg_pos):
+def _sem_analize(action, token, tabela, scopo, log_sem,stg_pos):
     if "s" in action:
         for controle in action['s']['do']:
-            yield _sem(controle, token, tabela, scopo, log_sem, action, stg_pos)
+            yield _sem(controle, token, tabela, scopo, log_sem, action,stg_pos)
 
 import json
 # class limpa_last_erro():
@@ -79,7 +79,7 @@ def remove_circular_refs(ob, _seen=None): ### NAO FOI EU QUE FIZ, PEQUEI E ESQUE
 
 def log(func):
     def warp(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem, action,stg_pos):
-        print('-> ' + controle, scopo, token, erro_sem, stg_pos, action, file = log_sem, sep=' | ')
+        print('-> ' + controle, scopo, token, erro_sem, stg_pos,action, file = log_sem, sep=' | ')
         r = func(controle, token, tabela, scopo, log_sem)
         try:
             print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
@@ -102,7 +102,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
             elif token["token"] in PRE:
                 return f"Na linha {token['line']}, {token['token']} foi declarado porém é palavra reservada"    
-            a[token['token']] = {"type": tabela['stack'][-1], 'is_vetor': False, 'is_const': False}
+            a[token['token']] = {"type":tabela['stack'][-1], 'is_vetor':False, 'is_const':False}
             tabela['stack'].append(token["token"])
             # stack: ..., tipo, var
             tabela['stack'].append(controle)
@@ -125,10 +125,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                     if token["token"] not in BOOL:
                         return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
                 case 'real':
-                    if token["type"] != 'NRO' and '.' not in token["token"]:
+                    if token["type"] != 'NRO' or '.' not in token["token"]:
                         return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
                 case 'int':
-                    if token["type"] != 'NRO' and '.' in token["token"]:
+                    if token["type"] != 'NRO' or '.' in token["token"]:
                         return f"Na linha {token['line']}, tentando salvar {token['token']} na variavel {var} do tipo {tipo}"
             a = _get_scopo(tabela, scopo)
         case 'validate_is_vector':
@@ -164,7 +164,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_scopo(tabela, scopo)
             from Analizador_lexico import PRE
             if token["token"] in a:
-                a[token['token']] = {"type": 'class', "data": {}}
+                a[token['token']] = {"type":'class', "data":{}}
                 tabela['stack'].append(token["token"])
                 return f"Na linha {token['line']}, {token['token']} declarado novamente"
             elif token["token"] in PRE and token['token'] != 'main':
@@ -252,19 +252,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             scopo.append("data")
             # scopo: ..., func, data
         case 'return_func_data':
-            # scopo: ..., func, data
             scopo.pop()
-            # scopo: ..., func
-            a = _get_scopo(tabela, scopo)
-            # del(a['data'])
             tabela['stack'].append(scopo.pop())
-            # scopo: ...
-            # stack: ...,func
         case 'validate_return':
-            
-
-            # TESTA  return_func_data nao remover scopo e fazer nos validate_return
-
             # stack: ...,func, ??
             tabela['stack'].pop()
             func = tabela['stack'].pop()
@@ -656,7 +646,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                         tabela['stack'].append('int')
                 else:
                     var = token['token']
-                    a = _get_in_scopo(var, tabela, scopo)
+                    a = _get_in_scopo(var,tabela,scopo)
                     if var not in a:
                         return f"Na linha {token['line']}, {token['token']} não foi declarado"
                     tabela['stack'].append(a[var]["type"])

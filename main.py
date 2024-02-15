@@ -80,7 +80,7 @@ def analizador_sintatico_files(list_tokens:list[dict], path:str,log_sem):
             out_file.write(f'\n\nSem erros Semanticos')
         else:
             out_file.write('\n\nErros Semanticos identificados:\n')
-            for s in str(semantico)[1:-1].split("', "):
+            for s in str(semantico)[1:-1].replace('"',"'").split("', "):
                 s= s.replace("'","")
                 out_file.write(f'{s}\n')
 
