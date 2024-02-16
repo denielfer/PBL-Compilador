@@ -111,18 +111,18 @@ methods{
         variables{
             string mulher;
             string homem;
-}
-        objects{}
-mulher = "mulher";
-homem = "homem";
-if (this.genero) then {
-    print( "eh mulher");
-} else {
-    print("eh homem");
-}
+    }
+            objects{}
+    mulher = "mulher";
+    homem = "homem";
+    if (this.genero) then {
+        print( "eh mulher");
+    } else {
+        print("eh homem");
+    }
 
-    return true;
-}
+        return true;
+    }
 }
 constructor(string nome, int idade, real peso, boolean genero){
     variables{}

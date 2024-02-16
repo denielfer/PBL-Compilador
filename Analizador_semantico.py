@@ -261,8 +261,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'return_func_data':
             pass
         case 'validate_return':
-            if 'programado' in tabela:
-                tabela['programado'].clear()
             tabela['last_scopo'].clear()
             # stack: ...,func, ??
             scopo.pop()
@@ -299,6 +297,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                             return f"Na linha {token['line']}, tentou retorna {token['token']}, porem não existe no scopo"
                         elif a[token['token']]['type'] != a[func]['type']:
                             return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}, do tipo {a[token['token']]['type']}"  
+
         case "validate_return_void":
             if 'programado' in tabela:
                 tabela['programado'].clear()
@@ -340,10 +339,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_in_scopo(var, tabela, scopo)
             if var == 'this':
                 tabela['stack'].append(scopo[1])
+                tabela['stack'].append(var)
             else:
                 if var not in a:
                     return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
                 #stack: ...,
+                tabela['stack'].append(var)
                 tabela['stack'].append(var)
                 #stack: ..., var
         case 'add_void_stack':
@@ -462,14 +463,22 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
+            _this = tabela['stack'].pop() 
             var = tabela['stack'][-1]
             a = _get_in_scopo(var,tabela,scopo)
+            if a == tabela['global'] and _this != 'this':
+                return f"Na linha {token['line']}, {var} não é objeto"
             if var in a:
                 if a[var]['type'] in TYPES:
                     return f"Na linha {token['line']}, usando variavel {var} como objeto, porém esta é tipo {a[var]['type']}"
-            scopo = _get_scopo_of(var,tabela,scopo)
+            print('ojasndkolpnmasklopdm',file=log_sem)
+            _scopo = _get_scopo_of(var,tabela,scopo)
+            scopo.clear()
+            for s in _scopo:
+                scopo.append(s)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
+            print(scopo,file=log_sem)
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
         case 'move_scopo_back':
             if tabela['last_scopo'] != []:
@@ -510,6 +519,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                         'log_rep':'add_func_type_stack_prog'
                                     }
                                 )
+        case 'dimention_swap_scopo':
+            tabela['scopo'].append(copy.deepcopy(scopo))
+            scopo.clear()
+            for s in tabela['last_scopo']:
+                scopo.append(s)
+        case 'dimention_swap_back_scopo':
+            _scopo = tabela['scopo'].pop()
+            scopo.clear()
+            for s in _scopo:
+                scopo.append(s)
         case 'add_scopo_func_call':
             tabela['scopo'].append(copy.deepcopy(scopo))
             scopo.clear()
