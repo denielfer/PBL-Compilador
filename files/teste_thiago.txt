@@ -39,7 +39,6 @@ class c2 extends c1{
             objects {
             }
             //obj2->constructor(a,b,c);
-            a = 1 + obj2->m1(v5,v6,c);
             return 1;
         }
     } 

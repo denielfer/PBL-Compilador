@@ -269,7 +269,7 @@ get_functions = {
                 {"test": [ # logical_expression_begin
                     {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('void', 0), ('logical_expression', 0)], 's': {'do': ['schedule_validate_last_boolean']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('logical_expression', 1), ('logical_expression', 0)]},
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void', 0), ("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack'], 'erro': [('void', 0),]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('logical_sinc', 0), ("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack'], 'erro': [('logical_sinc', 0),]}},
                     {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_bool']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [# logical_expression_end
@@ -440,6 +440,12 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['swap_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
             ],
+    'logical_sinc': [ # void operation so pra fazer schedule de operação so semantico
+                {"test": [
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                ], 'erro': {'tipo_recuperação': 'next'}},
+            ],
+    
 }
 
 def recuperação_next(list_actions, stack):

@@ -50,6 +50,8 @@ def analize(stage, pos_stage, action, token, log_sem= None):
                 tabela['programado'].remove(p)
             if len(tabela['programado']) == 0:
                 del(tabela['programado'])
+    else:
+        print(f'skiped {(stage, pos_stage)}, {token}')
     # except Exception as e:
     #     import traceback
     #     erro_sem = []
@@ -618,6 +620,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 a = _get_in_scopo(var,tabela, scopo)
                 tabela['stack'].append(a[var]['type'])
             except Exception as e:
+                # import traceback
+                # print('\n\n',traceback.format_exc(),file=log_sem)
                 print(' Erro: ',e,file=log_sem)
         case 'match_last':
             tabela['stack'].append('boolean')
@@ -782,7 +786,15 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
 def val_param(tabela,scopo,token):
         # tabela['stack'].pop()
         a = _get_scopo(tabela,scopo)
-        index = int(tabela['stack'][-2])
+        c = 0
+        while c < len(tabela['stack']):
+            c +=1
+            try:
+                int(tabela['stack'][-c])
+            except:
+                continue
+            break
+        index = int(tabela['stack'][-c])
         tipo = tabela['stack'][-1]
         try:
             _tipo = list(a.values())[index]['type']
