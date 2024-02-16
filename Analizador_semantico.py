@@ -17,7 +17,9 @@ def analize(stage, pos_stage, action, token, log_sem= None):
     if erro_sem:
         if (stage, pos_stage) in erro_sem:
             erro_sem = None
+            print('Analizador semantico re-avatido por chega em :',(stage, pos_stage),file=log_sem)
     # try:
+    print(erro_sem,erro_sem is None, )
     if erro_sem is None:
         for ret in _sem_analize(action, token, tabela, scopo, log_sem,(stage, pos_stage)):
             # if ret is limpa_last_erro:
@@ -27,7 +29,9 @@ def analize(stage, pos_stage, action, token, log_sem= None):
                 print(ret, file=log_sem)
                 erros_semantico.append(ret)
                 if 'erro' in action['s']:
+                    print('Analizador semantico desatido por erro semantico',(stage, pos_stage),file=log_sem)
                     erro_sem = action['s']['erro']
+                    break
         if 'programado' in tabela:
             d = []
             for programado in tabela['programado']:
@@ -41,7 +45,7 @@ def analize(stage, pos_stage, action, token, log_sem= None):
                         if ret is not None:
                             print(ret, file=log_sem)
                             erros_semantico.append(ret)
-                        print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), f' {scopo}', sep='\n', file=log_sem)
+                        # print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), f' {scopo}', sep='\n', file=log_sem)
             for p in d:
                 tabela['programado'].remove(p)
             if len(tabela['programado']) == 0:
@@ -82,7 +86,8 @@ def log(func):
         print('-> ' + controle, scopo, token, erro_sem, stg_pos,action, file = log_sem, sep=' | ')
         r = func(controle, token, tabela, scopo, log_sem)
         try:
-            print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         except ValueError:
             print(' Data nao pode ser representado pois ele contem loop de referencia.\n', " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         return r
@@ -252,15 +257,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             scopo.append("data")
             # scopo: ..., func, data
         case 'return_func_data':
-            scopo.pop()
-            tabela['stack'].append(scopo.pop())
+            pass
         case 'validate_return':
+            if 'programado' in tabela:
+                tabela['programado'].clear()
+            tabela['last_scopo'].clear()
             # stack: ...,func, ??
-            tabela['stack'].pop()
-            func = tabela['stack'].pop()
+            scopo.pop()
+            func = scopo.pop()
             # stack: ...,
             a = _get_scopo(tabela, scopo)
-            print(a,file=log_sem)
             tipo = a[func]['type']
             if token['type'] == 'IDE': # se retorno ide
                 scopo_var = a[func]['data']
@@ -292,8 +298,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                         elif a[token['token']]['type'] != a[func]['type']:
                             return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}, do tipo {a[token['token']]['type']}"  
         case "validate_return_void":
+            if 'programado' in tabela:
+                tabela['programado'].clear()
+            tabela['last_scopo'].clear()
             # stack: ...,func
-            func = tabela['stack'].pop()
+            scopo.pop()
+            func = scopo.pop()
             # stack: ...,
             a = _get_scopo(tabela, scopo)
             if a[func]['type'] != 'void':
@@ -327,14 +337,14 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             var = token['token']
             a = _get_in_scopo(var, tabela, scopo)
             if var == 'this':
-                var = scopo[2]
-                scopo = scopo[:3]
-                a = _get_scopo(tabela,scopo[:3])
-            if var not in a:
-                return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
-            #stack: ...,
-            tabela['stack'].append(var)
-            #stack: ..., var
+                var = scopo[1]
+                tabela['stack'].append(var)
+            else:
+                if var not in a:
+                    return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
+                #stack: ...,
+                tabela['stack'].append(var)
+                #stack: ..., var
         case 'add_void_stack':
             #stack: ...,
             tabela['stack'].append('void')
@@ -345,6 +355,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if a[ide]['type'] in TYPES:
                 return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
             if tabela['stack'][-1] == 'class':
+                if tabela['last_scopo'] == []:
+                    tabela['last_scopo'] = copy.deepcopy(scopo)
                 scopo.clear()
                 scopo.append('global')
             else:
@@ -465,7 +477,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'acess_method':
             a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
-                return f"Na linha {token['line']}, {token['token']} não foi encontrado como method do objeto {scopo[-2]}"
+                return f"Na linha {token['line']}, {token['token']} não foi encontrado como metodo do objeto {tabela['stack'][-1]}"
             scopo.append(token['token'])
             scopo.append('param')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data', func, 'param'
@@ -552,11 +564,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             try:
                 var = tabela['stack'][-1]
                 a = _get_in_scopo(var,tabela, scopo)
-                # print(a,file=log_sem)
                 tabela['stack'].append(a[var]['type'])
             except Exception as e:
                 print(' Erro: ',e,file=log_sem)
-                pass
         case 'match_last':
             tabela['stack'].append('boolean')
             if token['type'] == 'NRO':
@@ -583,7 +593,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'schedule_match_type_on_void':
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            tabela['programado'].append({'when': ('void',0), 
+            tabela['programado'].append({'when': ('rel_sinc',0), 
                                          'do': [
                                             (validate_type_relacional,
                                             {
@@ -694,7 +704,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                             }
                                             )
                                         ],
-                                        'log_rep':'match_type_on_void_prog'
+                                        'log_rep':'match_type_on_arit_expression_prog'
                                     }
                                 )
         case _:
@@ -749,13 +759,11 @@ def validate_last_is_boolean(tabela,erro_msg):
 
 def validate_type_arit_expression(tipo,tabela,erro_msg):
     tabela['stack'].append(tipo)
-    # print(tipo,tabela['stack'][-2],tabela['stack'],file=file)
     if tabela['stack'][-2] != tipo:
         return erro_msg
 
 def validate_type_relacional(tipo,tabela,erro_msg):
     tabela['stack'].append('boolean')
-    # print(tipo,tabela['stack'][-2],tabela['stack'],file=file)
     if tipo in ['real','int']:
         if tabela['stack'][-2] not in ['real','int']:
             return erro_msg

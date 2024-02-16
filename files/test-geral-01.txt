@@ -24,15 +24,15 @@ class Math {
     methods{
         int soma_gaus(int n){
             variables{
-    int soma, i;
-}
-        objects{}
-soma = 0;
-for(i = 0; i <= n; i++){
-    soma = soma + i;
-} 
-return soma;
-}
+                int soma, i;
+            }
+            objects{}
+            soma = 0;
+            for(i = 0; i <= n; i++){
+                soma = soma + i;
+            } 
+            return soma;
+        }
 int fibonacci(int n) {
     variables{
         int a, b;
@@ -81,11 +81,11 @@ real media(real n, int tam){
 }
     constructor(){
         variables{}
-    objects{}
-        this.pi = PI;
-        this.e = E;
-        this.raiz_2 = RAIZ_2;
-}
+        objects{}
+            this.pi = PI;
+            this.e = E;
+            this.raiz_2 = RAIZ_2;
+    }
 }
 class Pessoa {
 variables{
