@@ -460,7 +460,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
-            _scopo = _get_scopo_of(tabela['stack'][-1],tabela,scopo)
+            scopo = _get_scopo_of(tabela['stack'][-1],tabela,scopo)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
@@ -524,7 +524,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                             {}
                                             )
                                         ],
-                                        'log_rep':'add_func_type_stack_prog'
+                                        'log_rep':'func_scopo_pop_prog'
                                     }
                                 )
         case 'schedule_change_back_scopo':
