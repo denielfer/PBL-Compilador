@@ -49,6 +49,7 @@ class a extends a{
             vector = tres4quatro;
             vector2[1] = var1;
             vector[1] = tres4quatro;
+            vector = [1, [2, 4], 3];
             print(b);
             logical++;
             return 1;
@@ -58,8 +59,9 @@ class a extends a{
             }
             objects{
             }
-            //var1 = pessoa->aaa(1);
             pessoa = qwe->constructor();
+            var1 = pessoa->aaa(1);
+            var1 = pessoa->metodo1(1);
             print(var1);
             print(2);
             read(tres4quatro);

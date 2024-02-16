@@ -46,8 +46,8 @@ int fibonacci(int n) {
     } else {
         a = n -1;
         b = n - 2;
-        return1 = this->fibonacci(a);
-        return2 = this->fibonacci(b);
+        //return1 = this->fibonacci(a);
+        //return2 = this->fibonacci(b);
     }
     result = return1 + return2;
     return result;

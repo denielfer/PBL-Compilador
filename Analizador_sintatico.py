@@ -200,9 +200,9 @@ get_functions = {
                     {'is_terminal': False, 'terminais': [('dimention_acess', 0)], 'next': [("assigment_or_method_acess_or_duble", 1), ('object_access', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back','atribuição']}},
-                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art','move_scopo_back']}},
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object', 'schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}},
+                    {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back', 'atribuição']}},
+                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art', 'move_scopo_back']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'for': [
@@ -220,7 +220,7 @@ get_functions = {
                                                                             ]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
-    'var_assinement': [ # TO DO Validar
+    'var_assinement': [
         # <ASSIGMENT_WITHOUT_SEMICOLON> -> index [0,1]
                 {"test": [ # <DEC_OBJECT_ATRIBUTE_ACCESS>
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('var_assinement', 1), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack','save_scopo'], 'erro': [(';', 0)]}},
@@ -257,9 +257,9 @@ get_functions = {
     'aritimetic_or_logical_expression': [
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('logical_expression', 1), ('relational_expression_value', 0), ('method_access', 1)], 's': {'do': ['validate_last_object', "schadule_change_back_scopo_at_relational"], 'erro': [(';', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [], 's': {'do': ['duble_art','move_scopo_back']}},
-                    {'is_terminal': True, "key": 'token', "value": ART, 'next': [('arit_expression', 1)], 's': {'do': ['duble_art','move_scopo_back']}},
-                    {'is_terminal': False, "terminais": [("relational_expression_value", 2)],'next': [('logical_expression', 1)],'s': {'do':['move_scopo_back']}},
+                    {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [], 's': {'do': ['duble_art', 'move_scopo_back']}},
+                    {'is_terminal': True, "key": 'token', "value": ART, 'next': [('arit_expression', 1)], 's': {'do': ['duble_art', 'move_scopo_back']}},
+                    {'is_terminal': False, "terminais": [("relational_expression_value", 2)],'next': [('logical_expression', 1)],'s': {'do': ['move_scopo_back']}},
                     {'is_terminal': True, "key": 'token', "value": LOG, 'next': [('logical_expression', 1), ('logical_expression', 0)], 's': {'do':["move_scopo_back"]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's': {'do': ["move_scopo_back"]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -269,7 +269,7 @@ get_functions = {
                 {"test": [ # logical_expression_begin
                     {'is_terminal': True, "key": 'token', "value": ['!'], 'next': [('void', 0), ('logical_expression', 0)], 's': {'do': ['schedule_validate_last_boolean']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('logical_expression', 1), ('logical_expression', 0)]},
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void', 0),("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack'],'erro':[('void', 0),]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void', 0), ("relational_expression_value", 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack'], 'erro': [('void', 0),]}},
                     {'is_terminal': True, "key": 'token', "value": BOOL, 'next': [], 's': {'do': ['stack_bool']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [# logical_expression_end
@@ -284,7 +284,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <RELATIONAL_EXPRESSION_VALUE>
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('rel_sinc',0),('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE','add_void_stack', 'schedule_match_type_on_void'],'erro':[('rel_sinc',0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('rel_sinc', 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE','add_void_stack', 'schedule_match_type_on_void'], 'erro': [('rel_sinc', 0)]}},
                     {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': [], 's': {'do': ['match_last']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
@@ -293,12 +293,12 @@ get_functions = {
     ],
     'method_access': [
                 {"test": [ # <optional_method_access>
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}}, 
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)], 's': {'do': ['validate_last_object', 'schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}}, 
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's': {'do': ['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void',0),('method_access', 2)], 's': {'do': ['acess_method', "schedule_add_type_func"],'erro':[('void',0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void',0),('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'],'erro':[('void',0)]}},#to do validar
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', "schedule_add_type_func"], 'erro': [('void', 0)]}},
+                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'], 'erro': [('void', 0)]}}, # to do validar
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param']}},
@@ -336,7 +336,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ #<SIMPLE_EXPRESSION>
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('arit_expression', 0), ('object_access', 0), ("dimention_acess", 0)],'s':{'do':['schedule_match_type_on_arit_expression','validate_IDE','add_void_stack']}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('arit_expression', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['schedule_match_type_on_arit_expression', 'validate_IDE', 'add_void_stack']}},
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('arit_expression', 0), ('close_parentesis', 0), ('arit_expression', 1)]},
                     {'is_terminal': True, "key": 'type', "value": ['NRO'], 'next': [('arit_expression', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -367,7 +367,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [("close_parentesis", 0), ('read', 1)], "s": {'do': ['schadule_move_back_scopo', 'schadule_clean_last_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type','validate_IDE','add_void_stack'], 'erro': [("close_parentesis", 0), (';', 0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('object_access', 0), ("dimention_acess", 0)], "s": {'do': ['schedule_valid_type', 'validate_IDE', 'add_void_stack'], 'erro': [("close_parentesis", 0), (';', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}}
     ],
     "print": [ 
