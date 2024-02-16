@@ -137,8 +137,8 @@ get_functions = {
     ],
     'func_dec': [
                 {'test': [
-                    {'is_terminal': True, "key": 'token', "value": TYPES, 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack']}},
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack']}},
+                    {'is_terminal': True, "key": 'token', "value": TYPES, 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack'], 'erro':[('func_dec', 0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack'], 'erro':[('func_dec', 0)]}},
                     {'is_terminal': True, "key": 'type', "value": [''], 'next': [], 's': {'do': ['clear_stack']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {'test': [
@@ -191,7 +191,6 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['read'], 'next': [('command', 0), (";", 0), ('read', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['if'], 'next': [('command', 0), ('if', 0)]},
                     {'is_terminal': True, "key": 'token', "value": ['for'], 'next': [('command', 0), ('for', 0)]},
-                    # {'is_terminal': True, "key": 'token' , "value": ['this'], 'next': [('command', 0), ("assigment_or_method_acess_or_duble", 1), ('object_access', 0)], 's': {'do': ['validate_IDE'], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'type' , "value": ['IDE'], 'next': [('command', 0), ('assigment_or_method_acess_or_duble', 0)], 's': {'do': ['validate_IDE', "add_void_stack"], 'erro': [(';', 0), ('command', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}}
@@ -201,7 +200,7 @@ get_functions = {
                     {'is_terminal': False, 'terminais': [('dimention_acess', 0)], 'next': [("assigment_or_method_acess_or_duble", 1), ('object_access', 0)]},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo'], 'erro': [(';', 0)]}},
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [(';', 0), ('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}},
                     {'is_terminal': True, "key": 'token', "value": ['='], 'next': [(';', 0), ('value', 0)], 's': {'do': ['move_scopo_back','atribuição']}},
                     {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [(';', 0)], 's': {'do': ['duble_art','move_scopo_back']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
@@ -294,7 +293,7 @@ get_functions = {
     ],
     'method_access': [
                 {"test": [ # <optional_method_access>
-                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo'], 'erro': [(';', 0)]}}, 
+                    {'is_terminal': True, "key": 'token', "value": ['->'], 'next': [('method_access', 1)], 's': {'do': ['validate_last_object','schedule_change_back_scopo_parent'], 'erro': [(';', 0)]}}, 
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
@@ -302,20 +301,20 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void',0),('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'],'erro':[('void',0)]}},#to do validar
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['schedule_change_back_scopo', 'schedule_validate_qtd_param']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
                 {"test": [ #<PARAMETERS>
-                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)], 's': {"do": ['validate_param']}},
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1),("val_param",0)], 's': {"do": ['schedule_validate_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <MULT_PARAMETERS>
-                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['move_next_param']}},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['swap_scopo','move_next_param']}},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['swap_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
-                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1)], 's': {"do": ['validate_param']}},
+                    {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1),("val_param",0)], 's': {"do": ['schedule_validate_param']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'vetor_assinement': [
@@ -434,6 +433,11 @@ get_functions = {
     'rel_sinc': [ # void operation so pra fazer schedule de operação so semantico
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                ], 'erro': {'tipo_recuperação': 'next'}},
+            ],
+    'val_param': [ # void operation so pra fazer schedule de operação so semantico
+                {"test": [
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['swap_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
             ],
 }

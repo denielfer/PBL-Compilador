@@ -2,7 +2,7 @@ import copy
 
 def init():
     global tabela,scopo, erro_sem, erros_semantico
-    tabela = {'global':{}, 'stack':[],'last_scopo':[]}
+    tabela = {'global':{}, 'stack':[],'last_scopo':[],'scopo':[]}
     scopo = ["global"]
     erro_sem = None
     erros_semantico = []
@@ -337,8 +337,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             var = token['token']
             a = _get_in_scopo(var, tabela, scopo)
             if var == 'this':
-                var = scopo[1]
-                tabela['stack'].append(var)
+                tabela['stack'].append(scopo[1])
             else:
                 if var not in a:
                     return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
@@ -354,13 +353,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_in_scopo(ide, tabela, scopo)
             if a[ide]['type'] in TYPES:
                 return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
+            if tabela['last_scopo'] == []:
+                tabela['last_scopo'] = copy.deepcopy(scopo)
             if tabela['stack'][-1] == 'class':
-                if tabela['last_scopo'] == []:
-                    tabela['last_scopo'] = copy.deepcopy(scopo)
                 scopo.clear()
                 scopo.append('global')
             else:
-                scopo = _get_scopo_of(ide,tabela,scopo)
+                _scopo = _get_scopo_of(ide, tabela, scopo)#,log_sem)
+                scopo.clear()
+                for s in _scopo:
+                    scopo.append(s)
             scopo.append(ide)
             scopo.append('data')
         case 'atribuição':
@@ -477,7 +479,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'acess_method':
             a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
-                return f"Na linha {token['line']}, {token['token']} não foi encontrado como metodo do objeto {tabela['stack'][-1]}"
+                if tabela['last_scopo'] != []:
+                    scopo.clear()
+                    for a in tabela['last_scopo']:
+                        scopo.append(a)
+                    tabela['last_scopo'].clear()
+                return f"Na linha {token['line']}, {token['token']} não foi encontrado como metodo do objeto da classe {tabela['stack'][-1]}"
             scopo.append(token['token'])
             scopo.append('param')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data', func, 'param'
@@ -496,7 +503,18 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                         'log_rep':'add_func_type_stack_prog'
                                     }
                                 )
-
+        case 'add_scopo_func_call':
+            tabela['scopo'].append(copy.deepcopy(scopo))
+            scopo.clear()
+            for a in tabela['last_scopo']:
+                scopo.append(a)
+            tabela['last_scopo'].clear()
+        case 'swap_scopo':
+            _scopo = tabela['scopo'].pop()
+            tabela['scopo'].append(copy.deepcopy(scopo))
+            scopo.clear()
+            for a in _scopo:
+                scopo.append(a)
         case 'schedule_change_back_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
@@ -541,6 +559,23 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}, porém ela so recebe {len(a)}"
             if ( _tipo != tipo):
                 return f"Na linha {token['line']}, o parametro {index+1} da função {scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
+        case 'schedule_validate_param':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':('val_param',0), 
+                                         'do':[
+                                            (
+                                                val_param,
+                                                {
+                                                    'tabela': tabela,
+                                                    'scopo': scopo,
+                                                    "token":token,
+                                                }
+                                            )
+                                        ],
+                                        'log_rep':'validate_param_prog'
+                                    }
+                    )
         case 'move_next_param':
             a = -1
             while a > - len(tabela['stack']): # procura o ultimo numero, concerteza tem 0
@@ -696,21 +731,48 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 tabela['programado'] = []
             tabela['programado'].append({'when': ('arit_expression', 0), 
                                          'do': [
-                                            (validate_type_arit_expression,
-                                            {
-                                                'tipo':tabela['stack'][-1], 
-                                                'tabela':tabela, 
-                                                'erro_msg':f"Na linha {token['line']}, operação aritimetica com tipo diferentes", 
-                                            }
+                                            (
+                                                validate_type_arit_expression,
+                                                {
+                                                    'tipo':tabela['stack'][-1], 
+                                                    'tabela':tabela, 
+                                                    'erro_msg':f"Na linha {token['line']}, operação aritimetica com tipo diferentes", 
+                                                }
                                             )
                                         ],
                                         'log_rep':'match_type_on_arit_expression_prog'
                                     }
                                 )
+        case 'schedule_change_back_scopo_parent':
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when':('method_access', 2), 
+                                         'do': [
+                                            (
+                                                change_back_scopo,
+                                                {
+                                                    '_scopo':copy.deepcopy(scopo),
+                                                    'scopo':scopo
+                                                }
+                                            )
+                                        ],
+                                        'log_rep':'change_back_scopo_prog'
+                                    }
+                                )
         case _:
             pass
 
-# revisar return
+def val_param(tabela,scopo,token):
+        a = _get_scopo(tabela,scopo)
+        index = int(tabela['stack'][-2])
+        tipo = tabela['stack'][-1]
+        try:
+            _tipo = list(a.values())[index]['type']
+        except IndexError:
+            return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}, porém ela so recebe {len(a)}"
+        if ( _tipo != tipo):
+            return f"Na linha {token['line']}, o parametro {index+1} da função {scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
+        
 
 def clean_last_scopo(last_scopo):
     last_scopo.clear()
@@ -731,10 +793,11 @@ def validate_last_in_types(tabela, erro_msg:str):
         return erro_msg
 
 def change_back_scopo(_scopo,scopo):
-    while len(scopo) !=0:
-        scopo.pop()
-    for a in _scopo:
-        scopo.append(a)
+    if _scopo != []:
+        while len(scopo) !=0:
+            scopo.pop()
+        for a in _scopo:
+            scopo.append(a)
 
 def valid_qtd_param(tabela, scopo, msg:str):
     a = -1
@@ -770,11 +833,11 @@ def validate_type_relacional(tipo,tabela,erro_msg):
     elif tabela['stack'][-2] != tipo:
         return erro_msg
 
-def _get_scopo_of(var, tabela, scopo:list):
+def _get_scopo_of(var, tabela, scopo:list,file = None):
     t = copy.deepcopy(scopo)
     a = None
     while len(t) > 0:
-        a = tabela #testa
+        a = tabela
         for s in t:
             a = a[s]
         if var in a:
@@ -788,7 +851,7 @@ def _get_in_scopo(var, tabela, scopo:list,file = None):
     t = copy.deepcopy(scopo)
     a = None
     while len(t) > 0:
-        a = tabela #testa
+        a = tabela
         for s in t:
             a = a[s]
         if var in a:

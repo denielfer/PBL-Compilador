@@ -55,7 +55,7 @@ def analizar_lexico_files(path:str,replace='.txt',replace_to='-saida.txt'):
 
 def analizador_sintatico_files(list_tokens:list[dict], path:str,log_sem):
     print(path)
-    print(path,file=log_sem)
+    print('\n\n',path,file=log_sem)
     from Analizador_sintatico import analize
     erros = []
     analizer = analize(list_tokens,log_sem)
