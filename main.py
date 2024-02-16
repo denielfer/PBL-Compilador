@@ -76,6 +76,8 @@ def analizador_sintatico_files(list_tokens:list[dict], path:str,log_sem):
         # sys.stdout = log_sem
         print("___________________", file= log_sem)
         print(semantico, file= log_sem)
+        from Analizador_semantico import tabela
+        print(tabela, file= log_sem)
         if semantico is None or semantico.__str__() == '[]':
             out_file.write(f'\n\nSem erros Semanticos')
         else:

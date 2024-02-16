@@ -233,7 +233,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ART_DOUBLE, 'next': [('sinc_scopo',0),], 's': {'do': ['duble_art']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
             ],
-    'value': [ # TO DO validar
+    'value': [
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['NRO'], 'next': [("arit_expression", 0)], 's': {'do': ['stack_NRO']}}, 
                     {'is_terminal': True, "key": 'type', "value": ['CAC'], 'next': [], 's': {'do': ['stack_CAC']}},
@@ -302,7 +302,7 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', "schedule_add_type_func"], 'erro': [('void', 0)]}},
-                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'], 'erro': [('void', 0)]}}, # to do validar
+                    {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'], 'erro': [('void', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('sinc_scopo',0),('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param','schedule_pop_scopo']}},
@@ -311,11 +311,11 @@ get_functions = {
     'parameters': [
                 {"test": [ #<PARAMETERS>
                     {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1),("val_param",0)], 's': {"do": ['schedule_validate_param']}},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's': {"do": ['swap_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <MULT_PARAMETERS>
                     {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['swap_scopo','move_next_param']}},
-                    {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['swap_scopo']}},
+                    {'is_terminal': True, "key": 'token', "value": [''], 'next': []}, # ,'s':{'do':['swap_scopo']}
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 
                     {'is_terminal': False, "terminais": [("value", 0)], 'next': [('parameters', 1),("val_param",0)], 's': {"do": ['schedule_validate_param']}},

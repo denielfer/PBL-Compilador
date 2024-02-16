@@ -36,7 +36,7 @@ def analize(stage, pos_stage, action, token, log_sem= None):
             d = []
             for programado in tabela['programado']:
                 if programado['when'] == (stage, pos_stage):
-                    print(f"Programado triggered: {programado['when']} -> {programado['log_rep']}", file=log_sem)
+                    print(f"Programado triggered: {programado['when']} -> {programado['log_rep']}",scopo, file=log_sem)
                     d.append(programado)
                     # print(programado,file=log_sem)
                     # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
@@ -89,7 +89,7 @@ def log(func):
         r = func(controle, token, tabela, scopo, log_sem)
         try:
             # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
-            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), " scopo"+ json.dumps(tabela['scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         except ValueError:
             print(' Data nao pode ser representado pois ele contem loop de referencia.\n', " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         return r
@@ -530,7 +530,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if 'programado' not in tabela:
                 tabela['programado'] = []
             def temp():
-                tabela['scopo'].pop()
+                _scopo = tabela['scopo'].pop()
+                scopo.clear()
+                for s in _scopo:
+                    scopo.append(s)
             tabela['programado'].append({'when':('close_parentesis',0), 
                                          'do':[
                                             (temp,
