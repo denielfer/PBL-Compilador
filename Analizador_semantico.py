@@ -380,14 +380,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'atribuição':
             try:
                 if tabela['stack'][-4] == 'True':
-                    print('zojsbndiopanlsç',file=log_sem)
                     return f"Na linha {token['line']}, tentativa de atribuir valor a função, {tabela['stack'][-2]}"
             except:
                 pass
             #stack: ...,ide
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            print('alskndopáshnpjoldnaslç',tabela['stack'][-4:],file=log_sem)
             tabela['programado'].append({'when': (';', 0), 
                                          'do': [
                                                     (validate_same_type_with_stack_last,
@@ -826,6 +824,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                         'log_rep':'change_back_scopo_prog'
                                     }
                                 )
+        case 'validate_is_class':
+            if token['token'] not in tabela['global']:
+                return f"Na linha {token['line']}, {token['token']} não foi declarado como classe"
         case _:
             pass
 
@@ -867,7 +868,7 @@ def val_ret(tabela,scopo,token,file=None):
     tipo = a[func]['type']
     _tipe = tabela['stack'][-1]
     if tipo != _tipe:
-        return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {_tipe}"  
+        return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}" #, porém é {_tipe}  
             
 
 def clean_last_scopo(last_scopo):

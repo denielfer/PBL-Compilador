@@ -6,6 +6,7 @@ Referente a resolução do Problema 3 - Analisador Sintático, para a disciplina
 
 # Analisador Semantico
 
+Referente a resolução do Problema 3 - Analisador Semantico, para a disciplina MI - Processamento de Linguagem de Programação(EXA869) da Universidade Estadual de Feira de Santana. Desenvolvido em python versão: 3.10.12. Testes feitos em Windowns 11, versão versão 22H2 ( Compilação do Sistema Operacional 22621.2715 ) e ubuntu 22.04.
 foi feito com o extends usando copia, no qual os dados da copia da classe mae é copiada para a classe filha.
 
 ## Grupo formado por

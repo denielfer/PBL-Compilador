@@ -138,7 +138,7 @@ get_functions = {
     'func_dec': [
                 {'test': [
                     {'is_terminal': True, "key": 'token', "value": TYPES, 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack'], 'erro':[('func_dec', 0)]}},
-                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack'], 'erro':[('func_dec', 0)]}},
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('func_dec', 1)], 's': {'do': ['clear_stack','append_stack', 'validate_is_class'], 'erro':[('func_dec', 0)]}},
                     {'is_terminal': True, "key": 'type', "value": [''], 'next': [], 's': {'do': ['clear_stack']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {'test': [
