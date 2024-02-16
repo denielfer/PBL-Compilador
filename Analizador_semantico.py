@@ -261,43 +261,28 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'return_func_data':
             pass
         case 'validate_return':
-            tabela['last_scopo'].clear()
-            # stack: ...,func, ??
-            scopo.pop()
-            func = scopo.pop()
-            # stack: ...,
-            a = _get_scopo(tabela, scopo)
-            tipo = a[func]['type']
-            if token['type'] == 'IDE': # se retorno ide
-                scopo_var = a[func]['data']
-                if token["token"] not in scopo_var:
-                            return f"Na linha {token['line']}, no retorno da função {func} tentou retorna {token['token']}, porém este nao existe no scopo"
-                else:
-                    if scopo_var[token['token']]['type'] != tipo:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {scopo_var[token['token']]['type']}"
-            else:
-                match tipo:
-                    case 'string':
-                        if token["type"] != 'CAC':
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'boolean':
-                        if token["token"] not in BOOL:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'real':
-                        if token["type"] != 'NRO' and '.' not in token["token"]:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'int':
-                        if token["type"] != 'NRO' and '.' in token["token"]:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"
-                    case 'void':
-                        return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}"    
-                    case _:
-                        a = _get_in_scopo(token['token'], tabela, scopo + [func, 'data'])
-                        if token['token'] not in a:
-                            return f"Na linha {token['line']}, tentou retorna {token['token']}, porem não existe no scopo"
-                        elif a[token['token']]['type'] != a[func]['type']:
-                            return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {token['token']}, do tipo {a[token['token']]['type']}"  
-
+            def a():
+                tabela['last_scopo'].clear()
+                # stack: ...,func, ??
+                scopo.pop()
+                func = scopo.pop()
+                # stack: ...,
+                a = _get_scopo(tabela, scopo)
+                tipo = a[func]['type']
+                _tipe = tabela['stack'][-1]
+                if tipo != _tipe:
+                    return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {_tipe}"  
+            
+            if 'programado' not in tabela:
+                tabela['programado'] = []
+            tabela['programado'].append({'when': (';', 0), 
+                                         'do': [
+                                                    (a,{})
+                                                ],
+                                        'log_rep':'return_prog'
+                                    }
+                                )
+            
         case "validate_return_void":
             if 'programado' in tabela:
                 tabela['programado'].clear()
