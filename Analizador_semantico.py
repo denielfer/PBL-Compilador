@@ -763,6 +763,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             pass
 
 def val_param(tabela,scopo,token):
+        tabela['stack'].pop()
         a = _get_scopo(tabela,scopo)
         index = int(tabela['stack'][-2])
         tipo = tabela['stack'][-1]
