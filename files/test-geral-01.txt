@@ -136,45 +136,45 @@ constructor(string nome, int idade, real peso, boolean genero){
 }
 class Funcionario extends Pessoa {
     variables{
-    int num_registro;
-    string setor;
-    boolean is_gerente;
-    int folga;
-}
-objects{
-    Pessoa dependente;
-}
-methods{
-    void is_gerente(){
+        int num_registro;
+        string setor;
+        boolean is_gerente;
+        int folga;
+    }
+    objects{
+        Pessoa dependente;
+    }
+    methods{
+        void is_gerente(){
+            variables{}
+            objects{}
+            if(is_gerente) then {
+                print("Gerente");
+            } else {
+                print("Nao eh gerente");
+            }
+            return;
+        }
+        void folga(){
+            variables{}
+                objects{}
+            print("informe quantos dias de folga serao adicionados");
+            read(this.folga);
+            return;
+        }
+    }
+    constructor(string nome, int idade, real peso, boolean genero, int num_registro,string setor, boolean is_gerente, string nome_dep,int idade_dep, real peso_dep, boolean genero_dep){
         variables{}
         objects{}
-    if(is_gerente) then {
-        print("Gerente");
-} else {
-    print("Nao eh gerente");
-}
-return;
-}
-void folga(){
-    variables{}
-        objects{}
-    print("informe quantos dias de folga serao adicionados");
-    read(this.folga);
-    return;
-}
-}
-constructor(string nome, int idade, real peso, boolean genero, int num_registro,string setor, boolean is_gerente, string nome_dep,int idade_dep, real peso_dep, boolean genero_dep){
-    variables{}
-    objects{}
-    this.nome = nome;
-    this.idade = idade;
-    this.peso = peso;
-    this.genero = genero;
-    this.num_registro = num_registro;
-    this.setor = setor;
-    this.is_gerente = is_gerente;
-this.dependente = Pessoa->constructor(nome_dep, idade_dep, peso_dep, genero_dep);
-}
+        this.nome = nome;
+        this.idade = idade;
+        this.peso = peso;
+        this.genero = genero;
+        this.num_registro = num_registro;
+        this.setor = setor;
+        this.is_gerente = is_gerente;
+        this.dependente = Pessoa->constructor(nome_dep, idade_dep, peso_dep, genero_dep);
+    }
 }
 class main {
     variables{

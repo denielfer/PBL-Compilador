@@ -325,7 +325,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 if var not in a:
                     return f"Na linha {token['line']}, variavel {token['token']} não foi encontrada"  
                 #stack: ...,
-                tabela['stack'].append(var)
+                tabela['stack'].append(str('param' in a[var]))
+                tabela['stack'].append(a[var]['type'])
                 tabela['stack'].append(var)
                 #stack: ..., var
         case 'add_void_stack':
@@ -377,9 +378,16 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 scopo.append('data')
                 tabela['stack'].append(tabela['stack'][-2])
         case 'atribuição':
+            try:
+                if tabela['stack'][-4] == 'True':
+                    print('zojsbndiopanlsç',file=log_sem)
+                    return f"Na linha {token['line']}, tentativa de atribuir valor a função, {tabela['stack'][-2]}"
+            except:
+                pass
             #stack: ...,ide
             if 'programado' not in tabela:
                 tabela['programado'] = []
+            print('alskndopáshnpjoldnaslç',tabela['stack'][-4:],file=log_sem)
             tabela['programado'].append({'when': (';', 0), 
                                          'do': [
                                                     (validate_same_type_with_stack_last,
@@ -387,7 +395,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                         "type":tabela['stack'][-1],
                                                         'tabela': tabela,
                                                         'process':lambda _, y, z: z.replace('\%\%', y),
-                                                        "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% em {tabela['stack'][-2]} que é do tipo {tabela['stack'][-1]}"
+                                                        "erro_msg":f"Na linha {token['line']}, tentativa de atribuir \%\% em {tabela['stack'][-2]} que é do tipo {tabela['stack'][-1]}",
+                                                        'file':log_sem
                                                     }
                                                     )
                                                 ],
@@ -471,21 +480,28 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
-            _this = tabela['stack'].pop() 
-            var = tabela['stack'][-1]
+            var = tabela['stack'].pop() 
+            tipo = tabela['stack'][-1]
             a = _get_in_scopo(var,tabela,scopo)
-            if a == tabela['global'] and _this != 'this':
-                return f"Na linha {token['line']}, {var} não é objeto"
-            if var in a:
-                if a[var]['type'] in TYPES:
-                    return f"Na linha {token['line']}, usando variavel {var} como objeto, porém esta é tipo {a[var]['type']}"
-            _scopo = _get_scopo_of(var,tabela,scopo)
-            scopo.clear()
-            for s in _scopo:
-                scopo.append(s)
-            scopo.append(tabela['stack'][-1])
-            scopo.append('data')
-            # scopo: ..., class, 'data', method, 'data', objeto, 'data'
+            if var != 'this':
+                if  a == tabela['global']:
+                    return f"Na linha {token['line']}, {var} não é objeto"
+                if var in a:
+                    if a[var]['type'] in TYPES:
+                        return f"Na linha {token['line']}, usando variavel {var} como objeto, porém esta é tipo {a[var]['type']}"
+                _scopo = _get_scopo_of(var,tabela,scopo)
+                scopo.clear()
+                for s in _scopo:
+                    scopo.append(s)
+                scopo.append(var)
+                scopo.append('data')
+                # scopo: ..., class, 'data', method, 'data', objeto, 'data'
+            else:
+                scopo.clear()
+                scopo.append('global')
+                scopo.append(tipo)
+                scopo.append('data')
+
         case 'move_scopo_back':
             if tabela['last_scopo'] != []:
                 while len(scopo) != 0:
@@ -497,6 +513,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como atributo do objeto {scopo[-2]}"
+            tabela['stack'].append(str( 'param' in a[token['token']]))
             tabela['stack'].append(token['token'])
             tabela['stack'].append(token['token'])
         case 'acess_method':
@@ -588,7 +605,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                             (valid_qtd_param,
                                             {
                                                 'tabela': tabela,
-                                                'scopo': scopo,
+                                                'qtd_param_req':len(_get_scopo(tabela,scopo))-1,
                                                 "msg":f"Na linha {token['line']}, quantidade de parametros não conferem, 99 foram fornecidos porém 00 são nescessarios"
                                             }
                                             )
@@ -681,9 +698,10 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                          'do': [
                                             (validate_type_relacional,
                                             {
-                                                'tipo':tabela['stack'][-1], 
+                                                'tipo':tabela['stack'][-2], 
                                                 'tabela':tabela, 
                                                 'erro_msg':f"Na linha {token['line']}, operação relacional com tipo diferentes", 
+                                                'file':log_sem
                                             }
                                             )
                                         ],
@@ -855,8 +873,9 @@ def val_ret(tabela,scopo,token,file=None):
 def clean_last_scopo(last_scopo):
     last_scopo.clear()
 
-def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, process:str=None):
+def validate_same_type_with_stack_last(type:str, tabela, erro_msg:str, process:str=None,file=None):
     _type = tabela['stack'][-1]
+    print(type,_type,file=file)
     if type != _type:
         if process:
             erro_msg = process(type, _type, erro_msg)
@@ -877,7 +896,7 @@ def change_back_scopo(_scopo,scopo):
         for a in _scopo:
             scopo.append(a)
 
-def valid_qtd_param(tabela, scopo, msg:str):
+def valid_qtd_param(tabela,qtd_param_req, msg:str):
     a = -1
     while a > - len(tabela['stack']): # procura o ultimo numero, concerteza tem 0
         if tabela['stack'][a].isdigit():
@@ -887,7 +906,6 @@ def valid_qtd_param(tabela, scopo, msg:str):
     a = int(a)
     if a < 0:
         a = 0
-    qtd_param_req = len(_get_scopo(tabela, scopo))-1
     if qtd_param_req <0:
         qtd_param_req=0
     msg = msg.replace('99', str(a)).replace('00', str(qtd_param_req))
@@ -903,8 +921,9 @@ def validate_type_arit_expression(tipo,tabela,erro_msg):
     if tabela['stack'][-2] != tipo:
         return erro_msg
 
-def validate_type_relacional(tipo,tabela,erro_msg):
+def validate_type_relacional(tipo,tabela,erro_msg,file):
     tabela['stack'].append('boolean')
+    print(tipo,tabela['stack'][-4:],file=file)
     if tipo in ['real','int']:
         if tabela['stack'][-2] not in ['real','int']:
             return erro_msg

@@ -211,7 +211,7 @@ get_functions = {
                                                                                 ("if", 4), # '{' <command> '}'
                                                                                 ("close_parentesis", 0),
                                                                                 ('var_assinement', 2),
-                                                                                ('object_access', 1),
+                                                                                ('object_access', 2),
                                                                                 (";", 0),
                                                                                 ('relational_expression_value', 2),
                                                                                 ('relational_expression_value', 3),
@@ -305,7 +305,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'], 'erro': [('void', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('sinc_scopo',0),('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param','schedule_pop_scopo']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('sinc_scopo',0),('close_parentesis', 0), ("parameters", 0)], 's': {'do': [ 'schedule_validate_qtd_param','add_scopo_func_call','schedule_pop_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
@@ -411,7 +411,10 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("object_access", 0), ('din_scopo_swap_back',0) , ("dimention_acess", 0), ('din_scopo_swap',0)], 's': {'do': ['validate_atr', 'add_void_stack'], 'erro': [(';', 0)]}},
-                ], 'erro': {'tipo_recuperação': 'next'}},                                 
+                ], 'erro': {'tipo_recuperação': 'next'}},    
+                {"test": [
+                    {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [("object_access", 0), ('din_scopo_swap_back',0) , ("dimention_acess", 0), ('din_scopo_swap',0)], 's': {'do': ['validate_IDE', 'add_void_stack'], 'erro': [(';', 0)]}},
+                ], 'erro': {'tipo_recuperação': 'next'}},                               
                ],
     ';': [ # (";",0),
                 {"test": [
