@@ -89,7 +89,8 @@ def log(func):
         r = func(controle, token, tabela, scopo, log_sem)
         try:
             # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
-            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), " scopo"+ json.dumps(tabela['scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            # print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), " scopo"+ json.dumps(tabela['scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            print(" stack:" + json.dumps(tabela['stack'][-10:], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         except ValueError:
             print(' Data nao pode ser representado pois ele contem loop de referencia.\n', " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         return r
@@ -261,23 +262,18 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'return_func_data':
             pass
         case 'validate_return':
-            def a():
-                tabela['last_scopo'].clear()
-                # stack: ...,func, ??
-                scopo.pop()
-                func = scopo.pop()
-                # stack: ...,
-                a = _get_scopo(tabela, scopo)
-                tipo = a[func]['type']
-                _tipe = tabela['stack'][-1]
-                if tipo != _tipe:
-                    return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {_tipe}"  
-            
             if 'programado' not in tabela:
                 tabela['programado'] = []
             tabela['programado'].append({'when': (';', 0), 
                                          'do': [
-                                                    (a,{})
+                                                    (
+                                                        val_ret,
+                                                        {'tabela':tabela,
+                                                         'scopo':scopo,
+                                                         'token':token,
+                                                         'file':log_sem
+                                                        }
+                                                    )
                                                 ],
                                         'log_rep':'return_prog'
                                     }
@@ -483,14 +479,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if var in a:
                 if a[var]['type'] in TYPES:
                     return f"Na linha {token['line']}, usando variavel {var} como objeto, porém esta é tipo {a[var]['type']}"
-            print('ojasndkolpnmasklopdm',file=log_sem)
             _scopo = _get_scopo_of(var,tabela,scopo)
             scopo.clear()
             for s in _scopo:
                 scopo.append(s)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
-            print(scopo,file=log_sem)
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'
         case 'move_scopo_back':
             if tabela['last_scopo'] != []:
@@ -503,6 +497,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             a = _get_scopo(tabela, scopo)
             if token['token'] not in a:
                 return f"Na linha {token['line']}, {token['token']} não foi encontrado como atributo do objeto {scopo[-2]}"
+            tabela['stack'].append(token['token'])
             tabela['stack'].append(token['token'])
         case 'acess_method':
             a = _get_scopo(tabela, scopo)
@@ -546,6 +541,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             scopo.clear()
             for a in tabela['last_scopo']:
                 scopo.append(a)
+            tabela['scopo'].append(copy.deepcopy(tabela['last_scopo']))
             tabela['last_scopo'].clear()
         case 'swap_scopo':
             _scopo = tabela['scopo'].pop()
@@ -554,13 +550,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             for a in _scopo:
                 scopo.append(a)
         case 'schedule_pop_scopo':
+            return
             if 'programado' not in tabela:
                 tabela['programado'] = []
-            def temp():
-                _scopo = tabela['scopo'].pop()
-                scopo.clear()
-                for s in _scopo:
-                    scopo.append(s)
             tabela['programado'].append({'when':('close_parentesis',0), 
                                          'do':[
                                             (temp,
@@ -839,6 +831,26 @@ def val_param(tabela,scopo,token):
         if ( _tipo != tipo):
             return f"Na linha {token['line']}, o parametro {index+1} da função {scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
         
+
+def temp():
+    _scopo = tabela['scopo'].pop()
+    scopo.clear()
+    for s in _scopo:
+        scopo.append(s)
+
+def val_ret(tabela,scopo,token,file=None):
+    print(tabela['stack'][-5:],file=file)
+    tabela['last_scopo'].clear()
+    # stack: ...,func, ??
+    scopo.pop()
+    func = scopo.pop()
+    # stack: ...,
+    a = _get_scopo(tabela, scopo)
+    tipo = a[func]['type']
+    _tipe = tabela['stack'][-1]
+    if tipo != _tipe:
+        return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}, porém é {_tipe}"  
+            
 
 def clean_last_scopo(last_scopo):
     last_scopo.clear()
