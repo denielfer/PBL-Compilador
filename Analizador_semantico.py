@@ -25,7 +25,7 @@ def analize(stage, pos_stage, action, token, log_sem= None):
             # if ret is limpa_last_erro:
             #     erros_semantico.pop()
             # elif ret is not None:
-            if ret is not None:
+            if ret is not None and (type(ret) != list or ret[0] != '[') :
                 print(ret, file=log_sem)
                 erros_semantico.append(ret)
                 if 'erro' in action['s']:
@@ -525,9 +525,11 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'schedule_pop_scopo':
             if 'programado' not in tabela:
                 tabela['programado'] = []
+            def temp():
+                tabela['scopo'].pop()
             tabela['programado'].append({'when':('close_parentesis',0), 
                                          'do':[
-                                            (lambda :tabela['scopo'].pop(),
+                                            (temp,
                                             {}
                                             )
                                         ],
