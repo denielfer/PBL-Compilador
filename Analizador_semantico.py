@@ -336,23 +336,50 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             #stack: ...,
             tabela['stack'].append('void')
             #stack: ..., var
+        # case 'validate_last_object':
+        #     ide = tabela['stack'][-2]
+        #     a = _get_in_scopo(ide, tabela, scopo)
+        #     if a[ide]['type'] in TYPES:
+        #         return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
+        #     if tabela['last_scopo'] == []:
+        #         tabela['last_scopo'] = copy.deepcopy(scopo)
+        #     if tabela['stack'][-1] == 'class':
+        #         scopo.clear()
+        #         scopo.append('global')
+        #     else:
+        #         _scopo = _get_scopo_of(ide, tabela, scopo)#,log_sem)
+        #         scopo.clear()
+        #         for s in _scopo:
+        #             scopo.append(s)
+        #     scopo.append(ide)
+        #     scopo.append('data')
+            
         case 'validate_last_object':
             ide = tabela['stack'][-2]
-            a = _get_in_scopo(ide, tabela, scopo)
-            if a[ide]['type'] in TYPES:
-                return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
-            if tabela['last_scopo'] == []:
-                tabela['last_scopo'] = copy.deepcopy(scopo)
-            if tabela['stack'][-1] == 'class':
+            if tabela['stack'][-1] != 'this':
+                a = _get_in_scopo(ide, tabela, scopo)
+                if a[ide]['type'] in TYPES:
+                    return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
+                if tabela['last_scopo'] == []:
+                    tabela['last_scopo'] = copy.deepcopy(scopo)
+                if tabela['stack'][-2] == 'class':
+                    scopo.clear()
+                    scopo.append('global')
+                else:
+                    _scopo = _get_scopo_of(ide, tabela, scopo)#,log_sem)
+                    scopo.clear()
+                    for s in _scopo:
+                        scopo.append(s)
+                scopo.append(ide)
+                scopo.append('data')
+            else:
+                if tabela['last_scopo'] == []:
+                    tabela['last_scopo'] = copy.deepcopy(scopo)
                 scopo.clear()
                 scopo.append('global')
-            else:
-                _scopo = _get_scopo_of(ide, tabela, scopo)#,log_sem)
-                scopo.clear()
-                for s in _scopo:
-                    scopo.append(s)
-            scopo.append(ide)
-            scopo.append('data')
+                scopo.append(tabela['stack'][-2])
+                scopo.append('data')
+                tabela['stack'].append(tabela['stack'][-2])
         case 'atribuição':
             #stack: ...,ide
             if 'programado' not in tabela:
