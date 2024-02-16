@@ -9,7 +9,7 @@ variables {
     int a[sete], b, c;
     boolean aa, a_2;
     real b0_c;
-    real umbhnui[90], dois, tres4quatro;
+    real umbhnui[90], tres4quatro;
 }
 class main{
     variables {
