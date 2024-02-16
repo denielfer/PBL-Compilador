@@ -460,7 +460,12 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
         case 'validate_object':
             if tabela['last_scopo'] == []:
                 tabela['last_scopo'] = copy.deepcopy(scopo)  # scopo: ..., class, 'data', method, 'data'
-            scopo = _get_scopo_of(tabela['stack'][-1],tabela,scopo)
+            var = tabela['stack'][-1]
+            a = _get_in_scopo(var,tabela,scopo)
+            if var in a:
+                if a[var]['type'] in TYPES:
+                    return f"Na linha {token['line']}, usando variavel {var} como objeto, porém esta é tipo {a[var]['type']}"
+            scopo = _get_scopo_of(var,tabela,scopo)
             scopo.append(tabela['stack'][-1])
             scopo.append('data')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data'

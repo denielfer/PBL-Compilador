@@ -402,7 +402,7 @@ get_functions = {
     'object_access': [ 
         # <DEC_OBJECT_ATRIBUTE_ACCESS> -> começa do index 1
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['.'], 'next': [("object_access", 1)], 's': {'do': ['validate_object']}},
+                    {'is_terminal': True, "key": 'token', "value": ['.'], 'next': [("object_access", 1)], 's': {'do': ['validate_object','pop_stack'],'erro':[(';',0)]}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [],'s':{'do':['add_last_var_type']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
