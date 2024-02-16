@@ -301,7 +301,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void',0),('method_access', 2)], 's': {'do': ['acess_method', 'schedule_add_type_func'],'erro':[('void',0)]}},#to do validar
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('close_parentesis', 0), ("parameters", 0)], 's': {'do': ['add_scopo_func_call', 'schedule_validate_qtd_param','schedule_pop_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
