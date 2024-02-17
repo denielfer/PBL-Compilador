@@ -71,20 +71,11 @@ Comparando: teste_2-saida.txt
 	Na linha 103, tentando chamar construtor de objeto e não class
 	Na linha 85, foi dado um 2 parametro para função showTeachers, porém ela so recebe 0
  Linhas diferentes: 520
-	Na linha 105, operação relacional com tipo diferentes
+	Na linha 156, tentando chamar construtor de objeto e não class
 	Na linha 101, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
  Linhas diferentes: 521
-	Na linha 117, operação relacional com tipo diferentes
-	Na linha 102, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
- Linhas diferentes: 522
-	Na linha 122, operação relacional com tipo diferentes
-	Na linha 103, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
- Linhas diferentes: 523
-	Na linha 156, tentando chamar construtor de objeto e não class
-	Na linha 105, operação relacional com tipo diferentes
- Linhas diferentes: 524
 	Na linha 160, o parametro 1 da função main é do tipo string, e deveria ser real
-	Na linha 117, operação relacional com tipo diferentes
+	Na linha 102, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
 Comparando: teste_2.txt
 Comparando: teste_thiago-saida.txt
  Linhas diferentes: 221

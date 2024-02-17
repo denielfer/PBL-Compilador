@@ -700,7 +700,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                          'do': [
                                             (validate_type_relacional,
                                             {
-                                                'tipo':tabela['stack'][-2], 
+                                                'tipo':tabela['stack'][-4], 
                                                 'tabela':tabela, 
                                                 'erro_msg':f"Na linha {token['line']}, operação relacional com tipo diferentes", 
                                                 'file':log_sem
