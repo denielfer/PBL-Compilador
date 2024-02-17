@@ -319,6 +319,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             var = token['token']
             a = _get_in_scopo(var, tabela, scopo)
             if var == 'this':
+                tabela['stack'].append(str(False))
                 tabela['stack'].append(scopo[1])
                 tabela['stack'].append(var)
             else:
@@ -353,13 +354,13 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             
         case 'validate_last_object':
             ide = tabela['stack'][-2]
-            if tabela['stack'][-1] != 'this':
+            if ide != 'this':
                 a = _get_in_scopo(ide, tabela, scopo)
                 if a[ide]['type'] in TYPES:
                     return f"Na linha {token['line']}, variavel {ide} foi acessada como objeto, porém é {a[ide]['type']}" 
                 if tabela['last_scopo'] == []:
                     tabela['last_scopo'] = copy.deepcopy(scopo)
-                if tabela['stack'][-2] == 'class':
+                if tabela['stack'][-3] == 'class':
                     scopo.clear()
                     scopo.append('global')
                 else:
@@ -374,9 +375,9 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                     tabela['last_scopo'] = copy.deepcopy(scopo)
                 scopo.clear()
                 scopo.append('global')
-                scopo.append(tabela['stack'][-2])
+                scopo.append(tabela['stack'][-3])
                 scopo.append('data')
-                tabela['stack'].append(tabela['stack'][-2])
+                tabela['stack'].append(tabela['stack'][-3])
         case 'atribuição':
             try:
                 if tabela['stack'][-4] == 'True':
@@ -516,13 +517,14 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             tabela['stack'].append(token['token'])
         case 'acess_method':
             a = _get_scopo(tabela, scopo)
+            print(tabela['stack'][-10:],file=log_sem)
             if token['token'] not in a:
                 if tabela['last_scopo'] != []:
                     scopo.clear()
                     for a in tabela['last_scopo']:
                         scopo.append(a)
                     tabela['last_scopo'].clear()
-                return f"Na linha {token['line']}, {token['token']} não foi encontrado como metodo do objeto da classe {tabela['stack'][-1]}"
+                return f"Na linha {token['line']}, {token['token']} não foi encontrado como metodo do objeto da classe {tabela['stack'][-2]}"
             scopo.append(token['token'])
             scopo.append('param')
             # scopo: ..., class, 'data', method, 'data', objeto, 'data', func, 'param'
@@ -663,6 +665,8 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                 a = _get_in_scopo(var,tabela, scopo)
                 tabela['stack'].append(a[var]['type'])
             except Exception as e:
+                if tabela['stack'][-1] == 'this':
+                    tabela['stack'].append(scopo[1])
                 # import traceback
                 # print('\n\n',traceback.format_exc(),file=log_sem)
                 print(' Erro: ',e,file=log_sem)
@@ -809,6 +813,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                     }
                                 )
         case 'schedule_change_back_scopo_parent':
+            return
             if 'programado' not in tabela:
                 tabela['programado'] = []
             tabela['programado'].append({'when':('method_access', 2), 
@@ -817,16 +822,26 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                 change_back_scopo,
                                                 {
                                                     '_scopo':copy.deepcopy(scopo),
-                                                    'scopo':scopo
+                                                    'scopo':scopo,
+                                                    'file':log_sem
                                                 }
                                             )
                                         ],
-                                        'log_rep':'change_back_scopo_prog'
+                                        'log_rep':'change_back_scopo_parent_prog'
                                     }
                                 )
         case 'validate_is_class':
             if token['token'] not in tabela['global']:
                 return f"Na linha {token['line']}, {token['token']} não foi declarado como classe"
+        case 'validate_constructor':
+            print(tabela['scopo'],file=log_sem)
+            if tabela['stack'][-3] != 'class':
+                if tabela['last_scopo'] != []:
+                    scopo.clear()
+                    for s in tabela['last_scopo']:
+                        scopo.append(s)
+                    tabela['last_scopo'].clear()
+                return f"Na linha {token['line']}, tentando chamar construtor de objeto e não class"
         case _:
             pass
 
@@ -858,7 +873,6 @@ def temp():
         scopo.append(s)
 
 def val_ret(tabela,scopo,token,file=None):
-    print(tabela['stack'][-5:],file=file)
     tabela['last_scopo'].clear()
     # stack: ...,func, ??
     scopo.pop()
@@ -867,6 +881,7 @@ def val_ret(tabela,scopo,token,file=None):
     a = _get_scopo(tabela, scopo)
     tipo = a[func]['type']
     _tipe = tabela['stack'][-1]
+    print(tabela['stack'][-1:],tipo,file=file)
     if tipo != _tipe:
         return f"Na linha {token['line']}, retorno da função {func} devia ser {tipo}" #, porém é {_tipe}  
             
@@ -890,7 +905,8 @@ def validate_last_in_types(tabela, erro_msg:str):
     except :
         return erro_msg
 
-def change_back_scopo(_scopo,scopo):
+def change_back_scopo(_scopo,scopo,file=None):
+    print(_scopo,scopo,file=file)
     if _scopo != []:
         while len(scopo) !=0:
             scopo.pop()

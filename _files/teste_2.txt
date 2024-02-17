@@ -1,0 +1,169 @@
+const {
+    real pi = 3.1415;
+}
+variables {
+}
+class Person {
+    variables{
+        string name;
+        int age;
+    }
+    objects{
+    }
+    methods{
+        void changeName(string name){
+            variables {}
+            objects {}
+
+            this.name = name;
+
+            return;
+        }
+
+        void changeAge(real age) {
+            variables {}
+            objects {}
+
+            this.age = age; // Erro de tipos diferentes.
+
+            return;
+        }
+    }
+    constructor (string name, int age) {
+        variables{}
+        objects{}
+        
+        this.name = name;
+        this.age = age;
+    }
+}
+class Teacher extends Person {
+    variables{
+        string school;
+        string area;
+        int age;
+    }
+    objects{
+    }
+    methods{
+        int getAge() {
+            variables{
+                int my_age;
+            }
+            objects{}
+
+            my_age = this.age;
+
+            return my_age;
+        }
+    }
+    constructor (string school, string area) {
+        variables{}
+        objects{}
+        
+        this.school = school;
+        this.area = area;
+    }
+}
+class School {
+    variables{
+        string name;
+        int cafe;
+    }
+    objects{
+        Teacher t1;
+        Teacher t2;
+        Teacher t3;
+    }
+    methods{
+        void showTeachers() {
+            variables{}
+            objects{}
+
+            t1->constructor(this.name, "Geografia");
+            t2->constructor(this.name, "Matematica");
+            t3->constructor(this.name, "Fisica");
+
+            print(t1);
+            print(t2);
+            print(t3);
+
+            return;
+        }
+        boolean removeTeacher(string teacher_name) {
+            variables{
+                boolean flag;
+            }
+            objects{}
+
+            flag = false;
+
+            t1->constructor(this.name, "Geografia");
+            t2->constructor(this.name, "Matematica");
+            t3->constructor(this.name, "Fisica");
+
+            if (teacher_name == this.name) then {
+                print("Removendo t1");
+
+                flag = true;
+            }
+
+            if (this.name == teacher_name) then {
+                print("Removendo t1");
+
+                flag = true;
+            }
+            else {
+                if (teacher_name == t2.name) then {
+                    print("Removendo t2");
+
+                    flag = true;
+                } else {
+                    if (teacher_name == t3.name) then {
+                        print("Removendo t3");
+
+                        flag = true;
+                    } else {
+                        print("Nao existe");
+                    }
+                }
+            }
+
+            return flag;
+        }
+    }
+    constructor (string name) {
+        variables{}
+        objects{}
+        
+        this.name = name;
+    }
+}
+class main{
+    variables {
+    }
+    objects {
+        School s1;
+    }
+    methods{ 
+        void main(){
+            variables {
+                real circle_area;
+                real radius;
+            }
+            objects {}
+            
+            s1->constructor("Escola Novo Horizonte");
+
+            s1->showTeachers();
+
+            s1->removeTeacher("Ronaldo");
+
+            circle_area = (2.0 * pi) * radius;
+
+            return;
+        }
+    }
+}
+
+

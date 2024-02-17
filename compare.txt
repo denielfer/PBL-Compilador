@@ -1,0 +1,99 @@
+Comparando: class-erro-saida.txt
+Comparando: class-erro.txt
+Comparando: const+var-erro-saida.txt
+Comparando: const+var-erro.txt
+Comparando: const+var-saida.txt
+Comparando: const+var.txt
+Comparando: const-saida.txt
+Comparando: const.txt
+Comparando: duplicate-extends-saida.txt
+ Linhas diferentes: 358
+	Na linha 63, aaa não foi encontrado como metodo do objeto da classe pessoa
+	Na linha 63, aaa não foi encontrado como metodo do objeto da classe qwe
+Comparando: duplicate-extends.txt
+Comparando: Gramatica geral-saida.txt
+Comparando: Gramatica geral.txt
+Comparando: gramatica_testes-saida.txt
+Comparando: gramatica_testes.txt
+Comparando: minimo_gramatica-saida.txt
+Comparando: minimo_gramatica.txt
+Comparando: test-geral-01-saida.txt
+Comparando: test-geral-01.txt
+Comparando: test-geral-02-saida.txt
+Comparando: test-geral-02.txt
+Comparando: test-geral-03-saida.txt
+Comparando: test-geral-03.txt
+Comparando: test-geral-04-saida.txt
+Comparando: test-geral-04.txt
+Comparando: Teste da Gram�tica Geral - 2-saida.txt
+Comparando: Teste da Gram�tica Geral - 2.txt
+Comparando: Teste da Gram�tica Geral_sei_la_qual-saida.txt
+Comparando: Teste da Gram�tica Geral_sei_la_qual.txt
+Comparando: teste-com-erros-saida.txt
+ Linhas diferentes: 378
+	Na linha 65, o parametro 1 da função metodo1 é do tipo real, e deveria ser int
+	Na linha 65, variavel b não foi encontrada
+ Linhas diferentes: 379
+	Na linha 92, tipo de parametro bool não foi encontrado
+	Na linha 65, o parametro 1 da função metodo1 é do tipo 0, e deveria ser int
+ Linhas diferentes: 380
+	Na linha 102, tipo de parametro bool não foi encontrado
+	Na linha 92, tipo de parametro bool não foi encontrado
+ Linhas diferentes: 381
+	Na linha 109, classe Teste não foi encontrada
+	Na linha 102, tipo de parametro bool não foi encontrado
+Comparando: teste-com-erros.txt
+ Linhas diferentes: 92
+	        void tst(int b, bool a, int d){
+	        void tst(int b, boolean a, int d){
+ Linhas diferentes: 102
+	    constructor (int a, int b, bool c) {
+	    constructor (int a, int b, boolean c) {
+Comparando: teste_1-saida.txt
+Comparando: teste_1.txt
+Comparando: teste_2-saida.txt
+ Linhas diferentes: 514
+	Na linha 83, tentando chamar construtor de objeto e não class
+	Na linha 83, foi dado um 1 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 515
+	Na linha 84, tentando chamar construtor de objeto e não class
+	Na linha 83, foi dado um 2 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 516
+	Na linha 85, tentando chamar construtor de objeto e não class
+	Na linha 84, foi dado um 1 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 517
+	Na linha 101, tentando chamar construtor de objeto e não class
+	Na linha 84, foi dado um 2 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 518
+	Na linha 102, tentando chamar construtor de objeto e não class
+	Na linha 85, foi dado um 1 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 519
+	Na linha 103, tentando chamar construtor de objeto e não class
+	Na linha 85, foi dado um 2 parametro para função showTeachers, porém ela so recebe 0
+ Linhas diferentes: 520
+	Na linha 105, operação relacional com tipo diferentes
+	Na linha 101, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
+ Linhas diferentes: 521
+	Na linha 117, operação relacional com tipo diferentes
+	Na linha 102, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
+ Linhas diferentes: 522
+	Na linha 122, operação relacional com tipo diferentes
+	Na linha 103, o parametro 2 da função removeTeacher é do tipo string, e deveria ser boolean
+ Linhas diferentes: 523
+	Na linha 156, tentando chamar construtor de objeto e não class
+	Na linha 105, operação relacional com tipo diferentes
+ Linhas diferentes: 524
+	Na linha 160, o parametro 1 da função main é do tipo string, e deveria ser real
+	Na linha 117, operação relacional com tipo diferentes
+Comparando: teste_2.txt
+Comparando: teste_thiago-saida.txt
+ Linhas diferentes: 221
+	Na linha 41, tentando chamar construtor de objeto e não class
+	Na linha 41, o parametro 2 da função m2 é do tipo real, e deveria ser int
+Comparando: teste_thiago.txt
+Comparando: var-saida.txt
+Comparando: var.txt
+Comparando: var_erro-saida.txt
+Comparando: var_erro.txt
+______________________________________
+

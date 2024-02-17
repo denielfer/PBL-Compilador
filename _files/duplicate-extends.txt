@@ -1,0 +1,116 @@
+const {
+    int sete = 4;
+}
+
+variables {
+    real tres4quatro;
+    int vector[10], vector2[10];
+}
+
+class qwe{
+    variables{ int a;}
+    objects{}
+    methods{
+        int metodo1(int aaa) {
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class a extends a{
+    variables{
+        int var1;
+    }
+    
+    objects {
+        qwe pessoa;
+    }
+    
+    methods{
+        int a(int b, int c, int d){
+            variables{
+                string logical;
+                boolean truth;
+            }
+            objects{}
+            print(tres4quatro);
+            truth = !logical;
+            truth = true;
+            truth = !truth;
+            b = pessoa.a;
+            vector = vector2;
+            vector = tres4quatro;
+            vector2[1] = var1;
+            vector[1] = tres4quatro;
+            vector = [1, [2, 4], 3];
+            print(b);
+            logical++;
+            return 1;
+        }
+        int a(int b, int t, int d){
+            variables{
+            }
+            objects{
+            }
+            pessoa = qwe->constructor();
+            var1 = pessoa->aaa(1);
+            var1 = pessoa->metodo1(1);
+            print(var1);
+            print(2);
+            read(tres4quatro);
+            return 2;
+        }
+
+    }
+    
+    constructor (int a) {
+        variables{}
+        objects{}
+    }
+}
+
+class a extends qwe{
+    variables{
+        int b;
+    }
+    
+    objects {
+
+    }
+    
+    methods{
+
+    }
+    
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class main{
+    variables {
+        boolean flag;
+    }
+    objects {
+    }
+    methods{ 
+        void main(){
+            variables {}
+            objects {}
+            print(sete);
+            print("asdads");
+            print(1);
+            print(1.12);
+            
+            return;
+        }
+    }
+}

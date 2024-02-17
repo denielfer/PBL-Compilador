@@ -1,0 +1,146 @@
+﻿const {
+    int sete = 4, oito = 25;
+    real um = 4, dois = 1.1;
+    string variavel="false", variavel2="4";
+    boolean teste = false;
+    boolean teste_2 = true;
+}
+variables {
+    int a[sete], b, c;
+    boolean aa, a_2;
+    real b0_c;
+    int sete[a], oito[3];
+    real um[90], dois, tres4quatro;
+    string variavel, variavel2[2];
+    boolean teste[5], aaa;
+}
+class ewqweq{
+    variables{}
+    objects{}
+    methods{
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+class qwe{
+    variables{ int a,n;}
+    objects{}
+    methods{
+        int a(ewqweq b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+        int b(int b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+    }
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class Produto{
+    variables {
+        string name_product;
+        int value_product;
+    }
+    objects {
+    }
+    methods{}
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class a extends a{
+    variables{
+        int eko[sete];
+    }
+    
+    objects {
+        qwe pessoa[100];
+        Livro livro[tamanho];
+    }
+    
+    methods{
+        int a(int b, int c, int d){
+            variables{
+            }
+            objects{}
+            return 1;
+        }
+        int a(int b, int t, int d){
+            variables{
+                real t;
+            }
+            objects{
+                a a;
+            }
+            pessoa[1] = qwe->constructor();
+            eko = 0.0;
+            eko[eko] = "asasa";
+            eko = true;
+            a.pessoa[1]->a(1,2,3); 
+            a.pessoa[1]->a(1,2,3,5);
+            a.pessoa[1]->a(1,2);
+            a.pessoa[1]->b(1,2,3); 
+            a.pessoa[1]->b(1,2,3,5);
+            a.pessoa[1]->b(1,2);
+            a.pessoa[1].n++;
+            read(eko[1]);
+            read(sete);
+            //this.pessoa[1] = 1;
+            return 2;
+        }
+
+    }
+    
+    constructor (int size, int a) {
+        variables{
+        }
+        objects{
+            Produto produtos[500];
+        }
+        if(a>2)
+        then{}
+        else{}
+        for(a=0;a<size;a++) {
+            print("Nome:");
+            read(produtos[a].name_product);
+            print("Valor:");
+            read(produtos[a].value_product);
+            print("Produto adicionado com sucesso!");
+        }
+
+    }
+}
+
+class main{
+    variables {
+        boolean flag;
+    }
+    objects {
+        Math mat;
+    }
+    methods{ 
+        void main(){
+            variables {}
+            objects {}
+            print(sete);
+            print("asdads");
+            print(1);
+            print(1.12);
+            
+            return;
+        }
+    }
+}

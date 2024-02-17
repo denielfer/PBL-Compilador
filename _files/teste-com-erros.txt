@@ -1,0 +1,128 @@
+﻿const {
+    int sete = 4;
+    int c = 25;
+    real oito = 5.1, nove = 2.1;
+    string dez = "2";
+}
+variables {
+    int tamanho;
+    int h[tamanho];
+}
+
+class Pessoa{
+    variables{
+        int idade;
+        string dependentes[10];
+    }
+    
+    objects {}
+    
+    methods{
+        boolean metodo1(int a){
+            variables {
+                string b;
+                boolean teste;
+                int i;
+            }
+            objects {}
+            a = 2 / 3;
+            read(a);
+
+            if ( (teste) && (a > 2)) then {
+                a = 2 * 2;
+            } else {
+                a = 2 * 3;
+            }
+             for(i=1;i>=10;i=i+1){
+                this.idade = 5;
+                this.dependentes[i] = "um dependente";
+            }
+
+            return [teste,teste,teste,teste]; 
+        }
+    }   
+    constructor () {
+        variables{}
+        objects{}
+    }
+}
+
+class A {
+    variables{}
+    
+    objects {
+        Pessoa pessoa;
+    }
+    
+    methods{
+        int metodo1(int a){
+            variables {
+                real b;
+            }
+            objects {}
+            a++;
+
+            if (this.pessoa->metodo1(b)) then {
+                a = 2 * 2;
+            } else {
+                a = 2 * 3;
+            }
+
+            return a; 
+        }
+    }   
+    constructor () {
+        variables{
+            int a;
+            int b;
+        }
+        objects{
+        }
+    }
+}
+
+class test{
+    variables {
+        int b;
+    }
+    objects {
+        A a;
+    }
+    methods{ 
+        void tst(int b, boolean a, int d){
+            variables {
+                int treze;
+            }
+            objects {
+                Pessoa pessoinha;
+            }
+            return;
+        }
+    }
+    constructor (int a, int b, boolean c) {
+        variables{
+           boolean umteste;
+           int contador;
+        }
+        objects{
+            Pessoa pessoinha;
+            Teste i123;
+        }
+    }
+}
+
+class main{
+    variables {
+    }
+    objects {
+    }
+    methods{ 
+        void main(){
+            variables {
+            }
+            objects {
+            }
+            return;
+        } 
+    }
+}
