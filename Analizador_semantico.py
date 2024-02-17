@@ -619,7 +619,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             try:
                 _tipo = list(a.values())[index]['type']
             except IndexError:
-                return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}, porém ela so recebe {len(a)}"
+                return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}"
             if ( _tipo != tipo):
                 return f"Na linha {token['line']}, o parametro {index+1} da função {scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
         case 'schedule_validate_param':
@@ -879,7 +879,7 @@ def val_param(tabela,scopo,token,file=None):
         try:
             _tipo = list(paran.values())[index]['type']
         except IndexError:
-            return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {_scopo[-2]}, porém ela so recebe {len(a)}"
+            return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}"
         if ( _tipo != tipo):
             return f"Na linha {token['line']}, o parametro {index+1} da função {_scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
         
