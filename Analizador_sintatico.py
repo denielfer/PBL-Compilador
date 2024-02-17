@@ -292,7 +292,7 @@ get_functions = {
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <RELATIONAL_EXPRESSION_VALUE>
                     {'is_terminal': True, "key": 'type', "value": ['IDE'], 'next': [('rel_sinc', 0), ('method_access', 0), ('object_access', 0), ("dimention_acess", 0)], 's': {'do': ['validate_IDE', 'add_void_stack'], 'erro': [('rel_sinc', 0)]}},
-                    {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': []},
+                    {'is_terminal': True, "key": 'type', "value": ['NRO','CAC'], 'next': [],'s':{'do':['add_NRO_or_CAC']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'method_access': [
@@ -305,7 +305,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": ['constructor'], 'next': [('void', 0), ('method_access', 2)], 's': {'do': ['validate_constructor','acess_method', 'schedule_add_type_func'], 'erro': [('void', 0)]}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [
-                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('sinc_scopo',0),('close_parentesis', 0), ("parameters", 0)], 's': {'do': [ 'schedule_validate_qtd_param','add_scopo_func_call','schedule_pop_scopo']}},
+                    {'is_terminal': True, "key": 'token', "value": ['('], 'next': [('sinc_scopo',0), ('close_parentesis', 0), ("parameters", 0)], 's': {'do': [ 'schedule_validate_qtd_param','add_scopo_func_call','schedule_pop_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
     ],
     'parameters': [
@@ -314,7 +314,7 @@ get_functions = {
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': [], 's': {"do": ['swap_scopo']}},
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ # <MULT_PARAMETERS>
-                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['swap_scopo','move_next_param']}},
+                    {'is_terminal': True, "key": 'token', "value": [','], 'next': [('parameters', 1), ('parameters', 2)], 's': {"do": ['move_next_param']}},
                     {'is_terminal': True, "key": 'token', "value": [''], 'next': []}, # ,'s':{'do':['swap_scopo']}
                 ], 'erro': {'tipo_recuperação': 'next'}},
                 {"test": [ 

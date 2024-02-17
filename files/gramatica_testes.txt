@@ -38,6 +38,9 @@ class qwe{
             variables{
             }
             objects{}
+            for (b=10;1<b;b--){
+
+            }
             return 1;
         }
     }

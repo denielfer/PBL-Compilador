@@ -89,8 +89,8 @@ def log(func):
         r = func(controle, token, tabela, scopo, log_sem)
         try:
             # print(' data:' + json.dumps(remove_circular_refs(tabela['global']), indent=4).replace('\n', '\n '), " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
-            # print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), " scopo"+ json.dumps(tabela['scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
-            print(" stack:" + json.dumps(tabela['stack'][-10:], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            print(" stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), " scopo"+ json.dumps(tabela['scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
+            # print(" stack:" + json.dumps(tabela['stack'][-10:], indent=4).replace('\n', '\n '), " last_scopo:" + json.dumps(tabela['last_scopo'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         except ValueError:
             print(' Data nao pode ser representado pois ele contem loop de referencia.\n', " stack:" + json.dumps(tabela['stack'], indent=4).replace('\n', '\n '), sep='\n', file=log_sem)
         return r
@@ -186,7 +186,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             if a[token['token']]['type'] != "class":
                 return f"Na linha {token['line']}, tentou extender {token['token']}, porém este não é uma classe"
             var = tabela['stack'][-1]
-            a[var]['data'] = a[token['token']]['data']
+            a[var]['data'] = copy.deepcopy( a[token['token']]['data'])
         case 'append_stack_class':
             #scopo: ...
             scopo.append(tabela['stack'][-1])
@@ -567,7 +567,6 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
             for a in _scopo:
                 scopo.append(a)
         case 'schedule_pop_scopo':
-            return
             if 'programado' not in tabela:
                 tabela['programado'] = []
             tabela['programado'].append({'when':('close_parentesis',0), 
@@ -634,6 +633,7 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                                                     'tabela': tabela,
                                                     'scopo': scopo,
                                                     "token":token,
+                                                    'file':log_sem
                                                 }
                                             )
                                         ],
@@ -842,12 +842,28 @@ def _sem(controle:int, token:dict, tabela:dict, scopo:list[str], log_sem):
                         scopo.append(s)
                     tabela['last_scopo'].clear()
                 return f"Na linha {token['line']}, tentando chamar construtor de objeto e não class"
+        case 'add_NRO_or_CAC':
+            if token['type'] == 'CAC':
+                tabela['stack'].append('string')
+            elif token['type'] == 'NRO':
+                if '.' in token['token']:
+                    tabela['stack'].append('real')
+                else:
+                    tabela['stack'].append('int')
         case _:
             pass
 
-def val_param(tabela,scopo,token):
+def val_param(tabela,scopo,token,file=None):
         # tabela['stack'].pop()
-        a = _get_scopo(tabela,scopo)
+        # print(tabela['scopo'],file=file)
+        _scopo = tabela['scopo'][1]
+        tabela['scopo'].append(copy.deepcopy(scopo))
+        scopo.clear()
+        for a in _scopo:
+            scopo.append(a)
+        # print(scopo,file=file)
+        paran = _get_scopo(tabela,scopo)
+        # print(paran,file=file)
         c = 0
         while c < len(tabela['stack']):
             c +=1
@@ -856,14 +872,16 @@ def val_param(tabela,scopo,token):
             except:
                 continue
             break
+        # print(tabela['stack'],file=file)
         index = int(tabela['stack'][-c])
         tipo = tabela['stack'][-1]
+        _scopo = scopo
         try:
-            _tipo = list(a.values())[index]['type']
+            _tipo = list(paran.values())[index]['type']
         except IndexError:
-            return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {scopo[-2]}, porém ela so recebe {len(a)}"
+            return f"Na linha {token['line']}, foi dado um {index+1} parametro para função {_scopo[-2]}, porém ela so recebe {len(a)}"
         if ( _tipo != tipo):
-            return f"Na linha {token['line']}, o parametro {index+1} da função {scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
+            return f"Na linha {token['line']}, o parametro {index+1} da função {_scopo[-2]} é do tipo {tipo}, e deveria ser {_tipo}"
         
 
 def temp():
@@ -925,7 +943,7 @@ def valid_qtd_param(tabela,qtd_param_req, msg:str):
         a = 0
     if qtd_param_req <0:
         qtd_param_req=0
-    msg = msg.replace('99', str(a)).replace('00', str(qtd_param_req))
+    msg = msg.replace('99', str(a+1)).replace('00', str(qtd_param_req+1))
     if a != qtd_param_req:
         return msg
     
